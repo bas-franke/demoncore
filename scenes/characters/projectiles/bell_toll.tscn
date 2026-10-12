@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/characters/projectiles/spell_casts.gd" id="1_cast"]
+
+[node name="bell_toll" type="Node3D"]
+script = ExtResource("1_cast")
+kind = "bell"
+tint = Color(0.7, 0.88, 1, 1)
+reach = 7.0

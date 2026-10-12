@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/unicorn.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"unicorn"
+display_name = "Unicorn"
+flavor_text = "Purity with a point. It can only be tamed by the innocent, which rules you out."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 30.0
+speed = 2.8
+damage = 15.0
+xp_value = 5
+knockback_scale = 0.6
+behavior = 2
+preferred_distance = 8.0
+attack_cooldown = 3.2
+charge_speed = 16.0
+charge_time = 0.6
+windup_time = 0.85

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/thorn_guardian.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"thorn_guardian"
+display_name = "Thorn-Hedge Guardian"
+flavor_text = "The gardeners of Eden clipped it into a knight. It took the shape to heart, and the thorns to everyone else."
+model = ExtResource("2_model")
+size = 1.2
+max_hp = 70.0
+speed = 1.6
+damage = 14.0
+xp_value = 8
+knockback_scale = 0.2
+behavior = 4
+preferred_distance = 2.0
+attack_cooldown = 3.2
+charge_time = 0.25
+windup_time = 1.0
+slam_radius = 2.4
+slam_reach = 0.0
+slam_damage = 18.0

@@ -1,0 +1,128 @@
+{
+	"_doc": "Speaker roster for the Dialogue autoload. 'shops' maps Meta / Progression shop ids to the speaker who runs that shop. 'player' (the chosen demon) and 'narrator' are built in. Format: docs/team/story.md",
+	"speakers": {
+		"grimmaul": {
+			"name": "Grimmaul",
+			"title": "Blacksmith of the Ninth Forge",
+			"color": "#ff6a1f",
+			"glyph": "G",
+			"shops": [
+				"blacksmith",
+				"forge"
+			]
+		},
+		"vesper": {
+			"name": "Vesper Ashtongue",
+			"title": "Occultist of the Black Choir",
+			"color": "#b03bff",
+			"glyph": "V",
+			"shops": [
+				"occultist",
+				"oracle"
+			]
+		},
+		"clerk": {
+			"name": "Mammon's Clerk",
+			"title": "Soul Broker of the Ledger",
+			"color": "#e8c35a",
+			"glyph": "$",
+			"shops": [
+				"soul_broker",
+				"covenant"
+			]
+		},
+		"ossek": {
+			"name": "Wayfarer Ossek",
+			"title": "Cartographer of the Fallen Roads",
+			"color": "#5ad1c8",
+			"glyph": "O",
+			"shops": [
+				"cartographer"
+			]
+		},
+		"pip": {
+			"name": "Pip",
+			"title": "Courier of the Ashen Court",
+			"color": "#ff9b5a",
+			"glyph": "P"
+		},
+		"malphine": {
+			"name": "Duchess Malphine",
+			"title": "of the Ashen Court",
+			"color": "#d0606a",
+			"glyph": "M"
+		},
+		"sariel": {
+			"name": "Sariel",
+			"title": "Herald of the Last Dawn",
+			"color": "#f2dc9a",
+			"glyph": "S"
+		},
+		"grand_inquisitor": {
+			"name": "Ozias",
+			"title": "the Grand Inquisitor",
+			"color": "#d9c08a",
+			"glyph": "I"
+		},
+		"kesh": {
+			"name": "Kesh",
+			"title": "the Breachwarden",
+			"color": "#9fb8c9",
+			"glyph": "K"
+		},
+		"gate_archon": {
+			"name": "Azrafel",
+			"title": "Archon of the Seventh Gate",
+			"color": "#fff1c4",
+			"glyph": "A"
+		},
+		"frost_abbot": {
+			"name": "Ysmir",
+			"title": "the Frost Abbot",
+			"color": "#bfe3ff",
+			"glyph": "Y"
+		},
+		"dawn_wyrm": {
+			"name": "Aurelion",
+			"title": "the Dawn Wyrm",
+			"color": "#ffd27a",
+			"glyph": "A"
+		},
+		"verdant_matriarch": {
+			"name": "Mother Verdance",
+			"title": "Saint of the First Garden",
+			"color": "#9fe38a",
+			"glyph": "M"
+		},
+		"velka": {
+			"name": "Velka",
+			"title": "Bartender of the Bloodwine Bar",
+			"color": "#e0507a",
+			"glyph": "V"
+		},
+		"war_chariot": {
+			"name": "Lord-Marshal Caddoc",
+			"title": "the Burning Crusade",
+			"color": "#ff9a4a",
+			"glyph": "C"
+		},
+		"storm_archon": {
+			"name": "Baraqiel",
+			"title": "Archon of the Tempest",
+			"color": "#b9a6ff",
+			"glyph": "B"
+		},
+		"gilded_seraph": {
+			"name": "Aurum",
+			"title": "the Gilded Seraph",
+			"color": "#ffd34a",
+			"glyph": "A"
+		},
+		"cantor": {
+			"name": "Cantor Seraphiel",
+			"title": "the Broken Choir",
+			"color": "#d6b8ff",
+			"glyph": "S"
+		}
+	}
+}

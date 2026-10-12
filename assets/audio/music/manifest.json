@@ -1,0 +1,1056 @@
+{
+ "generator": "tools/music/gen_music.py",
+ "tracks": {
+  "basecamp": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 66,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 465456,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/basecamp_main.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "base",
+     "samples": 320728
+    }
+   ],
+   "title": "Basecamp Hell"
+  },
+  "basecamp_ended": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 512000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/basecamp_ended_main.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "base",
+     "samples": 352800
+    }
+   ],
+   "title": "The Reconquest"
+  },
+  "battle_breach": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 72,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 426664,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_calm.wav",
+     "loudness_db": -20.6,
+     "mix_rate": 16000,
+     "name": "battle_gate_calm",
+     "role": "base",
+     "samples": 426664
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_combat.wav",
+     "loudness_db": -21.8,
+     "mix_rate": 16000,
+     "name": "battle_gate_combat",
+     "role": "combat",
+     "samples": 213332
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_frenzy.wav",
+     "loudness_db": -24.1,
+     "mix_rate": 16000,
+     "name": "battle_gate_frenzy",
+     "role": "frenzy",
+     "samples": 213332
+    },
+    {
+     "bars": 2,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_breach_hell.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 11025,
+     "name": "hell",
+     "role": "base",
+     "samples": 73500
+    }
+   ],
+   "title": "The Breach"
+  },
+  "battle_citadel": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 120,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 256000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_citadel_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 256000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_citadel_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 128000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_citadel_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 128000
+    }
+   ],
+   "title": "Bastion of Valor"
+  },
+  "battle_city": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 92,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 333912,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_city_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 333912
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_city_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 166956
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_city_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 166956
+    }
+   ],
+   "title": "Vespers of Ash"
+  },
+  "battle_gardens": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 104,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 295384,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gardens_calm.wav",
+     "loudness_db": -20.2,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 295384
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gardens_combat.wav",
+     "loudness_db": -21.2,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 147692
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gardens_frenzy.wav",
+     "loudness_db": -23.7,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 147692
+    }
+   ],
+   "title": "The Gardens Above"
+  },
+  "battle_gate": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 72,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 426664,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_calm.wav",
+     "loudness_db": -20.6,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 426664
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_combat.wav",
+     "loudness_db": -21.8,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 213332
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_gate_frenzy.wav",
+     "loudness_db": -24.1,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 213332
+    }
+   ],
+   "title": "Before the Seventh Gate"
+  },
+  "battle_isles": {
+   "bars": 16,
+   "beats_per_bar": 3,
+   "bpm": 108,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 426672,
+   "stems": [
+    {
+     "bars": 16,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 426672
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 106668
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 106668
+    }
+   ],
+   "title": "Waltz of the Gilded Isles"
+  },
+  "battle_monastery": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 84,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 365712,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_monastery_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 365712
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_monastery_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 182856
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_monastery_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 182856
+    }
+   ],
+   "title": "Matins in the Snow"
+  },
+  "battle_sanctum": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 96,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 320000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_sanctum_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 320000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_sanctum_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 160000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_sanctum_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 160000
+    }
+   ],
+   "title": "Requiem for a Ruin"
+  },
+  "battle_spire": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 132,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 232728,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 232728
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 116364
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 116364
+    }
+   ],
+   "title": "The Spire in the Storm"
+  },
+  "battle_wastes": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 88,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 349088,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_wastes_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "calm",
+     "role": "base",
+     "samples": 349088
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_wastes_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "combat",
+     "role": "combat",
+     "samples": 174544
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_wastes_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "frenzy",
+     "role": "frenzy",
+     "samples": 174544
+    }
+   ],
+   "title": "Where the Ash Falls"
+  },
+  "boss_abbot": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 96,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 320000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_abbot_main.wav",
+     "loudness_db": -18.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 320000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_abbot_phase2.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 160000
+    }
+   ],
+   "title": "Ysmir's Matins"
+  },
+  "boss_archon": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 116,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 264824,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_archon_main.wav",
+     "loudness_db": -18.0,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 264824
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_archon_host.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "host",
+     "role": "frenzy",
+     "samples": 132412
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_archon_enrage.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "enrage",
+     "role": "enrage",
+     "samples": 132412
+    }
+   ],
+   "title": "Azrafel, Warden of the Seventh Gate"
+  },
+  "boss_aurum": {
+   "bars": 16,
+   "beats_per_bar": 3,
+   "bpm": 108,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 426672,
+   "stems": [
+    {
+     "bars": 16,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "battle_isles_calm",
+     "role": "base",
+     "samples": 426672
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "battle_isles_combat",
+     "role": "combat",
+     "samples": 106668
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_isles_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "battle_isles_frenzy",
+     "role": "frenzy",
+     "samples": 106668
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_aurum_cage.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "cage",
+     "role": "base",
+     "samples": 106668
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_aurum_phase2.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 106668
+    }
+   ],
+   "title": "The Gilded Cage"
+  },
+  "boss_cantor": {
+   "bars": 4,
+   "beats_per_bar": 4,
+   "bpm": 100,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 153600,
+   "stems": [
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_cantor_main.wav",
+     "loudness_db": -18.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 153600
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_cantor_phase2.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 153600
+    }
+   ],
+   "title": "The Broken Choir"
+  },
+  "boss_chariot": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 140,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 219432,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_chariot_main.wav",
+     "loudness_db": -18.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 219432
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_chariot_phase2.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 109716
+    }
+   ],
+   "title": "The Lord-Marshal Rides"
+  },
+  "boss_inquisitor": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 100,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 307200,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_inquisitor_main.wav",
+     "loudness_db": -20.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 307200
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_inquisitor_phase2.wav",
+     "loudness_db": -22.5,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 153600
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_inquisitor_phase3.wav",
+     "loudness_db": -24.0,
+     "mix_rate": 16000,
+     "name": "phase3",
+     "role": "phase3",
+     "samples": 153600
+    }
+   ],
+   "title": "Dies Irae, Dies Illa"
+  },
+  "boss_sariel": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 132,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 232728,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_sariel_main.wav",
+     "loudness_db": -18.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 232728
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_sariel_enrage.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "enrage",
+     "role": "enrage",
+     "samples": 116364
+    }
+   ],
+   "title": "Mass for the Fallen Host"
+  },
+  "boss_tempest": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 132,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 232728,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_calm.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "battle_spire_calm",
+     "role": "base",
+     "samples": 232728
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_combat.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "battle_spire_combat",
+     "role": "combat",
+     "samples": 116364
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/battle_spire_frenzy.wav",
+     "loudness_db": -23.5,
+     "mix_rate": 16000,
+     "name": "battle_spire_frenzy",
+     "role": "frenzy",
+     "samples": 116364
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_tempest_tempest.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 16000,
+     "name": "tempest",
+     "role": "phase2",
+     "samples": 116364
+    }
+   ],
+   "title": "Baraqiel Conducts the Storm"
+  },
+  "boss_verdance": {
+   "bars": 16,
+   "beats_per_bar": 3,
+   "bpm": 120,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 384000,
+   "stems": [
+    {
+     "bars": 16,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_verdance_main.wav",
+     "loudness_db": -18.5,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 384000
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_verdance_phase2.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 96000
+    }
+   ],
+   "title": "Lullaby of the Root Mother"
+  },
+  "boss_wyrm": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 126,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 243808,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_wyrm_main.wav",
+     "loudness_db": -19.8,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 243808
+    },
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/boss_wyrm_phase2.wav",
+     "loudness_db": -23.4,
+     "mix_rate": 16000,
+     "name": "phase2",
+     "role": "phase2",
+     "samples": 121904
+    }
+   ],
+   "title": "The Second Sunrise"
+  },
+  "defeat": {
+   "bars": 4,
+   "beats_per_bar": 4,
+   "bpm": 50,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 307200,
+   "stems": [
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/defeat_main.wav",
+     "loudness_db": -21.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "base",
+     "samples": 211680
+    }
+   ],
+   "title": "Unmade"
+  },
+  "ending_break": {
+   "bars": 1,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": false,
+   "mix_rate": 16000,
+   "samples": 272000,
+   "stems": [
+    {
+     "bars": 1,
+     "channels": 1,
+     "file": "res://assets/audio/music/ending_break_main.wav",
+     "loudness_db": -18.6,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "stinger",
+     "samples": 187425
+    }
+   ],
+   "title": "The Throne Is Broken"
+  },
+  "ending_climb": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 512000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/ending_climb_main.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "base",
+     "samples": 512000
+    },
+    {
+     "bars": 2,
+     "channels": 1,
+     "file": "res://assets/audio/music/ending_climb_archons.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "archons",
+     "role": "archons",
+     "samples": 128000
+    },
+    {
+     "bars": 2,
+     "channels": 1,
+     "file": "res://assets/audio/music/ending_climb_throne.wav",
+     "loudness_db": -22.0,
+     "mix_rate": 16000,
+     "name": "throne",
+     "role": "throne",
+     "samples": 128000
+    }
+   ],
+   "title": "Seven Steps"
+  },
+  "ending_sit": {
+   "bars": 1,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": false,
+   "mix_rate": 16000,
+   "samples": 320000,
+   "stems": [
+    {
+     "bars": 1,
+     "channels": 1,
+     "file": "res://assets/audio/music/ending_sit_main.wav",
+     "loudness_db": -18.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "stinger",
+     "samples": 220500
+    }
+   ],
+   "title": "The Throne Is Taken"
+  },
+  "run_won": {
+   "bars": 4,
+   "beats_per_bar": 4,
+   "bpm": 72,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 213332,
+   "stems": [
+    {
+     "bars": 4,
+     "channels": 1,
+     "file": "res://assets/audio/music/run_won_main.wav",
+     "loudness_db": -19.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "base",
+     "samples": 146999
+    }
+   ],
+   "title": "Ascendant"
+  },
+  "sting_objective": {
+   "bars": 1,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": false,
+   "mix_rate": 16000,
+   "samples": 80000,
+   "stems": [
+    {
+     "bars": 1,
+     "channels": 1,
+     "file": "res://assets/audio/music/sting_objective_main.wav",
+     "loudness_db": -19.0,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "stinger",
+     "samples": 80000
+    }
+   ],
+   "title": "Desecrated"
+  },
+  "sting_purchase": {
+   "bars": 1,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": false,
+   "mix_rate": 16000,
+   "samples": 48000,
+   "stems": [
+    {
+     "bars": 1,
+     "channels": 1,
+     "file": "res://assets/audio/music/sting_purchase_main.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 16000,
+     "name": "main",
+     "role": "stinger",
+     "samples": 48000
+    }
+   ],
+   "title": "A Deal Struck"
+  },
+  "title": {
+   "bars": 8,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": true,
+   "mix_rate": 16000,
+   "samples": 512000,
+   "stems": [
+    {
+     "bars": 8,
+     "channels": 1,
+     "file": "res://assets/audio/music/title_main.wav",
+     "loudness_db": -20.0,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "base",
+     "samples": 352800
+    }
+   ],
+   "title": "A Hymn, Unsung"
+  },
+  "victory": {
+   "bars": 1,
+   "beats_per_bar": 4,
+   "bpm": 60,
+   "loop": false,
+   "mix_rate": 16000,
+   "samples": 144000,
+   "stems": [
+    {
+     "bars": 1,
+     "channels": 1,
+     "file": "res://assets/audio/music/victory_main.wav",
+     "loudness_db": -18.2,
+     "mix_rate": 11025,
+     "name": "main",
+     "role": "stinger",
+     "samples": 99225
+    }
+   ],
+   "title": "The Host Falls"
+  }
+ }
+}

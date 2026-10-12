@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/pegasus.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"pegasus"
+display_name = "Pegasus"
+flavor_text = "Born from a slain monster's blood and raised to the stars. It remembers where it came from, and hates you for it."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 20.0
+speed = 3.6
+damage = 10.0
+xp_value = 3
+knockback_scale = 0.9
+behavior = 0

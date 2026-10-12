@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/dawn_wyrm_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"dawn_wyrm"
+display_name = "Aurelion, the Dawn Wyrm"
+flavor_text = "The dragon that pulls the morning over the citadel. Kill it and the sun will still rise. Probably."
+model = ExtResource("2_model")
+size = 2.3
+hover = 0.5
+max_hp = 3400.0
+speed = 2.4
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

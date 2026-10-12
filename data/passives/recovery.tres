@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PassiveData" format=3]
+
+[ext_resource type="Script" path="res://scripts/upgrades/passive_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Blood Pact"
+description = "Regenerate 0.3 HP per second. An old covenant, paid in kind."
+color = Color(0.6, 0.06, 0.08, 1)
+icon = "‡"
+stat = &"regen"
+amount_per_level = 0.3
+max_level = 5

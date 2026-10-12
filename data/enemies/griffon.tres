@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/griffon.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"griffon"
+display_name = "Griffon"
+flavor_text = "Guardian of the high treasuries, eagle in the eye and lion in the heart. It has hunted serpents since the first garden."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 28.0
+speed = 3.2
+damage = 13.0
+xp_value = 4
+knockback_scale = 0.7
+behavior = 2
+preferred_distance = 7.0
+attack_cooldown = 3.0
+charge_speed = 16.0
+charge_time = 0.55
+windup_time = 0.8

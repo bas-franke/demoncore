@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/bell_gargoyle.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bell_gargoyle"
+display_name = "Bell-Tower Gargoyle"
+flavor_text = "Carved to keep demons off the cathedral roof. It took the job seriously, and it has decided the roof extends to wherever you are."
+model = ExtResource("2_model")
+size = 1.15
+max_hp = 40.0
+speed = 2.2
+damage = 16.0
+xp_value = 5
+knockback_scale = 0.3
+behavior = 3
+attack_cooldown = 2.6
+charge_speed = 8.0
+charge_time = 0.8
+windup_time = 0.55

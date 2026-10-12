@@ -1,0 +1,30 @@
+{
+	"_doc": "Daily trial modifiers (Board of Trials in Basecamp Hell). Each day picks a seed, a map and `per_day` modifiers deterministically from the date. effects: {stat, amount} -> Player.apply_stat; {type: heat, amount} -> RunState.heat; {type: run_stat, stat, amount} -> Progression.apply_stat; {type: random_ability} -> one seeded unlocked ability at start; {type: score_mult, amount} -> multiplies the trial score. See docs/team/basecamp.md.",
+	"per_day": 2,
+	"modifiers": [
+		{"id": "glass_cannon", "name": "Glass Cannon", "icon": "✦",
+			"description": "+50% damage, -40 max vigor.",
+			"effects": [{"stat": "might", "amount": 0.5}, {"stat": "max_hp", "amount": -40.0}, {"type": "score_mult", "amount": 0.15}]},
+		{"id": "relentless", "name": "Relentless Host", "icon": "⚔",
+			"description": "Heaven arrives angrier: +3 heat, +25% experience.",
+			"effects": [{"type": "heat", "amount": 3}, {"stat": "xp_gain", "amount": 0.25}, {"type": "score_mult", "amount": 0.25}]},
+		{"id": "swift_damned", "name": "Swift Damnation", "icon": "»",
+			"description": "+1.5 speed, +2 heat.",
+			"effects": [{"stat": "move_speed", "amount": 1.5}, {"type": "heat", "amount": 2}, {"type": "score_mult", "amount": 0.1}]},
+		{"id": "iron_hide", "name": "Iron Hide", "icon": "⛨",
+			"description": "+3 armor, weapons recharge 15% slower.",
+			"effects": [{"stat": "armor", "amount": 3.0}, {"stat": "cooldown", "amount": 0.15}]},
+		{"id": "wide_wrath", "name": "Widening Wrath", "icon": "◎",
+			"description": "+35% area, -20 max vigor.",
+			"effects": [{"stat": "area", "amount": 0.35}, {"stat": "max_hp", "amount": -20.0}, {"type": "score_mult", "amount": 0.05}]},
+		{"id": "borrowed_rite", "name": "Borrowed Rite", "icon": "⛧",
+			"description": "Begin with a rite chosen by the Trial itself.",
+			"effects": [{"type": "random_ability"}]},
+		{"id": "lucky_damned", "name": "Fortune's Spite", "icon": "☘",
+			"description": "+30% luck, +2 rerolls, +2 heat.",
+			"effects": [{"type": "run_stat", "stat": "luck", "amount": 0.3}, {"type": "run_stat", "stat": "rerolls", "amount": 2.0}, {"type": "heat", "amount": 2}]},
+		{"id": "frail_reach", "name": "Frail Reach", "icon": "❂",
+			"description": "+2 soul reach, -30 max vigor.",
+			"effects": [{"stat": "pickup_radius", "amount": 2.0}, {"stat": "max_hp", "amount": -30.0}, {"type": "score_mult", "amount": 0.1}]}
+	]
+}

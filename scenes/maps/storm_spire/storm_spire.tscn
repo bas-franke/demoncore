@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/maps/storm_spire/storm_spire.gd" id="1_map"]
+
+[node name="StormSpire" type="Node3D"]
+script = ExtResource("1_map")

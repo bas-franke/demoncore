@@ -1,0 +1,151 @@
+{
+	"_doc": "Basecamp Hell NPC models (characters-new, docs/team/characters-new.md). scene drives itself (idle + gestures) when added outside an Enemy; call talk() / gesture(1) on it. speaker: Dialogue speaker id (data/dialogue/speakers.json). height: approx. head height in m (for prompt / name plates). Ambient entries are crowd dressing.",
+	"npcs": {
+		"pip": {
+			"name": "Pip",
+			"scene": "res://scenes/characters/npcs/pip.tscn",
+			"speaker": "pip",
+			"collision": 0.35,
+			"height": 0.9,
+			"role": "imp courier: banter / gossip"
+		},
+		"malphine": {
+			"name": "Duchess Malphine",
+			"scene": "res://scenes/characters/npcs/malphine.tscn",
+			"speaker": "malphine",
+			"collision": 0.5,
+			"height": 2.3,
+			"role": "noble of the Ashen Court"
+		},
+		"breachwarden": {
+			"name": "Kesh, the Breachwarden",
+			"scene": "res://scenes/characters/npcs/breachwarden.tscn",
+			"speaker": "kesh",
+			"collision": 0.7,
+			"height": 2.4,
+			"role": "keeper of the portal (gesture 1 = slams the halberd: the portal opens)"
+		},
+		"imp_porter": {
+			"name": "Imp Porter",
+			"scene": "res://scenes/characters/allies/imp.tscn",
+			"outfit": 1,
+			"collision": 0.3,
+			"height": 0.6,
+			"role": "ambient: carries sacks around the camp"
+		},
+		"hellhound_resting": {
+			"name": "Hellhound",
+			"scene": "res://scenes/characters/allies/hellhound.tscn",
+			"resting": true,
+			"collision": 0.45,
+			"height": 0.5,
+			"role": "ambient: lies by a fire, lifts its head on gestures"
+		},
+		"succubus": {
+			"name": "Succubus",
+			"scene": "res://scenes/characters/allies/succubus.tscn",
+			"collision": 0.4,
+			"height": 1.7,
+			"role": "ambient: lounging courtier, beckons"
+		},
+		"hell_brute": {
+			"name": "Hell Brute",
+			"scene": "res://scenes/characters/allies/hell_brute.tscn",
+			"collision": 0.6,
+			"height": 1.5,
+			"role": "ambient: labourer / guard, beats its chest"
+		},
+		"sable": {
+			"name": "Sable, the Barkeep",
+			"scene": "res://scenes/characters/npcs/infernal_bar.tscn",
+			"speaker": "sable",
+			"talk": true,
+			"verb": "Order a drink",
+			"height": 1.8,
+			"talk_radius": 2.6,
+			"collision": 0,
+			"role": "succubus barkeep of the Infernal Bar (the counter is solid)",
+			"lines": [
+				"What'll it be? Brimstone sour? Liquid regret? We have a lot of regret.",
+				"Drink up. Up there, everything tastes of incense.",
+				"The angels never tip. You'd think, with all that gold.",
+				"Pip owes me eleven souls. If you see Pip, you didn't hear it from me.",
+				"That one's on the house. The house is on fire, but still.",
+				"You look like someone who just got smited. Smote? Smitten. No."
+			]
+		},
+		"kennel": {
+			"name": "The Hellhound Kennel",
+			"scene": "res://scenes/characters/npcs/hellhound_kennel.tscn",
+			"speaker": "",
+			"narrate": true,
+			"talk": true,
+			"verb": "Pet the hounds",
+			"height": 1.2,
+			"talk_radius": 2.8,
+			"collision": 0,
+			"role": "a pen of three hellhounds (the pen is solid)",
+			"lines": [
+				"The hounds press their smoking muzzles to the bars. The iron hisses.",
+				"The biggest one rolls over. Its belly is very warm. Too warm.",
+				"Three tails thump against the basalt in perfect time.",
+				"The sleeper opens one ember eye, decides you are not an angel, and closes it again.",
+				"One drops a gnawed halo at your feet. It wants you to throw it."
+			]
+		},
+		"damned_hauler": {
+			"name": "Damned Laborer",
+			"scene": "res://scenes/characters/npcs/damned_laborer.tscn",
+			"task": 0,
+			"height": 1.0,
+			"collision": 0,
+			"role": "ambient: drags a stone block back and forth (patrols)"
+		},
+		"damned_carrier": {
+			"name": "Damned Laborer",
+			"scene": "res://scenes/characters/npcs/damned_laborer.tscn",
+			"task": 2,
+			"height": 1.0,
+			"collision": 0,
+			"role": "ambient: carries lava buckets on a yoke (patrols)"
+		},
+		"damned_miner": {
+			"name": "A Damned Soul",
+			"scene": "res://scenes/characters/npcs/damned_laborer.tscn",
+			"task": 1,
+			"speaker": "damned_soul",
+			"talk": true,
+			"height": 1.0,
+			"collision": 0.35,
+			"role": "swings a pick at an ember rock forever; talkable",
+			"lines": [
+				"Hello... sir? Madam? Hellspawn? I break the rock. The rock grows back. I break the rock.",
+				"I was a tax collector. This is fair.",
+				"Do you know what year it is up there? No. Don't tell me.",
+				"They say if I break it a million times I can rest. This is nine hundred thousand and... no, I lost count again.",
+				"You're going up? Spit on a cathedral for me."
+			]
+		}
+	},
+	"_basecamp_doc": "Placed in Basecamp Hell by CharacterRoster.populate_basecamp(hub) (called from basecamp.gd _ready). The talkable story NPCs (pip, breachwarden, malphine) are placed by the story role's StoryHooks instead (StoryNpc). Entries may set 'collision' (cylinder radius in m, 0 = none): spawn_npc adds a StaticBody3D on world layer 1 so the avatar can't walk through. pos = hub-local [x, y, z] (see HubScenery: FIRE (0,0,1), GATE (0,0,-10.5), SMITH (-10,0,-3)); yaw in degrees, 0 faces -Z, 180 faces the camera. Entries with 'talk': true are wrapped in a HubNpc (scenes/characters/npcs/hub_npc.gd: verb, lines, speaker pool, 'narrate' for narration lines). 'patrol' = [x, y, z] offset walked back and forth (laborers). The basecamp role's HubLife builds its own bar (Velka), kennel and quarry souls from these models, so 'sable', 'kennel' and the damned_* entries are offered as ready-made set pieces but not placed by default (add them to this list to place them).",
+	"basecamp": [
+		{
+			"npc": "hell_brute",
+			"pos": [
+				2.7,
+				0.0,
+				-8.6
+			],
+			"yaw": 200
+		},
+		{
+			"npc": "imp_porter",
+			"pos": [
+				-7.4,
+				0.0,
+				-0.6
+			],
+			"yaw": 120
+		}
+	]
+}

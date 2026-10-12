@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/infernal_chain/infernal_chain.gd" id="1_chain"]
+
+[node name="InfernalChain" type="Node3D"]
+script = ExtResource("1_chain")
+display_name = "Infernal Chain"
+description = "A lash of chained hellfire strikes the nearest foe, then leaps to the next. None are spared the binding."
+color = Color(1, 0.48, 0.16, 1)
+icon = "⛓"
+base_damage = 9.0
+base_cooldown = 1.1
+level_descriptions = PackedStringArray("+1 leap. The chain hungers.", "+30% damage.", "+1 leap.", "-20% cooldown. It lashes without rest.", "+1 leap, +25% leap reach.", "+40% damage, -15% cooldown. Bound for eternity.")

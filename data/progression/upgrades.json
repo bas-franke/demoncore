@@ -1,0 +1,908 @@
+{
+	"_doc": "Progression's permanent upgrade tree (the Souls catalog lives in data/meta/upgrades.json and is owned by Meta). Cost of rank n (0-based): cost array (last entry repeats) or base_cost * cost_growth^n. currency: sin_shards, hellstone or souls (souls are spent through Meta). effects: [{stat, per_level}] where stat is a Player property (Player.apply_stat) or a run stat kept by Progression: luck, rerolls, banishes, dash_charges, starting_boons, starting_relics, ichor_gain, shard_gain. format: flat | percent (0.05 shows +5%). requires: {upgrade_or_unlock_id: rank}. shop: the shopkeeper/shrine that sells it. Ability effects (Abilities autoload): {ability_mod: '<Abilities mod key, e.g. tag:fire>', per_level, format, label} adds to Abilities.mods at run start; {grant_ability: '<ability id>'} grants that ability at run start. category: tab name in the Basecamp shop panel.",
+	"upgrades": [
+		{
+			"id": "omens",
+			"shop": "occult",
+			"name": "Crooked Omens",
+			"icon": "☘",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"stat": "luck",
+					"per_level": 0.1,
+					"format": "percent"
+				}
+			],
+			"max_level": 5,
+			"cost": [
+				3,
+				7,
+				10,
+				15,
+				21
+			],
+			"description": "Fate leans your way: rarer boons and relics, more drops."
+		},
+		{
+			"id": "reroll",
+			"shop": "occult",
+			"name": "Second Augury",
+			"icon": "↻",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"stat": "rerolls",
+					"per_level": 1
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				7,
+				14,
+				21
+			],
+			"description": "Reroll the boons offered at a level-up. One use per rank, per run."
+		},
+		{
+			"id": "banish",
+			"shop": "occult",
+			"name": "Anathema",
+			"icon": "✕",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"stat": "banishes",
+					"per_level": 1
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				10,
+				18
+			],
+			"requires": {
+				"reroll": 1
+			},
+			"description": "Banish an unwanted boon from the run's offerings for good. One use per rank, per run."
+		},
+		{
+			"id": "birthright",
+			"shop": "occult",
+			"name": "Dark Birthright",
+			"icon": "✦",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"stat": "starting_boons",
+					"per_level": 1
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				8,
+				17,
+				28
+			],
+			"requires": {
+				"omens": 1
+			},
+			"description": "Begin each run already blessed with a random boon per rank."
+		},
+		{
+			"id": "shadowstep",
+			"shop": "occult",
+			"name": "Shadowstep",
+			"icon": "≫",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"stat": "dash_charges",
+					"per_level": 1
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				14,
+				25
+			],
+			"description": "One more step through the dark between heartbeats: +1 dash charge per rank."
+		},
+		{
+			"id": "greed",
+			"shop": "occult",
+			"name": "Mammon's Favour",
+			"icon": "¤",
+			"currency": "souls",
+			"effects": [
+				{
+					"stat": "ichor_gain",
+					"per_level": 0.1,
+					"format": "percent"
+				}
+			],
+			"max_level": 5,
+			"cost": 50,
+			"cost_growth": 1.5,
+			"description": "More Ichor from the fallen."
+		},
+		{
+			"id": "shard_sense",
+			"shop": "occult",
+			"name": "Shard-Sense",
+			"icon": "◆",
+			"currency": "souls",
+			"effects": [
+				{
+					"stat": "shard_gain",
+					"per_level": 0.15,
+					"format": "percent"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				120,
+				240,
+				420
+			],
+			"requires": {
+				"omens": 1
+			},
+			"description": "More Sin Shards banked at the end of each run."
+		},
+		{
+			"id": "reliquary",
+			"shop": "hellforge",
+			"name": "Hellforged Reliquary",
+			"icon": "⚱",
+			"currency": "hellstone",
+			"effects": [
+				{
+					"stat": "starting_relics",
+					"per_level": 1
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				2,
+				5
+			],
+			"description": "Start each run carrying a random relic per rank."
+		},
+		{
+			"id": "archfiend",
+			"shop": "hellforge",
+			"name": "Archfiend's Temper",
+			"icon": "†",
+			"currency": "hellstone",
+			"effects": [
+				{
+					"stat": "might",
+					"per_level": 0.08,
+					"format": "percent"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				2,
+				4,
+				7
+			],
+			"description": "Hellstone-quenched fury: damage beyond what souls can buy."
+		},
+		{
+			"id": "molten_heart",
+			"shop": "hellforge",
+			"name": "Molten Heart",
+			"icon": "♥",
+			"currency": "hellstone",
+			"effects": [
+				{
+					"stat": "max_hp",
+					"per_level": 20
+				},
+				{
+					"stat": "regen",
+					"per_level": 0.2,
+					"suffix": " HP/s"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				4,
+				7
+			],
+			"description": "A heart of living magma: more vigor and steady regrowth."
+		},
+		{
+			"id": "school_fire_1",
+			"shop": "hellforge",
+			"category": "Hellfire",
+			"name": "Hellfire Attunement",
+			"icon": "🜂",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:fire",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Hellfire damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Hellfire builds: abilities tagged fire hit harder."
+		},
+		{
+			"id": "school_fire_2",
+			"shop": "hellforge",
+			"category": "Hellfire",
+			"name": "Kindled Marrow",
+			"icon": "🜂",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "power:burn",
+					"per_level": 0.15,
+					"format": "percent",
+					"label": "Burn damage"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_fire_1": 2
+			},
+			"description": "Your burns sear deeper."
+		},
+		{
+			"id": "school_fire_3",
+			"shop": "hellforge",
+			"category": "Hellfire",
+			"name": "Pyre-Born",
+			"icon": "🜂",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "cinder_spray"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_fire_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Hellfire ability."
+		},
+		{
+			"id": "school_brute_1",
+			"shop": "hellforge",
+			"category": "Brimstone",
+			"name": "Brimstone Attunement",
+			"icon": "⚒",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:brute",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Brimstone damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Brimstone builds: abilities tagged brute hit harder."
+		},
+		{
+			"id": "school_brute_2",
+			"shop": "hellforge",
+			"category": "Brimstone",
+			"name": "Unbroken Horns",
+			"icon": "⚒",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "knockback",
+					"per_level": 0.15,
+					"format": "percent",
+					"label": "Knockback"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_brute_1": 2
+			},
+			"description": "Blows that throw the Host across the field."
+		},
+		{
+			"id": "school_brute_3",
+			"shop": "hellforge",
+			"category": "Brimstone",
+			"name": "Born of the Anvil",
+			"icon": "⚒",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "brimstone_maul"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_brute_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Brimstone ability."
+		},
+		{
+			"id": "school_chain_1",
+			"shop": "hellforge",
+			"category": "Chains",
+			"name": "Chains Attunement",
+			"icon": "⛓",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:chain",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Chains damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Chains builds: abilities tagged chain hit harder."
+		},
+		{
+			"id": "school_chain_2",
+			"shop": "hellforge",
+			"category": "Chains",
+			"name": "Tempered Links",
+			"icon": "⛓",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "dur:root",
+					"per_level": 0.25,
+					"format": "percent",
+					"label": "Bind duration"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_chain_1": 2
+			},
+			"description": "The chains hold the faithful longer."
+		},
+		{
+			"id": "school_chain_3",
+			"shop": "hellforge",
+			"category": "Chains",
+			"name": "Warden's Oath",
+			"icon": "⛓",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "hellhook"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_chain_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Chains ability."
+		},
+		{
+			"id": "school_blood_1",
+			"shop": "occult",
+			"category": "Blood Magic",
+			"name": "Blood Magic Attunement",
+			"icon": "🩸",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:blood",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Blood Magic damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Blood Magic builds: abilities tagged blood hit harder."
+		},
+		{
+			"id": "school_blood_2",
+			"shop": "occult",
+			"category": "Blood Magic",
+			"name": "Thick Blood",
+			"icon": "🩸",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "hp_cost_cut",
+					"per_level": 0.1,
+					"format": "percent",
+					"label": "Life cost reduction"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_blood_1": 2
+			},
+			"description": "Blood rites cost less of your life."
+		},
+		{
+			"id": "school_blood_3",
+			"shop": "occult",
+			"category": "Blood Magic",
+			"name": "Sanguine Rite",
+			"icon": "🩸",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "hemorrhage_lance"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_blood_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Blood Magic ability."
+		},
+		{
+			"id": "school_curse_1",
+			"shop": "occult",
+			"category": "Curses",
+			"name": "Curses Attunement",
+			"icon": "☿",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:curse",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Curses damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Curses builds: abilities tagged curse hit harder."
+		},
+		{
+			"id": "school_curse_2",
+			"shop": "occult",
+			"category": "Curses",
+			"name": "Venom of Words",
+			"icon": "☿",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "power:curse",
+					"per_level": 0.15,
+					"format": "percent",
+					"label": "Curse potency"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_curse_1": 2
+			},
+			"description": "Your hexes cut deeper."
+		},
+		{
+			"id": "school_curse_3",
+			"shop": "occult",
+			"category": "Curses",
+			"name": "First Malediction",
+			"icon": "☿",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "hex_frailty"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_curse_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Curses ability."
+		},
+		{
+			"id": "school_shadow_1",
+			"shop": "occult",
+			"category": "Shadow",
+			"name": "Shadow Attunement",
+			"icon": "☾",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:shadow",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Shadow damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Shadow builds: abilities tagged shadow hit harder."
+		},
+		{
+			"id": "school_shadow_2",
+			"shop": "occult",
+			"category": "Shadow",
+			"name": "Knife in the Dark",
+			"icon": "☾",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "tagcrit:shadow",
+					"per_level": 0.04,
+					"format": "percent",
+					"label": "Shadow crit chance"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_shadow_1": 2
+			},
+			"description": "Shadow strikes find the gaps in holy plate."
+		},
+		{
+			"id": "school_shadow_3",
+			"shop": "occult",
+			"category": "Shadow",
+			"name": "Child of the Umbra",
+			"icon": "☾",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "shadow_daggers"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_shadow_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Shadow ability."
+		},
+		{
+			"id": "school_plague_1",
+			"shop": "occult",
+			"category": "Plague",
+			"name": "Plague Attunement",
+			"icon": "☣",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:plague",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Plague damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Plague builds: abilities tagged plague hit harder."
+		},
+		{
+			"id": "school_plague_2",
+			"shop": "occult",
+			"category": "Plague",
+			"name": "Festering Gift",
+			"icon": "☣",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "dot_rate",
+					"per_level": 0.1,
+					"format": "percent",
+					"label": "Damage-over-time rate"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_plague_1": 2
+			},
+			"description": "Rot works faster."
+		},
+		{
+			"id": "school_plague_3",
+			"shop": "occult",
+			"category": "Plague",
+			"name": "Patient Zero",
+			"icon": "☣",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "blight_spit"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_plague_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Plague ability."
+		},
+		{
+			"id": "school_necro_1",
+			"shop": "bindings",
+			"category": "Necromancy",
+			"name": "Necromancy Attunement",
+			"icon": "☠",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:necro",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Necromancy damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Necromancy builds: abilities tagged necro hit harder."
+		},
+		{
+			"id": "school_necro_2",
+			"shop": "bindings",
+			"category": "Necromancy",
+			"name": "Gravecaller",
+			"icon": "☠",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "summon_count",
+					"per_level": 1,
+					"format": "flat",
+					"label": "Summons"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_necro_1": 2
+			},
+			"description": "One more of the dead answers you."
+		},
+		{
+			"id": "school_necro_3",
+			"shop": "bindings",
+			"category": "Necromancy",
+			"name": "Lord of Bones",
+			"icon": "☠",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "raise_thralls"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_necro_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Necromancy ability."
+		},
+		{
+			"id": "school_soul_1",
+			"shop": "bindings",
+			"category": "Soul Harvest",
+			"name": "Soul Harvest Attunement",
+			"icon": "✧",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:soul",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Soul Harvest damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Soul Harvest builds: abilities tagged soul hit harder."
+		},
+		{
+			"id": "school_soul_2",
+			"shop": "bindings",
+			"category": "Soul Harvest",
+			"name": "Bottomless Hunger",
+			"icon": "✧",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "soul_cap",
+					"per_level": 40,
+					"format": "flat",
+					"label": "Soul cap"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_soul_1": 2
+			},
+			"description": "You can hold more reaped souls."
+		},
+		{
+			"id": "school_soul_3",
+			"shop": "bindings",
+			"category": "Soul Harvest",
+			"name": "Ferryman's Due",
+			"icon": "✧",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "soul_siphon"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_soul_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Soul Harvest ability."
+		},
+		{
+			"id": "school_storm_1",
+			"shop": "bindings",
+			"category": "Storm",
+			"name": "Storm Attunement",
+			"icon": "ϟ",
+			"currency": "souls",
+			"effects": [
+				{
+					"ability_mod": "tag:storm",
+					"per_level": 0.06,
+					"format": "percent",
+					"label": "Storm damage"
+				}
+			],
+			"max_level": 3,
+			"cost": [
+				70,
+				130,
+				240
+			],
+			"description": "Meta support for Storm builds: abilities tagged storm hit harder."
+		},
+		{
+			"id": "school_storm_2",
+			"shop": "bindings",
+			"category": "Storm",
+			"name": "Forked Wrath",
+			"icon": "ϟ",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"ability_mod": "jumps",
+					"per_level": 1,
+					"format": "flat",
+					"label": "Chain jumps"
+				}
+			],
+			"max_level": 2,
+			"cost": [
+				7,
+				14
+			],
+			"requires": {
+				"school_storm_1": 2
+			},
+			"description": "Lightning leaps to one more angel."
+		},
+		{
+			"id": "school_storm_3",
+			"shop": "bindings",
+			"category": "Storm",
+			"name": "Eye of the Tempest",
+			"icon": "ϟ",
+			"currency": "sin_shards",
+			"effects": [
+				{
+					"grant_ability": "ball_lightning"
+				}
+			],
+			"max_level": 1,
+			"cost": [
+				17
+			],
+			"requires": {
+				"school_storm_2": 1
+			},
+			"description": "Capstone. Begin every run already wielding a Storm ability."
+		}
+	]
+}

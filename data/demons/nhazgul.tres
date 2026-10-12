@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/wailing_souls/wailing_souls.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Nhazgul"
+title = "the Plague Hive"
+lore = "A sinner so rotten the flies made a home of him. Now they swarm the heavens for him."
+perk_text = "+30 Max HP, +0.5 HP Regen, +10% Area.
+Starts with Wailing Souls."
+model_id = "nhazgul"
+skin_color = Color(0.2, 0.22, 0.13, 1)
+armor_color = Color(0.16, 0.24, 0.18, 1)
+cloth_color = Color(0.16, 0.17, 0.08, 1)
+glow_color = Color(0.55, 1, 0.15, 1)
+horn_color = Color(0.3, 0.3, 0.18, 1)
+build = 0
+horn_style = 1
+head_style = 0
+wing_style = 2
+height = 1.04
+bulk = 1.15
+cape_length = 0.4
+chains = true
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"max_hp": 30.0,
+&"regen": 0.5,
+&"area": 0.1
+}

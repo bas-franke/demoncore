@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/clockwork_cherub.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"clockwork_cherub"
+display_name = "Gilded Clockwork Cherub"
+flavor_text = "It was built to sing on the hour. The citadel's artificers found it could do something louder."
+model = ExtResource("2_model")
+size = 0.85
+max_hp = 7.0
+speed = 3.8
+damage = 6.0
+xp_value = 2
+knockback_scale = 1.2
+behavior = 8
+preferred_distance = 1.8
+windup_time = 0.9
+explode_radius = 2.0
+explode_damage = 20.0

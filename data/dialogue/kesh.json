@@ -1,0 +1,342 @@
+{
+	"_doc": "Kesh, the Breachwarden (the Chainward). Keeps the hellgate in Basecamp Hell. Pool 'kesh'. Model: CharacterRoster npc 'breachwarden'.",
+	"conversations": [
+		{
+			"id": "kesh_intro",
+			"pool": "kesh",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Halt. Name, sin, and reason for ascending."
+				},
+				{
+					"who": "player",
+					"text": "{demon}. All of them. Because I was told to."
+				},
+				{
+					"who": "kesh",
+					"text": "Correct answers. Kesh, of the Chainward. I keep the Breach. Nothing goes up without my halberd hitting the floor, and nothing comes down that I did not count."
+				},
+				{
+					"who": "kesh",
+					"text": "You will come down. They all do. I will count you."
+				}
+			]
+		},
+		{
+			"id": "kesh_skarn",
+			"pool": "kesh",
+			"once": true,
+			"priority": 95,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Warden Skarn. The Chainward salutes you."
+				},
+				{
+					"who": "player",
+					"text": "At ease, Kesh. The deepest pit misses you."
+				},
+				{
+					"who": "kesh",
+					"text": "The deepest pit misses nobody, Warden. That is why it works."
+				}
+			]
+		},
+		{
+			"id": "kesh_count",
+			"pool": "kesh",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"min": {
+					"deaths": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Three times down. I have notched it on the halberd."
+				},
+				{
+					"who": "kesh",
+					"text": "Do not take it personally. I notch everything. The haft is mostly notches now."
+				}
+			]
+		},
+		{
+			"id": "kesh_breach_widening",
+			"pool": "kesh",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"min": {
+					"runs": 6
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "The Breach is wider than when we tore it. A hand's width every week."
+				},
+				{
+					"who": "kesh",
+					"text": "Either the Verge is giving way, or something on the other side is pulling. I do not like either answer."
+				}
+			]
+		},
+		{
+			"id": "kesh_prisoners",
+			"pool": "kesh",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "We took an angel alive last week. Chained it in the low cells."
+				},
+				{
+					"who": "kesh",
+					"text": "It did not beg. It did not curse. It just kept asking the wall whether anyone was listening."
+				},
+				{
+					"who": "kesh",
+					"text": "I have kept prisoners for nine hundred years, Sinbound. That is the first one I pitied."
+				}
+			]
+		},
+		{
+			"id": "kesh_march",
+			"pool": "kesh",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"flags": [
+					"known.march"
+				]
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Ossek tells me the road goes all the way up now. To the Seventh Gate."
+				},
+				{
+					"who": "kesh",
+					"text": "When you are ready, I will open the Breach wider than it has ever been opened. All of it. Every chain off."
+				},
+				{
+					"who": "kesh",
+					"text": "Take the road to Heaven's Gate. Break the wards, fell the warden, and walk through. The Gate opens for those who know about the March. You do."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_1",
+			"pool": "kesh",
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Up, then. I will be here to count you down."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_2",
+			"pool": "kesh",
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Stand clear of the Breach. It bites the careless."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_3",
+			"pool": "kesh",
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Every chain holds something. Remember what you hold."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_died",
+			"pool": "kesh",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Counted. Again."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_lilaeth",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Seraph. You fell through here once. I counted you then, too."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_morvane",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Hexbinder. Do not write in my count."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_skarn",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Warden. The Breach holds. As you ordered."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_vharok",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Ravager. Please do not headbutt the gate on your way out. Again."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_ysolde",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Reaper. You are the only one who comes back as quietly as you leave."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_nhazgul",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Hive. I count you as one. The Chainward has agreed not to argue about it."
+				}
+			]
+		},
+		{
+			"id": "kesh_nhazgul",
+			"pool": "kesh",
+			"once": true,
+			"priority": 74,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Hive. The Breach counts a soul for every demon that goes up. When you go up, the count goes strange."
+				},
+				{
+					"who": "kesh",
+					"text": "One soul. Then a thousand. Then one again. I have stopped trying to make it add up."
+				},
+				{
+					"who": "player",
+					"text": "Neither do we."
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_iscariel",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Gatekeeper. One keeper of doors to another: you broke the only rule there is. I respect it more than I should."
+				}
+			]
+		},
+		{
+			"id": "kesh_iscariel",
+			"pool": "kesh",
+			"once": true,
+			"priority": 88,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Gatekeeper. You held the First Gate. I hold the Breach. Tell me, honestly: what does it feel like to open a door you swore to keep shut?"
+				},
+				{
+					"who": "player",
+					"text": "Like breathing out, after holding it for an age."
+				},
+				{
+					"who": "kesh",
+					"text": "...I will not open the Breach without orders. But I will think about that answer for a long time."
+				}
+			]
+		}
+	]
+}

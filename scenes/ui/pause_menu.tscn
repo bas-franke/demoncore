@@ -1,0 +1,147 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_pause"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 15
+script = ExtResource("1_pause")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.01, 0.008, 0.76)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/Center"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 56
+text = "RESPITE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/Center/VBox"]
+layout_mode = 2
+theme_type_variation = &"LoreLabel"
+theme_override_font_sizes/font_size = 19
+text = "The Host holds its breath. Rest, while it lasts."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Root/Center/VBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+
+[node name="Row" type="HBoxContainer" parent="Root/Center/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="MenuPanel" type="PanelContainer" parent="Root/Center/VBox/Row"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Buttons" type="VBoxContainer" parent="Root/Center/VBox/Row/MenuPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Resume" type="Button" parent="Root/Center/VBox/Row/MenuPanel/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+theme_type_variation = &"AccentButton"
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="Root/Center/VBox/Row/MenuPanel/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+text = "Settings"
+
+[node name="Restart" type="Button" parent="Root/Center/VBox/Row/MenuPanel/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+text = "Restart"
+
+[node name="ChangeDemon" type="Button" parent="Root/Center/VBox/Row/MenuPanel/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+text = "Choose Demon"
+
+[node name="Quit" type="Button" parent="Root/Center/VBox/Row/MenuPanel/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+text = "Quit"
+
+[node name="StatsPanel" type="PanelContainer" parent="Root/Center/VBox/Row"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+
+[node name="StatsBox" type="VBoxContainer" parent="Root/Center/VBox/Row/StatsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="WeaponsTitle" type="Label" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(0.784, 0.659, 0.384, 1)
+theme_override_font_sizes/font_size = 16
+text = "POWERS"
+
+[node name="Rule1" type="HSeparator" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+layout_mode = 2
+
+[node name="Weapons" type="VBoxContainer" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Spacer" type="Control" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="StatsHeader" type="Label" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(0.784, 0.659, 0.384, 1)
+theme_override_font_sizes/font_size = 16
+text = "ATTRIBUTES"
+
+[node name="Rule2" type="HSeparator" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+layout_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="Root/Center/VBox/Row/StatsPanel/StatsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 4
+columns = 2

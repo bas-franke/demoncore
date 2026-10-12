@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/gate_warden.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"gate_warden"
+display_name = "Warden of the Seventh Gate"
+flavor_text = "Kesh's mirror on the far side of the Breach. It has never let anything through, and it has never been asked nicely."
+model = ExtResource("2_model")
+size = 1.35
+max_hp = 120.0
+speed = 1.7
+damage = 18.0
+xp_value = 12
+knockback_scale = 0.0
+behavior = 6
+preferred_distance = 2.8
+attack_cooldown = 3.4
+charge_time = 0.25
+windup_time = 1.0
+slam_radius = 2.2
+slam_reach = 1.6
+slam_damage = 26.0
+ward_radius = 6.0
+ward_reduction = 0.5
+ward_max = 8

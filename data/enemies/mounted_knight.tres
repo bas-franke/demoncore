@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/mounted_knight.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mounted_knight"
+display_name = "Mounted Knight"
+flavor_text = "A knight of the Order on a barded destrier. He does not stop to fight. He rides through you, turns, and does it again."
+model = ExtResource("2_model")
+size = 1.15
+max_hp = 40.0
+speed = 3.2
+damage = 16.0
+xp_value = 6
+knockback_scale = 0.3
+behavior = 2
+preferred_distance = 11.0
+attack_cooldown = 3.0
+charge_speed = 21.0
+charge_time = 0.95
+windup_time = 0.75

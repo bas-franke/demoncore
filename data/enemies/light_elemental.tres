@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/light_elemental.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"light_elemental"
+display_name = "Light Elemental"
+flavor_text = "A spark of the First Light, left over from the making of the world. It has no mind, only a direction: away from the dark."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 20.0
+speed = 2.2
+damage = 6.0
+xp_value = 4
+knockback_scale = 0.8
+behavior = 1
+preferred_distance = 7.0
+attack_cooldown = 2.2
+windup_time = 0.6
+projectile_damage = 8.0
+projectile_speed = 8.0
+muzzle_height = 0.75
+shot_recover_time = 0.3

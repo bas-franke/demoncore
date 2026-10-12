@@ -1,0 +1,559 @@
+{
+	"_doc": "Mammon's Clerk, Soul Broker of the Ledger. Nameless (he sold his name). Discovers that the Lattice's souls are being burned. Pool 'clerk' (shop ids: soul_broker, covenant).",
+	"conversations": [
+		{
+			"id": "clerk_intro",
+			"pool": "clerk",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Ah! A customer! A debtor! Same thing, in the end."
+				},
+				{
+					"who": "clerk",
+					"text": "Mammon's Clerk, at your service. No, I do not have a name. I sold it, years ago, at an excellent rate."
+				},
+				{
+					"who": "clerk",
+					"text": "Souls deposited with the Ledger accrue interest. Bring them to me, and I will make them work harder than you do."
+				},
+				{
+					"choices": [
+						{
+							"text": "What is Mammon's cut?",
+							"goto": "cut"
+						},
+						{
+							"text": "And if I do not pay?",
+							"goto": "pay"
+						}
+					]
+				},
+				{
+					"label": "cut",
+					"who": "clerk",
+					"text": "Ha! Ha. Ha. You are funny. Mammon's cut is yes.",
+					"end": true
+				},
+				{
+					"label": "pay",
+					"who": "clerk",
+					"text": "Everyone pays, Sinbound. That is the entire premise of Hell. I just keep the receipts."
+				}
+			]
+		},
+		{
+			"id": "clerk_first_death",
+			"pool": "clerk",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"min": {
+					"deaths": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Deceased, re-formed, back in the queue. The Ledger records it all."
+				},
+				{
+					"who": "clerk",
+					"text": "Your file is getting thick, {demon}. I have had to start a second folder."
+				}
+			]
+		},
+		{
+			"id": "clerk_deaths_many",
+			"pool": "clerk",
+			"once": true,
+			"priority": 60,
+			"requires": {
+				"min": {
+					"deaths": 10
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Ten deaths! Do you know what the Ledger calls a demon who dies ten times?"
+				},
+				{
+					"who": "player",
+					"text": "What?"
+				},
+				{
+					"who": "clerk",
+					"text": "An investment. You keep coming back, and every time you come back, you are worth more."
+				}
+			]
+		},
+		{
+			"id": "clerk_ledger_wrong",
+			"pool": "clerk",
+			"once": true,
+			"priority": 88,
+			"requires": {
+				"flags": [
+					"known.lattice_question"
+				]
+			},
+			"set": {
+				"beat.lattice_answer": true
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Psst. Sinbound. Come closer. Closer than that. Mind the ink."
+				},
+				{
+					"who": "clerk",
+					"text": "I have been running the old accounts. Souls in the mortal world are born, they die, they rise or fall. It balances. It always balances."
+				},
+				{
+					"who": "clerk",
+					"text": "Except now it does not. The Lattice takes them, and they go nowhere. Not up, not down. Off the books."
+				},
+				{
+					"who": "clerk",
+					"text": "In my profession, when money vanishes, it is being spent. Somebody is spending souls, Sinbound. A great many of them."
+				}
+			]
+		},
+		{
+			"id": "clerk_dawn_fuel",
+			"pool": "clerk",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"flags": [
+					"known.lattice_answer"
+				],
+				"min": {
+					"boss_kills.sariel": 2,
+					"runs": 8
+				}
+			},
+			"set": {
+				"beat.dawn_fuel": true
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "I found the line item. It took me eleven nights and one very unpleasant favour."
+				},
+				{
+					"who": "clerk",
+					"text": "The souls the Lattice catches are being burned. Fuel, Sinbound. For a very large, very bright light."
+				},
+				{
+					"who": "player",
+					"text": "The Last Dawn."
+				},
+				{
+					"who": "clerk",
+					"text": "Heaven is lighting its sunrise with the dead. And they call us the monsters. Professionally, I am offended."
+				}
+			]
+		},
+		{
+			"id": "clerk_name",
+			"pool": "clerk",
+			"once": true,
+			"priority": 50,
+			"requires": {
+				"min": {
+					"runs": 9
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "You want to know what I sold my name for? A chair. A seat at Mammon's own table. Very comfortable."
+				},
+				{
+					"who": "clerk",
+					"text": "Worst trade I ever made. Never give up your name for a chair, Sinbound."
+				},
+				{
+					"choices": [
+						{
+							"text": "And if the chair were very, very big?",
+							"goto": "big",
+							"requires": {
+								"flags": [
+									"known.empty_throne"
+								]
+							}
+						},
+						{
+							"text": "I will keep that in mind.",
+							"goto": "mind"
+						}
+					]
+				},
+				{
+					"label": "big",
+					"who": "clerk",
+					"text": "...Then that is a different calculation altogether. Let me find a bigger ledger.",
+					"end": true
+				},
+				{
+					"label": "mind",
+					"who": "clerk",
+					"text": "Do. Write it down. Writing it down is the only way anything is real."
+				}
+			]
+		},
+		{
+			"id": "clerk_victory",
+			"pool": "clerk",
+			"once": true,
+			"priority": 95,
+			"requires": {
+				"min": {
+					"victories": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "A victory! Do you know how rarely I get to write that word in red ink?"
+				},
+				{
+					"who": "clerk",
+					"text": "Never. That is how rarely. I had to make the ink specially."
+				}
+			]
+		},
+		{
+			"id": "clerk_ysolde",
+			"pool": "clerk",
+			"once": true,
+			"priority": 72,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "The Pale Reaper! Professional courtesy: your harvest figures are superb. Have you considered a pension?"
+				},
+				{
+					"who": "player",
+					"text": "I have considered you."
+				},
+				{
+					"who": "clerk",
+					"text": "...Noted. Filed. Forgotten. Please."
+				}
+			]
+		},
+		{
+			"id": "clerk_morvane",
+			"pool": "clerk",
+			"once": true,
+			"priority": 72,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Hexbinder. You collect names. I used to have one. Is it, by any chance, in your book?"
+				},
+				{
+					"who": "player",
+					"text": "It is. Would you like it back?"
+				},
+				{
+					"who": "clerk",
+					"text": "...What would it cost?"
+				},
+				{
+					"who": "player",
+					"text": "Everything you have."
+				},
+				{
+					"who": "clerk",
+					"text": "Ha. Ha. No. I will keep being nobody. Nobody has excellent credit."
+				}
+			]
+		},
+		{
+			"id": "clerk_malphine",
+			"pool": "clerk",
+			"once": true,
+			"priority": 65,
+			"requires": {
+				"seen": [
+					"pip_decree"
+				]
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "The Duchess Malphine owes the Ledger four thousand souls, a minor river and one firstborn imp."
+				},
+				{
+					"who": "clerk",
+					"text": "So when the Court sends you to die gloriously, Sinbound, remember who is actually paying for it."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_1",
+			"pool": "clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Interest compounds. So does damnation."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_2",
+			"pool": "clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Spend wisely! Or do not. Either way, the Ledger profits."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_3",
+			"pool": "clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Your account is in order. For now."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_4",
+			"pool": "clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Every soul is a debt. Every debt is a soul. It is very elegant, if you do not think about it."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_died",
+			"pool": "clerk",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Another death? I will just add it to your tab."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_kills",
+			"pool": "clerk",
+			"priority": 1,
+			"requires": {
+				"min": {
+					"last.kills": 400
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "{last.kills} angels in one outing. My quill can barely keep up."
+				}
+			]
+		},
+		{
+			"id": "clerk_audit",
+			"pool": "clerk",
+			"once": true,
+			"priority": 78,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"min": {
+					"runs": 13
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "I have been preparing an audit. Of Heaven. Every soul the Lattice burned, itemised, with interest."
+				},
+				{
+					"who": "clerk",
+					"text": "When you take the chair, Sinbound, I would like to present it. Formally. With a ribbon."
+				},
+				{
+					"choices": [
+						{
+							"text": "You will have your audience.",
+							"goto": "yes",
+							"set": {
+								"clerk.audit_promised": true
+							}
+						},
+						{
+							"text": "When I take the chair, you work for me.",
+							"goto": "mine"
+						}
+					]
+				},
+				{
+					"label": "yes",
+					"who": "clerk",
+					"text": "Oh! Oh, that is the nicest thing anyone has said to me since I had a name.",
+					"end": true
+				},
+				{
+					"label": "mine",
+					"who": "clerk",
+					"text": "Naturally. I work for whoever owns the ledger. That has always been the arrangement."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_lilaeth",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Ah, the former employee of the competition! Any insider information? I pay well."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_morvane",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Hexbinder. You still have my name? Keep it safe. It is worth more than you think. Or less."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_skarn",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Warden. Your prisoners' accounts are in arrears. Not your fault. Just mentioning."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_vharok",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Please do not charge the counter. The counter is the only thing I own."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_ysolde",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Reaper! Your quarterly harvest report is a joy to read."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_nhazgul",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Nhazgul. Your account is... multiple. Do I bill each fly separately?"
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_iscariel",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Ah, Iscariel! The Ledger has a whole department for your transaction. Thirty pieces. Very well documented."
+				}
+			]
+		},
+		{
+			"id": "clerk_iscariel",
+			"pool": "clerk",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Iscariel! I have a question that has bothered the Ledger for an age. Thirty pieces of light. Who paid them?"
+				},
+				{
+					"who": "player",
+					"text": "No one paid me, Clerk. I invented the price so they would think I could be bought. Nobody chases a man who sold out. They only chase the ones who believed."
+				},
+				{
+					"who": "clerk",
+					"text": "...That is the most beautiful fraud I have ever heard. May I frame it?"
+				}
+			]
+		}
+	]
+}

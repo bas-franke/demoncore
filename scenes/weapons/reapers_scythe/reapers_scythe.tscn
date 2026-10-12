@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/reapers_scythe/reapers_scythe.gd" id="1_scythe"]
+
+[node name="ReapersScythe" type="Node3D"]
+script = ExtResource("1_scythe")
+display_name = "Reaper's Scythe"
+description = "A spinning scythe that reaps all in its path, then returns to its master's hand to reap again."
+color = Color(0.82, 0.78, 0.7, 1)
+icon = "✶"
+base_damage = 12.0
+base_cooldown = 1.6
+level_descriptions = PackedStringArray("+1 scythe.", "+30% damage. The harvest ripens.", "+25% range and a larger blade.", "+1 scythe.", "+40% damage. None escape the reaping.", "Faster throws, -25% cooldown.")

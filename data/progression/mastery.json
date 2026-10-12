@@ -1,0 +1,74 @@
+{
+	"_doc": "Per-demon mastery (Progression). Every run with a demon earns mastery XP: base + per_minute * minutes + per_kill * kills + per_level * player level + per_boss * bosses + victory, times (1 + heat_bonus * heat). XP to go from level n to n+1 = level_base + level_step * (n - 1); max_level caps it. rewards: {level: [reward]} for every demon; demons.<model id>.rewards add demon-specific ones. Reward kinds: {signature: rank} activates/upgrades the demon's signature boon; {skin: id} announces a skin from data/skins/skins.json (its unlock is {\"unlock\": \"mastery:<model id>:<level>\"}, or \"mastery:any:<level>\" for any demon); {currency: id, amount: n} pays once. Signature effects use the upgrade effect format ({stat, per_level} / {ability_mod, per_level}); rank II applies them twice.",
+	"xp": {"base": 10, "per_minute": 8, "per_kill": 0.02, "per_level": 2, "per_boss": 25, "victory": 60, "heat_bonus": 0.05},
+	"level_base": 80,
+	"level_step": 40,
+	"max_level": 10,
+	"rewards": {
+		"2": [{"currency": "sin_shards", "amount": 2}],
+		"3": [{"signature": 1}],
+		"4": [{"currency": "sin_shards", "amount": 3}],
+		"5": [{"skin": "mastery"}],
+		"6": [{"currency": "hellstone", "amount": 1}],
+		"7": [{"signature": 2}],
+		"8": [{"currency": "sin_shards", "amount": 5}],
+		"10": [{"skin": "archfiend"}, {"currency": "hellstone", "amount": 2}]
+	},
+	"demons": {
+		"vharok": {
+			"signature": {"name": "Ravager's Fury", "icon": "♉",
+				"description": "Brimstone and melee abilities hit harder and hurl angels further; +20 max HP.",
+				"effects": [{"ability_mod": "tag:brute", "per_level": 0.15, "format": "percent", "label": "Brimstone damage"},
+					{"ability_mod": "knockback", "per_level": 0.2, "format": "percent", "label": "Knockback"},
+					{"stat": "max_hp", "per_level": 20}]},
+			"skin": "mastery_vharok"
+		},
+		"lilaeth": {
+			"signature": {"name": "Hymn of Cinders", "icon": "♪",
+				"description": "Hellfire abilities hit harder and every ability hit may set the Host alight.",
+				"effects": [{"ability_mod": "tag:fire", "per_level": 0.15, "format": "percent", "label": "Hellfire damage"},
+					{"on_hit": {"do": "status", "id": "burn", "stacks": 1, "chance": 0.08}, "label": "8% Burn on hit"}]},
+			"skin": "mastery_lilaeth"
+		},
+		"morvane": {
+			"signature": {"name": "Hexbinder's Litany", "icon": "☿",
+				"description": "Curses stack higher and land on their own; weapons recover a little faster.",
+				"effects": [{"ability_mod": "max:curse", "per_level": 1, "label": "Max curse stacks"},
+					{"on_hit": {"do": "status", "id": "curse", "stacks": 1, "chance": 0.1}, "label": "10% Curse on hit"},
+					{"stat": "cooldown", "per_level": -0.03, "format": "percent"}]},
+			"skin": "mastery_morvane"
+		},
+		"skarn": {
+			"signature": {"name": "Warden's Shackles", "icon": "⛓",
+				"description": "Binds last longer, bound angels suffer more, and lightning forks further along the chains.",
+				"effects": [{"ability_mod": "dur:root", "per_level": 0.25, "format": "percent", "label": "Bind duration"},
+					{"ability_mod": "root_amp", "per_level": 0.1, "format": "percent", "label": "Damage to bound"},
+					{"ability_mod": "jumps", "per_level": 1, "label": "Chain jumps"}]},
+			"skin": "mastery_skarn"
+		},
+		"ysolde": {
+			"signature": {"name": "Pale Harvest", "icon": "☽",
+				"description": "Reaps more souls and holds more of them; Shadow abilities cut deeper.",
+				"effects": [{"ability_mod": "soul_cap", "per_level": 50, "label": "Soul cap"},
+					{"ability_mod": "soul_bonus", "per_level": 0.2, "format": "percent", "label": "Soul power"},
+					{"ability_mod": "tag:shadow", "per_level": 0.12, "format": "percent", "label": "Shadow damage"}]},
+			"skin": "mastery_ysolde"
+		},
+		"nhazgul": {
+			"signature": {"name": "Queen of the Swarm", "icon": "☣",
+				"description": "Plague abilities spread faster and bite harder; the hive keeps its host alive.",
+				"effects": [{"ability_mod": "tag:plague", "per_level": 0.15, "format": "percent", "label": "Plague damage"},
+					{"stat": "max_hp", "per_level": 15},
+					{"stat": "regen", "per_level": 0.25}]},
+			"skin": "mastery_nhazgul"
+		},
+		"iscariel": {
+			"signature": {"name": "Thirty Pieces of Light", "icon": "⚖",
+				"description": "Envy abilities strike harder and every hit may covet the Host's strength; he moves like a traitor.",
+				"effects": [{"ability_mod": "tag:envy", "per_level": 0.15, "format": "percent", "label": "Envy damage"},
+					{"on_hit": {"do": "status", "id": "curse", "stacks": 1, "chance": 0.08}, "label": "8% Curse on hit"},
+					{"stat": "move_speed", "per_level": 0.2}]},
+			"skin": "mastery_iscariel"
+		}
+	}
+}

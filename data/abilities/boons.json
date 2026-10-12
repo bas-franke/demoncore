@@ -1,0 +1,625 @@
+{
+ "_doc": "Level-up boons. mods add into Abilities.mods (keys documented in docs/team/abilities.md). requires_tag: offered only if you own an ability/weapon with one of these tags (empty = always). on_hit/on_kill: global trigger effects added per stack.",
+ "boons": [
+  {
+   "id": "infernal_might",
+   "name": "Infernal Might",
+   "icon": "✦",
+   "color": "#ff7040",
+   "max": 5,
+   "requires_tag": [],
+   "desc": "Abilities deal +12% damage.",
+   "mods": {
+    "damage": 0.12
+   }
+  },
+  {
+   "id": "quickened_rites",
+   "name": "Quickened Rites",
+   "icon": "≡",
+   "color": "#e0c060",
+   "max": 4,
+   "requires_tag": [],
+   "desc": "Ability cooldowns -7%.",
+   "mods": {
+    "cooldown": 0.07
+   }
+  },
+  {
+   "id": "widening_gyre",
+   "name": "Widening Gyre",
+   "icon": "◌",
+   "color": "#e09060",
+   "max": 4,
+   "requires_tag": [],
+   "desc": "Ability areas +12%.",
+   "mods": {
+    "area": 0.12
+   }
+  },
+  {
+   "id": "legion",
+   "name": "Legion of Sin",
+   "icon": "⁑",
+   "color": "#d0a0a0",
+   "max": 2,
+   "requires_tag": [
+    "projectile",
+    "summon",
+    "orbit"
+   ],
+   "desc": "+1 projectile, summon and orbiting object for every ability.",
+   "mods": {
+    "count": 1
+   }
+  },
+  {
+   "id": "lingering_hate",
+   "name": "Lingering Hate",
+   "icon": "∞",
+   "color": "#a080c0",
+   "max": 3,
+   "requires_tag": [],
+   "desc": "Status effects, zones and summons last 20% longer.",
+   "mods": {
+    "duration": 0.2
+   }
+  },
+  {
+   "id": "cruel_edge",
+   "name": "Cruel Edge",
+   "icon": "‡",
+   "color": "#e8d8c8",
+   "max": 4,
+   "requires_tag": [],
+   "desc": "+6% critical strike chance for abilities (crits deal double).",
+   "mods": {
+    "crit": 0.06
+   }
+  },
+  {
+   "id": "kindling",
+   "name": "Kindling",
+   "icon": "Ѳ",
+   "color": "#ff6a1e",
+   "max": 3,
+   "requires_tag": [
+    "fire"
+   ],
+   "desc": "Burning deals +35% damage and stacks 4 higher.",
+   "mods": {
+    "power:burn": 0.35,
+    "max:burn": 4
+   }
+  },
+  {
+   "id": "pyroclasm",
+   "name": "Pyroclasm",
+   "icon": "✹",
+   "color": "#ff4010",
+   "max": 2,
+   "requires_tag": [
+    "fire"
+   ],
+   "desc": "Burning foes that die burst into flame (radius 1.8).",
+   "on_kill": [
+    {
+     "do": "explode",
+     "if_status": "burn",
+     "radius": 1.8,
+     "damage": 8,
+     "flat": true,
+     "status": [
+      {
+       "id": "burn",
+       "stacks": 1
+      }
+     ],
+     "color": "#ff5010"
+    }
+   ]
+  },
+  {
+   "id": "fire_tags",
+   "name": "Sulphur Heart",
+   "icon": "Ѩ",
+   "color": "#ff8a2a",
+   "max": 3,
+   "requires_tag": [
+    "fire"
+   ],
+   "desc": "Fire abilities deal +20% damage.",
+   "mods": {
+    "tag:fire": 0.2
+   }
+  },
+  {
+   "id": "hemophage",
+   "name": "Hemophage",
+   "icon": "ϴ",
+   "color": "#d0102a",
+   "max": 3,
+   "requires_tag": [
+    "blood"
+   ],
+   "desc": "Blood abilities cost 20% less life and heal 0.5 HP on kill.",
+   "mods": {
+    "hp_cost_cut": 0.2
+   },
+   "on_kill": [
+    {
+     "do": "heal",
+     "amount": 0.5,
+     "if_tag": "blood"
+    }
+   ]
+  },
+  {
+   "id": "open_veins",
+   "name": "Open Veins",
+   "icon": "⟊",
+   "color": "#c4101e",
+   "max": 3,
+   "requires_tag": [
+    "blood"
+   ],
+   "desc": "Bleeding deals +40% damage. Every ability hit has a 15% chance to cause Bleeding.",
+   "mods": {
+    "power:bleed": 0.4
+   },
+   "on_hit": [
+    {
+     "do": "status",
+     "id": "bleed",
+     "stacks": 1,
+     "chance": 0.15
+    }
+   ]
+  },
+  {
+   "id": "blood_tags",
+   "name": "Crimson Covenant",
+   "icon": "☩",
+   "color": "#ff2040",
+   "max": 3,
+   "requires_tag": [
+    "blood"
+   ],
+   "desc": "Blood abilities deal +25% damage.",
+   "mods": {
+    "tag:blood": 0.25
+   }
+  },
+  {
+   "id": "grave_lord",
+   "name": "Grave Lord",
+   "icon": "Ѭ",
+   "color": "#c86a78",
+   "max": 3,
+   "requires_tag": [
+    "necro",
+    "summon"
+   ],
+   "desc": "+1 summon and summons deal +20% damage.",
+   "mods": {
+    "summon_count": 1,
+    "tag:summon": 0.2
+   }
+  },
+  {
+   "id": "corpse_harvest",
+   "name": "Corpse Harvest",
+   "icon": "✝",
+   "color": "#d8c0a8",
+   "max": 2,
+   "requires_tag": [
+    "necro"
+   ],
+   "desc": "Necromancy abilities deal +25% damage. Corpses remain usable 50% longer.",
+   "mods": {
+    "tag:necro": 0.25,
+    "corpse_life": 0.5
+   }
+  },
+  {
+   "id": "virulence",
+   "name": "Virulence",
+   "icon": "⊕",
+   "color": "#8fd13a",
+   "max": 3,
+   "requires_tag": [
+    "plague"
+   ],
+   "desc": "Plague deals +40% damage and spreads to 1 more foe.",
+   "mods": {
+    "power:plague": 0.4,
+    "spread:plague": 1
+   }
+  },
+  {
+   "id": "festering",
+   "name": "Festering Wounds",
+   "icon": "❂",
+   "color": "#a0c040",
+   "max": 2,
+   "requires_tag": [
+    "plague",
+    "dot"
+   ],
+   "desc": "All damage-over-time ticks 25% faster.",
+   "mods": {
+    "dot_rate": 0.25
+   }
+  },
+  {
+   "id": "overcharge",
+   "name": "Overcharge",
+   "icon": "ϟ",
+   "color": "#ff5a90",
+   "max": 3,
+   "requires_tag": [
+    "storm",
+    "chain"
+   ],
+   "desc": "+1 lightning jump. Shocked foes take +5% more storm damage per stack.",
+   "mods": {
+    "jumps": 1,
+    "power:shock": 0.5
+   }
+  },
+  {
+   "id": "storm_tags",
+   "name": "Eye of the Maelstrom",
+   "icon": "Ϟ",
+   "color": "#ff7090",
+   "max": 3,
+   "requires_tag": [
+    "storm"
+   ],
+   "desc": "Storm abilities deal +20% damage and cool down 5% faster.",
+   "mods": {
+    "tag:storm": 0.2,
+    "tagcd:storm": 0.05
+   }
+  },
+  {
+   "id": "night_blade",
+   "name": "Night Blade",
+   "icon": "†",
+   "color": "#9a7aff",
+   "max": 3,
+   "requires_tag": [
+    "shadow"
+   ],
+   "desc": "Shadow abilities: +10% crit chance, crits deal +50% more.",
+   "mods": {
+    "tagcrit:shadow": 0.1,
+    "crit_mult": 0.5
+   }
+  },
+  {
+   "id": "executioner",
+   "name": "Executioner",
+   "icon": "×",
+   "color": "#ff2a6a",
+   "max": 2,
+   "requires_tag": [
+    "shadow",
+    "curse"
+   ],
+   "desc": "Abilities deal +50% damage to foes below 30% health.",
+   "mods": {
+    "execute": 0.5
+   }
+  },
+  {
+   "id": "tectonic",
+   "name": "Tectonic Fury",
+   "icon": "Δ",
+   "color": "#ff9a30",
+   "max": 3,
+   "requires_tag": [
+    "brute",
+    "melee"
+   ],
+   "desc": "Brute and melee abilities deal +25% damage and knock foes further.",
+   "mods": {
+    "tag:brute": 0.25,
+    "tag:melee": 0.1,
+    "knockback": 0.3
+   }
+  },
+  {
+   "id": "iron_grip",
+   "name": "Iron Grip",
+   "icon": "§",
+   "color": "#c09050",
+   "max": 2,
+   "requires_tag": [
+    "chain",
+    "cc"
+   ],
+   "desc": "Bound lasts 50% longer. Bound foes take +15% damage.",
+   "mods": {
+    "dur:root": 0.5,
+    "root_amp": 0.15
+   }
+  },
+  {
+   "id": "deep_hex",
+   "name": "Deep Hex",
+   "icon": "⍟",
+   "color": "#b050ff",
+   "max": 3,
+   "requires_tag": [
+    "curse"
+   ],
+   "desc": "Curse stacks 2 higher and each stack adds 3% more damage taken.",
+   "mods": {
+    "max:curse": 2,
+    "power:curse": 0.375
+   }
+  },
+  {
+   "id": "soul_glutton",
+   "name": "Soul Glutton",
+   "icon": "❦",
+   "color": "#ff3346",
+   "max": 3,
+   "requires_tag": [
+    "soul"
+   ],
+   "desc": "Soul cap +100 and kills have 30% chance to yield an extra Soul.",
+   "mods": {
+    "soul_cap": 100,
+    "soul_bonus": 0.3
+   }
+  },
+  {
+   "id": "soul_tags",
+   "name": "Reaper's Due",
+   "icon": "☊",
+   "color": "#ff6070",
+   "max": 3,
+   "requires_tag": [
+    "soul"
+   ],
+   "desc": "Soul abilities deal +20% damage.",
+   "mods": {
+    "tag:soul": 0.2
+   }
+  },
+  {
+   "id": "simmering_hate",
+   "name": "Simmering Hate",
+   "icon": "Ꙩ",
+   "color": "#ff3a1a",
+   "max": 3,
+   "requires_tag": [
+    "wrath"
+   ],
+   "desc": "Gain Wrath 50% faster; Wrath abilities deal +15% damage.",
+   "mods": {
+    "wrath_gain": 0.5,
+    "tag:wrath": 0.15
+   }
+  },
+  {
+   "id": "endless_grudge",
+   "name": "Endless Grudge",
+   "icon": "ᛟ",
+   "color": "#d02010",
+   "max": 2,
+   "requires_tag": [
+    "wrath"
+   ],
+   "desc": "Wrath can stack 20 higher.",
+   "mods": {
+    "wrath_cap": 20
+   }
+  },
+  {
+   "id": "gilded_purse",
+   "name": "Gilded Purse",
+   "icon": "¤",
+   "color": "#ffd040",
+   "max": 3,
+   "requires_tag": [
+    "greed"
+   ],
+   "desc": "Greed abilities deal +25% damage.",
+   "mods": {
+    "tag:greed": 0.25
+   }
+  },
+  {
+   "id": "green_eyed",
+   "name": "Green-Eyed",
+   "icon": "Ꙭ",
+   "color": "#58c070",
+   "max": 3,
+   "requires_tag": [
+    "envy"
+   ],
+   "desc": "Envy abilities deal +20% damage and cool down 8% faster.",
+   "mods": {
+    "tag:envy": 0.2,
+    "tagcd:envy": 0.08
+   }
+  },
+  {
+   "id": "vanity",
+   "name": "Vanity",
+   "icon": "♕",
+   "color": "#f2b89a",
+   "max": 3,
+   "requires_tag": [
+    "pride"
+   ],
+   "desc": "Pride abilities deal +25% damage and crit 8% more often.",
+   "mods": {
+    "tag:pride": 0.25,
+    "tagcrit:pride": 0.08
+   }
+  },
+  {
+   "id": "bottomless",
+   "name": "Bottomless Hunger",
+   "icon": "Ѡ",
+   "color": "#c86a3a",
+   "max": 3,
+   "requires_tag": [
+    "gluttony"
+   ],
+   "desc": "Gluttony abilities deal +20% damage; meals heal 1 more.",
+   "mods": {
+    "tag:gluttony": 0.2
+   },
+   "on_kill": [
+    {
+     "do": "heal",
+     "amount": 1.0,
+     "if_tag": "gluttony"
+    }
+   ]
+  },
+  {
+   "id": "mirrored_self",
+   "name": "Mirrored Self",
+   "icon": "ⵙ",
+   "color": "#c8a8e8",
+   "max": 3,
+   "requires_tag": [
+    "illusion"
+   ],
+   "desc": "Illusion abilities deal +25% damage and last 10% longer.",
+   "mods": {
+    "tag:illusion": 0.25,
+    "duration": 0.1
+   }
+  },
+  {
+   "id": "overclocked",
+   "name": "Overclocked",
+   "icon": "⊤",
+   "color": "#ffa040",
+   "max": 3,
+   "requires_tag": [
+    "machine"
+   ],
+   "desc": "Machines deal +15% damage and are built 12% faster.",
+   "mods": {
+    "tag:machine": 0.15,
+    "tagcd:machine": 0.12
+   }
+  },
+  {
+   "id": "nine_tails",
+   "name": "Cat o' Nine Tails",
+   "icon": "ᔕ",
+   "color": "#ff5a2a",
+   "max": 3,
+   "requires_tag": [
+    "whip"
+   ],
+   "desc": "Whips deal +20% damage and crit 10% more often.",
+   "mods": {
+    "tag:whip": 0.2,
+    "tagcrit:whip": 0.1
+   }
+  },
+  {
+   "id": "hellstorm_covenant",
+   "name": "Hellstorm Covenant",
+   "icon": "Ϟ",
+   "color": "#ff5030",
+   "max": 1,
+   "legendary": true,
+   "requires_tag": [],
+   "requires_all": [
+    "fire",
+    "storm"
+   ],
+   "desc": "DUO LEGENDARY (fire + storm). Fire and storm abilities +20% damage. Fire hits may arc lightning; storm hits set foes Burning.",
+   "mods": {
+    "tag:fire": 0.2,
+    "tag:storm": 0.2
+   },
+   "on_hit": [
+    {
+     "do": "chain",
+     "jumps": 2,
+     "range": 5.0,
+     "damage": 0.5,
+     "chance": 0.12,
+     "if_tag": "fire"
+    },
+    {
+     "do": "status",
+     "id": "burn",
+     "stacks": 1,
+     "if_tag": "storm"
+    }
+   ]
+  },
+  {
+   "id": "gilded_gullet",
+   "name": "Gilded Gullet",
+   "icon": "¤",
+   "color": "#e0a040",
+   "max": 1,
+   "legendary": true,
+   "requires_tag": [],
+   "requires_all": [
+    "greed",
+    "gluttony"
+   ],
+   "desc": "DUO LEGENDARY (greed + gluttony). Greed and Gluttony +25% damage. Gluttony kills spill Ichor (25%); Greed kills heal 1 HP.",
+   "mods": {
+    "tag:greed": 0.25,
+    "tag:gluttony": 0.25
+   },
+   "on_kill": [
+    {
+     "do": "ichor",
+     "amount": 1,
+     "chance": 0.25,
+     "if_tag": "gluttony"
+    },
+    {
+     "do": "heal",
+     "amount": 1.0,
+     "if_tag": "greed"
+    }
+   ]
+  },
+  {
+   "id": "crimson_eclipse",
+   "name": "Crimson Eclipse",
+   "icon": "☍",
+   "color": "#c01848",
+   "max": 1,
+   "legendary": true,
+   "requires_tag": [],
+   "requires_all": [
+    "blood",
+    "shadow"
+   ],
+   "desc": "DUO LEGENDARY (blood + shadow). +10% crit, blood abilities +15% crit and cost 25% less life. Shadow hits cause Bleeding (35%).",
+   "mods": {
+    "crit": 0.1,
+    "tagcrit:blood": 0.15,
+    "hp_cost_cut": 0.25
+   },
+   "on_hit": [
+    {
+     "do": "status",
+     "id": "bleed",
+     "stacks": 2,
+     "chance": 0.35,
+     "if_tag": "shadow"
+    }
+   ]
+  }
+ ]
+}

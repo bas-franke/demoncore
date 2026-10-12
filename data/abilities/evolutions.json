@@ -1,0 +1,613 @@
+{
+ "_doc": "Evolutions: when ability `from` is at max rank and boon `boon` has been taken, the level-up offers an 'Evolve' card that replaces it with `ability` (a full ability definition; not offered otherwise).",
+ "evolutions": [
+  {
+   "id": "heart_of_gehenna",
+   "from": "inferno_nova",
+   "boon": "kindling",
+   "ability": {
+    "id": "heart_of_gehenna",
+    "name": "Heart of Gehenna",
+    "school": "Hellfire",
+    "tags": [
+     "fire",
+     "area"
+    ],
+    "icon": "✹",
+    "color": "#ff2a00",
+    "desc": "EVOLVED. Your heart beats hellfire: a vast nova every 1.6 s that leaves the ground burning.",
+    "kind": "nova",
+    "cooldown": 1.6,
+    "damage": 34,
+    "params": {
+     "radius": 5.5,
+     "knockback": 6
+    },
+    "status": [
+     {
+      "id": "burn",
+      "stacks": 4
+     }
+    ],
+    "after": [
+     {
+      "do": "zone",
+      "radius": 3.0,
+      "duration": 2.0,
+      "damage": 0.06,
+      "status": [
+       {
+        "id": "burn",
+        "stacks": 1
+       }
+      ]
+     }
+    ],
+    "levels": []
+   }
+  },
+  {
+   "id": "legion_of_the_damned",
+   "from": "raise_thralls",
+   "boon": "grave_lord",
+   "ability": {
+    "id": "legion_of_the_damned",
+    "name": "Legion of the Damned",
+    "school": "Necromancy",
+    "tags": [
+     "necro",
+     "summon",
+     "brute"
+    ],
+    "icon": "Ж",
+    "color": "#ff6040",
+    "desc": "EVOLVED. Three hulking pit brutes march at your side, hurling angels aside.",
+    "kind": "summon",
+    "cooldown": 3.0,
+    "damage": 26,
+    "params": {
+     "count": 3,
+     "lifetime": 24,
+     "speed": 3.6,
+     "hit_rate": 1.1,
+     "knockback": 6,
+     "style": "hell_brute"
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "pit_storm",
+   "from": "infernal_storm",
+   "boon": "overcharge",
+   "ability": {
+    "id": "pit_storm",
+    "name": "Storm of the Pit",
+    "school": "Storm",
+    "tags": [
+     "storm",
+     "chain"
+    ],
+    "icon": "ϟ",
+    "color": "#ff2060",
+    "desc": "EVOLVED. Three bolts every second, each leaping through ten angels.",
+    "kind": "chain",
+    "cooldown": 1.0,
+    "damage": 16,
+    "params": {
+     "count": 3,
+     "jumps": 9,
+     "range": 11,
+     "jump_range": 6.0
+    },
+    "status": [
+     {
+      "id": "shock",
+      "stacks": 2
+     }
+    ],
+    "levels": []
+   }
+  },
+  {
+   "id": "infernal_battery",
+   "from": "brimstone_turret",
+   "boon": "legion",
+   "ability": {
+    "id": "infernal_battery",
+    "name": "Infernal Battery",
+    "school": "Infernal Machinery",
+    "tags": [
+     "machine",
+     "projectile",
+     "fire"
+    ],
+    "icon": "⊤",
+    "color": "#ff7020",
+    "desc": "EVOLVED. A battery of four rapid-fire turrets rings you at all times.",
+    "kind": "turret",
+    "cooldown": 1.5,
+    "damage": 9,
+    "params": {
+     "count": 2,
+     "max": 4,
+     "rate": 0.35,
+     "reach": 11,
+     "lifetime": 16
+    },
+    "status": [
+     {
+      "id": "burn",
+      "stacks": 1
+     }
+    ],
+    "levels": []
+   }
+  },
+  {
+   "id": "wrath_incarnate",
+   "from": "wrathful_cleave",
+   "boon": "endless_grudge",
+   "ability": {
+    "id": "wrath_incarnate",
+    "name": "Wrath Incarnate",
+    "school": "Wrath",
+    "tags": [
+     "wrath",
+     "melee",
+     "brute"
+    ],
+    "icon": "Ꙩ",
+    "color": "#ff1a00",
+    "desc": "EVOLVED. A full circle of fury every second. +5% damage per Wrath stack.",
+    "kind": "cone",
+    "cooldown": 1.0,
+    "damage": 30,
+    "params": {
+     "radius": 4.2,
+     "arc": 360,
+     "knockback": 8,
+     "wrath_scale": 0.05
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "exsanguinator",
+   "from": "hemorrhage_lance",
+   "boon": "open_veins",
+   "ability": {
+    "id": "exsanguinator",
+    "name": "Exsanguinator",
+    "school": "Blood Magic",
+    "tags": [
+     "blood",
+     "projectile"
+    ],
+    "icon": "⟊",
+    "color": "#e0102a",
+    "desc": "EVOLVED. Three lances of your blood every 1.4 s, piercing everything and bleeding it dry.",
+    "kind": "bolt",
+    "cooldown": 1.4,
+    "damage": 34,
+    "params": {
+     "count": 3,
+     "spread": 0.3,
+     "speed": 22,
+     "range": 18,
+     "pierce": 99,
+     "size": 0.3
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "bleed",
+      "stacks": 4
+     }
+    ],
+    "hp_cost": 0.02
+   }
+  },
+  {
+   "id": "great_pestilence",
+   "from": "pestilent_cloud",
+   "boon": "virulence",
+   "ability": {
+    "id": "great_pestilence",
+    "name": "The Great Pestilence",
+    "school": "Plague",
+    "tags": [
+     "plague",
+     "area",
+     "dot"
+    ],
+    "icon": "∴",
+    "color": "#9acd32",
+    "desc": "EVOLVED. Three vast clouds of pestilence at once, lingering 8 s.",
+    "kind": "zone",
+    "cooldown": 2.5,
+    "damage": 4,
+    "params": {
+     "count": 3,
+     "radius": 3.2,
+     "duration": 8.0,
+     "tick": 0.5,
+     "range": 14,
+     "style": "cloud"
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "plague",
+      "stacks": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "thousand_cuts",
+   "from": "shadow_daggers",
+   "boon": "night_blade",
+   "ability": {
+    "id": "thousand_cuts",
+    "name": "A Thousand Cuts",
+    "school": "Shadow",
+    "tags": [
+     "shadow",
+     "projectile"
+    ],
+    "icon": "†",
+    "color": "#9a7aff",
+    "desc": "EVOLVED. A storm of twelve black daggers; 40% of them crit for x3.5.",
+    "kind": "bolt",
+    "cooldown": 0.8,
+    "damage": 9,
+    "params": {
+     "count": 12,
+     "spread": 1.6,
+     "speed": 20,
+     "range": 13,
+     "pierce": 2,
+     "size": 0.14,
+     "crit": 0.4,
+     "crit_mult": 3.5,
+     "style": "dagger"
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "worldbreaker",
+   "from": "brimstone_maul",
+   "boon": "tectonic",
+   "ability": {
+    "id": "worldbreaker",
+    "name": "Worldbreaker",
+    "school": "Brimstone",
+    "tags": [
+     "brute",
+     "melee",
+     "fire"
+    ],
+    "icon": "Ѧ",
+    "color": "#ff8020",
+    "desc": "EVOLVED. A 200-degree blow that cracks the world open; the ground keeps burning.",
+    "kind": "cone",
+    "cooldown": 2.0,
+    "damage": 60,
+    "params": {
+     "radius": 4.6,
+     "arc": 200,
+     "knockback": 14
+    },
+    "levels": [],
+    "after": [
+     {
+      "do": "zone",
+      "radius": 2.6,
+      "duration": 3.0,
+      "damage": 0.08,
+      "status": [
+       {
+        "id": "burn",
+        "stacks": 2
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "abyssal_anchors",
+   "from": "hellhook",
+   "boon": "iron_grip",
+   "ability": {
+    "id": "abyssal_anchors",
+    "name": "Abyssal Anchors",
+    "school": "Chains",
+    "tags": [
+     "chain",
+     "cc"
+    ],
+    "icon": "∫",
+    "color": "#d0a060",
+    "desc": "EVOLVED. Six anchors drag angels from 15 m away to your feet, Bound.",
+    "kind": "hook",
+    "cooldown": 2.0,
+    "damage": 22,
+    "params": {
+     "count": 6,
+     "range": 15,
+     "min_range": 2.0
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "root",
+      "stacks": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "anathema",
+   "from": "hex_frailty",
+   "boon": "deep_hex",
+   "ability": {
+    "id": "anathema",
+    "name": "Anathema",
+    "school": "Curses",
+    "tags": [
+     "curse"
+    ],
+    "icon": "⍟",
+    "color": "#b050ff",
+    "desc": "EVOLVED. Fourteen angels at a time are cursed four times over and slowed.",
+    "kind": "hex",
+    "cooldown": 1.6,
+    "damage": 6,
+    "params": {
+     "count": 14,
+     "range": 13
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "curse",
+      "stacks": 4
+     },
+     {
+      "id": "chill",
+      "stacks": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "reapers_toll",
+   "from": "soul_siphon",
+   "boon": "soul_glutton",
+   "ability": {
+    "id": "reapers_toll",
+    "name": "Reaper's Toll",
+    "school": "Soul Harvest",
+    "tags": [
+     "soul",
+     "projectile"
+    ],
+    "icon": "❦",
+    "color": "#ff3346",
+    "desc": "EVOLVED. Homing soul bolts, one more for every 10 Souls; +0.8% damage per Soul.",
+    "kind": "bolt",
+    "cooldown": 1.0,
+    "damage": 10,
+    "params": {
+     "count": 4,
+     "speed": 13,
+     "range": 15,
+     "pierce": 2,
+     "size": 0.22,
+     "homing": 8.0,
+     "per_souls": 10,
+     "soul_scale": 0.008,
+     "style": "soul"
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "midas_storm",
+   "from": "coin_barrage",
+   "boon": "gilded_purse",
+   "ability": {
+    "id": "midas_storm",
+    "name": "Midas Storm",
+    "school": "Greed",
+    "tags": [
+     "greed",
+     "projectile"
+    ],
+    "icon": "¤",
+    "color": "#ffd040",
+    "desc": "EVOLVED. A golden hurricane of twelve coins that gild what they strike. +0.6% damage per Ichor.",
+    "kind": "bolt",
+    "cooldown": 1.0,
+    "damage": 9,
+    "params": {
+     "count": 12,
+     "spread": 2.4,
+     "speed": 16,
+     "range": 13,
+     "pierce": 1,
+     "size": 0.18,
+     "style": "coin",
+     "greed_scale": 0.006
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "gilded",
+      "stacks": 1
+     }
+    ],
+    "on_kill": [
+     {
+      "do": "ichor",
+      "amount": 1,
+      "chance": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "usurpers_gaze",
+   "from": "covetous_gaze",
+   "boon": "green_eyed",
+   "ability": {
+    "id": "usurpers_gaze",
+    "name": "Usurper's Gaze",
+    "school": "Envy",
+    "tags": [
+     "envy",
+     "area"
+    ],
+    "icon": "ↂ",
+    "color": "#60e050",
+    "desc": "EVOLVED. Steals the nearest angel's attack every 1.2 s, wider and twice as deadly.",
+    "kind": "mimic",
+    "cooldown": 1.2,
+    "damage": 30,
+    "params": {
+     "range": 14,
+     "radius": 3.4,
+     "length": 14,
+     "width": 2.0
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "sovereign_hubris",
+   "from": "hubris",
+   "boon": "vanity",
+   "ability": {
+    "id": "sovereign_hubris",
+    "name": "Sovereign Hubris",
+    "school": "Pride",
+    "tags": [
+     "pride",
+     "area"
+    ],
+    "icon": "♔",
+    "color": "#ffe08a",
+    "desc": "EVOLVED. Pride gathers twice as fast up to 6x damage, and the blade's blast is twice as wide.",
+    "kind": "pride",
+    "cooldown": 3.0,
+    "damage": 50,
+    "params": {
+     "range": 16,
+     "radius": 3.0,
+     "charge_rate": 0.5,
+     "max_charge": 5.0,
+     "hurt_loss": 0.1
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "insatiable_maw",
+   "from": "devour",
+   "boon": "bottomless",
+   "ability": {
+    "id": "insatiable_maw",
+    "name": "Insatiable Maw",
+    "school": "Gluttony",
+    "tags": [
+     "gluttony",
+     "melee"
+    ],
+    "icon": "Ѡ",
+    "color": "#c86a3a",
+    "desc": "EVOLVED. Three bites a second's worth: swallows anything under 60 HP within 4 m.",
+    "kind": "devour",
+    "cooldown": 1.0,
+    "damage": 20,
+    "params": {
+     "range": 4.2,
+     "threshold": 60,
+     "heal": 4,
+     "count": 3
+    },
+    "levels": []
+   }
+  },
+  {
+   "id": "hall_of_doubles",
+   "from": "mirror_image",
+   "boon": "mirrored_self",
+   "ability": {
+    "id": "hall_of_doubles",
+    "name": "Hall of Doubles",
+    "school": "Illusion",
+    "tags": [
+     "illusion",
+     "area"
+    ],
+    "icon": "ⵙ",
+    "color": "#c8a8e8",
+    "desc": "EVOLVED. Two doubles every 4 s (six at once) that taunt, shoot faster and shatter wider.",
+    "kind": "decoy",
+    "cooldown": 4.0,
+    "damage": 24,
+    "params": {
+     "count": 2,
+     "max": 6,
+     "rate": 0.6,
+     "reach": 3.2,
+     "lifetime": 8
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "chill",
+      "stacks": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "scourge_of_gehenna",
+   "from": "hellfire_lash",
+   "boon": "nine_tails",
+   "ability": {
+    "id": "scourge_of_gehenna",
+    "name": "Scourge of Gehenna",
+    "school": "Hellfire Whip",
+    "tags": [
+     "whip",
+     "fire",
+     "melee"
+    ],
+    "icon": "ᔕ",
+    "color": "#ff4a20",
+    "desc": "EVOLVED. Three 7 m lashes every 1.1 s; the tip deals double and burns twice.",
+    "kind": "whip",
+    "cooldown": 1.1,
+    "damage": 18,
+    "params": {
+     "count": 3,
+     "length": 7.0,
+     "arc": 160,
+     "tip_mult": 2.0
+    },
+    "levels": [],
+    "status": [
+     {
+      "id": "burn",
+      "stacks": 2
+     }
+    ]
+   }
+  }
+ ]
+}

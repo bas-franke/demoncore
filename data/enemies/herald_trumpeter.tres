@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/herald_trumpeter.tscn" id="2_model"]
+[ext_resource type="Resource" path="res://data/enemies/cherub.tres" id="4_summon"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"herald_trumpeter"
+display_name = "Herald of the Last Trump"
+flavor_text = "One note and the cherubs come. It has been practising for the end of the world, and you will do for a rehearsal."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 22.0
+speed = 2.3
+damage = 5.0
+xp_value = 5
+knockback_scale = 0.8
+behavior = 9
+preferred_distance = 8.5
+attack_cooldown = 6.0
+windup_time = 1.0
+summon_count = 3
+summon_max = 6
+summon = ExtResource("4_summon")

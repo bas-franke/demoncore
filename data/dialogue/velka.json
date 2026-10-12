@@ -1,0 +1,275 @@
+{
+	"_doc": "Velka, bartender of the Bloodwine Bar in Basecamp (basecamp role's HubLife calls Dialogue.bark(\"velka\") on 'Have a drink'). Pool 'velka'.",
+	"conversations": [
+		{
+			"id": "velka_1",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Bloodwine. Vintage of the year Rome burned. Sip it, darling, do not gulp."
+				}
+			]
+		},
+		{
+			"id": "velka_2",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Drink up. Dying is thirsty work."
+				}
+			]
+		},
+		{
+			"id": "velka_3",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "On the house. The house is on fire, but still."
+				}
+			]
+		},
+		{
+			"id": "velka_4",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "I water nothing down. Except the angels' tears. Those I water down. Too sweet."
+				}
+			]
+		},
+		{
+			"id": "velka_died",
+			"pool": "velka",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Back from the Font already? This one is for the itch of new skin."
+				}
+			]
+		},
+		{
+			"id": "velka_boss",
+			"pool": "velka",
+			"priority": 1,
+			"requires": {
+				"min": {
+					"last.boss_kills": 1
+				},
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "A Herald-slayer at my bar. Drinks are free tonight. For you. Only for you."
+				}
+			]
+		},
+		{
+			"id": "velka_hymn",
+			"pool": "velka",
+			"priority": 1,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Vesper drinks here when the Choir gets loud. She has been drinking a lot lately."
+				}
+			]
+		},
+		{
+			"id": "velka_throne",
+			"pool": "velka",
+			"priority": 1,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "An empty throne, they say. I have been pouring for an empty throne all my life. It is called the Ashen Court."
+				}
+			]
+		},
+		{
+			"id": "velka_ending",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"flags": [
+					"known.ending"
+				],
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "What will it be, Your Majesty? Ha. The usual, then."
+				}
+			]
+		},
+		{
+			"id": "velka_lilaeth",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Something sweet for the Seraph? No? Something bitter, then. Better."
+				}
+			]
+		},
+		{
+			"id": "velka_morvane",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Morvane, please stop writing on my coasters."
+				}
+			]
+		},
+		{
+			"id": "velka_skarn",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Warden. The strong stuff. In a chained mug, as always."
+				}
+			]
+		},
+		{
+			"id": "velka_vharok",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Vharok, you are paying for the last stool. And the one before."
+				}
+			]
+		},
+		{
+			"id": "velka_ysolde",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Ysolde. Water? Just water? You are the strangest demon I have ever served."
+				}
+			]
+		},
+		{
+			"id": "velka_camp_1",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Bloodwine, neat. You look like Heaven chewed on you a while."
+				}
+			]
+		},
+		{
+			"id": "velka_camp_2",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "They say the Choir sings louder every time you fall. I say let them sing."
+				}
+			]
+		},
+		{
+			"id": "velka_camp_3",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "{runs} descents and still standing. Well, mostly standing."
+				}
+			]
+		},
+		{
+			"id": "velka_camp_4",
+			"pool": "velka",
+			"lines": [
+				{
+					"who": "velka",
+					"text": "{kills_total} angels in the ledger. The Clerk smiles when he counts them. It is horrible."
+				}
+			]
+		},
+		{
+			"id": "velka_chat_nhazgul",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "Something sweet for the Hive? Honeyed bloodwine. I keep it just for you. Nobody else can drink it."
+				}
+			]
+		},
+		{
+			"id": "velka_chat_iscariel",
+			"pool": "velka",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "velka",
+					"text": "For the Turncoat: half bloodwine, half holy water. It hisses. You like that."
+				}
+			]
+		}
+	]
+}

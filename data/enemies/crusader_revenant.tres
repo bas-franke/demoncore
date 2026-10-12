@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/crusader_revenant.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"crusader_revenant"
+display_name = "Burned Crusader Revenant"
+flavor_text = "He burned with the city he was sent to purge. He did not stay down then, and he will not stay down now."
+model = ExtResource("2_model")
+size = 1.05
+max_hp = 30.0
+speed = 2.2
+damage = 13.0
+xp_value = 4
+knockback_scale = 0.6
+behavior = 0

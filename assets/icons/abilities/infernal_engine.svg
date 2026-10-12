@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+<defs>
+<radialGradient id="bg" cx="32" cy="32" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1c0d0a" stop-opacity="0.96"/><stop offset="0.72" stop-color="#0c0605" stop-opacity="0.9"/><stop offset="1" stop-color="#080404" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="32" cy="32" r="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff6020" stop-opacity="0.55"/><stop offset="1" stop-color="#ff6020" stop-opacity="0"/></radialGradient>
+<linearGradient id="fill" x1="14" y1="8" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffb28a"/><stop offset="0.5" stop-color="#ff6020"/><stop offset="1" stop-color="#7a2e11"/></linearGradient>
+</defs>
+<circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+<circle cx="32" cy="32" r="27" fill="url(#glow)"/>
+<path d="M59.00 32.00 L58.67 36.22 L51.02 38.18 L49.82 41.08 L53.84 47.87 L51.09 51.09 L43.76 48.18 L41.08 49.82 L40.34 57.68 L36.22 58.67 L32.00 52.00 L28.87 51.75 L23.66 57.68 L19.74 56.06 L20.24 48.18 L17.86 46.14 L10.16 47.87 L7.94 44.26 L12.98 38.18 L12.25 35.13 L5.00 32.00 L5.33 27.78 L12.98 25.82 L14.18 22.92 L10.16 16.13 L12.91 12.91 L20.24 15.82 L22.92 14.18 L23.66 6.32 L27.78 5.33 L32.00 12.00 L35.13 12.25 L40.34 6.32 L44.26 7.94 L43.76 15.82 L46.14 17.86 L53.84 16.13 L56.06 19.74 L51.02 25.82 L51.75 28.87 Z M25.00 32.00 a7.00 7.00 0 1 0 14.00 0 a7.00 7.00 0 1 0 -14.00 0 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

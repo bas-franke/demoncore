@@ -1,0 +1,566 @@
+{
+	"_doc": "In-run relics (lost when the run ends). rarity: common, uncommon, rare, epic, legendary (scripts/progression/rarity.gd). stats: Player property or run stat -> amount added once on pickup. heal: HP restored on pickup. A relic is found at most once per run. tags: synergy tags this relic supports (relic drops favour tags you own). ability_mods: {Abilities mod key: amount} added to Abilities.mods. on_hit / on_kill: Abilities effect dictionaries appended to Abilities.global_on_hit / global_on_kill (see docs/team/abilities.md). codex_milestones: rewards paid once when that percentage of all relics has been discovered ({currency, amount} banked at once, {stat, amount} = permanent run bonus).",
+	"relics": [
+		{
+			"id": "cracked_halo",
+			"name": "Cracked Halo",
+			"icon": "◯",
+			"rarity": "common",
+			"stats": {
+				"might": 0.06
+			},
+			"description": "+6% damage. It still hums, faintly, with stolen grace."
+		},
+		{
+			"id": "torn_pinion",
+			"name": "Torn Pinion",
+			"icon": "❦",
+			"rarity": "common",
+			"stats": {
+				"move_speed": 0.35
+			},
+			"description": "+0.35 speed. Lighter than it should be."
+		},
+		{
+			"id": "votive_heart",
+			"name": "Votive Heart",
+			"icon": "♥",
+			"rarity": "common",
+			"stats": {
+				"max_hp": 15
+			},
+			"heal": 15,
+			"description": "+15 max HP. Still warm from the altar."
+		},
+		{
+			"id": "censer_ash",
+			"name": "Censer Ash",
+			"icon": "∴",
+			"rarity": "common",
+			"stats": {
+				"pickup_radius": 0.6
+			},
+			"description": "+0.6 pickup radius."
+		},
+		{
+			"id": "rusted_nail",
+			"name": "Rusted Nail",
+			"icon": "†",
+			"rarity": "uncommon",
+			"stats": {
+				"might": 0.1,
+				"armor": 1
+			},
+			"description": "+10% damage, +1 armor. Pulled from a holier wound."
+		},
+		{
+			"id": "choir_tongue",
+			"name": "Choir Tongue",
+			"icon": "♪",
+			"rarity": "uncommon",
+			"stats": {
+				"cooldown": -0.05
+			},
+			"description": "-5% cooldown. It will never sing again."
+		},
+		{
+			"id": "pilgrim_coin",
+			"name": "Pilgrim's Coin",
+			"icon": "¤",
+			"rarity": "uncommon",
+			"stats": {
+				"ichor_gain": 0.25,
+				"luck": 0.05
+			},
+			"description": "+25% Ichor, +5% luck."
+		},
+		{
+			"id": "seraph_eye",
+			"name": "Seraph's Eye",
+			"icon": "◉",
+			"rarity": "rare",
+			"stats": {
+				"area": 0.15
+			},
+			"description": "+15% area. It sees everything, and now so do you."
+		},
+		{
+			"id": "martyr_bone",
+			"name": "Martyr's Bone",
+			"icon": "⚚",
+			"rarity": "rare",
+			"stats": {
+				"regen": 0.6,
+				"max_hp": 10
+			},
+			"description": "+0.6 HP/s, +10 max HP."
+		},
+		{
+			"id": "fallen_sword",
+			"name": "Sword of the Fallen Host",
+			"icon": "⚔",
+			"rarity": "rare",
+			"stats": {
+				"might": 0.18
+			},
+			"description": "+18% damage."
+		},
+		{
+			"id": "inverted_thurible",
+			"name": "Inverted Thurible",
+			"icon": "♁",
+			"rarity": "epic",
+			"stats": {
+				"cooldown": -0.1,
+				"area": 0.1
+			},
+			"description": "-10% cooldown, +10% area. Its smoke sinks."
+		},
+		{
+			"id": "black_grail",
+			"name": "Black Grail",
+			"icon": "♅",
+			"rarity": "epic",
+			"stats": {
+				"xp_gain": 0.2,
+				"luck": 0.1
+			},
+			"description": "+20% XP, +10% luck."
+		},
+		{
+			"id": "archangel_crown",
+			"name": "Archangel's Crown",
+			"icon": "♛",
+			"rarity": "legendary",
+			"stats": {
+				"might": 0.25,
+				"bonus_projectiles": 1
+			},
+			"description": "+25% damage, +1 projectile. Worn now by the one who unmade its owner."
+		},
+		{
+			"id": "heart_of_eden",
+			"name": "Heart of Eden",
+			"icon": "❤",
+			"rarity": "legendary",
+			"stats": {
+				"max_hp": 40,
+				"regen": 1.0,
+				"armor": 2
+			},
+			"heal": 40,
+			"description": "+40 max HP, +1 HP/s, +2 armor. The garden's last root."
+		},
+		{
+			"id": "ember_rosary",
+			"name": "Ember Rosary",
+			"icon": "🜂",
+			"rarity": "uncommon",
+			"tags": [
+				"fire"
+			],
+			"ability_mods": {
+				"tag:fire": 0.15
+			},
+			"description": "+15% Hellfire damage. Each bead a smouldering saint."
+		},
+		{
+			"id": "anvil_shard",
+			"name": "Anvil Shard",
+			"icon": "⚒",
+			"rarity": "uncommon",
+			"tags": [
+				"brute"
+			],
+			"ability_mods": {
+				"tag:brute": 0.15,
+				"knockback": 0.15
+			},
+			"description": "+15% Brimstone damage, +15% knockback."
+		},
+		{
+			"id": "iron_collar",
+			"name": "Iron Collar",
+			"icon": "⛓",
+			"rarity": "uncommon",
+			"tags": [
+				"chain"
+			],
+			"ability_mods": {
+				"dur:root": 0.3,
+				"tag:chain": 0.1
+			},
+			"description": "Binds last 30% longer, +10% Chain damage."
+		},
+		{
+			"id": "blood_vial",
+			"name": "Vial of Martyr's Blood",
+			"icon": "🩸",
+			"rarity": "uncommon",
+			"tags": [
+				"blood"
+			],
+			"ability_mods": {
+				"power:bleed": 0.25,
+				"hp_cost_cut": 0.1
+			},
+			"description": "+25% bleed damage, blood rites cost 10% less life."
+		},
+		{
+			"id": "witch_finger",
+			"name": "Witch's Finger",
+			"icon": "☿",
+			"rarity": "rare",
+			"tags": [
+				"curse"
+			],
+			"ability_mods": {
+				"power:curse": 0.25,
+				"max:curse": 1
+			},
+			"description": "+25% curse potency, +1 max curse stacks."
+		},
+		{
+			"id": "black_feather",
+			"name": "Black Feather",
+			"icon": "☾",
+			"rarity": "uncommon",
+			"tags": [
+				"shadow"
+			],
+			"ability_mods": {
+				"tagcrit:shadow": 0.08
+			},
+			"description": "+8% critical chance with Shadow abilities."
+		},
+		{
+			"id": "rot_sachet",
+			"name": "Rot Sachet",
+			"icon": "☣",
+			"rarity": "uncommon",
+			"tags": [
+				"plague"
+			],
+			"ability_mods": {
+				"dot_rate": 0.15,
+				"power:plague": 0.15
+			},
+			"description": "Damage over time ticks 15% faster, +15% plague damage."
+		},
+		{
+			"id": "grave_dirt",
+			"name": "Grave Dirt",
+			"icon": "☠",
+			"rarity": "rare",
+			"tags": [
+				"necro"
+			],
+			"ability_mods": {
+				"tag:necro": 0.15,
+				"corpse_life": 0.5
+			},
+			"description": "+15% Necromancy damage, corpses linger 50% longer."
+		},
+		{
+			"id": "soul_jar",
+			"name": "Soul Jar",
+			"icon": "✧",
+			"rarity": "uncommon",
+			"tags": [
+				"soul"
+			],
+			"ability_mods": {
+				"soul_cap": 50,
+				"tag:soul": 0.1
+			},
+			"description": "+50 soul cap, +10% Soul Harvest damage."
+		},
+		{
+			"id": "lightning_rod",
+			"name": "Lightning Rod",
+			"icon": "ϟ",
+			"rarity": "rare",
+			"tags": [
+				"storm"
+			],
+			"ability_mods": {
+				"jumps": 1,
+				"tag:storm": 0.1
+			},
+			"description": "Chains leap once more, +10% Storm damage."
+		},
+		{
+			"id": "ninth_circle_crown",
+			"name": "Crown of the Ninth Circle",
+			"icon": "♛",
+			"rarity": "legendary",
+			"tags": [
+				"fire"
+			],
+			"ability_mods": {
+				"tag:fire": 0.25,
+				"max:burn": 3
+			},
+			"on_hit": [
+				{
+					"do": "status",
+					"id": "burn",
+					"stacks": 1,
+					"chance": 0.25
+				}
+			],
+			"description": "Ability hits have a 25% chance to Burn. +25% Hellfire damage, +3 max burn stacks."
+		},
+		{
+			"id": "lich_phylactery",
+			"name": "Phylactery of the Lich",
+			"icon": "⚱",
+			"rarity": "legendary",
+			"tags": [
+				"necro",
+				"summon"
+			],
+			"ability_mods": {
+				"summon_count": 2,
+				"tag:summon": 0.3
+			},
+			"description": "+2 summons for every summoning ability, +30% summon damage. Your dead outnumber their living."
+		},
+		{
+			"id": "stormcaller_heart",
+			"name": "Stormcaller's Heart",
+			"icon": "⚡",
+			"rarity": "legendary",
+			"tags": [
+				"storm",
+				"chain"
+			],
+			"ability_mods": {
+				"tag:storm": 0.2,
+				"power:shock": 0.5
+			},
+			"on_hit": [
+				{
+					"do": "chain",
+					"jumps": 2,
+					"range": 6,
+					"damage": 0.35,
+					"chance": 0.15
+				}
+			],
+			"description": "Ability hits have a 15% chance to arc lightning to 2 more angels. +20% Storm damage, +50% shock potency."
+		},
+		{
+			"id": "plague_censer",
+			"name": "Censer of Pestilence",
+			"icon": "☣",
+			"rarity": "legendary",
+			"tags": [
+				"plague",
+				"curse"
+			],
+			"ability_mods": {
+				"power:plague": 0.5,
+				"spread:plague": 2
+			},
+			"on_kill": [
+				{
+					"do": "spread",
+					"status": "plague",
+					"count": 3,
+					"range": 6,
+					"stacks": 2
+				}
+			],
+			"description": "Every kill spreads Plague to 3 nearby angels. +50% plague damage. The thurible now swings for you."
+		},
+		{
+			"id": "chalice_of_ichor",
+			"name": "Chalice of Ichor",
+			"icon": "♆",
+			"rarity": "legendary",
+			"tags": [
+				"blood"
+			],
+			"ability_mods": {
+				"hp_cost_cut": 0.5,
+				"tag:blood": 0.3
+			},
+			"on_kill": [
+				{
+					"do": "heal",
+					"amount": 1.5,
+					"chance": 0.5
+				}
+			],
+			"description": "Blood rites cost half the life, +30% Blood damage, kills often heal 1.5 HP."
+		},
+		{
+			"id": "executioner_hood",
+			"name": "Executioner's Hood",
+			"icon": "☗",
+			"rarity": "legendary",
+			"tags": [
+				"shadow",
+				"curse"
+			],
+			"ability_mods": {
+				"execute": 0.6,
+				"tagcrit:shadow": 0.15,
+				"crit_mult": 0.5
+			},
+			"description": "+60% damage to angels below 30% HP, +15% Shadow crit chance, +50% crit damage."
+		},
+		{
+			"id": "fallen_shackles",
+			"name": "Shackles of the Fallen",
+			"icon": "⛓",
+			"rarity": "legendary",
+			"tags": [
+				"chain",
+				"brute"
+			],
+			"ability_mods": {
+				"dur:root": 0.6,
+				"root_amp": 0.3,
+				"tag:brute": 0.15
+			},
+			"on_hit": [
+				{
+					"do": "status",
+					"id": "root",
+					"stacks": 1,
+					"chance": 0.06
+				}
+			],
+			"description": "Ability hits sometimes Bind. Bound angels take +30% damage; binds last 60% longer."
+		},
+		{
+			"id": "malediction_mask",
+			"name": "Mask of Malediction",
+			"icon": "☿",
+			"rarity": "legendary",
+			"tags": [
+				"curse"
+			],
+			"ability_mods": {
+				"max:curse": 3,
+				"power:curse": 0.3
+			},
+			"on_hit": [
+				{
+					"do": "status",
+					"id": "curse",
+					"stacks": 1,
+					"chance": 0.3
+				}
+			],
+			"description": "Ability hits have a 30% chance to Curse; curses stack 3 higher and bite 30% harder."
+		},
+		{
+			"id": "ferryman_lantern",
+			"name": "Lantern of the Ferryman",
+			"icon": "🏮",
+			"rarity": "legendary",
+			"tags": [
+				"soul"
+			],
+			"ability_mods": {
+				"soul_cap": 150,
+				"soul_bonus": 0.5,
+				"tag:soul": 0.2
+			},
+			"on_kill": [
+				{
+					"do": "soul",
+					"stacks": 1
+				}
+			],
+			"description": "Every kill reaps an extra soul. +150 soul cap, souls empower you 50% more."
+		},
+		{
+			"id": "meteor_heart",
+			"name": "Heart of the Falling Star",
+			"icon": "☄",
+			"rarity": "legendary",
+			"tags": [
+				"brute",
+				"fire"
+			],
+			"ability_mods": {
+				"tag:brute": 0.3,
+				"knockback": 0.4
+			},
+			"on_kill": [
+				{
+					"do": "explode",
+					"radius": 2.6,
+					"damage": 0.6,
+					"chance": 0.3,
+					"status": [
+						{
+							"id": "burn",
+							"stacks": 1
+						}
+					]
+				}
+			],
+			"description": "Kills often detonate in a burning blast. +30% Brimstone damage, +40% knockback."
+		}
+	],
+	"codex_milestones": [
+		{
+			"percent": 25,
+			"name": "Collector of Trophies",
+			"rewards": [
+				{
+					"currency": "sin_shards",
+					"amount": 10
+				}
+			]
+		},
+		{
+			"percent": 50,
+			"name": "Keeper of the Reliquary",
+			"rewards": [
+				{
+					"currency": "sin_shards",
+					"amount": 15
+				},
+				{
+					"currency": "hellstone",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"percent": 75,
+			"name": "Desecrator of Altars",
+			"rewards": [
+				{
+					"currency": "hellstone",
+					"amount": 3
+				},
+				{
+					"stat": "luck",
+					"amount": 0.05,
+					"format": "percent"
+				}
+			]
+		},
+		{
+			"percent": 100,
+			"name": "Curator of Ruin",
+			"rewards": [
+				{
+					"currency": "hellstone",
+					"amount": 5
+				},
+				{
+					"stat": "starting_relics",
+					"amount": 1
+				}
+			]
+		}
+	]
+}

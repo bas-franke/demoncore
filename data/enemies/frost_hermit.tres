@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/frost_hermit.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"frost_hermit"
+display_name = "Frost-Blessed Hermit"
+flavor_text = "Forty winters on the mountain, praying in the snow. The cold stopped trying to kill him and started to listen."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 16.0
+speed = 2.3
+damage = 6.0
+xp_value = 3
+knockback_scale = 1.0
+behavior = 7
+preferred_distance = 7.0
+attack_cooldown = 2.4
+windup_time = 0.65
+projectile_damage = 8.0
+projectile_speed = 8.0
+muzzle_height = 0.9
+shot_recover_time = 0.3

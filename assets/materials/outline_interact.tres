@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3]
+
+[ext_resource type="Shader" path="res://shaders/style/outline_mask.gdshader" id="1_mask"]
+[ext_resource type="Shader" path="res://shaders/style/outline.gdshader" id="2_hull"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hull"]
+render_priority = 1
+shader = ExtResource("2_hull")
+shader_parameter/color = Color(1, 0.36, 0.08, 1)
+shader_parameter/width = 3.0
+shader_parameter/energy = 2.0
+shader_parameter/pulse = 0.6
+
+[resource]
+next_pass = SubResource("ShaderMaterial_hull")
+shader = ExtResource("1_mask")

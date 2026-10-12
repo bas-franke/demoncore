@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/paladin.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"paladin"
+display_name = "Paladin"
+flavor_text = "Sworn to the Light in a vigil of nine days without sleep. His hammer has broken gates, and the things behind them."
+model = ExtResource("2_model")
+size = 1.15
+max_hp = 55.0
+speed = 1.9
+damage = 16.0
+xp_value = 7
+knockback_scale = 0.3
+behavior = 6
+preferred_distance = 2.6
+attack_cooldown = 3.4
+charge_time = 0.25
+windup_time = 0.95
+slam_radius = 1.9
+slam_reach = 1.3
+slam_damage = 22.0
+ward_radius = 4.5
+ward_reduction = 0.5
+ward_max = 6

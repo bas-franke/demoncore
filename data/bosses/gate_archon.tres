@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/archon.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"gate_archon"
+display_name = "Azrafel, Archon of the Seventh Gate"
+flavor_text = "The last warden. It has stood before the Seventh Gate since before the first fall, and it has never once stepped aside."
+model = ExtResource("2_model")
+size = 2.8
+max_hp = 5200.0
+speed = 1.8
+damage = 26.0
+xp_value = 150
+knockback_scale = 0.0
+behavior = 0

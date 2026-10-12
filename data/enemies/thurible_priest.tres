@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/thurible_priest.tscn" id="2_model"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/holy_smoke.tscn" id="3_proj"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"thurible_priest"
+display_name = "Censer Cleric"
+flavor_text = "It tends the incense of the high altar. The smoke is a prayer, and the prayer is a burning."
+model = ExtResource("2_model")
+size = 1.0
+hover = 0.3
+max_hp = 18.0
+speed = 2.6
+damage = 8.0
+xp_value = 3
+knockback_scale = 0.9
+behavior = 1
+preferred_distance = 3.4
+attack_cooldown = 2.6
+projectile = ExtResource("3_proj")
+projectile_damage = 5.0
+projectile_speed = 10.0
+muzzle_height = 0.85
+shot_recover_time = 0.5
+windup_time = 0.7

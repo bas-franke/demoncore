@@ -1,0 +1,1335 @@
+{
+	"_doc": "Offerings (Affinity, scripts/dialogue/affinity.gd): pool gift.<speaker> plays after each offering; gift_<speaker>_<n> is the beat for reaching affinity n (1..5), then repeatable thanks. <speaker>_chat_affinity: affinity-gated chatter in the NPC's own pool. Generated once, edit freely. affinity_rewards: speaker -> level -> reward. Rewards: currency {id: n} (Progression.add_currency, granted once), stat {player stat: amount} (applied at the start of every run while affinity >= level), unlock (Progression.grant_unlock id, granted once; fallback currency if already owned), text (announced).",
+	"conversations": [
+		{
+			"id": "gift_grimmaul_1",
+			"pool": "gift.grimmaul",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.grimmaul": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "A sack of souls? For me?"
+				},
+				{
+					"who": "grimmaul",
+					"text": "...Hm. Most Sinbound pay me for steel. Nobody pays me for nothing."
+				},
+				{
+					"who": "grimmaul",
+					"text": "I will put them in the quench water. Steel likes a gift too."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_2",
+			"pool": "gift.grimmaul",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.grimmaul": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Again. You are either soft in the head or you want something."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Fine. Here is something for free: never parry a Lancer. Step aside. They cannot turn."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_3",
+			"pool": "gift.grimmaul",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.grimmaul": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "You keep doing this. People will talk."
+				},
+				{
+					"who": "grimmaul",
+					"text": "...Let them. I have been talked about for six hundred years. It is mostly the hammer they mention."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_4",
+			"pool": "gift.grimmaul",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.grimmaul": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Sit. No, there. That stool is Darling's. Pip told you about Darling, did he not."
+				},
+				{
+					"who": "grimmaul",
+					"text": "My first anvil. Pulled her out of the Eighth Forge's slag with my own hands. She remembers every blade. I talk to her because she listens."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Now you know. Tell anyone and I will forge you into a doorstop."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_5",
+			"pool": "gift.grimmaul",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.grimmaul": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Enough gifts. Take this instead."
+				},
+				{
+					"who": "grimmaul",
+					"text": "My mark. Struck into your claws while you were not looking. Every smith in the Pit will know you are under the Ninth Forge's hand."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Do not die stupidly with it on. It would reflect on me."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_thanks_1",
+			"pool": "gift.grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Hm. Thanks."
+				}
+			]
+		},
+		{
+			"id": "gift_grimmaul_thanks_2",
+			"pool": "gift.grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Souls in, gratitude out. Grudgingly."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_1",
+			"pool": "gift.vesper",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.vesper": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "An offering. How quaint. I have not received one since I stopped being worshipped."
+				},
+				{
+					"who": "vesper",
+					"text": "...I will pretend it is a hymn. It is the closest thing you have."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_2",
+			"pool": "gift.vesper",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.vesper": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You remember my name now. Most do not bother. Ashtongue is easier to say than to love."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_3",
+			"pool": "gift.vesper",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.vesper": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Do you want to hear the hymn? The backwards one?"
+				},
+				{
+					"who": "vesper",
+					"text": "...No. Not yet. It burns the tongue, and you need yours for threatening angels."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_4",
+			"pool": "gift.vesper",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.vesper": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Lilaeth had a voice like a struck bell. I had a voice like the silence after it."
+				},
+				{
+					"who": "vesper",
+					"text": "When we fell, I fell first. I wanted her to know there was somewhere to land."
+				},
+				{
+					"who": "vesper",
+					"text": "Do not tell her that. She would sing about it. Badly."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_5",
+			"pool": "gift.vesper",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.vesper": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Come closer. I will sing it after all. Only one note."
+				},
+				{
+					"who": "vesper",
+					"text": "..."
+				},
+				{
+					"who": "vesper",
+					"text": "There. You will hear that note for the rest of your existence, under everything. It means someone in the Pit is on your side."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_thanks_1",
+			"pool": "gift.vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Every rite has a price. This one, you paid freely. Strange."
+				}
+			]
+		},
+		{
+			"id": "gift_vesper_thanks_2",
+			"pool": "gift.vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "I accept. I always accept. That was the problem, once."
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_1",
+			"pool": "gift.clerk",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.clerk": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "A deposit with no account attached? Highly irregular. I adore it."
+				},
+				{
+					"who": "clerk",
+					"text": "I shall open a new ledger for it. Category: inexplicable kindness."
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_2",
+			"pool": "gift.clerk",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.clerk": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Second unsolicited payment. I am beginning to suspect fraud. Lovely, generous fraud."
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_3",
+			"pool": "gift.clerk",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.clerk": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Do you know nobody has given me anything since I sold my name? Not even a nod."
+				},
+				{
+					"who": "clerk",
+					"text": "People do not give gifts to nobody. You are making a very strange investment, Sinbound."
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_4",
+			"pool": "gift.clerk",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.clerk": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "I remembered something last night. My mother's voice, calling me in for supper."
+				},
+				{
+					"who": "clerk",
+					"text": "She was calling a name. I could not hear which one. But she was calling, Sinbound. Someone once called me."
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_5",
+			"pool": "gift.clerk",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.clerk": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "I have made a decision. With you as witness."
+				},
+				{
+					"who": "clerk",
+					"text": "When we take the chair and I present the audit, I will sign it. Not as Mammon's Clerk."
+				},
+				{
+					"who": "clerk",
+					"text": "I will think of a name. A new one. One nobody can buy. Will you remember it for me?"
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_thanks_1",
+			"pool": "gift.clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Credited with interest. Thank you!"
+				}
+			]
+		},
+		{
+			"id": "gift_clerk_thanks_2",
+			"pool": "gift.clerk",
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Noted, filed, cherished."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_1",
+			"pool": "gift.ossek",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.ossek": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "A gift? For a mapmaker? Then I shall name a hill after you. A small one, with a nice view of the angels."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_2",
+			"pool": "gift.ossek",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.ossek": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Look. I have marked your favourite killing grounds. Little horns, instead of skulls. You have earned horns."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_3",
+			"pool": "gift.ossek",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.ossek": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "I was a scout, before. For the Host. Did you know? I drew Heaven's maps of Hell."
+				},
+				{
+					"who": "ossek",
+					"text": "Then one day I drew a road I was not supposed to see, and followed it down. I never went back up."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_4",
+			"pool": "gift.ossek",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.ossek": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Want to know my secret road? There is a path off the Fallen Roads that leads nowhere at all. Just a cliff over the Pit."
+				},
+				{
+					"who": "ossek",
+					"text": "I go there to sit. Everything is very small from up there. Even Heaven."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_5",
+			"pool": "gift.ossek",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.ossek": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Here. My own compass. It does not point north. It points to wherever I am."
+				},
+				{
+					"who": "ossek",
+					"text": "Now you can always find me. Whatever happens at the top of the stairs, find me after. I want the map."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_thanks_1",
+			"pool": "gift.ossek",
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Mapped and grateful."
+				}
+			]
+		},
+		{
+			"id": "gift_ossek_thanks_2",
+			"pool": "gift.ossek",
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "I shall draw you on the next one. Bigger than the angels."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_1",
+			"pool": "gift.pip",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.pip": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "For ME? Nobody gives imps things! Usually they give us jobs. Or kicks."
+				},
+				{
+					"who": "pip",
+					"text": "I am going to keep this forever. Or until lunch."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_2",
+			"pool": "gift.pip",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.pip": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "You did it again! Are we friends? Is this what friends are? I read about it in a letter once."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_3",
+			"pool": "gift.pip",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.pip": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Secret! The Duchess snores. Like a furnace with a cough. I have it on parchment."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_4",
+			"pool": "gift.pip",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.pip": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "I have never told anybody this. I was not always an imp. I was a sin. A small one. Somebody's white lie."
+				},
+				{
+					"who": "pip",
+					"text": "They forgot it, so it fell, and it landed here, and it became me. I am a lie nobody remembers telling. Hee."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_5",
+			"pool": "gift.pip",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.pip": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "I am going to follow you up. To the top. To the chair. Do not argue."
+				},
+				{
+					"who": "pip",
+					"text": "Someone has to carry the decrees when you are in charge. And I want a hat. A real one. With a feather. An angel feather."
+				}
+			]
+		},
+		{
+			"id": "gift_pip_thanks_1",
+			"pool": "gift.pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Hee! Thank you!"
+				}
+			]
+		},
+		{
+			"id": "gift_pip_thanks_2",
+			"pool": "gift.pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Mine! All mine! Thank you!"
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_1",
+			"pool": "gift.kesh",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.kesh": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Tribute for the warden of the gate. Counted. And... appreciated."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_2",
+			"pool": "gift.kesh",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.kesh": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "You are the first Sinbound to bring the Breachwarden anything but complaints. I will remember it when I count you down."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_3",
+			"pool": "gift.kesh",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.kesh": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "The halberd was my father's. He kept the gate before me. He went up once, against orders, to see the sky."
+				},
+				{
+					"who": "kesh",
+					"text": "He did not come down. I have counted every soul that came down since, looking for him."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_4",
+			"pool": "gift.kesh",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.kesh": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "I have stopped looking for my father in the count, Sinbound. I started looking for you instead."
+				},
+				{
+					"who": "kesh",
+					"text": "That is a kinder thing to wait for."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_5",
+			"pool": "gift.kesh",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.kesh": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "When you go up the last time, I will come with you as far as the Gate. The Chainward has never left the Breach."
+				},
+				{
+					"who": "kesh",
+					"text": "We will make an exception. Chains are for holding on, too."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_thanks_1",
+			"pool": "gift.kesh",
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "Counted. Gratefully."
+				}
+			]
+		},
+		{
+			"id": "gift_kesh_thanks_2",
+			"pool": "gift.kesh",
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "The gate remembers generosity."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_affinity",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.grimmaul": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Darling says hello. I mean the anvil. Obviously."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_affinity",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.vesper": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "I hummed your note today. The lava hummed it back."
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_affinity",
+			"pool": "clerk",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.clerk": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Your account has been upgraded to Cherished. It is a new tier. I invented it."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_affinity",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.ossek": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "There is a hill on the map with your name on it now. Mind the angels on it."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_affinity",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.pip": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Best friend! Hello! Best friend!"
+				}
+			]
+		},
+		{
+			"id": "kesh_chat_affinity",
+			"pool": "kesh",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"affinity.kesh": 3
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "The count goes better when I know who I am waiting for."
+				}
+			]
+		},
+		{
+			"id": "keepsake_grimmaul",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.grimmaul": 3
+				}
+			},
+			"set": {
+				"keepsake.grimmaul": true
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Take this. Ember-Forged Locket. I made it from the first nail I ever drove."
+				},
+				{
+					"who": "grimmaul",
+					"text": "It is still warm. It will stay warm. Wear it down there and hit harder for me."
+				},
+				{
+					"text": "Keepsake unlocked: Ember-Forged Locket. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_vesper",
+			"pool": "vesper",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.vesper": 3
+				}
+			},
+			"set": {
+				"keepsake.vesper": true
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "This is a page from the hymnal I sang from, before. One verse. Heaven forgot it."
+				},
+				{
+					"who": "vesper",
+					"text": "Carry it up. Let them hear what they forgot."
+				},
+				{
+					"text": "Keepsake unlocked: Torn Hymnal Page. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_clerk",
+			"pool": "clerk",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.clerk": 3
+				}
+			},
+			"set": {
+				"keepsake.clerk": true
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Here. My marked coin. The first soul I ever took in payment. I marked it so I would remember."
+				},
+				{
+					"who": "clerk",
+					"text": "Take it on your descents. It earns interest. Everything near it does."
+				},
+				{
+					"text": "Keepsake unlocked: The Clerk's Marked Coin. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_ossek",
+			"pool": "ossek",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.ossek": 3
+				}
+			},
+			"set": {
+				"keepsake.ossek": true
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "My compass. No, not that one. The real one. It always points away from Heaven."
+				},
+				{
+					"who": "ossek",
+					"text": "Which means, if you are lost up there, it points home."
+				},
+				{
+					"text": "Keepsake unlocked: Wayfarer's Compass. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_pip",
+			"pool": "pip",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.pip": 3
+				}
+			},
+			"set": {
+				"keepsake.pip": true
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "This is my lucky tooth! Well. Somebody's lucky tooth. It is lucky for ME, anyway."
+				},
+				{
+					"who": "pip",
+					"text": "You can borrow it. Bring it back. Please. It is my only tooth that is not in my mouth."
+				},
+				{
+					"text": "Keepsake unlocked: Pip's Lucky Tooth. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_kesh",
+			"pool": "kesh",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.kesh": 3
+				}
+			},
+			"set": {
+				"keepsake.kesh": true
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "One link from the chain that held the Breach shut, before we tore it open."
+				},
+				{
+					"who": "kesh",
+					"text": "It held a world closed. It can hold you together. Wear it."
+				},
+				{
+					"text": "Keepsake unlocked: Breachwarden's Link. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "keepsake_malphine",
+			"pool": "malphine",
+			"once": true,
+			"priority": 97,
+			"requires": {
+				"min": {
+					"affinity.malphine": 3
+				}
+			},
+			"set": {
+				"keepsake.malphine": true
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "My signet, darling. It opens doors at Court. It closes others, permanently."
+				},
+				{
+					"who": "malphine",
+					"text": "Wear it where Heaven can see. Let them know whose weapon you are. For now."
+				},
+				{
+					"text": "Keepsake unlocked: Ashen Signet. Choose it at the hellgate before you descend."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_1",
+			"pool": "gift.malphine",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.malphine": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Tribute. Correctly offered, with the left hand. Someone taught you manners."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_2",
+			"pool": "gift.malphine",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.malphine": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Again? Careful, darling. The Court will think you want something."
+				},
+				{
+					"who": "malphine",
+					"text": "...You may stand a little closer."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_3",
+			"pool": "gift.malphine",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.malphine": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "You have earned a favour. I do not grant those often. Ask Pip. Actually, do not."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_4",
+			"pool": "gift.malphine",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.malphine": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Do you know why I write letters, darling? Because the last thing I said aloud to someone I trusted, they repeated to a duke."
+				},
+				{
+					"who": "malphine",
+					"text": "I do not intend to repeat that mistake. With you, I am... trying."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_5",
+			"pool": "gift.malphine",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"affinity.malphine": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Enough tribute. Here is mine: when the chair is filled, I will not stand against whoever fills it. If it is you."
+				},
+				{
+					"who": "malphine",
+					"text": "That is the most anyone at Court has ever promised anyone. Treasure it."
+				}
+			]
+		},
+		{
+			"id": "gift_malphine_thanks_1",
+			"pool": "gift.malphine",
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Tribute received. Noted. Appreciated, in moderation."
+				}
+			]
+		}
+	],
+	"affinity_rewards": {
+		"grimmaul": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "Grimmaul slips you 3 Sin Shards. 'Offcuts.'"
+			},
+			"3": {
+				"stat": {
+					"might": 0.05
+				},
+				"text": "Grimmaul's Edge: +5% Might in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Grimmaul gives you a lump of Hellstone. 'From Darling.'"
+			},
+			"5": {
+				"unlock": "weapon_infernal_chain",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "Grimmaul forges you the Infernal Chain. It may now be offered in runs."
+			}
+		},
+		"vesper": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "Vesper presses 3 Sin Shards into your palm. They hum."
+			},
+			"3": {
+				"stat": {
+					"xp_gain": 0.06
+				},
+				"text": "Vesper's Note: +6% experience in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Vesper gives you 1 Hellstone, warm from her singing."
+			},
+			"5": {
+				"unlock": "ability_wraith_host",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "Vesper teaches you the Wraith Host. It may now be offered at level-ups."
+			}
+		},
+		"clerk": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "The Clerk refunds you 3 Sin Shards. 'Interest.'"
+			},
+			"3": {
+				"stat": {
+					"regen": 0.25
+				},
+				"text": "Compound Interest: +0.25 life regeneration in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "The Clerk issues you 1 Hellstone. 'A dividend.'"
+			},
+			"5": {
+				"unlock": "ability_harvest_moon",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "The Clerk signs over the Harvest Moon. It may now be offered at level-ups."
+			}
+		},
+		"ossek": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "Ossek hands you 3 Sin Shards he found on the roads."
+			},
+			"3": {
+				"stat": {
+					"move_speed": 0.3
+				},
+				"text": "Wayfarer's Stride: +0.3 move speed in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Ossek gives you a Hellstone chipped from the edge of the Pit."
+			},
+			"5": {
+				"unlock": "ability_tempest_nova",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "Ossek shows you the road to the Tempest Nova. It may now be offered at level-ups."
+			}
+		},
+		"pip": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "Pip 'finds' you 3 Sin Shards. Do not ask where."
+			},
+			"3": {
+				"stat": {
+					"pickup_radius": 0.6
+				},
+				"text": "Pip's Errands: +0.6 pickup radius in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Pip gives you 1 Hellstone. It was in the Duchess's jewellery box."
+			},
+			"5": {
+				"unlock": "demon_morvane",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "Pip stole the key to Morvane's prison. Morvane is free to walk with you."
+			}
+		},
+		"kesh": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "Kesh tallies you 3 Sin Shards from the gate tithe."
+			},
+			"3": {
+				"stat": {
+					"max_hp": 12
+				},
+				"text": "Warden's Count: +12 maximum life in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Kesh gives you 1 Hellstone from the Chainward's vault."
+			},
+			"5": {
+				"unlock": "ability_infernal_storm",
+				"fallback": {
+					"sin_shards": 8
+				},
+				"text": "Kesh unchains the Infernal Storm. It may now be offered at level-ups."
+			}
+		},
+		"malphine": {
+			"2": {
+				"currency": {
+					"sin_shards": 3
+				},
+				"text": "The Duchess has 3 Sin Shards sent to your quarters. 'Pocket money.'"
+			},
+			"3": {
+				"stat": {
+					"xp_gain": 0.04
+				},
+				"text": "Courtly Favour: +4% experience in every run."
+			},
+			"4": {
+				"currency": {
+					"hellstone": 1
+				},
+				"text": "Malphine presents you with 1 Hellstone, set in velvet."
+			},
+			"5": {
+				"currency": {
+					"sin_shards": 10
+				},
+				"text": "The Court's purse opens: 10 Sin Shards."
+			}
+		}
+	}
+}

@@ -1,0 +1,2553 @@
+{
+	"_doc": "Floating enemy chatter for WorldBarks (scripts/dialogue/world_barks.gd). Pools enemy_taunt.<enemy id | faction> and enemy_death.<enemy id | faction>; enemy id = EnemyData file name, factions from CharacterRoster.ENEMIES. Only repeatable entries (no 'once'). Generated once, edit freely.",
+	"conversations": [
+		{
+			"id": "enemy_taunt_paladin_1",
+			"pool": "enemy_taunt.paladin",
+			"lines": [
+				{
+					"text": "By the light, I smite thee!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paladin_2",
+			"pool": "enemy_taunt.paladin",
+			"lines": [
+				{
+					"text": "Stand and face judgement, fiend!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paladin_3",
+			"pool": "enemy_taunt.paladin",
+			"lines": [
+				{
+					"text": "My oath is my armour!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paladin_4",
+			"pool": "enemy_taunt.paladin",
+			"lines": [
+				{
+					"text": "Kneel before the Dawn!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paladin_5",
+			"pool": "enemy_taunt.paladin",
+			"lines": [
+				{
+					"text": "The Order does not retreat!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_knight_1",
+			"pool": "enemy_taunt.holy_knight",
+			"lines": [
+				{
+					"text": "For the Dawn!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_knight_2",
+			"pool": "enemy_taunt.holy_knight",
+			"lines": [
+				{
+					"text": "Hold the line!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_knight_3",
+			"pool": "enemy_taunt.holy_knight",
+			"lines": [
+				{
+					"text": "Steel and faith, brothers!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_knight_4",
+			"pool": "enemy_taunt.holy_knight",
+			"lines": [
+				{
+					"text": "Another demon for the pyre!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_inquisitor_1",
+			"pool": "enemy_taunt.inquisitor",
+			"lines": [
+				{
+					"text": "Repent, and burn quickly. Refuse, and burn slowly."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_inquisitor_2",
+			"pool": "enemy_taunt.inquisitor",
+			"lines": [
+				{
+					"text": "I smell heresy. It smells of you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_inquisitor_3",
+			"pool": "enemy_taunt.inquisitor",
+			"lines": [
+				{
+					"text": "The flesh is weak. Let us test yours."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_inquisitor_4",
+			"pool": "enemy_taunt.inquisitor",
+			"lines": [
+				{
+					"text": "Confess! Confession is the first kindness."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_inquisitor_5",
+			"pool": "enemy_taunt.inquisitor",
+			"lines": [
+				{
+					"text": "Sin is a stain. Fire is the soap."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_grand_inquisitor_1",
+			"pool": "enemy_taunt.grand_inquisitor",
+			"lines": [
+				{
+					"text": "The verdict was written before your birth."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_grand_inquisitor_2",
+			"pool": "enemy_taunt.grand_inquisitor",
+			"lines": [
+				{
+					"text": "Every sinner confesses eventually."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_zealot_1",
+			"pool": "enemy_taunt.zealot",
+			"lines": [
+				{
+					"text": "Purge! PURGE!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_zealot_2",
+			"pool": "enemy_taunt.zealot",
+			"lines": [
+				{
+					"text": "Glory to the Throne!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_zealot_3",
+			"pool": "enemy_taunt.zealot",
+			"lines": [
+				{
+					"text": "I fear nothing! I fear NOTHING!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_zealot_4",
+			"pool": "enemy_taunt.zealot",
+			"lines": [
+				{
+					"text": "Die, devil!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_monk_1",
+			"pool": "enemy_taunt.monk",
+			"lines": [
+				{
+					"text": "Silence is a weapon."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_monk_2",
+			"pool": "enemy_taunt.monk",
+			"lines": [
+				{
+					"text": "Breathe. Strike. Breathe."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_monk_3",
+			"pool": "enemy_taunt.monk",
+			"lines": [
+				{
+					"text": "The mountain does not hate you. It simply falls."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_censer_nun_1",
+			"pool": "enemy_taunt.censer_nun",
+			"lines": [
+				{
+					"text": "Smell the incense, beast. It is the last sweet thing you will know."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_censer_nun_2",
+			"pool": "enemy_taunt.censer_nun",
+			"lines": [
+				{
+					"text": "Sisters, cleanse the air!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_censer_nun_3",
+			"pool": "enemy_taunt.censer_nun",
+			"lines": [
+				{
+					"text": "Holy smoke for an unholy thing."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_thurible_priest_1",
+			"pool": "enemy_taunt.thurible_priest",
+			"lines": [
+				{
+					"text": "Let the censer swing!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_thurible_priest_2",
+			"pool": "enemy_taunt.thurible_priest",
+			"lines": [
+				{
+					"text": "In the name of the Most High, begone!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_thurible_priest_3",
+			"pool": "enemy_taunt.thurible_priest",
+			"lines": [
+				{
+					"text": "Breathe deep, demon. Choke on grace."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_torch_1",
+			"pool": "enemy_taunt.villager_torch",
+			"lines": [
+				{
+					"text": "Burn the devil!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_torch_2",
+			"pool": "enemy_taunt.villager_torch",
+			"lines": [
+				{
+					"text": "Get it! Get it before it gets the children!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_torch_3",
+			"pool": "enemy_taunt.villager_torch",
+			"lines": [
+				{
+					"text": "Mother, I'm scared!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_torch_4",
+			"pool": "enemy_taunt.villager_torch",
+			"lines": [
+				{
+					"text": "The priest said this would work!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_pitchfork_1",
+			"pool": "enemy_taunt.villager_pitchfork",
+			"lines": [
+				{
+					"text": "Stick it! Stick it!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_pitchfork_2",
+			"pool": "enemy_taunt.villager_pitchfork",
+			"lines": [
+				{
+					"text": "Back, beast! Back!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_pitchfork_3",
+			"pool": "enemy_taunt.villager_pitchfork",
+			"lines": [
+				{
+					"text": "I've a pitchfork and I'm not afraid to use it!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_villager_pitchfork_4",
+			"pool": "enemy_taunt.villager_pitchfork",
+			"lines": [
+				{
+					"text": "Somebody fetch the paladins!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_seraph_1",
+			"pool": "enemy_taunt.seraph",
+			"lines": [
+				{
+					"text": "Six wings, one purpose."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_seraph_2",
+			"pool": "enemy_taunt.seraph",
+			"lines": [
+				{
+					"text": "Look upon me and despair."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_seraph_3",
+			"pool": "enemy_taunt.seraph",
+			"lines": [
+				{
+					"text": "The choir sings your ending."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cherub_1",
+			"pool": "enemy_taunt.cherub",
+			"lines": [
+				{
+					"text": "Hee hee! Holy!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cherub_2",
+			"pool": "enemy_taunt.cherub",
+			"lines": [
+				{
+					"text": "Pew pew, devil!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cherub_3",
+			"pool": "enemy_taunt.cherub",
+			"lines": [
+				{
+					"text": "Mummy Seraph says you're bad!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_archangel_1",
+			"pool": "enemy_taunt.archangel",
+			"lines": [
+				{
+					"text": "I stood at the Gate when you fell. I will stand over you now."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_archangel_2",
+			"pool": "enemy_taunt.archangel",
+			"lines": [
+				{
+					"text": "Kneel, little shadow."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_archangel_3",
+			"pool": "enemy_taunt.archangel",
+			"lines": [
+				{
+					"text": "The sword of Heaven is never sheathed."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_valkyrie_1",
+			"pool": "enemy_taunt.valkyrie",
+			"lines": [
+				{
+					"text": "Only the worthy fall here. You are not worthy."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_valkyrie_2",
+			"pool": "enemy_taunt.valkyrie",
+			"lines": [
+				{
+					"text": "Ride! The slain await their choosing!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_throne_1",
+			"pool": "enemy_taunt.throne",
+			"lines": [
+				{
+					"text": "Wheel within wheel, eye within eye."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_throne_2",
+			"pool": "enemy_taunt.throne",
+			"lines": [
+				{
+					"text": "We see. We see. We see."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_saint_statue_1",
+			"pool": "enemy_taunt.saint_statue",
+			"lines": [
+				{
+					"text": "...REPENT..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_saint_statue_2",
+			"pool": "enemy_taunt.saint_statue",
+			"lines": [
+				{
+					"text": "...THE STONE REMEMBERS..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_saint_statue_3",
+			"pool": "enemy_taunt.saint_statue",
+			"lines": [
+				{
+					"text": "...KNEEL..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_glass_golem_1",
+			"pool": "enemy_taunt.glass_golem",
+			"lines": [
+				{
+					"text": "*the stained glass rings like a bell*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_glass_golem_2",
+			"pool": "enemy_taunt.glass_golem",
+			"lines": [
+				{
+					"text": "*a hundred painted saints glare at you*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_unicorn_1",
+			"pool": "enemy_taunt.unicorn",
+			"lines": [
+				{
+					"text": "*a righteous whinny*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_unicorn_2",
+			"pool": "enemy_taunt.unicorn",
+			"lines": [
+				{
+					"text": "*the horn glows with insufferable purity*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_lion_1",
+			"pool": "enemy_taunt.holy_lion",
+			"lines": [
+				{
+					"text": "*a roar like a sermon*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_griffon_1",
+			"pool": "enemy_taunt.griffon",
+			"lines": [
+				{
+					"text": "*screeches the screech of the righteous*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_pegasus_1",
+			"pool": "enemy_taunt.pegasus",
+			"lines": [
+				{
+					"text": "*snorts disapprovingly*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_light_elemental_1",
+			"pool": "enemy_taunt.light_elemental",
+			"lines": [
+				{
+					"text": "Burn bright. Burn out."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_light_elemental_2",
+			"pool": "enemy_taunt.light_elemental",
+			"lines": [
+				{
+					"text": "I am the light. You are the shadow it eats."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_angel_1",
+			"pool": "enemy_taunt.angel",
+			"lines": [
+				{
+					"text": "Fall, fallen one."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_angel_2",
+			"pool": "enemy_taunt.angel",
+			"lines": [
+				{
+					"text": "The light finds you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_angel_3",
+			"pool": "enemy_taunt.angel",
+			"lines": [
+				{
+					"text": "For the Throne!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_angel_4",
+			"pool": "enemy_taunt.angel",
+			"lines": [
+				{
+					"text": "You do not belong in the light."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_order_1",
+			"pool": "enemy_taunt.order",
+			"lines": [
+				{
+					"text": "For the Order!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_order_2",
+			"pool": "enemy_taunt.order",
+			"lines": [
+				{
+					"text": "Faith and fire!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_order_3",
+			"pool": "enemy_taunt.order",
+			"lines": [
+				{
+					"text": "Steel your hearts!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_1",
+			"pool": "enemy_taunt.mortal",
+			"lines": [
+				{
+					"text": "Help! Somebody help!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_2",
+			"pool": "enemy_taunt.mortal",
+			"lines": [
+				{
+					"text": "It's real! The devil's real!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_3",
+			"pool": "enemy_taunt.mortal",
+			"lines": [
+				{
+					"text": "Run!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_beast_1",
+			"pool": "enemy_taunt.beast",
+			"lines": [
+				{
+					"text": "*a holy snarl*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_beast_2",
+			"pool": "enemy_taunt.beast",
+			"lines": [
+				{
+					"text": "*it paws the ground, radiant and furious*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_construct_1",
+			"pool": "enemy_taunt.construct",
+			"lines": [
+				{
+					"text": "*the stone groans a hymn*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_elemental_1",
+			"pool": "enemy_taunt.elemental",
+			"lines": [
+				{
+					"text": "*a hum of searing light*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_paladin_1",
+			"pool": "enemy_death.paladin",
+			"lines": [
+				{
+					"text": "My oath... unbroken..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_paladin_2",
+			"pool": "enemy_death.paladin",
+			"lines": [
+				{
+					"text": "Light... take me..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_paladin_3",
+			"pool": "enemy_death.paladin",
+			"lines": [
+				{
+					"text": "Tell the Order... I held..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_holy_knight_1",
+			"pool": "enemy_death.holy_knight",
+			"lines": [
+				{
+					"text": "Forgive me, Dawn..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_holy_knight_2",
+			"pool": "enemy_death.holy_knight",
+			"lines": [
+				{
+					"text": "Not like this..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_inquisitor_1",
+			"pool": "enemy_death.inquisitor",
+			"lines": [
+				{
+					"text": "I... confess..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_inquisitor_2",
+			"pool": "enemy_death.inquisitor",
+			"lines": [
+				{
+					"text": "The fire was... supposed to be... for you..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_inquisitor_3",
+			"pool": "enemy_death.inquisitor",
+			"lines": [
+				{
+					"text": "Is this... what they felt?"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_zealot_1",
+			"pool": "enemy_death.zealot",
+			"lines": [
+				{
+					"text": "Glory... glory..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_zealot_2",
+			"pool": "enemy_death.zealot",
+			"lines": [
+				{
+					"text": "I was promised paradise!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_censer_nun_1",
+			"pool": "enemy_death.censer_nun",
+			"lines": [
+				{
+					"text": "The smoke... clears..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_torch_1",
+			"pool": "enemy_death.villager_torch",
+			"lines": [
+				{
+					"text": "AAAAAH!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_torch_2",
+			"pool": "enemy_death.villager_torch",
+			"lines": [
+				{
+					"text": "Mother!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_torch_3",
+			"pool": "enemy_death.villager_torch",
+			"lines": [
+				{
+					"text": "Not my face! Not my face!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_torch_4",
+			"pool": "enemy_death.villager_torch",
+			"lines": [
+				{
+					"text": "I only came for the bonfire!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_pitchfork_1",
+			"pool": "enemy_death.villager_pitchfork",
+			"lines": [
+				{
+					"text": "AAAAH!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_pitchfork_2",
+			"pool": "enemy_death.villager_pitchfork",
+			"lines": [
+				{
+					"text": "I want to go home!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_pitchfork_3",
+			"pool": "enemy_death.villager_pitchfork",
+			"lines": [
+				{
+					"text": "The priest lied!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_villager_pitchfork_4",
+			"pool": "enemy_death.villager_pitchfork",
+			"lines": [
+				{
+					"text": "Tell my pigs I loved them!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_seraph_1",
+			"pool": "enemy_death.seraph",
+			"lines": [
+				{
+					"text": "The choir... falls silent..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_seraph_2",
+			"pool": "enemy_death.seraph",
+			"lines": [
+				{
+					"text": "Was there... ever... an answer...?"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_cherub_1",
+			"pool": "enemy_death.cherub",
+			"lines": [
+				{
+					"text": "Waaaah!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_cherub_2",
+			"pool": "enemy_death.cherub",
+			"lines": [
+				{
+					"text": "Not fair!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_archangel_1",
+			"pool": "enemy_death.archangel",
+			"lines": [
+				{
+					"text": "Impossible..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_archangel_2",
+			"pool": "enemy_death.archangel",
+			"lines": [
+				{
+					"text": "The Gate... remember the Gate..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_saint_statue_1",
+			"pool": "enemy_death.saint_statue",
+			"lines": [
+				{
+					"text": "...CRACK..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_saint_statue_2",
+			"pool": "enemy_death.saint_statue",
+			"lines": [
+				{
+					"text": "...AMEN..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_angel_1",
+			"pool": "enemy_death.angel",
+			"lines": [
+				{
+					"text": "The light... fades..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_angel_2",
+			"pool": "enemy_death.angel",
+			"lines": [
+				{
+					"text": "Throne... why..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_angel_3",
+			"pool": "enemy_death.angel",
+			"lines": [
+				{
+					"text": "I see... nothing..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_order_1",
+			"pool": "enemy_death.order",
+			"lines": [
+				{
+					"text": "The Order... endures..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_order_2",
+			"pool": "enemy_death.order",
+			"lines": [
+				{
+					"text": "Avenge me..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mortal_1",
+			"pool": "enemy_death.mortal",
+			"lines": [
+				{
+					"text": "AAAH!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mortal_2",
+			"pool": "enemy_death.mortal",
+			"lines": [
+				{
+					"text": "No, no, no!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mortal_3",
+			"pool": "enemy_death.mortal",
+			"lines": [
+				{
+					"text": "Help!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_gargoyle_1",
+			"pool": "enemy_taunt.bell_gargoyle",
+			"lines": [
+				{
+					"text": "*BONG*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_gargoyle_2",
+			"pool": "enemy_taunt.bell_gargoyle",
+			"lines": [
+				{
+					"text": "*the gargoyle tolls your name*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_gargoyle_3",
+			"pool": "enemy_taunt.bell_gargoyle",
+			"lines": [
+				{
+					"text": "*stone wings grind, a bell rings inside its chest*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cherubim_1",
+			"pool": "enemy_taunt.cherubim",
+			"lines": [
+				{
+					"text": "Four faces, all of them judging you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cherubim_2",
+			"pool": "enemy_taunt.cherubim",
+			"lines": [
+				{
+					"text": "We guard the way to the Tree. You are not on the list."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_choir_wraith_1",
+			"pool": "enemy_taunt.choir_wraith",
+			"lines": [
+				{
+					"text": "Sing with us... sing..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_choir_wraith_2",
+			"pool": "enemy_taunt.choir_wraith",
+			"lines": [
+				{
+					"text": "The hymn never ends. Neither do we."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_choir_wraith_3",
+			"pool": "enemy_taunt.choir_wraith",
+			"lines": [
+				{
+					"text": "Laaaaaa..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_clockwork_cherub_1",
+			"pool": "enemy_taunt.clockwork_cherub",
+			"lines": [
+				{
+					"text": "*tick* Holy. *tick* Holy. *tick* Holy."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_clockwork_cherub_2",
+			"pool": "enemy_taunt.clockwork_cherub",
+			"lines": [
+				{
+					"text": "*a brass hymn grinds out of its belly*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_clockwork_cherub_3",
+			"pool": "enemy_taunt.clockwork_cherub",
+			"lines": [
+				{
+					"text": "Wind me up and watch me smite!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dryad_priestess_1",
+			"pool": "enemy_taunt.dryad_priestess",
+			"lines": [
+				{
+					"text": "The garden remembers its gardeners."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dryad_priestess_2",
+			"pool": "enemy_taunt.dryad_priestess",
+			"lines": [
+				{
+					"text": "Root and branch, I bind you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dryad_priestess_3",
+			"pool": "enemy_taunt.dryad_priestess",
+			"lines": [
+				{
+					"text": "Every flower here is a prayer. Trample them and see."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_exorcist_1",
+			"pool": "enemy_taunt.exorcist",
+			"lines": [
+				{
+					"text": "Out, spirit! Out of this world!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_exorcist_2",
+			"pool": "enemy_taunt.exorcist",
+			"lines": [
+				{
+					"text": "By the bell, the book and the candle!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_exorcist_3",
+			"pool": "enemy_taunt.exorcist",
+			"lines": [
+				{
+					"text": "I have cast out worse than you. Well. Smaller than you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_frost_hermit_1",
+			"pool": "enemy_taunt.frost_hermit",
+			"lines": [
+				{
+					"text": "Forty winters of silence, and now YOU."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_frost_hermit_2",
+			"pool": "enemy_taunt.frost_hermit",
+			"lines": [
+				{
+					"text": "The cold purifies."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_frost_hermit_3",
+			"pool": "enemy_taunt.frost_hermit",
+			"lines": [
+				{
+					"text": "Breathe the frost, demon. It is the breath of Heaven."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_light_wyrm_1",
+			"pool": "enemy_taunt.light_wyrm",
+			"lines": [
+				{
+					"text": "*a hiss like a hot coal in snow*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_light_wyrm_2",
+			"pool": "enemy_taunt.light_wyrm",
+			"lines": [
+				{
+					"text": "*it coils, bright as noon*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_martyr_1",
+			"pool": "enemy_taunt.martyr",
+			"lines": [
+				{
+					"text": "Strike me! My death will be sung!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_martyr_2",
+			"pool": "enemy_taunt.martyr",
+			"lines": [
+				{
+					"text": "I die for the Throne! Gladly!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_martyr_3",
+			"pool": "enemy_taunt.martyr",
+			"lines": [
+				{
+					"text": "Make me a saint, demon. I dare you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_martyr_shade_1",
+			"pool": "enemy_taunt.martyr_shade",
+			"lines": [
+				{
+					"text": "I died for this... I died..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_martyr_shade_2",
+			"pool": "enemy_taunt.martyr_shade",
+			"lines": [
+				{
+					"text": "Was it worth it? Tell me it was worth it..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mobile_reliquary_1",
+			"pool": "enemy_taunt.mobile_reliquary",
+			"lines": [
+				{
+					"text": "*the reliquary creaks forward on its wheels*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mobile_reliquary_2",
+			"pool": "enemy_taunt.mobile_reliquary",
+			"lines": [
+				{
+					"text": "Bear the relic! Bear it forward!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mobile_reliquary_3",
+			"pool": "enemy_taunt.mobile_reliquary",
+			"lines": [
+				{
+					"text": "The bones of Saint Aurel go to war!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_ophan_1",
+			"pool": "enemy_taunt.ophan",
+			"lines": [
+				{
+					"text": "We are the wheels. We turn."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_ophan_2",
+			"pool": "enemy_taunt.ophan",
+			"lines": [
+				{
+					"text": "Eyes. Eyes. Eyes upon you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_plague_doctor_1",
+			"pool": "enemy_taunt.plague_doctor",
+			"lines": [
+				{
+					"text": "Your sickness is sin. I have the cure."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_plague_doctor_2",
+			"pool": "enemy_taunt.plague_doctor",
+			"lines": [
+				{
+					"text": "Hold still. This will burn."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_plague_doctor_3",
+			"pool": "enemy_taunt.plague_doctor",
+			"lines": [
+				{
+					"text": "Breathe through the beak, brothers. It reeks of hell."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_templar_ballista_1",
+			"pool": "enemy_taunt.templar_ballista",
+			"lines": [
+				{
+					"text": "Load! Aim! Loose!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_templar_ballista_2",
+			"pool": "enemy_taunt.templar_ballista",
+			"lines": [
+				{
+					"text": "Bolt for the beast! Wind it!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_templar_ballista_3",
+			"pool": "enemy_taunt.templar_ballista",
+			"lines": [
+				{
+					"text": "For the Order, crank faster!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_witch_hunter_captain_1",
+			"pool": "enemy_taunt.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "There it is, lads. Silver and fire."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_witch_hunter_captain_2",
+			"pool": "enemy_taunt.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "I hanged a hundred witches. A demon is just a bigger witch."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_witch_hunter_captain_3",
+			"pool": "enemy_taunt.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "Form up! Nets! Torches!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_witch_hunter_captain_4",
+			"pool": "enemy_taunt.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "I know your kind. I know your tricks."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_bell_gargoyle_1",
+			"pool": "enemy_death.bell_gargoyle",
+			"lines": [
+				{
+					"text": "*the bell cracks mid-toll*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_choir_wraith_1",
+			"pool": "enemy_death.choir_wraith",
+			"lines": [
+				{
+					"text": "The hymn... ends..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_clockwork_cherub_1",
+			"pool": "enemy_death.clockwork_cherub",
+			"lines": [
+				{
+					"text": "*sproing*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_clockwork_cherub_2",
+			"pool": "enemy_death.clockwork_cherub",
+			"lines": [
+				{
+					"text": "*tick... tick... ...*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_dryad_priestess_1",
+			"pool": "enemy_death.dryad_priestess",
+			"lines": [
+				{
+					"text": "The garden... withers..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_exorcist_1",
+			"pool": "enemy_death.exorcist",
+			"lines": [
+				{
+					"text": "The rite... failed..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_frost_hermit_1",
+			"pool": "enemy_death.frost_hermit",
+			"lines": [
+				{
+					"text": "Warm... at last..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_martyr_1",
+			"pool": "enemy_death.martyr",
+			"lines": [
+				{
+					"text": "Remember... me...!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_martyr_2",
+			"pool": "enemy_death.martyr",
+			"lines": [
+				{
+					"text": "Glory! ...glory?"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_martyr_shade_1",
+			"pool": "enemy_death.martyr_shade",
+			"lines": [
+				{
+					"text": "Again? Not again..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_plague_doctor_1",
+			"pool": "enemy_death.plague_doctor",
+			"lines": [
+				{
+					"text": "No cure... for this..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_witch_hunter_captain_1",
+			"pool": "enemy_death.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "Should have... stuck to witches..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_witch_hunter_captain_2",
+			"pool": "enemy_death.witch_hunter_captain",
+			"lines": [
+				{
+					"text": "Lads... run..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mounted_knight_1",
+			"pool": "enemy_taunt.mounted_knight",
+			"lines": [
+				{
+					"text": "Make way! Make WAY!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mounted_knight_2",
+			"pool": "enemy_taunt.mounted_knight",
+			"lines": [
+				{
+					"text": "Lance down, for the Dawn!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mounted_knight_3",
+			"pool": "enemy_taunt.mounted_knight",
+			"lines": [
+				{
+					"text": "Ride it down, brothers!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crossbow_militia_1",
+			"pool": "enemy_taunt.crossbow_militia",
+			"lines": [
+				{
+					"text": "Loose! Loose! Loose!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crossbow_militia_2",
+			"pool": "enemy_taunt.crossbow_militia",
+			"lines": [
+				{
+					"text": "Reload, Tam! RELOAD!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crossbow_militia_3",
+			"pool": "enemy_taunt.crossbow_militia",
+			"lines": [
+				{
+					"text": "Three bolts, one devil. Good odds."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crossbow_militia_4",
+			"pool": "enemy_taunt.crossbow_militia",
+			"lines": [
+				{
+					"text": "Is it dead? Shoot it again!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_flagellant_1",
+			"pool": "enemy_taunt.flagellant",
+			"lines": [
+				{
+					"text": "Pain is prayer! PAIN IS PRAYER!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_flagellant_2",
+			"pool": "enemy_taunt.flagellant",
+			"lines": [
+				{
+					"text": "Every lash brings me closer!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_flagellant_3",
+			"pool": "enemy_taunt.flagellant",
+			"lines": [
+				{
+					"text": "Bleed with me, demon! Bleed!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_water_friar_1",
+			"pool": "enemy_taunt.holy_water_friar",
+			"lines": [
+				{
+					"text": "Blessed water, cursed beast!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_water_friar_2",
+			"pool": "enemy_taunt.holy_water_friar",
+			"lines": [
+				{
+					"text": "Have a drink, devil! On the house!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_holy_water_friar_3",
+			"pool": "enemy_taunt.holy_water_friar",
+			"lines": [
+				{
+					"text": "Brother Anselm's finest. Scalding!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_choir_1",
+			"pool": "enemy_taunt.mortal_choir",
+			"lines": [
+				{
+					"text": "Glo-o-ria! Glo-o-o-ria!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_choir_2",
+			"pool": "enemy_taunt.mortal_choir",
+			"lines": [
+				{
+					"text": "Sing, sisters! The angels need us!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mortal_choir_3",
+			"pool": "enemy_taunt.mortal_choir",
+			"lines": [
+				{
+					"text": "Hallelujah! Hallelujah! Hallelu... is it looking at us?"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dominion_1",
+			"pool": "enemy_taunt.dominion",
+			"lines": [
+				{
+					"text": "The wall holds."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dominion_2",
+			"pool": "enemy_taunt.dominion",
+			"lines": [
+				{
+					"text": "Behind my shields, the Host is safe."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_dominion_3",
+			"pool": "enemy_taunt.dominion",
+			"lines": [
+				{
+					"text": "Dominion over all that moves."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_virtue_1",
+			"pool": "enemy_taunt.virtue",
+			"lines": [
+				{
+					"text": "What was broken is unbroken."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_virtue_2",
+			"pool": "enemy_taunt.virtue",
+			"lines": [
+				{
+					"text": "A miracle, small and certain."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_virtue_3",
+			"pool": "enemy_taunt.virtue",
+			"lines": [
+				{
+					"text": "Rise, brothers. Rise again."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_power_1",
+			"pool": "enemy_taunt.power",
+			"lines": [
+				{
+					"text": "Your servants are mine to dismiss."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_power_2",
+			"pool": "enemy_taunt.power",
+			"lines": [
+				{
+					"text": "No demon walks with a retinue in my sight."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_power_3",
+			"pool": "enemy_taunt.power",
+			"lines": [
+				{
+					"text": "Begone, little horrors."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gryphon_rider_1",
+			"pool": "enemy_taunt.gryphon_rider",
+			"lines": [
+				{
+					"text": "From the sky! For the Throne!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gryphon_rider_2",
+			"pool": "enemy_taunt.gryphon_rider",
+			"lines": [
+				{
+					"text": "Dive! DIVE!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gryphon_rider_3",
+			"pool": "enemy_taunt.gryphon_rider",
+			"lines": [
+				{
+					"text": "Hold on, girl! Here we go!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_herald_trumpeter_1",
+			"pool": "enemy_taunt.herald_trumpeter",
+			"lines": [
+				{
+					"text": "*blows a long, golden note*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_herald_trumpeter_2",
+			"pool": "enemy_taunt.herald_trumpeter",
+			"lines": [
+				{
+					"text": "Hear the Last Trump! Cherubs, to me!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_herald_trumpeter_3",
+			"pool": "enemy_taunt.herald_trumpeter",
+			"lines": [
+				{
+					"text": "The trumpet sounds! The Host answers!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paschal_lamb_1",
+			"pool": "enemy_taunt.paschal_lamb",
+			"lines": [
+				{
+					"text": "Baa."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paschal_lamb_2",
+			"pool": "enemy_taunt.paschal_lamb",
+			"lines": [
+				{
+					"text": "*it looks at you with enormous, forgiving eyes*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_paschal_lamb_3",
+			"pool": "enemy_taunt.paschal_lamb",
+			"lines": [
+				{
+					"text": "Baaa?"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mounted_knight_1",
+			"pool": "enemy_death.mounted_knight",
+			"lines": [
+				{
+					"text": "My horse... save my horse..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_crossbow_militia_1",
+			"pool": "enemy_death.crossbow_militia",
+			"lines": [
+				{
+					"text": "Tam! TAM!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_crossbow_militia_2",
+			"pool": "enemy_death.crossbow_militia",
+			"lines": [
+				{
+					"text": "I only joined for the bread!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_flagellant_1",
+			"pool": "enemy_death.flagellant",
+			"lines": [
+				{
+					"text": "Yes... YES... finally..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_flagellant_2",
+			"pool": "enemy_death.flagellant",
+			"lines": [
+				{
+					"text": "Not enough... pain..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_holy_water_friar_1",
+			"pool": "enemy_death.holy_water_friar",
+			"lines": [
+				{
+					"text": "Spilled... all of it..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mortal_choir_1",
+			"pool": "enemy_death.mortal_choir",
+			"lines": [
+				{
+					"text": "Hallelu... ..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mortal_choir_2",
+			"pool": "enemy_death.mortal_choir",
+			"lines": [
+				{
+					"text": "The song... ended..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_dominion_1",
+			"pool": "enemy_death.dominion",
+			"lines": [
+				{
+					"text": "The wall... breaks..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_virtue_1",
+			"pool": "enemy_death.virtue",
+			"lines": [
+				{
+					"text": "No miracle... for me..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_power_1",
+			"pool": "enemy_death.power",
+			"lines": [
+				{
+					"text": "Dismissed..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_gryphon_rider_1",
+			"pool": "enemy_death.gryphon_rider",
+			"lines": [
+				{
+					"text": "Fly, girl... fly home..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_herald_trumpeter_1",
+			"pool": "enemy_death.herald_trumpeter",
+			"lines": [
+				{
+					"text": "*a sad, flat note*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_paschal_lamb_1",
+			"pool": "enemy_death.paschal_lamb",
+			"lines": [
+				{
+					"text": "Baa... ..."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_paschal_lamb_2",
+			"pool": "enemy_death.paschal_lamb",
+			"lines": [
+				{
+					"text": "*the Host sighs with relief as its light washes over them*"
+				}
+			]
+		},
+		{
+			"id": "whale_first",
+			"pool": "celestial_whale",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"text": "Something vast and gentle swims through the sky above you, made of light, raining judgement as idly as a whale breathes."
+				}
+			]
+		},
+		{
+			"id": "whale_1",
+			"pool": "celestial_whale",
+			"lines": [
+				{
+					"who": "player",
+					"text": "A whale. Heaven has whales. Of course it does."
+				}
+			]
+		},
+		{
+			"id": "whale_2",
+			"pool": "celestial_whale",
+			"lines": [
+				{
+					"text": "The Celestial Leviathan passes overhead. It does not hate you. It does not notice you at all. Move."
+				}
+			]
+		},
+		{
+			"id": "whale_3",
+			"pool": "celestial_whale",
+			"lines": [
+				{
+					"who": "player",
+					"text": "If I could reach it, I would ride it into the Silver City."
+				}
+			]
+		},
+		{
+			"id": "whale_vharok",
+			"pool": "celestial_whale",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "COME DOWN HERE, FISH!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_icebound_penitent_1",
+			"pool": "enemy_taunt.icebound_penitent",
+			"lines": [
+				{
+					"text": "...cold... so cold... forgive..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_icebound_penitent_2",
+			"pool": "enemy_taunt.icebound_penitent",
+			"lines": [
+				{
+					"text": "*ice cracks as it lurches forward*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_icebound_penitent_1",
+			"pool": "enemy_death.icebound_penitent",
+			"lines": [
+				{
+					"text": "*it shatters into a spray of frozen shards*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_ringer_monk_1",
+			"pool": "enemy_taunt.bell_ringer_monk",
+			"lines": [
+				{
+					"text": "*DONG*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_ringer_monk_2",
+			"pool": "enemy_taunt.bell_ringer_monk",
+			"lines": [
+				{
+					"text": "Hear the vespers bell, devil!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_bell_ringer_monk_3",
+			"pool": "enemy_taunt.bell_ringer_monk",
+			"lines": [
+				{
+					"text": "Every toll a prayer. Every prayer a wall."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_bell_ringer_monk_1",
+			"pool": "enemy_death.bell_ringer_monk",
+			"lines": [
+				{
+					"text": "The bell... rings on... without me..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_watch_pikeman_1",
+			"pool": "enemy_taunt.watch_pikeman",
+			"lines": [
+				{
+					"text": "Halt! In the name of the Watch!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_watch_pikeman_2",
+			"pool": "enemy_taunt.watch_pikeman",
+			"lines": [
+				{
+					"text": "Keep your distance, beast! That is what the pike is for!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_watch_pikeman_3",
+			"pool": "enemy_taunt.watch_pikeman",
+			"lines": [
+				{
+					"text": "Hold the street!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_watch_pikeman_1",
+			"pool": "enemy_death.watch_pikeman",
+			"lines": [
+				{
+					"text": "I was... off duty in an hour..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rooftop_archer_1",
+			"pool": "enemy_taunt.rooftop_archer",
+			"lines": [
+				{
+					"text": "Got the high ground, devil!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rooftop_archer_2",
+			"pool": "enemy_taunt.rooftop_archer",
+			"lines": [
+				{
+					"text": "Loose from the rooftops!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rooftop_archer_3",
+			"pool": "enemy_taunt.rooftop_archer",
+			"lines": [
+				{
+					"text": "Can't reach me up here, can you?"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_rooftop_archer_1",
+			"pool": "enemy_death.rooftop_archer",
+			"lines": [
+				{
+					"text": "The roof... I fell off the roof..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_thorn_guardian_1",
+			"pool": "enemy_taunt.thorn_guardian",
+			"lines": [
+				{
+					"text": "*branches creak in a knightly salute*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_thorn_guardian_2",
+			"pool": "enemy_taunt.thorn_guardian",
+			"lines": [
+				{
+					"text": "*the topiary knight bristles with thorns*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_thorn_guardian_1",
+			"pool": "enemy_death.thorn_guardian",
+			"lines": [
+				{
+					"text": "*it collapses into clippings*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_hummingbird_cherub_1",
+			"pool": "enemy_taunt.hummingbird_cherub",
+			"lines": [
+				{
+					"text": "Bzz-bzz! Holy-holy!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_hummingbird_cherub_2",
+			"pool": "enemy_taunt.hummingbird_cherub",
+			"lines": [
+				{
+					"text": "*a blur of tiny, furious wings*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_hummingbird_cherub_3",
+			"pool": "enemy_taunt.hummingbird_cherub",
+			"lines": [
+				{
+					"text": "Catch us! Catch us!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_hummingbird_cherub_1",
+			"pool": "enemy_death.hummingbird_cherub",
+			"lines": [
+				{
+					"text": "Eep!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_sun_priest_1",
+			"pool": "enemy_taunt.sun_priest",
+			"lines": [
+				{
+					"text": "Behold the noon!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_sun_priest_2",
+			"pool": "enemy_taunt.sun_priest",
+			"lines": [
+				{
+					"text": "The mirror catches the sun. The sun catches you."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_sun_priest_3",
+			"pool": "enemy_taunt.sun_priest",
+			"lines": [
+				{
+					"text": "Stand in the light, demon. It is the last place you will stand."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_sun_priest_1",
+			"pool": "enemy_death.sun_priest",
+			"lines": [
+				{
+					"text": "Night... falls..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_golden_legionary_1",
+			"pool": "enemy_taunt.golden_legionary",
+			"lines": [
+				{
+					"text": "Shields up! The wall holds!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_golden_legionary_2",
+			"pool": "enemy_taunt.golden_legionary",
+			"lines": [
+				{
+					"text": "Face me, demon! Face my shield!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_golden_legionary_3",
+			"pool": "enemy_taunt.golden_legionary",
+			"lines": [
+				{
+					"text": "No one gets past the Legion."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_golden_legionary_1",
+			"pool": "enemy_death.golden_legionary",
+			"lines": [
+				{
+					"text": "The wall... breaks..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crusader_revenant_1",
+			"pool": "enemy_taunt.crusader_revenant",
+			"lines": [
+				{
+					"text": "Again! I rise again!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crusader_revenant_2",
+			"pool": "enemy_taunt.crusader_revenant",
+			"lines": [
+				{
+					"text": "Death cannot end the Crusade!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_crusader_revenant_3",
+			"pool": "enemy_taunt.crusader_revenant",
+			"lines": [
+				{
+					"text": "From the ashes, for the Throne!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_crusader_revenant_1",
+			"pool": "enemy_death.crusader_revenant",
+			"lines": [
+				{
+					"text": "Not... yet..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_carrion_angel_1",
+			"pool": "enemy_taunt.carrion_angel",
+			"lines": [
+				{
+					"text": "*it tilts its head at the dead, hungry*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_carrion_angel_2",
+			"pool": "enemy_taunt.carrion_angel",
+			"lines": [
+				{
+					"text": "Death feeds me. You feed me."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_carrion_angel_3",
+			"pool": "enemy_taunt.carrion_angel",
+			"lines": [
+				{
+					"text": "So much to eat here."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_carrion_angel_1",
+			"pool": "enemy_death.carrion_angel",
+			"lines": [
+				{
+					"text": "*it falls into the carrion it fed on*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rod_acolyte_1",
+			"pool": "enemy_taunt.rod_acolyte",
+			"lines": [
+				{
+					"text": "Strike, heavens! Strike HERE!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rod_acolyte_2",
+			"pool": "enemy_taunt.rod_acolyte",
+			"lines": [
+				{
+					"text": "The rod calls. The sky answers."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_rod_acolyte_3",
+			"pool": "enemy_taunt.rod_acolyte",
+			"lines": [
+				{
+					"text": "Stand still. Lightning prefers it."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_rod_acolyte_1",
+			"pool": "enemy_death.rod_acolyte",
+			"lines": [
+				{
+					"text": "The rod... grounded..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cloud_djinn_1",
+			"pool": "enemy_taunt.cloud_djinn",
+			"lines": [
+				{
+					"text": "*a gust that laughs*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cloud_djinn_2",
+			"pool": "enemy_taunt.cloud_djinn",
+			"lines": [
+				{
+					"text": "Behind you! No, behind you!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_cloud_djinn_3",
+			"pool": "enemy_taunt.cloud_djinn",
+			"lines": [
+				{
+					"text": "We are the storm's breath."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_cloud_djinn_1",
+			"pool": "enemy_death.cloud_djinn",
+			"lines": [
+				{
+					"text": "*it disperses like a passing squall*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mimic_reliquary_1",
+			"pool": "enemy_taunt.mimic_reliquary",
+			"lines": [
+				{
+					"text": "*the treasure chest opens its golden lid... and its teeth*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mimic_reliquary_2",
+			"pool": "enemy_taunt.mimic_reliquary",
+			"lines": [
+				{
+					"text": "Greedy little demon! Come closer!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_mimic_reliquary_3",
+			"pool": "enemy_taunt.mimic_reliquary",
+			"lines": [
+				{
+					"text": "Gold! Free gold! Hee!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_mimic_reliquary_1",
+			"pool": "enemy_death.mimic_reliquary",
+			"lines": [
+				{
+					"text": "*the lid slams shut forever*"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gilded_harpy_1",
+			"pool": "enemy_taunt.gilded_harpy",
+			"lines": [
+				{
+					"text": "Shiny! Mine!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gilded_harpy_2",
+			"pool": "enemy_taunt.gilded_harpy",
+			"lines": [
+				{
+					"text": "Pay the toll, pay the toll!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gilded_harpy_3",
+			"pool": "enemy_taunt.gilded_harpy",
+			"lines": [
+				{
+					"text": "*a shriek of golden feathers*"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_gilded_harpy_1",
+			"pool": "enemy_death.gilded_harpy",
+			"lines": [
+				{
+					"text": "My shinies..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gate_warden_1",
+			"pool": "enemy_taunt.gate_warden",
+			"lines": [
+				{
+					"text": "None pass the Seventh Gate."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gate_warden_2",
+			"pool": "enemy_taunt.gate_warden",
+			"lines": [
+				{
+					"text": "The mirror shows your sin. All of it."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_gate_warden_3",
+			"pool": "enemy_taunt.gate_warden",
+			"lines": [
+				{
+					"text": "Stand. Be judged. Fall."
+				}
+			]
+		},
+		{
+			"id": "enemy_death_gate_warden_1",
+			"pool": "enemy_death.gate_warden",
+			"lines": [
+				{
+					"text": "The mirror... cracks..."
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_honour_guard_1",
+			"pool": "enemy_taunt.honour_guard",
+			"lines": [
+				{
+					"text": "Salute! Then strike!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_honour_guard_2",
+			"pool": "enemy_taunt.honour_guard",
+			"lines": [
+				{
+					"text": "For the Gate, brother!"
+				}
+			]
+		},
+		{
+			"id": "enemy_taunt_honour_guard_3",
+			"pool": "enemy_taunt.honour_guard",
+			"lines": [
+				{
+					"text": "Together! Always together!"
+				}
+			]
+		},
+		{
+			"id": "enemy_death_honour_guard_1",
+			"pool": "enemy_death.honour_guard",
+			"lines": [
+				{
+					"text": "Brother... I..."
+				}
+			]
+		}
+	]
+}

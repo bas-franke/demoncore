@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://tools/vfx_test.gd" id="1_test"]
+[ext_resource type="PackedScene" path="res://scenes/main.tscn" id="2_main"]
+[ext_resource type="Script" path="res://scenes/vfx/combat_vfx.gd" id="3_vfx"]
+
+[node name="VfxTest" type="Node3D"]
+script = ExtResource("1_test")
+
+[node name="Main" parent="." instance=ExtResource("2_main")]
+
+[node name="CombatVFX" type="Node3D" parent="."]
+script = ExtResource("3_vfx")

@@ -1,0 +1,675 @@
+{
+ "_doc": "Synergies unlock when the player's owned abilities (and weapons, via weapon_tags) carry at least the listed count of each tag. Bespoke effects are code keyed by id (autoload/abilities.gd etc.); data-driven ones use hit_status {tags_any, status}, hit_amp {tags_any, amount, vs_status?, vs_elite?}, on_hit / on_kill {tags_any, effects}. tags_any empty = every ability hit.",
+ "synergies": [
+  {
+   "id": "explosive_miasma",
+   "name": "Explosive Miasma",
+   "requires": {
+    "fire": 1,
+    "plague": 1
+   },
+   "color": "#c0e040",
+   "icon": "✸",
+   "desc": "Foes both Burning and Plagued explode on death, spreading fire and plague.",
+   "params": {
+    "radius": 2.6,
+    "damage": 14,
+    "burn": 2,
+    "plague": 2
+   }
+  },
+  {
+   "id": "firestorm",
+   "name": "Firestorm",
+   "requires": {
+    "fire": 1,
+    "storm": 1
+   },
+   "color": "#ff6040",
+   "icon": "ϟ",
+   "desc": "Lightning ignites what it strikes. Burning foes take +30% storm damage.",
+   "params": {
+    "burn": 1,
+    "amp": 0.3
+   }
+  },
+  {
+   "id": "sanguine_legion",
+   "name": "Sanguine Legion",
+   "requires": {
+    "blood": 1,
+    "necro": 1
+   },
+   "color": "#d02040",
+   "icon": "☥",
+   "desc": "Your summons deal +40% damage and every kill they make heals you 1 HP.",
+   "params": {
+    "amp": 0.4,
+    "heal": 1.0
+   }
+  },
+  {
+   "id": "assassins_mark",
+   "name": "Assassin's Mark",
+   "requires": {
+    "shadow": 1,
+    "curse": 1
+   },
+   "color": "#9050ff",
+   "icon": "⌖",
+   "desc": "Hits against Cursed foes have +25% chance to critically strike for double damage.",
+   "params": {
+    "crit": 0.25,
+    "mult": 2.0
+   }
+  },
+  {
+   "id": "magma_forge",
+   "name": "Magma Forge",
+   "requires": {
+    "fire": 1,
+    "brute": 1
+   },
+   "color": "#ff8020",
+   "icon": "Ѧ",
+   "desc": "Brute abilities leave pools of magma where they land.",
+   "params": {
+    "radius": 1.6,
+    "duration": 2.5,
+    "damage": 0.12
+   }
+  },
+  {
+   "id": "soul_cage",
+   "name": "Soul Cage",
+   "requires": {
+    "soul": 1,
+    "necro": 1
+   },
+   "color": "#ff4070",
+   "icon": "♅",
+   "desc": "Kills grant an extra Soul. Summons grow 0.3% stronger per Soul held.",
+   "params": {
+    "souls": 1,
+    "amp_per_soul": 0.003
+   }
+  },
+  {
+   "id": "contagion",
+   "name": "Contagion",
+   "requires": {
+    "plague": 1,
+    "curse": 1
+   },
+   "color": "#80c040",
+   "icon": "⊕",
+   "desc": "Plague ticks also Curse. Plague spreads to 2 more foes on death.",
+   "params": {
+    "spread": 2
+   }
+  },
+  {
+   "id": "conductive_chains",
+   "name": "Conductive Chains",
+   "requires": {
+    "chain": 1,
+    "storm": 1
+   },
+   "color": "#e0a0ff",
+   "icon": "§",
+   "desc": "Lightning jumps +2 times and briefly Binds. Bound foes take +25% storm damage.",
+   "params": {
+    "jumps": 2,
+    "amp": 0.25
+   }
+  },
+  {
+   "id": "boiling_blood",
+   "name": "Boiling Blood",
+   "requires": {
+    "blood": 1,
+    "fire": 1
+   },
+   "color": "#ff3020",
+   "icon": "Ѳ",
+   "desc": "Whenever you spend life, a burst of hellfire erupts around you.",
+   "params": {
+    "radius": 3.0,
+    "damage_per_hp": 2.5,
+    "burn": 2
+   }
+  },
+  {
+   "id": "wrecking_ball",
+   "name": "Wrecking Ball",
+   "requires": {
+    "chain": 1,
+    "brute": 1
+   },
+   "color": "#d09040",
+   "icon": "⊗",
+   "desc": "Hooked and Bound foes take +40% damage from brute and melee attacks; hooks land with a shockwave.",
+   "params": {
+    "amp": 0.4,
+    "radius": 2.0,
+    "damage": 12
+   }
+  },
+  {
+   "id": "static_step",
+   "name": "Static Step",
+   "requires": {
+    "shadow": 1,
+    "storm": 1
+   },
+   "color": "#a080ff",
+   "icon": "⇝",
+   "desc": "Blinking or slaying a Shocked foe discharges chain lightning.",
+   "params": {
+    "damage": 10,
+    "jumps": 3
+   }
+  },
+  {
+   "id": "soul_transfusion",
+   "name": "Soul Transfusion",
+   "requires": {
+    "soul": 1,
+    "blood": 1
+   },
+   "color": "#ff2050",
+   "icon": "ϴ",
+   "desc": "Each Soul gained heals 0.5 HP. Blood abilities cost 40% less life.",
+   "params": {
+    "heal": 0.5,
+    "cost_cut": 0.4
+   }
+  },
+  {
+   "id": "plague_bearers",
+   "name": "Plague Bearers",
+   "requires": {
+    "necro": 1,
+    "plague": 1
+   },
+   "color": "#90d060",
+   "icon": "Ж",
+   "desc": "Your summons Plague what they strike and burst into a pestilent cloud when they expire.",
+   "params": {
+    "plague": 1,
+    "radius": 2.0,
+    "duration": 3.0
+   }
+  },
+  {
+   "id": "shackled_damnation",
+   "name": "Shackled Damnation",
+   "requires": {
+    "curse": 1,
+    "chain": 1
+   },
+   "color": "#c060c0",
+   "icon": "✠",
+   "desc": "Bound foes count as having 3 extra Curse stacks.",
+   "params": {
+    "curse_stacks": 3
+   }
+  },
+  {
+   "id": "hellstorm_trinity",
+   "name": "Hellstorm Trinity",
+   "requires": {
+    "fire": 2,
+    "storm": 2,
+    "shadow": 1
+   },
+   "color": "#ff2060",
+   "icon": "▲",
+   "desc": "All ability cooldowns -15%. Ability damage +15%.",
+   "params": {
+    "cooldown": 0.15,
+    "amp": 0.15
+   }
+  },
+  {
+   "id": "lord_of_the_pit",
+   "name": "Lord of the Pit",
+   "requires": {
+    "necro": 2,
+    "soul": 2
+   },
+   "color": "#ff5080",
+   "icon": "Ψ",
+   "desc": "Summon limits +2. A fallen angel sometimes rises as your thrall (8%).",
+   "params": {
+    "extra_count": 2,
+    "raise_chance": 0.08
+   }
+  },
+  {
+   "id": "crimson_pact",
+   "name": "Crimson Pact",
+   "requires": {
+    "blood": 2,
+    "curse": 1
+   },
+   "color": "#e01040",
+   "icon": "☍",
+   "desc": "Bleeding foes take damage 40% faster. You heal 0.2 HP whenever a Bleeding foe dies.",
+   "params": {
+    "bleed_amp": 0.4,
+    "heal": 0.2
+   }
+  },
+  {
+   "id": "blood_fury",
+   "name": "Blood Fury",
+   "requires": {
+    "wrath": 1,
+    "blood": 1
+   },
+   "color": "#ff2a20",
+   "icon": "Ꙩ",
+   "desc": "Life you spend on blood magic feeds your Wrath twice over.",
+   "params": {
+    "wrath_mult": 2.0
+   }
+  },
+  {
+   "id": "unstoppable",
+   "name": "Unstoppable",
+   "requires": {
+    "wrath": 1,
+    "brute": 1
+   },
+   "color": "#e05020",
+   "icon": "Δ",
+   "desc": "Each Wrath stack grants +0.06 Armor.",
+   "params": {
+    "armor_per_wrath": 0.06
+   }
+  },
+  {
+   "id": "soul_market",
+   "name": "Soul Market",
+   "requires": {
+    "greed": 1,
+    "soul": 1
+   },
+   "color": "#ffb060",
+   "icon": "¤",
+   "desc": "Greed also counts half your reaped Souls as Ichor.",
+   "params": {
+    "per_soul": 0.5
+   }
+  },
+  {
+   "id": "coin_op_hell",
+   "name": "Coin-Op Hell",
+   "requires": {
+    "greed": 1,
+    "machine": 1
+   },
+   "color": "#ffc040",
+   "icon": "⊤",
+   "desc": "Kills by machines spill Ichor (25%). Machines hit Gilded foes 20% harder.",
+   "on_kill": {
+    "tags_any": [
+     "machine"
+    ],
+    "effects": [
+     {
+      "do": "ichor",
+      "amount": 1,
+      "chance": 0.25
+     }
+    ]
+   },
+   "hit_amp": {
+    "tags_any": [
+     "machine"
+    ],
+    "amount": 0.2,
+    "vs_status": "gilded"
+   }
+  },
+  {
+   "id": "stolen_thunder",
+   "name": "Stolen Thunder",
+   "requires": {
+    "envy": 1,
+    "storm": 1
+   },
+   "color": "#78c890",
+   "icon": "Ϟ",
+   "desc": "Envy hits have a 50% chance to arc lightning to 2 more foes.",
+   "on_hit": {
+    "tags_any": [
+     "envy"
+    ],
+    "effects": [
+     {
+      "do": "chain",
+      "jumps": 1,
+      "range": 4.5,
+      "damage": 0.4,
+      "chance": 0.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "covetous_curse",
+   "name": "Covetous Curse",
+   "requires": {
+    "envy": 1,
+    "curse": 1
+   },
+   "color": "#58b070",
+   "icon": "Ҩ",
+   "desc": "Envy hits lay 2 Curse stacks.",
+   "hit_status": {
+    "tags_any": [
+     "envy"
+    ],
+    "status": [
+     {
+      "id": "curse",
+      "stacks": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "regicide",
+   "name": "Regicide",
+   "requires": {
+    "pride": 1,
+    "shadow": 1
+   },
+   "color": "#f0b090",
+   "icon": "♔",
+   "desc": "Abilities deal +35% damage to elites and bosses.",
+   "hit_amp": {
+    "tags_any": [],
+    "amount": 0.35,
+    "vs_elite": true
+   }
+  },
+  {
+   "id": "sunfall",
+   "name": "Sunfall",
+   "requires": {
+    "pride": 1,
+    "fire": 1
+   },
+   "color": "#ffc070",
+   "icon": "⍒",
+   "desc": "Pride strikes leave a crater of burning ground.",
+   "on_hit": {
+    "tags_any": [
+     "pride"
+    ],
+    "effects": [
+     {
+      "do": "zone",
+      "radius": 2.4,
+      "duration": 3.0,
+      "damage": 0.1,
+      "status": [
+       {
+        "id": "burn",
+        "stacks": 2
+       }
+      ],
+      "chance": 0.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "rotten_feast",
+   "name": "Rotten Feast",
+   "requires": {
+    "gluttony": 1,
+    "plague": 1
+   },
+   "color": "#a0b040",
+   "icon": "ӂ",
+   "desc": "Anything Gluttony kills bursts in a cloud of rot (Plague).",
+   "on_kill": {
+    "tags_any": [
+     "gluttony"
+    ],
+    "effects": [
+     {
+      "do": "explode",
+      "radius": 2.2,
+      "damage": 12,
+      "flat": true,
+      "status": [
+       {
+        "id": "plague",
+        "stacks": 2
+       }
+      ],
+      "color": "#a0c040"
+     }
+    ]
+   }
+  },
+  {
+   "id": "bone_banquet",
+   "name": "Bone Banquet",
+   "requires": {
+    "gluttony": 1,
+    "necro": 1
+   },
+   "color": "#d0c0a0",
+   "icon": "Ѡ",
+   "desc": "Half of what Gluttony kills rises again as your thrall.",
+   "on_kill": {
+    "tags_any": [
+     "gluttony"
+    ],
+    "effects": [
+     {
+      "do": "raise",
+      "chance": 0.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "smoke_and_mirrors",
+   "name": "Smoke and Mirrors",
+   "requires": {
+    "illusion": 1,
+    "shadow": 1
+   },
+   "color": "#9080ff",
+   "icon": "ⵙ",
+   "desc": "Every blink leaves a mirror decoy where you stood. Illusion hits +20% damage.",
+   "hit_amp": {
+    "tags_any": [
+     "illusion"
+    ],
+    "amount": 0.2
+   }
+  },
+  {
+   "id": "false_idols",
+   "name": "False Idols",
+   "requires": {
+    "illusion": 1,
+    "curse": 1
+   },
+   "color": "#c0a0ff",
+   "icon": "▯",
+   "desc": "Illusion hits Curse twice and slow.",
+   "hit_status": {
+    "tags_any": [
+     "illusion"
+    ],
+    "status": [
+     {
+      "id": "curse",
+      "stacks": 2
+     },
+     {
+      "id": "chill",
+      "stacks": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "hellforge",
+   "name": "Hellforge",
+   "requires": {
+    "machine": 1,
+    "fire": 1
+   },
+   "color": "#ff7020",
+   "icon": "Ⓘ",
+   "desc": "Machine hits Burn twice and deal +15% damage.",
+   "hit_status": {
+    "tags_any": [
+     "machine"
+    ],
+    "status": [
+     {
+      "id": "burn",
+      "stacks": 2
+     }
+    ]
+   },
+   "hit_amp": {
+    "tags_any": [
+     "machine"
+    ],
+    "amount": 0.15
+   }
+  },
+  {
+   "id": "tripwire",
+   "name": "Tripwire",
+   "requires": {
+    "machine": 1,
+    "chain": 1
+   },
+   "color": "#c09050",
+   "icon": "⊚",
+   "desc": "Mines and traps Bind what they hit.",
+   "hit_status": {
+    "tags_any": [
+     "trap"
+    ],
+    "status": [
+     {
+      "id": "root",
+      "stacks": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "lash_of_gehenna",
+   "name": "Lash of Gehenna",
+   "requires": {
+    "whip": 1,
+    "fire": 1
+   },
+   "color": "#ff4a20",
+   "icon": "ᔕ",
+   "desc": "Whip hits Burn twice and deal +20% damage.",
+   "hit_status": {
+    "tags_any": [
+     "whip"
+    ],
+    "status": [
+     {
+      "id": "burn",
+      "stacks": 2
+     }
+    ]
+   },
+   "hit_amp": {
+    "tags_any": [
+     "whip"
+    ],
+    "amount": 0.2
+   }
+  },
+  {
+   "id": "chain_dancer",
+   "name": "Chain Dancer",
+   "requires": {
+    "whip": 1,
+    "chain": 1
+   },
+   "color": "#e09050",
+   "icon": "⥁",
+   "desc": "Whips reach 30% further and hit Bound foes 30% harder.",
+   "hit_amp": {
+    "tags_any": [
+     "whip"
+    ],
+    "amount": 0.3,
+    "vs_status": "root"
+   }
+  },
+  {
+   "id": "flagellant",
+   "name": "Flagellant",
+   "requires": {
+    "whip": 1,
+    "blood": 1
+   },
+   "color": "#d02040",
+   "icon": "ᘓ",
+   "desc": "Whip hits cause Bleeding; 30% of them heal you 0.4 HP.",
+   "hit_status": {
+    "tags_any": [
+     "whip"
+    ],
+    "status": [
+     {
+      "id": "bleed",
+      "stacks": 1
+     }
+    ]
+   },
+   "on_hit": {
+    "tags_any": [
+     "whip"
+    ],
+    "effects": [
+     {
+      "do": "heal",
+      "amount": 0.4,
+      "chance": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "seven_deadly",
+   "name": "The Seven Deadly",
+   "requires": {
+    "wrath": 1,
+    "greed": 1,
+    "envy": 1,
+    "pride": 1,
+    "gluttony": 1
+   },
+   "color": "#ff0040",
+   "icon": "✠",
+   "desc": "Five sins as one: every ability deals +30% damage.",
+   "hit_amp": {
+    "tags_any": [],
+    "amount": 0.3
+   }
+  }
+ ]
+}

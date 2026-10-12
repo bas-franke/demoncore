@@ -1,0 +1,506 @@
+{
+	"_doc": "Pip, imp courier of the Ashen Court: decrees from Duchess Malphine, camp gossip, comic relief. Pool 'pip'. Malphine only speaks through Pip's letters.",
+	"conversations": [
+		{
+			"id": "pip_intro",
+			"pool": "pip",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Oi! Oi! You are the new Sinbound! I am Pip. Courier to the Ashen Court."
+				},
+				{
+					"who": "pip",
+					"text": "I carry decrees, gossip and, once, a duke's spare head. Do not ask about the head."
+				},
+				{
+					"who": "pip",
+					"text": "Duchess Malphine says welcome. Also: go and die gloriously. Also: do not track ash on her carpets."
+				},
+				{
+					"choices": [
+						{
+							"text": "Tell the Duchess I said thank you.",
+							"goto": "thanks"
+						},
+						{
+							"text": "Tell the Duchess to come up and fight.",
+							"goto": "fight",
+							"set": {
+								"pip.cheeky": true
+							}
+						}
+					]
+				},
+				{
+					"label": "thanks",
+					"who": "pip",
+					"text": "Ooh, polite. She will hate that. She thinks manners are a sign of weakness.",
+					"end": true
+				},
+				{
+					"label": "fight",
+					"who": "pip",
+					"text": "Hee! I am not telling her that. I like my ears where they are."
+				}
+			]
+		},
+		{
+			"id": "pip_decree",
+			"pool": "pip",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"min": {
+					"runs": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Decree from the Court! Ahem. Ahem!"
+				},
+				{
+					"who": "malphine",
+					"text": "The Sinbound shall bring down the Herald of the Last Dawn, for the glory of the Pit and the warmth of its nobility."
+				},
+				{
+					"who": "pip",
+					"text": "There is a bit more, in smaller writing."
+				},
+				{
+					"who": "malphine",
+					"text": "Soon, please. It is getting very cold down here."
+				}
+			]
+		},
+		{
+			"id": "pip_herald",
+			"pool": "pip",
+			"once": true,
+			"priority": 95,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "You did it! The Herald! The Court threw a feast!"
+				},
+				{
+					"who": "pip",
+					"text": "I was not invited. I was the feast. Only a little bit. I grew back."
+				}
+			]
+		},
+		{
+			"id": "pip_gossip_grimmaul",
+			"pool": "pip",
+			"once": true,
+			"priority": 60,
+			"requires": {
+				"min": {
+					"runs": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Gossip! Grimmaul talks to his anvil when he thinks nobody is looking. He calls it Darling."
+				},
+				{
+					"who": "pip",
+					"text": "You did not hear it from me. You did not hear anything from me. I am not here."
+				}
+			]
+		},
+		{
+			"id": "pip_gossip_clerk",
+			"pool": "pip",
+			"once": true,
+			"priority": 55,
+			"requires": {
+				"min": {
+					"runs": 6
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Did you know the Clerk sleeps standing up, holding his ledger? In case anyone tries to read it."
+				},
+				{
+					"who": "pip",
+					"text": "I tried to read it once. The numbers bit me."
+				}
+			]
+		},
+		{
+			"id": "pip_lilaeth",
+			"pool": "pip",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Is it true you used to be an angel? Did you have a harp? Can I have it?"
+				},
+				{
+					"who": "player",
+					"text": "I melted it into a knife."
+				},
+				{
+					"who": "pip",
+					"text": "...Can I have the knife?"
+				}
+			]
+		},
+		{
+			"id": "pip_malphine_letter",
+			"pool": "pip",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"min": {
+					"boss_kills": 3
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Personal letter from the Duchess! For you! She never writes personal letters. I am shaking."
+				},
+				{
+					"who": "malphine",
+					"text": "Sinbound. Your successes have been noted. Your successes have also been noticed. Those are different things."
+				},
+				{
+					"who": "malphine",
+					"text": "Be a good weapon and do not start thinking for yourself. Weapons that think tend to get melted down."
+				},
+				{
+					"who": "pip",
+					"text": "...She signed it with a little heart. A real one. It is still beating."
+				}
+			]
+		},
+		{
+			"id": "pip_empty_throne",
+			"pool": "pip",
+			"once": true,
+			"priority": 92,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Is it true? The big chair? Up at the top? Nobody in it?"
+				},
+				{
+					"who": "pip",
+					"text": "The Court has gone mad. Three dukes have challenged each other for it already, and one of them is a puddle now."
+				},
+				{
+					"who": "pip",
+					"text": "You had better hurry, {demon}. Someone is going to sit in it. Might as well be someone I like."
+				}
+			]
+		},
+		{
+			"id": "pip_victory",
+			"pool": "pip",
+			"once": true,
+			"priority": 96,
+			"requires": {
+				"min": {
+					"victories": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "You won! You actually won! I bet three toes on you and now I have nine!"
+				},
+				{
+					"who": "pip",
+					"text": "Wait. That is not how betting works. Where did the extra toes come from?"
+				}
+			]
+		},
+		{
+			"id": "pip_chat_1",
+			"pool": "pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Got a decree for you! No, wait. That is my lunch."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_2",
+			"pool": "pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Hot today! Well. It is always hot. That is sort of the point."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_3",
+			"pool": "pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "If you see a duke, I was never here."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_4",
+			"pool": "pip",
+			"lines": [
+				{
+					"who": "pip",
+					"text": "The lava is extra bubbly today. That means it likes you. Probably."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_died",
+			"pool": "pip",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "You fell out of the Font right on top of me! Twice! Well, once. It felt like twice."
+				}
+			]
+		},
+		{
+			"id": "pip_malphine_plot",
+			"pool": "pip",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"min": {
+					"runs": 13
+				}
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Psst. Psst! I read a letter I was not supposed to read. I read all of them. That is the job, mostly."
+				},
+				{
+					"who": "malphine",
+					"text": "When the Sinbound has cleared the Seventh Gate, have it destroyed. The Throne is for the Court, not for our weapons."
+				},
+				{
+					"who": "pip",
+					"text": "So. Um. She is going to kill you. After. I thought you should know. I like you more than her. You have never eaten me."
+				},
+				{
+					"choices": [
+						{
+							"text": "Let her try.",
+							"goto": "try",
+							"set": {
+								"path.defy_court": true
+							}
+						},
+						{
+							"text": "Keep reading her letters, Pip.",
+							"goto": "spy",
+							"set": {
+								"pip.spy": true
+							}
+						}
+					]
+				},
+				{
+					"label": "try",
+					"who": "pip",
+					"text": "Hee! Oh, I hope I am there to see it. From a safe distance. A very safe distance.",
+					"end": true
+				},
+				{
+					"label": "spy",
+					"who": "pip",
+					"text": "A spy! I am a spy now! Do spies get hats? I want a hat."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_lilaeth",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Wings! Can I sit on your wing? Just once? I am very light!"
+				}
+			]
+		},
+		{
+			"id": "pip_chat_morvane",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Morvane! Do you have my name in your book? Is it spelled right? It is P-I-P!"
+				}
+			]
+		},
+		{
+			"id": "pip_chat_skarn",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "...Hello, Warden. I have been good. Very good. Mostly."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_vharok",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Vharok! Do the roar! Please do the roar!"
+				}
+			]
+		},
+		{
+			"id": "pip_chat_ysolde",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Ysolde is my favourite. Do not tell the others. She is so QUIET."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_nhazgul",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Mr Nhazgul! Please do not let them in my ears again. They were in my ears for a week."
+				}
+			]
+		},
+		{
+			"id": "pip_nhazgul",
+			"pool": "pip",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Can I ask the flies a question?"
+				},
+				{
+					"who": "player",
+					"text": "They are listening."
+				},
+				{
+					"who": "pip",
+					"text": "...Do you ever get lonely? No. Of course you do not. You are never alone. Hee. I would like that."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_iscariel",
+			"pool": "pip",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Mr Iscariel! Is it true you were an angel AND a demon? At the same time? Which half do you eat with?"
+				}
+			]
+		},
+		{
+			"id": "pip_iscariel",
+			"pool": "pip",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Is it true they paid you thirty pieces of light? Can I see one? Just one? I will give it back!"
+				},
+				{
+					"who": "player",
+					"text": "I do not have them, Pip. I never did."
+				},
+				{
+					"who": "pip",
+					"text": "...Oh. Then can I have one of your feathers? The white ones. The black ones are a bit crispy."
+				}
+			]
+		}
+	]
+}

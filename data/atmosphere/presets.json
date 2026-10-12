@@ -1,0 +1,444 @@
+{
+	"_doc": "Atmosphere presets (autoload Atmosphere, docs/team/visuals.md). Each preset is a set of sections; omitted keys inherit from 'extends' (default '_defaults'). Colors: '#rrggbb' or [r,g,b] (values may exceed 1 for tints). Angles in degrees. Overlays (under '_overlays') may use operators on keys: 'key*' multiply, 'key+' add, 'key~' [color_or_value, amount] mix toward. 'cycle' lists weather variants the map drifts through: [{preset, time}].",
+
+	"_scenes": {
+		"_doc": "Scene file -> preset, applied automatically when that scene becomes current (unless it calls apply_preset itself). Map runs use the map id instead (Maps.map_loaded; a map def may name another preset with \"atmosphere_preset\").",
+		"res://scenes/basecamp/basecamp.tscn": "basecamp_hell"
+	},
+
+	"_defaults": {
+		"env": {
+			"tonemap": "agx", "exposure": 1.05, "white": 1.0,
+			"background": [0.07, 0.075, 0.085],
+			"ambient": [0.4, 0.5, 0.62], "ambient_energy": 0.55, "ambient_sky": 0.6,
+			"glow": true, "glow_intensity": 0.65, "glow_strength": 1.0, "glow_bloom": 0.04, "glow_threshold": 0.95,
+			"ssao": true, "ssao_intensity": 1.8, "ssao_radius": 1.4,
+			"fog": true, "fog_color": [0.36, 0.42, 0.48], "fog_energy": 0.8, "fog_density": 0.008,
+			"fog_scatter": 0.35, "fog_height": 0.6, "fog_height_density": 0.06,
+			"volfog": false, "volfog_density": 0.0045, "volfog_albedo": [0.7, 0.72, 0.76],
+			"volfog_emission": [0.32, 0.38, 0.46], "volfog_emission_energy": 0.04, "volfog_anisotropy": 0.55,
+			"adjust": false, "brightness": 1.0, "contrast": 1.0, "saturation": 1.0
+		},
+		"sky": {
+			"top": [0.2, 0.26, 0.32], "horizon": [0.62, 0.52, 0.38],
+			"ground_bottom": [0.06, 0.06, 0.055], "ground_horizon": [0.36, 0.31, 0.25], "energy": 1.0
+		},
+		"sun": { "color": [1.0, 0.83, 0.62], "energy": 2.3, "pitch": -31.0, "yaw": -122.7, "fog_energy": 2.4 },
+		"moon": { "color": [0.55, 0.65, 1.0], "energy": 0.0, "pitch": -60.0, "yaw": 40.0 },
+		"grade": {
+			"shadow_tint": [0.86, 0.97, 1.02], "highlight_tint": [1.07, 1.0, 0.86],
+			"saturation": 0.86, "contrast": 1.08, "lift": 0.008,
+			"vignette": 0.62, "vignette_color": [0.02, 0.018, 0.02], "grain": 0.035
+		},
+		"weather": {
+			"ash": 0.0, "embers": 0.0, "feathers": 0.0, "snow": 0.0, "rain": 0.0, "rays": 0.0,
+			"wisps": 0.0, "lightning": 0.0, "wind": [0.45, 0.18], "gust": 0.0,
+			"clouds": 0.5, "cloud_cover": 0.5, "cloud_speed": 1.0,
+			"ash_color": [0.62, 0.6, 0.57], "ember_color": [1.0, 0.42, 0.1],
+			"feather_color": [0.92, 0.88, 0.8], "snow_color": [0.9, 0.94, 1.0],
+			"ray_color": [1.0, 0.8, 0.46], "wisp_color": [0.85, 0.82, 0.76],
+			"rain_color": [0.55, 0.6, 0.68], "lightning_color": [0.78, 0.8, 1.0], "wet": 0.35
+		},
+		"scene": { "ash": 1.0, "embers": 1.0, "beams": 1.0, "beam_color": [1.0, 0.8, 0.46], "mist": 1.0, "map_particles": 1.0 },
+		"fx": {
+			"hellglow_color": [1.0, 0.36, 0.12], "hellglow_energy": 0.0, "hellglow_range": 6.0,
+			"flicker": 1.0,
+			"gloom": 0.0, "gloom_color": [0.09, 0.02, 0.06], "gloom_radius": 9.0
+		}
+	},
+
+	"sanctum_dusk": {
+		"_doc": "The original endless sanctum: golden dusk over ruins (the look main.tscn authors), drifting through ash storms and holy rain.",
+		"overlays": { "run_storm_local": { "weather.ash+": 0.4, "weather.embers+": 0.3, "scene.beams*": 0.5 } },
+		"fx": { "hellglow_energy": 0.55, "gloom": 0.25 },
+		"cycle": [
+			{ "preset": "sanctum_dusk", "time": 75 },
+			{ "preset": "sanctum_ash_storm", "time": 50 },
+			{ "preset": "sanctum_dusk", "time": 40 },
+			{ "preset": "sanctum_holy_rain", "time": 60 }
+		]
+	},
+
+	"sanctum_ash_storm": {
+		"extends": "sanctum_dusk",
+		"_doc": "Overcast ash storm: the sun smothered, flat grey-brown light, thick wind-driven ash.",
+		"env": {
+			"ambient": [0.42, 0.41, 0.42], "ambient_energy": 0.5, "background": [0.06, 0.058, 0.056],
+			"fog_color": [0.3, 0.285, 0.27], "fog_energy": 0.75, "fog_density": 0.024, "fog_scatter": 0.12,
+			"fog_height_density": 0.12, "glow_intensity": 0.45, "exposure": 0.98
+		},
+		"sky": { "top": [0.17, 0.17, 0.18], "horizon": [0.36, 0.33, 0.3] },
+		"sun": { "color": [0.86, 0.74, 0.62], "energy": 0.85 },
+		"grade": { "shadow_tint": [0.95, 0.96, 0.98], "highlight_tint": [1.02, 0.98, 0.92],
+			"saturation": 0.62, "vignette": 0.72, "contrast": 1.04 },
+		"weather": { "ash": 1.0, "embers": 0.25, "gust": 1.0, "wind": [1.4, 0.5], "clouds": 0.8, "cloud_cover": 0.35,
+			"ash_color": [0.42, 0.4, 0.38], "lightning": 0.6 },
+		"scene": { "embers": 1.0, "beams": 0.12, "beam_color": [0.85, 0.75, 0.6] },
+		"fx": { "hellglow_energy": 0.8 },
+		"cycle": []
+	},
+
+	"sanctum_holy_rain": {
+		"extends": "sanctum_dusk",
+		"_doc": "Holy rain: cool silver light, the low sun breaking through in golden shafts, wet ground.",
+		"env": {
+			"ambient": [0.36, 0.45, 0.56], "ambient_energy": 0.5, "background": [0.05, 0.06, 0.07],
+			"fog_color": [0.33, 0.4, 0.48], "fog_energy": 0.85, "fog_density": 0.017, "fog_scatter": 0.55,
+			"fog_height_density": 0.09, "glow_intensity": 0.8, "exposure": 1.02
+		},
+		"sky": { "top": [0.15, 0.2, 0.26], "horizon": [0.42, 0.42, 0.4] },
+		"sun": { "color": [1.0, 0.85, 0.62], "energy": 1.45, "pitch": -35.6 },
+		"grade": { "shadow_tint": [0.82, 0.95, 1.07], "highlight_tint": [1.08, 1.0, 0.84],
+			"saturation": 0.78, "vignette": 0.66, "contrast": 1.1 },
+		"weather": { "rain": 1.0, "gust": 0.15, "wet": 1.0, "clouds": 0.7, "cloud_cover": 0.4, "lightning": 0.4 },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 1.45 },
+		"cycle": []
+	},
+
+	"basecamp_hell": {
+		"_doc": "Basecamp Hell: the hub. Crimson underglow, a pit-fire key light from the burning sky, dusky violet shadows, ash and embers rising forever, heavy bloom.",
+		"env": {
+			"tonemap": "aces", "white": 6.0, "exposure": 1.0, "background": [0.05, 0.008, 0.005],
+			"ambient": [0.5, 0.42, 0.5], "ambient_energy": 0.45, "ambient_sky": 0.3,
+			"glow_intensity": 0.8, "glow_strength": 1.0, "glow_bloom": 0.05, "glow_threshold": 1.0,
+			"fog_color": [0.24, 0.06, 0.06], "fog_energy": 1.0, "fog_density": 0.006, "fog_scatter": 0.2,
+			"fog_height": 0.4, "fog_height_density": 0.06,
+			"volfog": true, "volfog_density": 0.006, "volfog_albedo": [0.75, 0.55, 0.5],
+			"volfog_emission": [0.04, 0.008, 0.004], "volfog_emission_energy": 1.0, "volfog_anisotropy": 0.3,
+			"adjust": true, "contrast": 1.06, "saturation": 1.0
+		},
+		"sky": { "top": [0.1, 0.012, 0.008], "horizon": [0.54, 0.12, 0.03],
+			"ground_bottom": [0.03, 0.004, 0.004], "ground_horizon": [0.29, 0.06, 0.024] },
+		"sun": { "color": [1.0, 0.55, 0.35], "energy": 0.85, "pitch": -58.0, "yaw": -38.0, "fog_energy": 1.5 },
+		"moon": { "color": [0.55, 0.3, 0.9], "energy": 0.18, "pitch": -65.0, "yaw": 140.0 },
+		"grade": { "shadow_tint": [0.94, 0.88, 1.04], "highlight_tint": [1.1, 0.98, 0.86],
+			"saturation": 0.92, "contrast": 1.1, "lift": 0.006, "vignette": 0.7,
+			"vignette_color": [0.04, 0.0, 0.01], "grain": 0.04 },
+		"weather": { "ash": 0.7, "embers": 1.0, "wind": [0.3, 0.1], "gust": 0.2, "clouds": 0.25, "cloud_cover": 0.55,
+			"ash_color": [0.3, 0.26, 0.24], "ember_color": [1.0, 0.36, 0.06], "wet": 0.0 },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 0.0, "mist": 0.6 },
+		"fx": { "hellglow_energy": 0.5, "flicker": 1.25, "gloom": 0.0 }
+	},
+
+	"cathedral_city": {
+		"_doc": "Cathedral City: a walled mortal city under the cathedral's bells. Warm late-afternoon gold, god rays through the spires, a few feathers drifting from the angels overhead, cloud shadows sweeping the streets. The demon's gloom stains it.",
+		"overlays": { "run_storm_local": { "weather.rain+": 0.85, "weather.wet+": 0.65, "weather.feathers*": 0.3, "weather.rays*": 0.5 } },
+		"env": {
+			"exposure": 1.06, "background": [0.3, 0.26, 0.24],
+			"ambient": [0.66, 0.58, 0.5], "ambient_energy": 0.62, "ambient_sky": 0.6,
+			"glow_intensity": 0.75, "glow_bloom": 0.08, "glow_threshold": 0.92,
+			"fog_color": [0.72, 0.6, 0.48], "fog_energy": 0.8, "fog_density": 0.006, "fog_scatter": 0.55,
+			"fog_height": 0.8, "fog_height_density": 0.05,
+			"volfog": true, "volfog_density": 0.0035, "volfog_albedo": [1.0, 0.92, 0.8],
+			"volfog_emission": [0.1, 0.07, 0.04], "volfog_emission_energy": 0.04, "volfog_anisotropy": 0.65,
+			"adjust": true, "saturation": 0.98
+		},
+		"sky": { "top": [0.4, 0.42, 0.5], "horizon": [0.95, 0.66, 0.42],
+			"ground_bottom": [0.12, 0.1, 0.08], "ground_horizon": [0.5, 0.4, 0.32] },
+		"sun": { "color": [1.0, 0.82, 0.6], "energy": 2.5, "pitch": -36.0, "yaw": -140.0, "fog_energy": 2.2 },
+		"grade": { "shadow_tint": [0.9, 0.96, 1.05], "highlight_tint": [1.1, 1.0, 0.84],
+			"saturation": 0.9, "contrast": 1.08, "lift": 0.008, "vignette": 0.55,
+			"vignette_color": [0.06, 0.035, 0.02], "grain": 0.03 },
+		"weather": { "feathers": 0.35, "rays": 1.0, "wisps": 0.0, "embers": 0.0, "wind": [0.6, 0.25], "gust": 0.1,
+			"clouds": 0.55, "cloud_cover": 0.45, "ray_color": [1.0, 0.84, 0.55], "wet": 0.15 },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 1.0, "beam_color": [1.0, 0.84, 0.58], "mist": 0.5 },
+		"fx": { "hellglow_energy": 0.7, "flicker": 0.9, "gloom": 0.45, "gloom_color": [0.07, 0.015, 0.05] }
+	},
+
+	"ruined_sanctum": {
+		"_doc": "The Ruined Sanctum map (open, endless): the original golden-dusk sanctum with its weather cycle.",
+		"extends": "sanctum_dusk"
+	},
+
+	"outer_gardens": {
+		"_doc": "The Outer Gardens of heaven: soft green-gold Eden light, pale haze, drifting cloud wisps, light shafts, slow feathers. Serene, and the demon is the stain on it.",
+		"overlays": { "run_storm_local": { "weather.rain+": 0.6, "weather.wet+": 0.5, "weather.wisps+": 0.3 } },
+		"env": {
+			"exposure": 1.08, "background": [0.42, 0.46, 0.4],
+			"ambient": [0.62, 0.7, 0.58], "ambient_energy": 0.7, "ambient_sky": 0.7,
+			"glow_intensity": 0.85, "glow_bloom": 0.1, "glow_threshold": 0.9,
+			"fog_color": [0.78, 0.84, 0.7], "fog_energy": 0.85, "fog_density": 0.007, "fog_scatter": 0.5,
+			"fog_height": 0.8, "fog_height_density": 0.07,
+			"volfog": true, "volfog_density": 0.004, "volfog_albedo": [0.95, 1.0, 0.9],
+			"volfog_emission": [0.06, 0.08, 0.05], "volfog_emission_energy": 0.05, "volfog_anisotropy": 0.6,
+			"adjust": true, "saturation": 1.02
+		},
+		"sky": { "top": [0.45, 0.62, 0.8], "horizon": [0.95, 0.9, 0.72],
+			"ground_bottom": [0.14, 0.18, 0.1], "ground_horizon": [0.55, 0.62, 0.45] },
+		"sun": { "color": [1.0, 0.95, 0.78], "energy": 2.6, "pitch": -50.0, "yaw": -110.0, "fog_energy": 1.8 },
+		"grade": { "shadow_tint": [0.92, 1.0, 1.02], "highlight_tint": [1.06, 1.04, 0.9],
+			"saturation": 0.95, "contrast": 1.04, "lift": 0.014, "vignette": 0.45,
+			"vignette_color": [0.03, 0.05, 0.02], "grain": 0.025 },
+		"weather": { "feathers": 0.25, "rays": 0.9, "wisps": 0.5, "wind": [0.4, 0.2], "gust": 0.05,
+			"clouds": 0.45, "cloud_cover": 0.5, "ray_color": [1.0, 0.95, 0.72], "wisp_color": [0.95, 0.97, 0.9], "wet": 0.25 },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 0.9, "beam_color": [1.0, 0.95, 0.75], "mist": 0.8 },
+		"fx": { "hellglow_energy": 0.8, "flicker": 0.9, "gloom": 0.45, "gloom_color": [0.06, 0.02, 0.05] },
+		"cycle": [
+			{ "preset": "outer_gardens", "time": 90 },
+			{ "preset": "outer_gardens_rain", "time": 50 }
+		]
+	},
+
+	"outer_gardens_rain": {
+		"extends": "outer_gardens",
+		"_doc": "A soft holy rain over the gardens, the sun still breaking through in shafts.",
+		"env": { "ambient_energy": 0.6, "fog_density": 0.012, "fog_color": [0.6, 0.68, 0.66] },
+		"sun": { "energy": 1.7 },
+		"grade": { "saturation": 0.85, "contrast": 1.08 },
+		"weather": { "rain": 0.8, "rays": 1.3, "feathers": 0.0, "wet": 1.0, "clouds": 0.7, "cloud_cover": 0.35 },
+		"cycle": []
+	},
+
+	"sunlit_citadel": {
+		"_doc": "The Sunlit Citadel: heaven's fortress at high noon. A blinding white-gold sun almost overhead, short hard shadows, rays everywhere, cloud wisps drifting past the ramparts.",
+		"extends": "heavens_gate",
+		"env": { "exposure": 0.96, "ambient": [0.92, 0.9, 0.82], "fog_density": 0.004, "glow_intensity": 0.85, "glow_bloom": 0.08 },
+		"sun": { "color": [1.0, 0.97, 0.88], "energy": 2.9, "pitch": -66.0, "yaw": -150.0 },
+		"grade": { "highlight_tint": [1.08, 1.05, 0.94], "saturation": 0.86, "contrast": 1.14, "vignette": 0.38, "lift": 0.004 },
+		"weather": { "rays": 1.5, "ray_color": [1.0, 0.96, 0.82], "feathers": 0.5, "wisps": 0.6 }
+	},
+
+	"heavens_gate": {
+		"_doc": "The approach to the celestial gate: above the clouds, blinding gold, wisps of cloud drifting past, feathers everywhere.",
+		"overlays": { "run_storm_local": { "weather.lightning_color": [1.0, 0.9, 0.62], "weather.wisps+": 0.4, "weather.rays+": 0.3, "sun.color~": [[1.0, 0.8, 0.55], 0.3] } },
+		"extends": "cathedral_city",
+		"env": { "exposure": 0.98, "background": [0.6, 0.58, 0.52], "ambient": [0.86, 0.8, 0.7], "ambient_energy": 0.68,
+			"fog_density": 0.005, "fog_color": [1.0, 0.92, 0.78], "glow_intensity": 0.8, "glow_bloom": 0.07,
+			"volfog_density": 0.0025 },
+		"sky": { "top": [0.62, 0.72, 0.9], "horizon": [1.0, 0.9, 0.7] },
+		"sun": { "color": [1.0, 0.9, 0.7], "energy": 3.0, "pitch": -38.0 },
+		"grade": { "highlight_tint": [1.1, 1.04, 0.88], "saturation": 0.88, "contrast": 1.12, "vignette": 0.42, "lift": 0.0 },
+		"weather": { "feathers": 0.7, "rays": 1.3, "wisps": 0.8, "clouds": 0.45, "cloud_cover": 0.35,
+			"wisp_color": [1.0, 0.96, 0.88] },
+		"scene": { "beams": 1.5 }
+	},
+
+	"ashen_wastes": {
+		"_doc": "The Ashen Wastes: a scorched battlefield on the Verge. Copper sun low through drifting ash, cinder-lava rivers glowing through the haze, embers on the wind; the storm builds over the run.",
+		"extends": "sanctum_ash_storm",
+		"overlays": { "run_storm_local": { "weather.ash": 1.0, "weather.gust+": 0.5, "weather.wind*": 1.6, "env.fog_density*": 1.4, "weather.embers+": 0.4 } },
+		"env": { "ambient": [0.5, 0.36, 0.3], "ambient_energy": 0.55, "fog_density": 0.016, "fog_color": [0.4, 0.24, 0.18],
+			"background": [0.12, 0.08, 0.07], "exposure": 1.1, "glow_intensity": 0.7,
+			"volfog": true, "volfog_density": 0.006, "volfog_albedo": [0.8, 0.6, 0.5],
+			"volfog_emission": [0.12, 0.03, 0.01], "volfog_emission_energy": 0.4 },
+		"sky": { "top": [0.18, 0.12, 0.12], "horizon": [0.62, 0.3, 0.16] },
+		"sun": { "color": [1.0, 0.58, 0.34], "energy": 1.9, "pitch": -30.0, "yaw": -120.0 },
+		"grade": { "shadow_tint": [1.0, 0.92, 0.92], "highlight_tint": [1.1, 0.96, 0.82], "saturation": 0.78, "vignette": 0.7 },
+		"weather": { "ash": 0.65, "embers": 0.45, "gust": 0.5, "wind": [1.2, 0.45], "lightning": 0.5,
+			"ember_color": [1.0, 0.4, 0.08] },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 0.0, "map_particles": 1.0 },
+		"fx": { "hellglow_energy": 1.0, "gloom": 0.15, "flicker": 1.2 }
+	},
+
+	"gilded_isles": {
+		"_doc": "The Gilded Isles: paradise adrift over a sea of cloud. Clean high-altitude light, cloud wisps streaming across the rift, gold rays and feathers; now and then a soft holy rain.",
+		"extends": "heavens_gate",
+		"overlays": { "run_storm_local": { "weather.wisps+": 0.5, "weather.rain+": 0.4, "weather.lightning_color": [1.0, 0.9, 0.62] } },
+		"env": { "exposure": 0.98, "background": [0.7, 0.72, 0.8], "ambient": [0.8, 0.78, 0.72], "ambient_energy": 0.7,
+			"fog_color": [0.96, 0.92, 0.86], "fog_density": 0.006, "glow_intensity": 0.8 },
+		"sky": { "top": [0.46, 0.62, 0.86], "horizon": [1.0, 0.9, 0.74], "ground_horizon": [0.9, 0.86, 0.8], "ground_bottom": [0.85, 0.82, 0.86] },
+		"sun": { "color": [1.0, 0.93, 0.78], "energy": 2.5, "pitch": -54.0, "yaw": -125.0 },
+		"moon": { "color": [0.72, 0.8, 1.0], "energy": 0.45, "pitch": -28.0, "yaw": 55.0 },
+		"grade": { "shadow_tint": [0.96, 1.0, 1.08], "saturation": 0.9, "vignette": 0.35, "lift": 0.01 },
+		"weather": { "wisps": 1.0, "feathers": 0.4, "rays": 1.0, "wind": [1.1, 0.35], "clouds": 0.5, "cloud_cover": 0.4,
+			"wisp_color": [0.98, 0.97, 0.95] },
+		"cycle": [
+			{ "preset": "gilded_isles", "time": 90 },
+			{ "preset": "gilded_isles_rain", "time": 45 }
+		]
+	},
+
+	"gilded_isles_rain": {
+		"extends": "gilded_isles",
+		"_doc": "A passing holy rain over the isles, sun still breaking through.",
+		"env": { "ambient_energy": 0.68, "fog_density": 0.01 },
+		"sun": { "energy": 1.9 },
+		"weather": { "rain": 0.7, "rays": 1.3, "feathers": 0.1, "wet": 0.8, "clouds": 0.7 },
+		"cycle": []
+	},
+
+	"frozen_monastery": {
+		"_doc": "Frozen Monastery: a monastery under eternal snow. Cold blue moonlight, pale fog, slow heavy snowfall.",
+		"overlays": { "run_storm_local": { "weather.snow": 1.0, "weather.gust+": 0.9, "weather.wind*": 2.5, "weather.lightning*": 0.15, "weather.wisps+": 0.4, "env.fog_density*": 1.6, "env.fog_color~": [[0.75, 0.8, 0.9], 0.4], "sun.color~": [[0.8, 0.85, 1.0], 0.6] } },
+		"env": {
+			"exposure": 0.98, "background": [0.04, 0.05, 0.08],
+			"ambient": [0.48, 0.58, 0.78], "ambient_energy": 0.65, "ambient_sky": 0.7,
+			"glow_intensity": 0.7, "glow_threshold": 0.9,
+			"fog_color": [0.55, 0.62, 0.76], "fog_energy": 0.9, "fog_density": 0.016, "fog_scatter": 0.3,
+			"fog_height_density": 0.08,
+			"volfog": true, "volfog_density": 0.006, "volfog_albedo": [0.85, 0.9, 1.0],
+			"volfog_emission": [0.1, 0.13, 0.2], "volfog_emission_energy": 0.06, "volfog_anisotropy": 0.4,
+			"adjust": true, "saturation": 0.9
+		},
+		"sky": { "top": [0.08, 0.11, 0.2], "horizon": [0.4, 0.46, 0.58],
+			"ground_bottom": [0.1, 0.11, 0.14], "ground_horizon": [0.5, 0.55, 0.62] },
+		"sun": { "color": [0.85, 0.9, 1.0], "energy": 1.2, "pitch": -40.0, "yaw": 150.0, "fog_energy": 1.2 },
+		"moon": { "color": [0.6, 0.72, 1.0], "energy": 0.55, "pitch": -65.0, "yaw": -30.0 },
+		"grade": { "shadow_tint": [0.85, 0.95, 1.12], "highlight_tint": [1.0, 1.02, 1.06],
+			"saturation": 0.75, "contrast": 1.06, "lift": 0.015, "vignette": 0.6,
+			"vignette_color": [0.0, 0.01, 0.04] },
+		"weather": { "snow": 1.0, "wind": [0.35, 0.1], "gust": 0.35, "clouds": 0.35, "cloud_cover": 0.4,
+			"wisps": 0.3, "wisp_color": [0.8, 0.86, 0.96], "wet": 0.15 },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 0.35, "beam_color": [0.75, 0.85, 1.0], "map_particles": 0.0 },
+		"fx": { "hellglow_energy": 1.0, "gloom": 0.3 }
+	},
+
+	"frozen_reliquary": {
+		"_doc": "Alias of frozen_monastery (older name, still used by data/maps/frozen_monastery.json).",
+		"extends": "frozen_monastery"
+	},
+
+	"storm_spire": {
+		"_doc": "Storm Spire: a lightning-wracked bastion. Bruised indigo sky, driving rain, frequent close strikes.",
+		"env": {
+			"exposure": 1.0, "background": [0.025, 0.03, 0.05],
+			"ambient": [0.3, 0.36, 0.5], "ambient_energy": 0.5,
+			"glow_intensity": 0.75,
+			"fog_color": [0.2, 0.24, 0.32], "fog_energy": 0.8, "fog_density": 0.02, "fog_scatter": 0.2,
+			"fog_height_density": 0.1,
+			"volfog": true, "volfog_density": 0.008, "volfog_albedo": [0.6, 0.65, 0.8],
+			"volfog_emission": [0.03, 0.04, 0.07], "volfog_emission_energy": 0.04
+		},
+		"sky": { "top": [0.05, 0.06, 0.1], "horizon": [0.2, 0.22, 0.3] },
+		"sun": { "color": [0.7, 0.75, 0.95], "energy": 0.9, "pitch": -50.0, "yaw": -90.0 },
+		"grade": { "shadow_tint": [0.86, 0.94, 1.12], "highlight_tint": [1.0, 1.0, 1.04],
+			"saturation": 0.7, "contrast": 1.14, "vignette": 0.75 },
+		"weather": { "rain": 1.0, "gust": 0.6, "wind": [0.9, 0.3], "lightning": 2.5, "clouds": 0.9, "cloud_cover": 0.25,
+			"wet": 1.0, "ray_color": [0.8, 0.85, 1.0] },
+		"scene": { "ash": 0.0, "embers": 0.0, "beams": 0.25, "beam_color": [0.75, 0.8, 1.0] },
+		"fx": { "hellglow_energy": 1.1, "gloom": 0.3 }
+	},
+
+	"blood_moon": {
+		"_doc": "Blood moon night: red moonlight from high above, crimson fog and grade, a storm of embers, lightning.",
+		"env": {
+			"ambient": [0.34, 0.14, 0.18], "ambient_energy": 0.42, "background": [0.05, 0.015, 0.02],
+			"fog_color": [0.26, 0.07, 0.08], "fog_energy": 0.75, "fog_density": 0.011, "fog_scatter": 0.6,
+			"fog_height_density": 0.1, "glow_intensity": 0.95, "exposure": 1.0
+		},
+		"sky": { "top": [0.12, 0.03, 0.045], "horizon": [0.45, 0.08, 0.06] },
+		"sun": { "color": [1.0, 0.24, 0.17], "energy": 1.7, "pitch": -54.4, "yaw": -71.0 },
+		"grade": { "shadow_tint": [0.88, 0.84, 1.06], "highlight_tint": [1.14, 0.86, 0.8],
+			"saturation": 0.85, "vignette": 0.78, "contrast": 1.13 },
+		"weather": { "ash": 0.3, "embers": 1.0, "gust": 0.35, "lightning": 5.0, "wet": 0.45, "clouds": 0.6 },
+		"scene": { "ash": 0.55, "embers": 1.0, "beams": 0.55, "beam_color": [1.0, 0.22, 0.12] },
+		"fx": { "hellglow_energy": 1.2, "gloom": 0.4 }
+	},
+
+	"the_breach": {
+		"_doc": "The Breach (terrain map): Hell bursting up through Heaven over a lava sea. A split sky (cold heaven blue overhead, crimson horizon), gold heaven light from high above fighting a low red hell glow raking in from the opposite side (the moon light, which also fills the cliff faces the sun leaves dark), ash and feathers falling together, embers rising.",
+		"extends": "gilded_isles",
+		"cycle": [],
+		"overlays": { "run_storm_local": { "weather.ash+": 0.4, "weather.embers+": 0.4, "weather.feathers*": 0.4,
+			"moon.energy*": 1.6, "sun.energy*": 0.8, "env.volfog_emission_energy*": 1.8 } },
+		"env": { "exposure": 1.0, "background": [0.22, 0.08, 0.07], "ambient": [0.62, 0.6, 0.72], "ambient_energy": 0.62,
+			"ambient_sky": 0.5, "fog_color": [0.5, 0.36, 0.4], "fog_density": 0.0045, "fog_scatter": 0.45,
+			"fog_height": 0.0, "fog_height_density": 0.08, "glow_intensity": 0.85, "glow_bloom": 0.07,
+			"volfog": true, "volfog_albedo": [0.9, 0.75, 0.75],
+			"volfog_emission": [0.3, 0.05, 0.02], "volfog_emission_energy": 0.12, "volfog_anisotropy": 0.5,
+			"volfog_density": 0.003 },
+		"sky": { "top": [0.3, 0.38, 0.62], "horizon": [0.95, 0.42, 0.24], "ground_horizon": [0.6, 0.16, 0.08],
+			"ground_bottom": [0.35, 0.05, 0.03] },
+		"sun": { "color": [1.0, 0.9, 0.72], "energy": 2.2, "pitch": -56.0, "yaw": -125.0, "fog_energy": 1.8 },
+		"moon": { "color": [1.0, 0.32, 0.12], "energy": 0.9, "pitch": -16.0, "yaw": 55.0 },
+		"grade": { "shadow_tint": [1.04, 0.92, 1.0], "highlight_tint": [1.06, 1.02, 0.94], "saturation": 0.95,
+			"contrast": 1.1, "vignette": 0.55, "vignette_color": [0.08, 0.0, 0.01], "lift": 0.006 },
+		"weather": { "wisps": 0.35, "feathers": 0.45, "rays": 0.8, "embers": 0.8, "ash": 0.45, "rain": 0.0,
+			"ray_color": [1.0, 0.88, 0.6], "ember_color": [1.0, 0.38, 0.06], "ash_color": [0.36, 0.32, 0.3],
+			"feather_color": [0.95, 0.9, 0.82], "clouds": 0.3, "cloud_cover": 0.55, "wind": [0.6, 0.2], "gust": 0.2 },
+		"scene": { "map_particles": 1.0 },
+		"fx": { "hellglow_energy": 1.1, "gloom": 0.3, "flicker": 1.15 }
+	},
+
+	"_overlays": {
+		"boss": {
+			"_doc": "Generic boss fight lighting, layered on whatever map is active: the sky darkens, a cold judgement light, crimson edges, more lightning.",
+			"sun.energy*": 0.7, "sun.color~": [[1.0, 0.92, 0.8], 0.35],
+			"env.ambient_energy*": 0.75, "env.exposure*": 0.97, "env.glow_intensity+": 0.15,
+			"env.fog_density*": 1.25,
+			"grade.vignette+": 0.12, "grade.contrast+": 0.05, "grade.saturation*": 0.92,
+			"grade.vignette_color~": [[0.12, 0.0, 0.01], 0.6],
+			"weather.lightning+": 2.0, "weather.gust+": 0.3, "fx.flicker*": 1.4, "fx.hellglow_energy*": 1.3
+		},
+		"boss_enraged": {
+			"_doc": "Boss below 40% HP: blood-red grade, flickering storm, the demon's gloom deepens.",
+			"sun.color~": [[1.0, 0.3, 0.2], 0.55], "env.ambient~": [[0.5, 0.1, 0.1], 0.4],
+			"grade.highlight_tint~": [[1.18, 0.86, 0.8], 0.6], "grade.saturation*": 1.1,
+			"weather.lightning+": 3.0, "weather.embers+": 0.5, "fx.gloom+": 0.2
+		},
+		"boss_war_chariot": {
+			"_doc": "Lord-Marshal Caddoc, the Burning Crusade: the sky catches fire, ember storm, orange grade.",
+			"sun.color~": [[1.0, 0.5, 0.22], 0.5], "env.fog_color~": [[0.5, 0.2, 0.08], 0.5],
+			"grade.highlight_tint~": [[1.16, 0.94, 0.74], 0.5], "weather.embers+": 0.6, "weather.ash+": 0.3,
+			"weather.lightning*": 0.4, "weather.lightning_color": [1.0, 0.6, 0.3], "fx.flicker*": 1.2
+		},
+		"boss_storm_archon": {
+			"_doc": "Baraqiel, Archon of the Tempest: violet storm light, lashing rain, constant lightning.",
+			"sun.color~": [[0.72, 0.62, 1.0], 0.5], "env.ambient~": [[0.45, 0.4, 0.7], 0.4],
+			"grade.shadow_tint~": [[0.92, 0.88, 1.14], 0.5], "weather.lightning+": 4.0,
+			"weather.lightning_color": [0.82, 0.72, 1.0], "weather.rain+": 0.5, "weather.gust+": 0.5,
+			"env.ambient_energy*": 1.2
+		},
+		"boss_gilded_seraph": {
+			"_doc": "Aurum, the Gilded Seraph: everything turns to gold; rays and feathers, warm highlights, no storm.",
+			"sun.color~": [[1.0, 0.82, 0.45], 0.55], "sun.energy*": 1.25, "grade.highlight_tint~": [[1.18, 1.02, 0.72], 0.6],
+			"weather.rays+": 0.6, "weather.ray_color": [1.0, 0.82, 0.4], "weather.feathers+": 0.4,
+			"weather.lightning*": 0.2, "weather.lightning_color": [1.0, 0.85, 0.45], "grade.saturation*": 1.08
+		},
+		"boss_cantor": {
+			"_doc": "Cantor Seraphiel, the Broken Choir: a mournful lilac hush, drained colour, drifting haze.",
+			"sun.color~": [[0.85, 0.78, 1.0], 0.45], "grade.saturation*": 0.82, "grade.shadow_tint~": [[0.96, 0.9, 1.1], 0.5],
+			"env.fog_color~": [[0.55, 0.5, 0.7], 0.4], "env.fog_density*": 1.2, "weather.wisps+": 0.4,
+			"weather.lightning*": 0.3, "weather.lightning_color": [0.85, 0.78, 1.0], "env.ambient_energy*": 1.15
+		},
+		"boss_grand_inquisitor": {
+			"_doc": "Ozias, the Grand Inquisitor: pyre light, embers and smoke.",
+			"sun.color~": [[1.0, 0.6, 0.3], 0.35], "weather.embers+": 0.5, "weather.ash+": 0.2,
+			"weather.lightning_color": [1.0, 0.65, 0.35]
+		},
+		"shrine": {
+			"_doc": "Example local overlay (shops, cutscenes): warmer, softer, lower contrast.",
+			"grade.contrast*": 0.95, "grade.vignette*": 0.8, "env.exposure*": 1.05
+		},
+		"run_calm": {
+			"_doc": "Run start (AtmoRunWeather): clearer skies, light wind. Fades out by ~40 % escalation.",
+			"weather.lightning*": 0.0, "weather.gust*": 0.5, "weather.clouds*": 0.6, "weather.rain*": 0.4,
+			"sun.energy*": 1.06, "env.fog_density*": 0.85
+		},
+		"run_storm": {
+			"_doc": "Run escalation (weight = difficulty tier / 12): the sun sinks and reddens, clouds close in, gusts and lightning. A preset adds its own flavour with a local run_storm_local.",
+			"sun.energy*": 0.62, "sun.pitch+": 12.0, "sun.color~": [[1.0, 0.55, 0.35], 0.4],
+			"env.ambient_energy*": 0.82, "env.fog_density*": 1.5, "sky.horizon~": [[0.3, 0.12, 0.1], 0.4],
+			"weather.clouds+": 0.35, "weather.cloud_cover+": -0.15, "weather.gust+": 0.6, "weather.lightning+": 2.5,
+			"weather.ash+": 0.25, "grade.saturation*": 0.9, "grade.contrast+": 0.05, "grade.vignette+": 0.08,
+			"fx.hellglow_energy*": 1.3, "fx.flicker*": 1.2
+		},
+		"surge": {
+			"_doc": "RunState surge wave: darker, gustier, more lightning (weight 0.6..1 with escalation).",
+			"weather.lightning+": 2.0, "weather.gust+": 0.4, "env.ambient_energy*": 0.9, "sun.energy*": 0.88,
+			"grade.contrast+": 0.04, "grade.vignette+": 0.05, "fx.flicker*": 1.25
+		},
+		"lull": {
+			"_doc": "RunState lull: a breather, the light lifts a little.",
+			"sun.energy*": 1.1, "weather.gust*": 0.5, "weather.lightning*": 0.4, "grade.vignette+": -0.05
+		},
+		"final_dawn": {
+			"_doc": "The run's final boss: a blinding holy dawn breaks low behind the battlefield (backlit, long shadows toward the camera), gold rays, feathers, the storm torn away. Stays for the victory.",
+			"sun.color": [1.0, 0.86, 0.6], "sun.energy": 3.0, "sun.pitch": -14.0, "sun.yaw": 180.0,
+			"env.ambient~": [[0.95, 0.8, 0.6], 0.5], "env.exposure*": 1.04, "env.fog_color": [1.0, 0.82, 0.55],
+			"env.fog_scatter": 0.8, "env.fog_density*": 0.55, "env.volfog_density*": 0.5,
+			"env.glow_intensity+": 0.15, "sky.horizon": [1.0, 0.75, 0.45],
+			"weather.rays": 1.4, "weather.ray_color": [1.0, 0.85, 0.55], "weather.lightning": 0.0,
+			"weather.rain*": 0.2, "weather.snow*": 0.5, "weather.ash*": 0.4, "weather.feathers+": 0.45,
+			"weather.clouds*": 0.4, "weather.gust*": 0.3,
+			"scene.beams": 1.6, "scene.beam_color": [1.0, 0.86, 0.6],
+			"grade.highlight_tint": [1.14, 1.02, 0.84], "grade.saturation*": 1.05, "grade.vignette*": 0.8,
+			"grade.lift+": 0.01
+		},
+		"run_lost": {
+			"_doc": "The demon falls: the world drains of colour and darkens.",
+			"grade.saturation*": 0.4, "env.exposure*": 0.85, "sun.energy*": 0.5, "weather.ash+": 0.5,
+			"grade.vignette+": 0.15
+		}
+	}
+}

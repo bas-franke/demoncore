@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+<defs>
+<radialGradient id="bg" cx="32" cy="32" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1c0d0a" stop-opacity="0.96"/><stop offset="0.72" stop-color="#0c0605" stop-opacity="0.9"/><stop offset="1" stop-color="#080404" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="32" cy="32" r="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#c83a30" stop-opacity="0.55"/><stop offset="1" stop-color="#c83a30" stop-opacity="0"/></radialGradient>
+<linearGradient id="fill" x1="14" y1="8" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e6a191"/><stop offset="0.5" stop-color="#c83a30"/><stop offset="1" stop-color="#611d18"/></linearGradient>
+</defs>
+<circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+<circle cx="32" cy="32" r="27" fill="url(#glow)"/>
+<path d="M32.00 3.00 L35.66 19.53 L47.68 7.60 L41.82 23.49 L58.38 19.95 L44.87 30.15 L60.70 36.13 L43.83 37.40 L53.92 50.99 L39.03 42.94 L40.17 59.83 L32.00 45.00 L23.83 59.83 L24.97 42.94 L10.08 50.99 L20.17 37.40 L3.30 36.13 L19.13 30.15 L5.62 19.95 L22.18 23.49 L16.32 7.60 L28.34 19.53 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M19.50 28.00 a5.00 5.00 0 1 0 10.00 0 a5.00 5.00 0 1 0 -10.00 0 Z M34.50 28.00 a5.00 5.00 0 1 0 10.00 0 a5.00 5.00 0 1 0 -10.00 0 Z M32.00 33.00 L29.00 39.00 L35.00 39.00 Z" fill="#140806" fill-rule="evenodd" opacity="0.92"/>
+</svg>

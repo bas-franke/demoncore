@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/plague_doctor.tscn" id="2_model"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/holy_smoke.tscn" id="3_proj"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"plague_doctor"
+display_name = "Plague Doctor of the Order"
+flavor_text = "The Order of the Purging Flame treats corruption the way it treats rot: with smoke, fire, and a very long stick."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 16.0
+speed = 2.7
+damage = 7.0
+xp_value = 3
+knockback_scale = 0.9
+behavior = 7
+preferred_distance = 5.0
+attack_cooldown = 2.4
+windup_time = 0.6
+projectile_damage = 6.0
+projectile_speed = 10.0
+muzzle_height = 0.8
+shot_recover_time = 0.35
+projectile = ExtResource("3_proj")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/war_chariot_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"war_chariot"
+display_name = "Lord-Marshal Caddoc"
+flavor_text = "He has burned eleven heresies and the cities that sheltered them. His chariot wheels have never been cold."
+model = ExtResource("2_model")
+size = 2.0
+hover = 0.0
+max_hp = 3300.0
+speed = 2.6
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/mimic_reliquary.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mimic_reliquary"
+display_name = "Treasure-Mimic Reliquary"
+flavor_text = "Not every reliquary on the isles is full of relics. Some are full of teeth."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 50.0
+speed = 4.2
+damage = 18.0
+xp_value = 7
+knockback_scale = 0.2
+behavior = 0

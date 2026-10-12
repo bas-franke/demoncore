@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/infernal_chain/infernal_chain.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Skarn"
+title = "the Chain Warden"
+lore = "Jailer of the deepest pit. The chains he wears once held a god."
+perk_text = "+0.4 HP Regen, +0.8 Pickup Radius.
+Starts with Infernal Chain."
+model_id = "skarn"
+skin_color = Color(0.3, 0.15, 0.12, 1)
+armor_color = Color(0.26, 0.23, 0.21, 1)
+cloth_color = Color(0.2, 0.13, 0.09, 1)
+glow_color = Color(1, 0.5, 0.1, 1)
+horn_color = Color(0.3, 0.27, 0.24, 1)
+build = 3
+horn_style = 0
+head_style = 1
+wing_style = 0
+height = 1.06
+bulk = 1.0
+cape_length = 0.6
+chains = true
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"regen": 0.4,
+&"pickup_radius": 0.8
+}

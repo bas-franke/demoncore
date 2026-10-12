@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/archon.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"archon"
+display_name = "Archon of the Seventh Gate"
+flavor_text = "Warden of the Seventh Gate, last of the Host to look upon the unveiled Throne. Its blade was forged from what it saw."
+model = ExtResource("2_model")
+size = 2.0
+max_hp = 300.0
+speed = 2.0
+damage = 30.0
+xp_value = 30
+knockback_scale = 0.1
+behavior = 4
+preferred_distance = 3.4
+attack_cooldown = 3.2
+charge_time = 0.3
+windup_time = 1.1
+slam_radius = 2.8
+slam_reach = 1.9
+slam_damage = 30.0

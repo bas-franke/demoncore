@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+<defs>
+<radialGradient id="bg" cx="32" cy="32" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1c0d0a" stop-opacity="0.96"/><stop offset="0.72" stop-color="#0c0605" stop-opacity="0.9"/><stop offset="1" stop-color="#080404" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="32" cy="32" r="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9a7aff" stop-opacity="0.55"/><stop offset="1" stop-color="#9a7aff" stop-opacity="0"/></radialGradient>
+<linearGradient id="fill" x1="14" y1="8" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d2beee"/><stop offset="0.5" stop-color="#9a7aff"/><stop offset="1" stop-color="#4c3a76"/></linearGradient>
+</defs>
+<circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+<circle cx="32" cy="32" r="27" fill="url(#glow)"/>
+<path d="M15.72 11.26 L29.55 39.00 L28.65 41.67 L33.23 40.94 L34.43 44.25 L29.99 45.87 L32.25 52.07 L29.29 53.14 L27.03 46.94 L22.59 48.56 L21.39 45.25 L25.37 42.87 L22.97 41.40 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M48.28 11.26 L41.03 41.40 L38.63 42.87 L42.61 45.25 L41.41 48.56 L36.97 46.94 L34.71 53.14 L31.75 52.07 L34.01 45.87 L29.57 44.25 L30.77 40.94 L35.35 41.67 L34.45 39.00 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

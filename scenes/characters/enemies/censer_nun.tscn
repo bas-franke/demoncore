@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/characters/enemies/censer_nun.gd" id="1_script"]
+
+[node name="CenserNun" type="Node3D"]
+script = ExtResource("1_script")
+

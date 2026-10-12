@@ -1,0 +1,58 @@
+{
+	"_doc": "Boss roster for ObjectiveDirector.summon_boss(id) and the timed boss rotation. 'scene' root must have setup(data: EnemyData, hp_scale: float) and join group 'boss' (Boss / InquisitorBoss do). 'herald' is the toast shown a few seconds before it arrives.",
+	"bosses": {
+		"sariel": {
+			"data": "res://data/bosses/sariel.tres",
+			"scene": "res://scenes/bosses/boss.tscn",
+			"herald": "The sky splits. A Seraph descends."
+		},
+		"grand_inquisitor": {
+			"data": "res://data/bosses/grand_inquisitor.tres",
+			"scene": "res://scenes/bosses/inquisitor/inquisitor_boss.tscn",
+			"herald": "Bells toll. The Grand Inquisitor comes to judge you."
+		},
+		"gate_archon": {
+			"data": "res://data/bosses/gate_archon.tres",
+			"scene": "res://scenes/bosses/archon/archon_boss.tscn",
+			"herald": "The Seventh Gate's warden steps through the light.",
+			"rage_text": "The Warden draws the light of the Throne",
+			"felled_text": "THE WARDEN FALLS",
+			"finale_only": true
+		},
+		"frost_abbot": {
+			"data": "res://data/bosses/frost_abbot.tres",
+			"scene": "res://scenes/characters/bosses/frost_abbot.tscn",
+			"herald": "The monastery bells ring by themselves. Snow begins to fall upward."
+		},
+		"verdant_matriarch": {
+			"data": "res://data/bosses/verdant_matriarch.tres",
+			"scene": "res://scenes/characters/bosses/verdant_matriarch.tscn",
+			"herald": "The roots beneath the garden wake. Something old is blooming."
+		},
+		"dawn_wyrm": {
+			"data": "res://data/bosses/dawn_wyrm.tres",
+			"scene": "res://scenes/characters/bosses/dawn_wyrm.tscn",
+			"herald": "The sun rises twice. The second one has wings."
+		},
+		"war_chariot": {
+			"data": "res://data/bosses/war_chariot.tres",
+			"scene": "res://scenes/characters/bosses/war_chariot.tscn",
+			"herald": "The ash shakes. Hooves and burning wheels, coming fast."
+		},
+		"storm_archon": {
+			"data": "res://data/bosses/storm_archon.tres",
+			"scene": "res://scenes/characters/bosses/storm_archon.tscn",
+			"herald": "Every lightning rod on the spire turns to face you."
+		},
+		"gilded_seraph": {
+			"data": "res://data/bosses/gilded_seraph.tres",
+			"scene": "res://scenes/characters/bosses/gilded_seraph.tscn",
+			"herald": "Gold rains on the isles. Something is counting it."
+		},
+		"cantor": {
+			"data": "res://data/bosses/cantor.tres",
+			"scene": "res://scenes/characters/bosses/cantor.tscn",
+			"herald": "Somewhere in the ruins, a choir starts to sing."
+		}
+	}
+}

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/monk.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"monk"
+display_name = "Warrior Monk"
+flavor_text = "Forty years of silence, prayer and the staff. He will not speak to you. He will simply arrive."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 18.0
+speed = 3.3
+damage = 10.0
+xp_value = 3
+knockback_scale = 0.9
+behavior = 2
+preferred_distance = 6.0
+attack_cooldown = 2.6
+charge_speed = 15.0
+charge_time = 0.45
+windup_time = 0.6

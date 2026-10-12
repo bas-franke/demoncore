@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/verdant_matriarch_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"verdant_matriarch"
+display_name = "Mother Verdance"
+flavor_text = "The first garden grew a saint to tend it. Every root of Eden reaches for you, and they do not let go."
+model = ExtResource("2_model")
+size = 2.4
+hover = 0.0
+max_hp = 3200.0
+speed = 1.6
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

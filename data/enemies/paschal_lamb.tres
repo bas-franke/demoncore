@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/paschal_lamb.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"paschal_lamb"
+display_name = "Paschal Lamb"
+flavor_text = "Spotless, gentle, and the most dangerous thing on the field. Its death is a sacrifice, and every angel near it is made whole."
+model = ExtResource("2_model")
+size = 0.9
+max_hp = 10.0
+speed = 2.6
+damage = 2.0
+xp_value = 2
+knockback_scale = 1.2
+behavior = 0

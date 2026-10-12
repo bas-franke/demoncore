@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PassiveData" format=3]
+
+[ext_resource type="Script" path="res://scripts/upgrades/passive_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Dominion"
+description = "+12% area of effect. Thy shadow falls upon a wider earth."
+color = Color(0.45, 0.3, 0.55, 1)
+icon = "Θ"
+stat = &"area"
+amount_per_level = 0.12
+max_level = 5

@@ -1,0 +1,19 @@
+# Matches docs/team/code-quality.md (CODE_STYLE): tabs in GDScript/shaders, LF, UTF-8.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{gd,gdshader,gdshaderinc,tscn,tres,cfg,godot}]
+indent_style = tab
+indent_size = 4
+
+[*.{md,py,sh,bat}]
+indent_style = space
+indent_size = 4
+
+[*.bat]
+end_of_line = crlf

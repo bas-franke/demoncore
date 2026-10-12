@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/witch_hunter_captain.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"witch_hunter_captain"
+display_name = "Witch-Hunter Captain"
+flavor_text = "Captain Aldric Vane has hanged a coven, burned a lich and duelled a duke. He considers you a professional challenge."
+model = ExtResource("2_model")
+size = 1.05
+max_hp = 48.0
+speed = 3.0
+damage = 14.0
+xp_value = 7
+knockback_scale = 0.5
+behavior = 2
+preferred_distance = 6.0
+attack_cooldown = 2.2
+charge_speed = 17.0
+charge_time = 0.35
+windup_time = 0.65

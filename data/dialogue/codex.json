@@ -1,0 +1,656 @@
+{
+	"_doc": "Lore codex (scripts/dialogue/codex.gd, read with Dialogue.codex_entries()). Each entry: id, category, title, text, requires (story condition block; omit = always unlocked). Order here = display order.",
+	"codex": [
+		{
+			"id": "last_dawn",
+			"category": "The War",
+			"title": "The Last Dawn",
+			"text": "The Archons have proclaimed a sunrise that will never set. When it has fully risen, no shadow will survive in any world, and Hell is made of shadow. Its bearer is the Herald Sariel."
+		},
+		{
+			"id": "sinbound",
+			"category": "The War",
+			"title": "The Sinbound",
+			"requires": {
+				"seen": [
+					"prologue"
+				]
+			},
+			"text": "Demons whose sins weigh too much for them to stay dead. Slain on the Verge, they are dragged back down into the Font of Brimstone and made again. The Ashen Court's only weapon that Heaven cannot keep buried."
+		},
+		{
+			"id": "breach",
+			"category": "The War",
+			"title": "The Breach",
+			"requires": {
+				"seen": [
+					"kesh_intro"
+				]
+			},
+			"text": "A wound torn from the Pit up into the Verge, kept by the Chainward. It grows a hand's width every week. Nobody is sure whether the Verge is giving way, or something above is pulling."
+		},
+		{
+			"id": "lattice",
+			"category": "The War",
+			"title": "The Lattice of Grace",
+			"requires": {
+				"min": {
+					"runs": 2
+				}
+			},
+			"text": "A net of light strung across the sky that catches souls before they can fall. Hell is starving because of it. The Penitent Statues on the Verge are souls caught halfway down."
+		},
+		{
+			"id": "basecamp",
+			"category": "The Pit",
+			"title": "Basecamp Hell",
+			"requires": {
+				"min": {
+					"basecamp_visits": 1
+				}
+			},
+			"text": "The war camp on the lip of the Breach: a basalt plateau ringed with lava, where the Sinbound reform, trade and wait for the next ascent. It smells exactly as you would expect."
+		},
+		{
+			"id": "font",
+			"category": "The Pit",
+			"title": "The Font of Brimstone",
+			"requires": {
+				"min": {
+					"deaths": 1
+				}
+			},
+			"text": "Where the Sinbound come back. Each return leaves them a little more out of tune, which Heaven hates more than anything."
+		},
+		{
+			"id": "ashen_court",
+			"category": "Factions",
+			"title": "The Ashen Court",
+			"requires": {
+				"seen": [
+					"pip_intro"
+				]
+			},
+			"text": "The dukes of the Pit, on thrones of cooled slag. They ordered the war and never come up to fight it. Duchess Malphine writes most of their letters, and Pip reads all of them."
+		},
+		{
+			"id": "ninth_forge",
+			"category": "Factions",
+			"title": "The Ninth Forge",
+			"requires": {
+				"seen": [
+					"grimmaul_ninth_forge"
+				]
+			},
+			"text": "Eight Forges before it swore to make a blade that could kill an Archon. All eight are slag now, kept in a row by the lava. Grimmaul intends to be the first to be right."
+		},
+		{
+			"id": "black_choir",
+			"category": "Factions",
+			"title": "The Black Choir",
+			"requires": {
+				"seen": [
+					"vesper_intro"
+				]
+			},
+			"text": "Fallen angels who still sing, but backwards. The reversed hymn burns the tongue to ash, which is how Vesper earned her name."
+		},
+		{
+			"id": "ledger",
+			"category": "Factions",
+			"title": "The Ledger",
+			"requires": {
+				"seen": [
+					"clerk_intro"
+				]
+			},
+			"text": "The accountants of damnation, of the House of Mammon. Every soul is a debt, every debt a soul. Its Clerk sold his own name for a chair at Mammon's table."
+		},
+		{
+			"id": "fallen_roads",
+			"category": "Factions",
+			"title": "The Fallen Roads",
+			"requires": {
+				"seen": [
+					"ossek_intro"
+				]
+			},
+			"text": "The paths the angels once came down by, before they only came down to kill. Walked now by demon scouts and mapmakers."
+		},
+		{
+			"id": "chainward",
+			"category": "Factions",
+			"title": "The Chainward",
+			"requires": {
+				"any": [
+					{
+						"seen": [
+							"kesh_intro"
+						]
+					},
+					{
+						"demon": "skarn"
+					}
+				]
+			},
+			"text": "Jailers of the deepest pit. Skarn is their Warden; Kesh keeps the Breach. Every chain holds something."
+		},
+		{
+			"id": "sariel",
+			"category": "Heaven",
+			"title": "Sariel, Herald of the Last Dawn",
+			"requires": {
+				"min": {
+					"boss_seen.sariel": 1
+				}
+			},
+			"text": "A six-winged seraph of the Second Choir who carries the Last Dawn on its spear. It sang beside Lilaeth once. Lately it has begun to wonder why the light does not answer."
+		},
+		{
+			"id": "ozias",
+			"category": "Heaven",
+			"title": "Ozias, the Grand Inquisitor",
+			"requires": {
+				"min": {
+					"boss_seen.grand_inquisitor": 1
+				}
+			},
+			"text": "Judge of the Seventh Gate. He has burned more angels this age than demons, for the crime of doubt. His sermons always end in fire."
+		},
+		{
+			"id": "seventh_gate",
+			"category": "Heaven",
+			"title": "The Seventh Gate",
+			"requires": {
+				"seen": [
+					"ossek_seventh_gate"
+				]
+			},
+			"text": "The hole in the middle of every map of the Verge, shaped like a tower. Archons stand on its steps. Nobody has drawn what lies past it."
+		},
+		{
+			"id": "hollow_hymn",
+			"category": "Truths",
+			"title": "The Hollow Hymn",
+			"requires": {
+				"flags": [
+					"beat.hollow_hymn"
+				]
+			},
+			"text": "Every hymn is a question sung toward the Throne, and should come back down answered. For an age, nothing has come back."
+		},
+		{
+			"id": "brittle_steel",
+			"category": "Truths",
+			"title": "Rushed Steel",
+			"requires": {
+				"flags": [
+					"beat.brittle_steel"
+				]
+			},
+			"text": "Angel weapons have been forged in a hurry. Heaven was never in a hurry before."
+		},
+		{
+			"id": "missing_souls",
+			"category": "Truths",
+			"title": "Off the Books",
+			"requires": {
+				"flags": [
+					"beat.lattice_answer"
+				]
+			},
+			"text": "The souls taken by the Lattice go neither up nor down. In the Clerk's profession, when something vanishes, it is being spent."
+		},
+		{
+			"id": "dawn_fuel",
+			"category": "Truths",
+			"title": "Kindling",
+			"requires": {
+				"flags": [
+					"beat.dawn_fuel"
+				]
+			},
+			"text": "The Lattice souls are burned to light the Last Dawn. Heaven is lighting its sunrise with the dead."
+		},
+		{
+			"id": "empty_throne",
+			"category": "Truths",
+			"title": "The Empty Throne",
+			"requires": {
+				"flags": [
+					"beat.empty_throne"
+				]
+			},
+			"text": "The Throne is empty, perhaps since the Fall. The Archons rule from its steps. The Last Dawn is a pyre for the only witnesses: every demon who remembers that once there was Someone to fall from."
+		},
+		{
+			"id": "malphine",
+			"category": "Cast",
+			"title": "Duchess Malphine",
+			"requires": {
+				"seen": [
+					"malphine_arrival"
+				]
+			},
+			"text": "Noble of the Ashen Court, who believes everyone is somebody's weapon. She has had a cushion made for the Throne."
+		},
+		{
+			"id": "darling",
+			"category": "Cast",
+			"title": "Darling",
+			"requires": {
+				"min": {
+					"affinity.grimmaul": 4
+				}
+			},
+			"text": "Grimmaul's first anvil, pulled from the slag of the Eighth Forge. She remembers every blade. He talks to her because she listens."
+		},
+		{
+			"id": "vesper_note",
+			"category": "Cast",
+			"title": "Vesper's Note",
+			"requires": {
+				"min": {
+					"affinity.vesper": 5
+				}
+			},
+			"text": "One note of the backwards hymn, sung for you alone. You will hear it under everything, forever. It means someone in the Pit is on your side."
+		},
+		{
+			"id": "nameless",
+			"category": "Cast",
+			"title": "The Nameless Clerk",
+			"requires": {
+				"min": {
+					"affinity.clerk": 4
+				}
+			},
+			"text": "Someone once called him in for supper. He cannot remember the name she used. He is thinking of choosing a new one."
+		},
+		{
+			"id": "pip_origin",
+			"category": "Cast",
+			"title": "What Pip Was",
+			"requires": {
+				"min": {
+					"affinity.pip": 4
+				}
+			},
+			"text": "Pip was once a sin: somebody's small white lie, forgotten so completely that it fell into the Pit and became an imp."
+		},
+		{
+			"id": "ossek_origin",
+			"category": "Cast",
+			"title": "Ossek's First Map",
+			"requires": {
+				"min": {
+					"affinity.ossek": 3
+				}
+			},
+			"text": "Ossek was a scout of the Host who drew Heaven's maps of Hell, until he drew a road he was not meant to see and followed it down."
+		},
+		{
+			"id": "kesh_father",
+			"category": "Cast",
+			"title": "The Breachwarden's Father",
+			"requires": {
+				"min": {
+					"affinity.kesh": 3
+				}
+			},
+			"text": "Kesh's father kept the gate before him, went up once to see the sky, and never came down. Kesh counted every soul since, looking for him."
+		},
+		{
+			"id": "the_chair",
+			"category": "Truths",
+			"title": "The Chair",
+			"requires": {
+				"flags": [
+					"story.ended"
+				]
+			},
+			"text": "Very large, very plain, very empty, with dust on the armrests. {demon} climbed the stairs past the Seventh Gate and decided what it would be."
+		},
+		{
+			"id": "reconquest",
+			"category": "The War",
+			"title": "The Reconquest",
+			"requires": {
+				"flags": [
+					"story.ended"
+				]
+			},
+			"text": "Archons who would not kneel have rallied Heaven's remnant to take back a Throne that was never filled. Some faiths do not know how to stop."
+		},
+		{
+			"id": "azrafel",
+			"category": "Heaven",
+			"title": "Azrafel, Archon of the Seventh Gate",
+			"requires": {
+				"min": {
+					"boss_seen.gate_archon": 1
+				}
+			},
+			"text": "The last warden. It has stood before the Seventh Gate since before the first fall and has never once stepped aside. It knew what was behind the Gate. It guarded it anyway."
+		},
+		{
+			"id": "ysmir",
+			"category": "Heaven",
+			"title": "Ysmir, the Frost Abbot",
+			"requires": {
+				"min": {
+					"boss_seen.frost_abbot": 1
+				}
+			},
+			"text": "Abbot of the Silent Brothers, who prayed in the snow for forty years until the mountain answered. He told himself the silence was holy."
+		},
+		{
+			"id": "aurelion",
+			"category": "Heaven",
+			"title": "Aurelion, the Dawn Wyrm",
+			"requires": {
+				"min": {
+					"boss_seen.dawn_wyrm": 1
+				}
+			},
+			"text": "Hatched from the first sunrise and kept in the Sunlit Citadel as the Last Dawn's hearth. It has never seen a sunset."
+		},
+		{
+			"id": "verdance",
+			"category": "Heaven",
+			"title": "Mother Verdance",
+			"requires": {
+				"min": {
+					"boss_seen.verdant_matriarch": 1
+				}
+			},
+			"text": "Saint of the First Garden, who has tended Heaven's outermost terrace alone for an age. No one has come to walk in it."
+		},
+		{
+			"id": "seventh_gate_open",
+			"category": "Truths",
+			"title": "Past the Seventh Gate",
+			"requires": {
+				"min": {
+					"endings": 1
+				}
+			},
+			"text": "Stairs through thinning light, seven Archons kneeling out of habit, and at the top a chair with dust on its armrests."
+		},
+		{
+			"id": "boss_war_chariot",
+			"category": "Heaven",
+			"title": "Lord-Marshal Caddoc",
+			"requires": {
+				"min": {
+					"boss_seen.war_chariot": 1
+				}
+			},
+			"text": "A mortal crusader who rode to war in a burning chariot at the head of the Burning Crusade. He believed the bishops. He believed everything."
+		},
+		{
+			"id": "boss_storm_archon",
+			"category": "Heaven",
+			"title": "Baraqiel, Archon of the Tempest",
+			"requires": {
+				"min": {
+					"boss_seen.storm_archon": 1
+				}
+			},
+			"text": "The Archon of the Storm Spire, who sent the rain down on behalf of a Throne that had stopped asking. He told himself the thunder was an answer."
+		},
+		{
+			"id": "boss_gilded_seraph",
+			"category": "Heaven",
+			"title": "Aurum, the Gilded Seraph",
+			"requires": {
+				"min": {
+					"boss_seen.gilded_seraph": 1
+				}
+			},
+			"text": "Keeper of the Gilded Isles and of Heaven's ledgers. Aurum counted every soul the Lattice burned and never asked what it was buying."
+		},
+		{
+			"id": "boss_cantor",
+			"category": "Heaven",
+			"title": "Cantor Seraphiel, the Broken Choir",
+			"requires": {
+				"min": {
+					"boss_seen.cantor": 1
+				}
+			},
+			"text": "Master of the Ruined Sanctum's choir. When no hymn ever came back answered, he broke his choir and stitched it into a single screaming instrument."
+		},
+		{
+			"id": "leviathan",
+			"category": "Heaven",
+			"title": "The Celestial Leviathan",
+			"requires": {
+				"seen": [
+					"whale_first"
+				]
+			},
+			"text": "A whale of light that swims the open sky over Heaven's terraces, shedding pillars of judgement the way a whale sheds water. It cannot be fought. It does not appear to know there is a war."
+		},
+		{
+			"id": "paschal_lamb",
+			"category": "Heaven",
+			"title": "The Paschal Lamb",
+			"requires": {
+				"min": {
+					"runs": 8
+				}
+			},
+			"text": "Harmless, gentle, and a trap: whoever kills it pays for the slaughter, because its blood heals every angel nearby. Heaven has always known how to use an innocent."
+		},
+		{
+			"id": "virtue_power",
+			"category": "Heaven",
+			"title": "Virtues and Powers",
+			"requires": {
+				"min": {
+					"runs": 6
+				}
+			},
+			"text": "Middle choirs of the Host. Virtues work small miracles, undoing the last moments of an angel's wounds. Powers hunt the servants of demons and dismiss them back to the Pit."
+		},
+		{
+			"id": "nhazgul",
+			"category": "The Pit",
+			"title": "Nhazgul, the Plague Hive",
+			"requires": {
+				"min": {
+					"runs_as.nhazgul": 1
+				}
+			},
+			"text": "A sinner who let everything around him rot, and sat in the middle of it calling it his. The flies made a home of him. Now they swarm the heavens on his behalf, and Heaven has never had to fight a plague that thinks."
+		},
+		{
+			"id": "sig_icebound_penitent",
+			"category": "Heaven",
+			"title": "Icebound Penitent",
+			"requires": {
+				"min": {
+					"map_runs.frozen_monastery": 1
+				}
+			},
+			"text": "A penitent who knelt in the snow until the monastery's cold sealed him in ice. Break him and the ice breaks outward, in every direction."
+		},
+		{
+			"id": "sig_bell_ringer_monk",
+			"category": "Heaven",
+			"title": "Bell-Ringer Monk",
+			"requires": {
+				"min": {
+					"map_runs.frozen_monastery": 1
+				}
+			},
+			"text": "Keepers of the monastery's bells, whose every toll rolls out as a ring of holy frost. The Silent Brothers speak only through them."
+		},
+		{
+			"id": "sig_watch_pikeman",
+			"category": "Heaven",
+			"title": "Watch Pikeman",
+			"requires": {
+				"min": {
+					"map_runs.cathedral_city": 1
+				}
+			},
+			"text": "Saint Aurel's city watch. They were hired to stop thieves and drunks. Nobody told them about this."
+		},
+		{
+			"id": "sig_rooftop_archer",
+			"category": "Heaven",
+			"title": "Rooftop Archer",
+			"requires": {
+				"min": {
+					"map_runs.cathedral_city": 1
+				}
+			},
+			"text": "An archer so attached to his vantage point that he carries a piece of it with him. Long range, short temper."
+		},
+		{
+			"id": "sig_thorn_guardian",
+			"category": "Heaven",
+			"title": "Thorn Guardian",
+			"requires": {
+				"min": {
+					"map_runs.outer_gardens": 1
+				}
+			},
+			"text": "A knight of clipped hedge, grown and trimmed by Mother Verdance to guard her paths. Come close and the thorns come out."
+		},
+		{
+			"id": "sig_hummingbird_cherub",
+			"category": "Heaven",
+			"title": "Hummingbird Cherub",
+			"requires": {
+				"min": {
+					"map_runs.outer_gardens": 1
+				}
+			},
+			"text": "Cherubs grown small and quick as hummingbirds in the gardens' nectar. They never arrive alone."
+		},
+		{
+			"id": "sig_sun_priest",
+			"category": "Heaven",
+			"title": "Sun Priest",
+			"requires": {
+				"min": {
+					"map_runs.sunlit_citadel": 1
+				}
+			},
+			"text": "Priests of the Unsetting Sun, who bend the Citadel's light through polished mirrors into lances."
+		},
+		{
+			"id": "sig_golden_legionary",
+			"category": "Heaven",
+			"title": "Golden Legionary",
+			"requires": {
+				"min": {
+					"map_runs.sunlit_citadel": 1
+				}
+			},
+			"text": "Heaven's shield-wall infantry. From the front they are nearly invulnerable. Nobody ever taught them to turn around."
+		},
+		{
+			"id": "sig_crusader_revenant",
+			"category": "Heaven",
+			"title": "Crusader Revenant",
+			"requires": {
+				"min": {
+					"map_runs.ashen_wastes": 1
+				}
+			},
+			"text": "Crusaders burned on the Ashen Wastes who did not stop marching. Kill one and it climbs out of its own ashes once more."
+		},
+		{
+			"id": "sig_carrion_angel",
+			"category": "Heaven",
+			"title": "Carrion Angel",
+			"requires": {
+				"min": {
+					"map_runs.ashen_wastes": 1
+				}
+			},
+			"text": "Angels of the Wastes that have learned to eat the battlefield. Every death nearby mends them."
+		},
+		{
+			"id": "sig_rod_acolyte",
+			"category": "Heaven",
+			"title": "Rod Acolyte",
+			"requires": {
+				"min": {
+					"map_runs.storm_spire": 1
+				}
+			},
+			"text": "Acolytes of Baraqiel who carry iron rods to the top of the Spire and call the lightning down onto anything that moves."
+		},
+		{
+			"id": "sig_cloud_djinn",
+			"category": "Heaven",
+			"title": "Cloud Djinn",
+			"requires": {
+				"min": {
+					"map_runs.storm_spire": 1
+				}
+			},
+			"text": "Spirits of the Storm Spire that burst into cloud and re-form wherever you are not looking."
+		},
+		{
+			"id": "sig_mimic_reliquary",
+			"category": "Heaven",
+			"title": "Mimic Reliquary",
+			"requires": {
+				"min": {
+					"map_runs.gilded_isles": 1
+				}
+			},
+			"text": "A reliquary on the Gilded Isles that waits as treasure for the greedy. It has always been Aurum's favourite joke."
+		},
+		{
+			"id": "sig_gilded_harpy",
+			"category": "Heaven",
+			"title": "Gilded Harpy",
+			"requires": {
+				"min": {
+					"map_runs.gilded_isles": 1
+				}
+			},
+			"text": "Gold-feathered harpies of the Isles who dive, strike and fly off with whatever glitters, including your Ichor."
+		},
+		{
+			"id": "sig_gate_warden",
+			"category": "Heaven",
+			"title": "Gate Warden",
+			"requires": {
+				"min": {
+					"map_runs.heavens_gate": 1
+				}
+			},
+			"text": "Wardens of the Seventh Gate with holy mirrors and key-halberds, shielding the Host. Kesh calls them his reflection: keepers of a door, on the wrong side."
+		},
+		{
+			"id": "sig_honour_guard",
+			"category": "Heaven",
+			"title": "Honour Guard",
+			"requires": {
+				"min": {
+					"map_runs.heavens_gate": 1
+				}
+			},
+			"text": "Twin sabre-angels who serve the Gate in pairs, saluting with crossed blades before they dash. Kill one and the other fights harder."
+		},
+		{
+			"id": "iscariel",
+			"category": "The Pit",
+			"title": "Iscariel, the Turncoat",
+			"requires": {
+				"min": {
+					"runs_as.iscariel": 1
+				}
+			},
+			"text": "Keeper of the First Gate of the Silver City and brother-warden of Azrafel. At the Fall he opened his Gate from the inside and let Hell's first legions through. Heaven says he was paid thirty pieces of light. He says he invented the price, so they would think he could be bought. One wing white, one wing burned: both sides remember, only one forgives."
+		}
+	]
+}

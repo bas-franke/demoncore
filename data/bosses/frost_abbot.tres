@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/frost_abbot_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"frost_abbot"
+display_name = "Ysmir, the Frost Abbot"
+flavor_text = "He knelt in the snow for forty years asking God for a sign. The mountain answered instead, and it does not forgive the warm."
+model = ExtResource("2_model")
+size = 2.3
+hover = 0.0
+max_hp = 3000.0
+speed = 1.9
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

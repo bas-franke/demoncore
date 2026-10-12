@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/mortal_choir.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mortal_choir"
+display_name = "Mortal Choir"
+flavor_text = "The parish choir sings for the angels now. Every verse makes the Host a little faster and a little crueller."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 20.0
+speed = 2.0
+damage = 4.0
+xp_value = 4
+knockback_scale = 0.9
+behavior = 5
+preferred_distance = 8.0
+attack_cooldown = 4.5
+windup_time = 1.3
+heal_radius = 5.0
+heal_fraction = 0.1

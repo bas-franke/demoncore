@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/ophanim.tscn" id="2_model"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/holy_orb.tscn" id="3_proj"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ophanim"
+display_name = "Ophanim"
+flavor_text = "Wheels within wheels, rimmed with eyes that blink only to remember. It watched you fall, and it remembers."
+model = ExtResource("2_model")
+size = 1.0
+hover = 0.8
+max_hp = 16.0
+speed = 2.2
+damage = 6.0
+xp_value = 3
+knockback_scale = 0.8
+behavior = 1
+preferred_distance = 7.0
+attack_cooldown = 2.6
+projectile = ExtResource("3_proj")
+projectile_damage = 9.0
+projectile_speed = 5.5
+muzzle_height = 1.35
+windup_time = 0.7

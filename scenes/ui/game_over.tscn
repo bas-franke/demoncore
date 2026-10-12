@@ -1,0 +1,113 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/game_over.gd" id="1_go"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("1_go")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012, 0.004, 0.003, 0.62)
+
+[node name="Band" type="TextureRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -230.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -230.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(0.64, 0.1, 0.07, 1)
+theme_override_colors/font_shadow_color = Color(0.25, 0.0, 0.0, 0.55)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 28
+theme_override_font_sizes/font_size = 104
+text = "UNMADE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="CenterContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Details" type="VBoxContainer" parent="Root/Center"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Subtitle" type="Label" parent="Root/Center/Details"]
+layout_mode = 2
+theme_type_variation = &"LoreLabel"
+theme_override_font_sizes/font_size = 20
+text = "Thy flesh returns to the pit. The Host sings on."
+horizontal_alignment = 1
+
+[node name="Stats" type="HBoxContainer" parent="Root/Center/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 18
+
+[node name="Buttons" type="HBoxContainer" parent="Root/Center/Details"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="Restart" type="Button" parent="Root/Center/Details/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 52)
+layout_mode = 2
+theme_type_variation = &"AccentButton"
+text = "Rise Again"
+
+[node name="ChangeDemon" type="Button" parent="Root/Center/Details/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 52)
+layout_mode = 2
+text = "Choose Demon"
+
+[node name="Quit" type="Button" parent="Root/Center/Details/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 52)
+layout_mode = 2
+text = "Quit"

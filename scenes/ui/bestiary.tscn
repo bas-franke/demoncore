@@ -1,0 +1,108 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/bestiary.gd" id="1_bestiary"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+
+[node name="Bestiary" type="CanvasLayer"]
+process_mode = 3
+layer = 22
+script = ExtResource("1_bestiary")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012, 0.008, 0.006, 0.8)
+
+[node name="Margin" type="MarginContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 28
+
+[node name="Panel" type="PanelContainer" parent="Root/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/Margin/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Root/Margin/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Root/Margin/Panel/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 44
+text = "BESTIARY"
+
+[node name="Spacer" type="Control" parent="Root/Margin/Panel/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="CounterBadge" type="PanelContainer" parent="Root/Margin/Panel/VBox/Header"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Badge"
+
+[node name="Counter" type="Label" parent="Root/Margin/Panel/VBox/Header/CounterBadge"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"InkLabel"
+theme_override_colors/font_color = Color(0.91, 0.84, 0.65, 1)
+theme_override_font_sizes/font_size = 17
+text = "Witnessed  0 / 0"
+horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="Root/Margin/Panel/VBox/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Close"
+
+[node name="Subtitle" type="Label" parent="Root/Margin/Panel/VBox"]
+layout_mode = 2
+theme_type_variation = &"LoreLabel"
+theme_override_font_sizes/font_size = 18
+text = "Know the Host that hunts thee. Each seraph thou hast faced is set down here."
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Margin/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Center" type="CenterContainer" parent="Root/Margin/Panel/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="Root/Margin/Panel/VBox/Scroll/Center"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4

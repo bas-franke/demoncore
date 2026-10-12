@@ -1,0 +1,629 @@
+{
+	"_doc": "Per-map arrival narration (StoryHooks, at run start). Pool map_arrival.<map id> (data/maps/*.json ids); if nothing is eligible the generic run_start pool plays instead. Story var map_runs.<id> counts runs on each map (already incremented when these play).",
+	"conversations": [
+		{
+			"id": "arrive_sanctum_first",
+			"pool": "map_arrival.ruined_sanctum",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Ruined Sanctum. Here the fallen first broke through, and here the chapels still lie where they toppled. No walls. No end. Only more of them."
+				}
+			]
+		},
+		{
+			"id": "arrive_sanctum_1",
+			"pool": "map_arrival.ruined_sanctum",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Burnt graveyards and broken bells. The Sanctum remembers you, {demon}. It still smells of the last time."
+				}
+			]
+		},
+		{
+			"id": "arrive_sanctum_2",
+			"pool": "map_arrival.ruined_sanctum",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The border of the mortal realm. Every step you take here, the Verge forgets a prayer."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_first",
+			"pool": "map_arrival.outer_gardens",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Outer Gardens. First Terrace of Heaven. Hedges trimmed by angels, pools that reflect nothing unholy. Let us see how they reflect you."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_1",
+			"pool": "map_arrival.outer_gardens",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The Gilded Tree bears no fruit any more. Heaven has not noticed. Heaven notices less and less."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_2",
+			"pool": "map_arrival.outer_gardens",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The choirs here are slow to anger. Teach them."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_throne",
+			"pool": "map_arrival.outer_gardens",
+			"once": true,
+			"priority": 5,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"text": "Even the gardeners are gone. Somebody left the shears in the hedge, mid-cut, an age ago."
+				}
+			]
+		},
+		{
+			"id": "arrive_city_first",
+			"pool": "map_arrival.cathedral_city",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "Saint Aurel, Jewel of the Faithful. A mortal city, walled and pious. Every church door is about to open at once."
+				}
+			]
+		},
+		{
+			"id": "arrive_city_1",
+			"pool": "map_arrival.cathedral_city",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The bells of Saint Aurel ring the alarm. The faithful bar their doors. Their doors are made of wood."
+				}
+			]
+		},
+		{
+			"id": "arrive_city_2",
+			"pool": "map_arrival.cathedral_city",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Narrow streets, narrow minds. Mind the choke points, {demon}. Theirs, not yours."
+				}
+			]
+		},
+		{
+			"id": "arrive_city_hymn",
+			"pool": "map_arrival.cathedral_city",
+			"once": true,
+			"priority": 5,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"text": "Listen. The cathedral is singing. Ten thousand mortal voices, and not one answer coming down."
+				}
+			]
+		},
+		{
+			"id": "arrive_monastery_first",
+			"pool": "map_arrival.frozen_monastery",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Frozen Monastery. The Silent Brothers have kept vigil here so long that the cold has learned to pray."
+				}
+			]
+		},
+		{
+			"id": "arrive_monastery_1",
+			"pool": "map_arrival.frozen_monastery",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Snow on the meditation stones. Bring the fire indoors, {demon}. All of it."
+				}
+			]
+		},
+		{
+			"id": "arrive_monastery_2",
+			"pool": "map_arrival.frozen_monastery",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The wind cuts. The monks cut harder. You cut hardest."
+				}
+			]
+		},
+		{
+			"id": "arrive_monastery_skarn",
+			"pool": "map_arrival.frozen_monastery",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"text": "Skarn knows this kind of silence. It is the silence of a cell after the screaming stops."
+				}
+			]
+		},
+		{
+			"id": "arrive_citadel_first",
+			"pool": "map_arrival.sunlit_citadel",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Sunlit Citadel, Bastion of the Unsetting Sun. Heaven's war-fortress. Behind its golden rings, the road climbs toward the Seventh Gate."
+				}
+			]
+		},
+		{
+			"id": "arrive_citadel_after",
+			"pool": "map_arrival.sunlit_citadel",
+			"priority": 4,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "The Citadel still burns from the last time. Heaven's remnant wants it back. Let them try."
+				}
+			]
+		},
+		{
+			"id": "arrive_citadel_1",
+			"pool": "map_arrival.sunlit_citadel",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Lancers on the ramparts, archons in the gates. Every courtyard is a siege. You are the siege."
+				}
+			]
+		},
+		{
+			"id": "arrive_citadel_march",
+			"pool": "map_arrival.sunlit_citadel",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"flags": [
+					"known.march"
+				]
+			},
+			"lines": [
+				{
+					"text": "The Citadel's lancers have heard about the March. They are holding the walls with their eyes shut."
+				}
+			]
+		},
+		{
+			"id": "arrive_isles_first",
+			"pool": "map_arrival.gilded_isles",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Gilded Isles. A shard of paradise adrift above an endless sea of cloud. Do not look down. Heaven never does."
+				}
+			]
+		},
+		{
+			"id": "arrive_isles_1",
+			"pool": "map_arrival.gilded_isles",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "One bridge joins the halves of the isle. Hold it, and Heaven has to come to you."
+				}
+			]
+		},
+		{
+			"id": "arrive_isles_2",
+			"pool": "map_arrival.gilded_isles",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Marble, gold, stained glass, and under all of it, nothing for a thousand miles. Fall, {demon}, and keep falling, all the way home."
+				}
+			]
+		},
+		{
+			"id": "arrive_isles_hymn",
+			"pool": "map_arrival.gilded_isles",
+			"once": true,
+			"priority": 5,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"text": "The sky rift hums the same note over and over. A question. Nobody upstairs is answering it."
+				}
+			]
+		},
+		{
+			"id": "arrive_spire_first",
+			"pool": "map_arrival.storm_spire",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Storm Spire. Heaven's lightning is born here, wound tight around a tower of white stone. Every bolt is a prayer that missed."
+				}
+			]
+		},
+		{
+			"id": "arrive_spire_1",
+			"pool": "map_arrival.storm_spire",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Thunder rolls up the Spire like a choir clearing its throat. Make it choke."
+				}
+			]
+		},
+		{
+			"id": "arrive_spire_2",
+			"pool": "map_arrival.storm_spire",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Rain falls upward here. Even the weather is trying to leave."
+				}
+			]
+		},
+		{
+			"id": "arrive_spire_vharok",
+			"pool": "map_arrival.storm_spire",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "A tower. Good. I have not broken a tower in a while."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_first",
+			"pool": "map_arrival.heavens_gate",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "Heaven's Gate. The pearl road, the warded arches, and at the end of it, the Seventh Gate, which has never been opened from the outside."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_locked",
+			"pool": "map_arrival.heavens_gate",
+			"requires": {
+				"not_flags": [
+					"known.march"
+				]
+			},
+			"priority": 2,
+			"lines": [
+				{
+					"text": "The Seventh Gate does not know your name yet. Break its wards anyway. It is good practice."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_march",
+			"pool": "map_arrival.heavens_gate",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"flags": [
+					"known.march"
+				],
+				"not_flags": [
+					"story.ended"
+				]
+			},
+			"lines": [
+				{
+					"text": "Kesh's halberd rings behind you and the Breach opens wider than it ever has. This is the March, {demon}. Break the wards. Fell the warden. Walk through."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_march_again",
+			"pool": "map_arrival.heavens_gate",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.march"
+				],
+				"not_flags": [
+					"story.ended"
+				]
+			},
+			"lines": [
+				{
+					"text": "The wards of the Seventh Gate glow on their pillars. Break them, fell the warden, and the stairs are yours."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_after",
+			"pool": "map_arrival.heavens_gate",
+			"priority": 4,
+			"requires": {
+				"flags": [
+					"story.ended"
+				]
+			},
+			"lines": [
+				{
+					"text": "The Gate you broke has been rebuilt by loyalists who will not accept an answer. Break it again."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_first",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"text": "The Breach. Here Hell came up through the floor of Heaven like a fist through a stained-glass window. Hellfire in the rifts, obsidian through the marble. Ours, nearly."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_1",
+			"pool": "map_arrival.the_breach",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Every rift here glows with the Pit's own fire. Heaven bleeds light; the wound bleeds back."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_2",
+			"pool": "map_arrival.the_breach",
+			"requires": {
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The blight has already taken half the island. Take the other half, {demon}."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_3",
+			"pool": "map_arrival.the_breach",
+			"requires": {
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Home has a door into Heaven now. I should knock."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_kesh",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"seen": [
+					"kesh_breach_widening"
+				]
+			},
+			"lines": [
+				{
+					"text": "Kesh says the Breach is wider every week. Standing in it, you understand why: Heaven is not holding it shut. It is falling in."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_hymn",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 5,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"text": "The defenders here sing as they die. Listen for the reply. There is still none."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_throne",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 5,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"text": "Heaven fights hardest here, for every scorched step. As if there were still someone upstairs to disappoint."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_march",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 7,
+			"requires": {
+				"flags": [
+					"known.march"
+				],
+				"not_flags": [
+					"story.ended"
+				]
+			},
+			"lines": [
+				{
+					"text": "The March passes through the Breach. Every demon in the Pit is behind you, {demon}, pressing upward."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_after",
+			"pool": "map_arrival.the_breach",
+			"priority": 4,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "The Breach is Hell's front porch now. The loyalists keep trying to sweep it."
+				}
+			]
+		},
+		{
+			"id": "arrive_breach_skarn",
+			"pool": "map_arrival.the_breach",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "A hole in Heaven. The finest cell door I have ever seen. Open."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_nhazgul",
+			"pool": "map_arrival.outer_gardens",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Flowers. Fruit. Nectar. Children, we are home."
+				}
+			]
+		},
+		{
+			"id": "arrive_monastery_nhazgul",
+			"pool": "map_arrival.frozen_monastery",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"text": "The cold bites the hive. Nhazgul draws the swarm in close, a coat of a million wings. The monks will warm them up."
+				}
+			]
+		},
+		{
+			"id": "arrive_gate_iscariel",
+			"pool": "map_arrival.heavens_gate",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "The pearl road. I walked it every morning for a thousand years. It has not changed. I have."
+				}
+			]
+		},
+		{
+			"id": "arrive_gardens_iscariel",
+			"pool": "map_arrival.outer_gardens",
+			"once": true,
+			"priority": 6,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"text": "Iscariel walks the hedges he once patrolled. A gardener-cherub recognises him, drops its shears, and flees."
+				}
+			]
+		}
+	]
+}

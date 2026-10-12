@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/glass_golem.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"glass_golem"
+display_name = "Stained-Glass Golem"
+flavor_text = "A rose window of the great cathedral, walking. Every pane tells a story of a demon's defeat."
+model = ExtResource("2_model")
+size = 1.3
+max_hp = 80.0
+speed = 1.6
+damage = 18.0
+xp_value = 9
+knockback_scale = 0.25
+behavior = 0

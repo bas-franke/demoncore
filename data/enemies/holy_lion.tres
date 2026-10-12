@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/holy_lion.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"holy_lion"
+display_name = "Lion of Judah"
+flavor_text = "The beast that lies down with the lamb. It does not lie down with demons."
+model = ExtResource("2_model")
+size = 1.15
+max_hp = 34.0
+speed = 3.0
+damage = 15.0
+xp_value = 5
+knockback_scale = 0.6
+behavior = 3
+attack_cooldown = 1.6
+charge_speed = 8.0
+charge_time = 0.6
+windup_time = 0.5

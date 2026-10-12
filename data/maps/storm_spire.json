@@ -1,0 +1,53 @@
+{
+	"_doc": "Map registry entry (autoload Maps, docs/team/maps.md).",
+	"id": "storm_spire",
+	"name": "The Storm Spire",
+	"subtitle": "Bastion of the Thousand Bolts",
+	"description": "A lightning-wracked bastion of three stepped tiers, each with only two stairways, turned so the climb is a spiral. Lightning hunts you all run, and every bolt that lands near a rod is pulled into it. Lure the host onto the rods.",
+	"order": 7,
+	"realm": "heaven",
+	"biome": "storm",
+	"difficulty": 5,
+	"difficulty_minutes": 1.6,
+	"scene": "res://scenes/maps/storm_spire/storm_spire.tscn",
+	"generator": "",
+	"seed": 4242,
+	"decor": "none",
+	"atmosphere_preset": "storm_spire",
+	"music": "battle_spire",
+	"music_fallback": "battle_citadel",
+	"ambience": "storm",
+	"weather": {"particles": "", "particle_amount": 0},
+	"unlock": {"default": false, "cost": 400, "requires": "sunlit_citadel"},
+	"spawner": {"base_rate": 1.18, "rate_growth": 0.037, "surge_rate": 2.6, "ring_base": 12, "ring_per_wave": 4, "boss_time": 270.0},
+	"hazards": {"lightning": {"interval": 4.5, "player_damage": 13.0, "enemy_damage": 38.0}},
+	"enemy_pool": [
+		{"enemy": "seraph_sentinel", "start": 0, "end": -1, "weight": 6},
+		{"enemy": "ophanim", "start": 0, "end": -1, "weight": 4},
+		{"enemy": "dawn_lancer", "start": 20, "end": -1, "weight": 5},
+		{"enemy": "choir_wisp", "start": 0, "end": 90, "weight": 3},
+		{"enemy": "penitent_statue", "start": 90, "end": -1, "weight": 3},
+		{"enemy": "archon", "start": 200, "end": -1, "weight": 0.7},
+		{"enemy": "gryphon_rider", "start": 80, "end": -1, "weight": 2},
+		{"enemy": "dominion", "start": 150, "end": -1, "weight": 1.2},
+		{"enemy": "virtue", "start": 120, "end": -1, "weight": 1.2},
+		{"enemy": "herald_trumpeter", "start": 70, "end": -1, "weight": 1.5},
+		{"enemy": "power", "start": 140, "end": -1, "weight": 1.2},
+		{"enemy": "rod_acolyte", "start": 50, "end": -1, "weight": 3.0},
+		{"enemy": "cloud_djinn", "start": 110, "end": -1, "weight": 1.8}
+	],
+	"elite": "archon",
+	"boss": "storm_archon",
+	"env": {
+		"sky_top": [0.12, 0.12, 0.22], "sky_horizon": [0.35, 0.36, 0.5], "ground_horizon": [0.24, 0.25, 0.32],
+		"background": [0.1, 0.1, 0.16], "ambient": [0.45, 0.5, 0.7], "ambient_energy": 0.6,
+		"fog_color": [0.3, 0.32, 0.45], "fog_density": 0.016, "exposure": 1.0,
+		"sun_color": [0.7, 0.78, 1.0], "sun_energy": 1.3, "sun_pitch": -40.0, "sun_yaw": -100.0
+	},
+	"ground": {
+		"grass_dark": [0.12, 0.13, 0.16], "grass_mid": [0.2, 0.21, 0.25], "stone_color": [0.4, 0.42, 0.48],
+		"stone_color_b": [0.3, 0.32, 0.38], "wetness": 0.7
+	},
+	"portal": {"color": [0.55, 0.7, 1.0], "glyph": "*"},
+	"tags": ["bounded", "heaven", "storm"]
+}

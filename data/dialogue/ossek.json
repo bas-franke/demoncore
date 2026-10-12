@@ -1,0 +1,395 @@
+{
+	"_doc": "Wayfarer Ossek, Cartographer of the Fallen Roads. Scouts the Verge and the way to the Seventh Gate. Pool 'ossek' (shop id: cartographer).",
+	"conversations": [
+		{
+			"id": "ossek_intro",
+			"pool": "ossek",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Mind the map! The ink is still wet. Wet with what, you do not want to know."
+				},
+				{
+					"who": "ossek",
+					"text": "Wayfarer Ossek. I walk the Fallen Roads, the paths the angels used to come down by. Before they stopped coming down for anything but killing."
+				},
+				{
+					"who": "ossek",
+					"text": "Pick a road, Sinbound. I will tell you which ones bleed."
+				}
+			]
+		},
+		{
+			"id": "ossek_seventh_gate",
+			"pool": "ossek",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"min": {
+					"runs": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Every map of the Verge has a hole in the middle. Shaped like a tower."
+				},
+				{
+					"who": "ossek",
+					"text": "The Seventh Gate. Archons stand on its steps. Nobody has drawn what lies past it."
+				},
+				{
+					"who": "player",
+					"text": "Nobody has tried?"
+				},
+				{
+					"who": "ossek",
+					"text": "Plenty have tried. Nobody has come back with a pen."
+				}
+			]
+		},
+		{
+			"id": "ossek_first_death",
+			"pool": "ossek",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"min": {
+					"deaths": 2
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Where did they get you? No, do not tell me. Show me. Here, on the map."
+				},
+				{
+					"who": "ossek",
+					"text": "Ah. Everyone dies there the first few times. I have marked it with a little skull. It is getting crowded."
+				}
+			]
+		},
+		{
+			"id": "ossek_gates_empty",
+			"pool": "ossek",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				],
+				"min": {
+					"runs": 7
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "I went further than ever last week. Past the clouds of the Verge, up to the outer gates."
+				},
+				{
+					"who": "ossek",
+					"text": "Do you know what was guarding them? Statues. Penitent ones. Facing outward, praying at nobody."
+				},
+				{
+					"who": "ossek",
+					"text": "Heaven has locked itself in, Sinbound. The question a mapmaker asks is: locked in with what?"
+				}
+			]
+		},
+		{
+			"id": "ossek_inquisitor",
+			"pool": "ossek",
+			"once": true,
+			"priority": 88,
+			"requires": {
+				"min": {
+					"boss_seen.grand_inquisitor": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Bells on the roads now. Inquisitors. They hang their own."
+				},
+				{
+					"who": "ossek",
+					"text": "I passed a seraph strung up by its wings, with a sign around its neck. One word. DOUBTED."
+				}
+			]
+		},
+		{
+			"id": "ossek_vharok",
+			"pool": "ossek",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Ravager! You broke the gates of the Silver City once. Which ones, exactly? I need it for the map."
+				},
+				{
+					"who": "player",
+					"text": "All of them."
+				},
+				{
+					"who": "ossek",
+					"text": "...That is not helpful, cartographically."
+				}
+			]
+		},
+		{
+			"id": "ossek_skarn",
+			"pool": "ossek",
+			"once": true,
+			"priority": 72,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Warden. Your pit is the only place I have never mapped."
+				},
+				{
+					"who": "player",
+					"text": "Nobody maps the deepest pit. It maps you."
+				},
+				{
+					"who": "ossek",
+					"text": "Ah. Well. I will leave that page blank, then."
+				}
+			]
+		},
+		{
+			"id": "ossek_march",
+			"pool": "ossek",
+			"once": true,
+			"priority": 95,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"set": {
+				"beat.march": true
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "So the chair is empty. The road to it is not."
+				},
+				{
+					"who": "ossek",
+					"text": "The Seventh Gate stands in between, and every Archon left in Heaven is standing on it."
+				},
+				{
+					"who": "ossek",
+					"text": "I will start drawing that map now, shall I? Try to survive long enough to walk it."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_1",
+			"pool": "ossek",
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "The Heavens have many doors. I know which ones bleed."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_2",
+			"pool": "ossek",
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "North is wherever the angels are coming from. That is all the compass you need."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_3",
+			"pool": "ossek",
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "A road is just a scar the world agreed to keep."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_died",
+			"pool": "ossek",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Another little skull on the map. Do not worry, I use small ones."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_long",
+			"pool": "ossek",
+			"priority": 1,
+			"requires": {
+				"min": {
+					"best_time": 600
+				},
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "You have been further up the Verge than most. Tell me what you saw, some time."
+				}
+			]
+		},
+		{
+			"id": "ossek_beyond_gate",
+			"pool": "ossek",
+			"once": true,
+			"priority": 82,
+			"requires": {
+				"flags": [
+					"known.march"
+				],
+				"min": {
+					"boss_kills": 6
+				}
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "I found a scout's map in the ash. One of theirs. An angel's."
+				},
+				{
+					"who": "ossek",
+					"text": "It shows the road past the Seventh Gate. It goes up and up, and at the very top somebody has drawn a chair, and then scribbled over it until the page tore."
+				},
+				{
+					"who": "ossek",
+					"text": "Even their own maps are afraid of it. I will finish it for them."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_lilaeth",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Seraph. You flew the High Roads once. Draw them for me? I will trade you a valley."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_morvane",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Hexbinder. Every name you hold is a place on someone's map. Tell me a few."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_skarn",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Warden. If I map your pit, will it let me back out?"
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_vharok",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Ravager. Here is a map with every gate on it. Circle the ones you have not broken."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_ysolde",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Reaper. The fields of the Verge are on page nine. Whichever ones you like."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_nhazgul",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Hive. Your flies get everywhere. One of them is on my map right now. It is standing on Heaven."
+				}
+			]
+		},
+		{
+			"id": "ossek_chat_iscariel",
+			"pool": "ossek",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "Gatekeeper. You know Heaven's doors better than I ever will. Which ones squeak?"
+				}
+			]
+		}
+	]
+}

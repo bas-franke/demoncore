@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+<defs>
+<radialGradient id="bg" cx="32" cy="32" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1c0d0a" stop-opacity="0.96"/><stop offset="0.72" stop-color="#0c0605" stop-opacity="0.9"/><stop offset="1" stop-color="#080404" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="32" cy="32" r="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b08040" stop-opacity="0.55"/><stop offset="1" stop-color="#b08040" stop-opacity="0"/></radialGradient>
+<linearGradient id="fill" x1="14" y1="8" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#dbc098"/><stop offset="0.5" stop-color="#b08040"/><stop offset="1" stop-color="#563c20"/></linearGradient>
+</defs>
+<circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+<circle cx="32" cy="32" r="27" fill="url(#glow)"/>
+<path d="M10.08 18.56 L18.56 10.08 L26.34 12.20 L28.46 19.98 L19.98 28.46 L12.20 26.34 Z M14.32 19.98 L19.98 14.32 L23.51 15.03 L24.22 18.56 L18.56 24.22 L15.03 23.51 Z M19.98 28.46 L28.46 19.98 L36.24 22.10 L38.36 29.88 L29.88 38.36 L22.10 36.24 Z M24.22 29.88 L29.88 24.22 L33.41 24.93 L34.12 28.46 L28.46 34.12 L24.93 33.41 Z M29.88 38.36 L38.36 29.88 L46.14 32.00 L48.26 39.78 L39.78 48.26 L32.00 46.14 Z M34.12 39.78 L39.78 34.12 L43.31 34.83 L44.02 38.36 L38.36 44.02 L34.83 43.31 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

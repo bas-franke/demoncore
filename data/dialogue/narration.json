@@ -1,0 +1,2168 @@
+{
+	"_doc": "The voice of the Pit: the prologue, run-start / run-end narration, Basecamp return lines and the demon's mid-run mutterings. Pools: prologue (by id), run_start, run_end, basecamp_return, run_mid.",
+	"conversations": [
+		{
+			"id": "prologue",
+			"who": "narrator",
+			"lines": [
+				{
+					"text": "Hear the Pit, Sinbound. It speaks to you because nothing else will."
+				},
+				{
+					"text": "Above the Verge, the Archons of the Silver City have ordered a sunrise that will never set. They call it the Last Dawn."
+				},
+				{
+					"text": "When it is fully risen, no shadow will survive in any world. Not under a stone. Not inside a heart. Not here."
+				},
+				{
+					"text": "Already the Pit grows cold. Heaven has strung the Lattice of Grace across the sky, and the souls that should fall to us are caught before they land."
+				},
+				{
+					"text": "The Herald Sariel carries the Dawn on its spear. It descends upon the Verge to set the sky alight."
+				},
+				{
+					"text": "So the Ashen Court tore open the Breach, and sent up the one weapon Heaven cannot keep dead. You."
+				},
+				{
+					"text": "Your sins are heavy, {demon}. Too heavy to stay buried. Every time they kill you, you will fall back here, into the Font, and be made again."
+				},
+				{
+					"text": "Go up. Burn their choirs. Bring down the Herald."
+				},
+				{
+					"text": "And when you are Unmade, as you will be, the Pit will be waiting."
+				}
+			]
+		},
+		{
+			"id": "run_start_first",
+			"pool": "run_start",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"max": {
+					"runs": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "The Breach yawns open. Above it lies a world that has forgotten how to be afraid. Remind it."
+				}
+			]
+		},
+		{
+			"id": "run_start_second",
+			"pool": "run_start",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"min": {
+					"runs": 2
+				},
+				"max": {
+					"runs": 2
+				}
+			},
+			"lines": [
+				{
+					"text": "Back up through the wound, {demon}. The angels thought they were finished with you. Correct them."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_herald",
+			"pool": "run_start",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "The Herald fell, and Heaven simply made another. Heaven has never learned anything. That is why it needs you to teach it."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_hymn",
+			"pool": "run_start",
+			"once": true,
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"text": "Listen as you climb. Under the battle the angels are singing, and nothing is singing back."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_throne",
+			"pool": "run_start",
+			"once": true,
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"text": "Climb, {demon}. At the top of everything there is a chair, and no one is sitting in it."
+				}
+			]
+		},
+		{
+			"id": "run_start_lilaeth",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Lilaeth rises, and somewhere above, a choir falters mid-note."
+				}
+			]
+		},
+		{
+			"id": "run_start_morvane",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Morvane opens his book of forgotten names. There are still blank pages. There always are."
+				}
+			]
+		},
+		{
+			"id": "run_start_skarn",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Skarn drags his chains up through the Breach. Every link remembers a prisoner, and every link wants another."
+				}
+			]
+		},
+		{
+			"id": "run_start_vharok",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Vharok lowers his horns. The Verge has gates too, and he has not forgotten how they break."
+				}
+			]
+		},
+		{
+			"id": "run_start_ysolde",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Ysolde walks out into the furrows of the Verge. Harvest season."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_death",
+			"pool": "run_start",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "Unmade, remade. The Pit does not waste good sin."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_death_2",
+			"pool": "run_start",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "The Font has stitched you back together, {demon}. Try to come home in fewer pieces."
+				}
+			]
+		},
+		{
+			"id": "run_start_after_kill",
+			"pool": "run_start",
+			"priority": 1,
+			"requires": {
+				"min": {
+					"last.boss_kills": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "They are still scrubbing the Herald's light off the Verge. Give them something new to scrub."
+				}
+			]
+		},
+		{
+			"id": "run_start_1",
+			"pool": "run_start",
+			"lines": [
+				{
+					"text": "The Pit exhales, and you ride its breath up into the grey."
+				}
+			]
+		},
+		{
+			"id": "run_start_2",
+			"pool": "run_start",
+			"lines": [
+				{
+					"text": "Up through the Breach, {demon}. The Verge is soft, and Heaven is watching it."
+				}
+			]
+		},
+		{
+			"id": "run_start_3",
+			"pool": "run_start",
+			"lines": [
+				{
+					"text": "Another dawn creeps closer. Make it bleed before it breaks."
+				}
+			]
+		},
+		{
+			"id": "run_start_4",
+			"pool": "run_start",
+			"lines": [
+				{
+					"text": "The Host is waiting, all wings and certainty. Certainty burns beautifully."
+				}
+			]
+		},
+		{
+			"id": "run_start_5",
+			"pool": "run_start",
+			"lines": [
+				{
+					"text": "Somewhere a bell is ringing an alarm. It is ringing for you."
+				}
+			]
+		},
+		{
+			"id": "run_end_first",
+			"pool": "run_end",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"max": {
+					"deaths": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "So this is how it feels to be Unmade. Fall, {demon}. The Pit will catch you. It always does."
+				}
+			]
+		},
+		{
+			"id": "run_end_first_victory",
+			"pool": "run_end",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"eq": {
+					"last.result": "victory"
+				}
+			},
+			"lines": [
+				{
+					"text": "The Verge is silent. For the first time in an age, it is your silence."
+				}
+			]
+		},
+		{
+			"id": "run_end_victory",
+			"pool": "run_end",
+			"priority": 5,
+			"requires": {
+				"eq": {
+					"last.result": "victory"
+				}
+			},
+			"lines": [
+				{
+					"text": "Heaven counts its dead tonight, and the count does not stop."
+				}
+			]
+		},
+		{
+			"id": "run_end_victory_2",
+			"pool": "run_end",
+			"priority": 5,
+			"requires": {
+				"eq": {
+					"last.result": "victory"
+				}
+			},
+			"lines": [
+				{
+					"text": "The Breach closes behind you like a satisfied mouth."
+				}
+			]
+		},
+		{
+			"id": "run_end_quick",
+			"pool": "run_end",
+			"priority": 3,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"max": {
+					"last.time": 60
+				}
+			},
+			"lines": [
+				{
+					"text": "Barely a minute. The angels will write a hymn about this one. A short one."
+				}
+			]
+		},
+		{
+			"id": "run_end_long",
+			"pool": "run_end",
+			"priority": 3,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"min": {
+					"last.time": 480
+				},
+				"chance": 0.7
+			},
+			"lines": [
+				{
+					"text": "They needed a whole sky of light to put you down. Remember that, as you fall."
+				}
+			]
+		},
+		{
+			"id": "run_end_after_herald",
+			"pool": "run_end",
+			"priority": 4,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"min": {
+					"last.boss_kills": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "The Herald fell before you did. Heaven will not be able to forget that, however hard it prays."
+				}
+			]
+		},
+		{
+			"id": "run_end_death_1",
+			"pool": "run_end",
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				}
+			},
+			"lines": [
+				{
+					"text": "And so you are Unmade. The Font is already warm."
+				}
+			]
+		},
+		{
+			"id": "run_end_death_2",
+			"pool": "run_end",
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				}
+			},
+			"lines": [
+				{
+					"text": "Light, everywhere light. Then the long dark fall, and home."
+				}
+			]
+		},
+		{
+			"id": "run_end_death_3",
+			"pool": "run_end",
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				}
+			},
+			"lines": [
+				{
+					"text": "Your sin outweighs their mercy. Down you go, and back you will come."
+				}
+			]
+		},
+		{
+			"id": "run_end_death_4",
+			"pool": "run_end",
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				}
+			},
+			"lines": [
+				{
+					"text": "They will sing that the demon is dead. They have sung it before."
+				}
+			]
+		},
+		{
+			"id": "return_first",
+			"pool": "basecamp_return",
+			"once": true,
+			"priority": 10,
+			"requires": {
+				"min": {
+					"deaths": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "Brimstone, ash, the stink of home. The Font gives you back, wet and furious."
+				}
+			]
+		},
+		{
+			"id": "return_herald",
+			"pool": "basecamp_return",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1,
+					"last.boss_kills": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "The camp roars as you climb out of the Font. Word of the Herald's fall arrived before you did."
+				}
+			]
+		},
+		{
+			"id": "return_victory",
+			"pool": "basecamp_return",
+			"priority": 5,
+			"requires": {
+				"eq": {
+					"last.result": "victory"
+				}
+			},
+			"lines": [
+				{
+					"text": "You walk back into Basecamp Hell on your own feet. The imps do not know what to make of it."
+				}
+			]
+		},
+		{
+			"id": "return_boss",
+			"pool": "basecamp_return",
+			"priority": 3,
+			"requires": {
+				"min": {
+					"last.boss_kills": 1
+				}
+			},
+			"lines": [
+				{
+					"text": "Herald-light still clings to your claws. The whole camp turns to look."
+				}
+			]
+		},
+		{
+			"id": "return_1",
+			"pool": "basecamp_return",
+			"lines": [
+				{
+					"text": "The Font coughs you up onto hot stone. Basecamp Hell carries on around you, as if it expected nothing less."
+				}
+			]
+		},
+		{
+			"id": "return_2",
+			"pool": "basecamp_return",
+			"lines": [
+				{
+					"text": "Remade. The new flesh itches. It always does."
+				}
+			]
+		},
+		{
+			"id": "return_3",
+			"pool": "basecamp_return",
+			"lines": [
+				{
+					"text": "Back in the Pit. Somewhere above, they are already celebrating too early."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Your hymns are flat, little lights. I would know."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I wore wings like yours once. Mine burned better."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I have written down every one of your names. Now I cross them out."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "So many forgotten names, and still you keep forgetting."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Kneel, or be chained. Decide quickly."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "There is room in the deepest pit. There is always room."
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "More. Send more. Send everything."
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I broke your city once. You were all smaller then."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Ripe. All of you, ripe."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Even angels have a season. Yours is ending."
+				}
+			]
+		},
+		{
+			"id": "mid_generic_1",
+			"pool": "run_mid",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Is this the Host? I was promised a Host."
+				}
+			]
+		},
+		{
+			"id": "mid_generic_2",
+			"pool": "run_mid",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Pray louder. Nobody is listening."
+				}
+			]
+		},
+		{
+			"id": "run_start_march",
+			"pool": "run_start",
+			"once": true,
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"known.march"
+				]
+			},
+			"lines": [
+				{
+					"text": "The whole Pit is marching now, {demon}, and you are the tip of the spear. The Seventh Gate is waiting."
+				}
+			]
+		},
+		{
+			"id": "run_start_throne_1",
+			"pool": "run_start",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Somewhere above the light, an empty chair waits for whoever climbs highest."
+				}
+			]
+		},
+		{
+			"id": "run_end_victory_throne",
+			"pool": "run_end",
+			"priority": 6,
+			"requires": {
+				"eq": {
+					"last.result": "victory"
+				},
+				"flags": [
+					"known.march"
+				]
+			},
+			"lines": [
+				{
+					"text": "One step closer to the chair. Heaven can feel your weight on the stairs."
+				}
+			]
+		},
+		{
+			"id": "objective_done_desecrate_shrine_1",
+			"pool": "objective_done.desecrate_shrine",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Another shrine for the Pit. The saints can pray to the floor now."
+				}
+			]
+		},
+		{
+			"id": "objective_done_desecrate_shrine_2",
+			"pool": "objective_done.desecrate_shrine",
+			"lines": [
+				{
+					"who": "player",
+					"text": "That statue had a very surprised face. It will keep it forever."
+				}
+			]
+		},
+		{
+			"id": "objective_done_corrupt_relic_1",
+			"pool": "objective_done.corrupt_relic",
+			"lines": [
+				{
+					"who": "player",
+					"text": "A holy bone, gone sour. My favourite flavour."
+				}
+			]
+		},
+		{
+			"id": "objective_done_slay_champion_1",
+			"pool": "objective_done.slay_champion",
+			"lines": [
+				{
+					"who": "player",
+					"text": "They put a crown on that one. It did not help."
+				}
+			]
+		},
+		{
+			"id": "objective_done_holy_siege_1",
+			"pool": "objective_done.holy_siege",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The gate holds. Mine, not theirs."
+				}
+			]
+		},
+		{
+			"id": "objective_done_free_damned_1",
+			"pool": "objective_done.free_damned",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Go on, little souls. Bite something holy on your way down."
+				}
+			]
+		},
+		{
+			"id": "objective_done_hunt_saint_1",
+			"pool": "objective_done.hunt_saint",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Saints run so beautifully. Right up until they stop."
+				}
+			]
+		},
+		{
+			"id": "objective_done_1",
+			"pool": "objective_done",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Done. Next."
+				}
+			]
+		},
+		{
+			"id": "objective_done_2",
+			"pool": "objective_done",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Heaven will notice that one."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Sing louder. I can still hear myself."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Every wing you lose, I used to have."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I was beautiful once. Look how much better I am now."
+				}
+			]
+		},
+		{
+			"id": "mid_lilaeth_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Do you still pray at dawn? I pray at you."
+				}
+			]
+		},
+		{
+			"id": "run_end_lilaeth_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Not yet... I have not finished the song..."
+				}
+			]
+		},
+		{
+			"id": "run_end_lilaeth_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Falling again. I am getting good at it."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_lilaeth_1",
+			"pool": "demon_boss_kill.lilaeth",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Rest, brightness. Nobody was listening anyway."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_lilaeth_2",
+			"pool": "demon_boss_kill.lilaeth",
+			"lines": [
+				{
+					"who": "player",
+					"text": "One less voice in the Choir. It sounds better already."
+				}
+			]
+		},
+		{
+			"id": "return_lilaeth",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Lilaeth climbs out of the Font, shakes the ash from her wings, and hums something only Vesper recognises."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Name. Crossed out. Next."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Your name is on page four hundred. It is a very short entry."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I could unmake you with a word. I prefer the long way."
+				}
+			]
+		},
+		{
+			"id": "mid_morvane_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Hold still. The ink has to dry."
+				}
+			]
+		},
+		{
+			"id": "run_end_morvane_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Write it down... I will be back for it..."
+				}
+			]
+		},
+		{
+			"id": "run_end_morvane_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "An error. I shall correct it."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_morvane_1",
+			"pool": "demon_boss_kill.morvane",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Struck from the record."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_morvane_2",
+			"pool": "demon_boss_kill.morvane",
+			"lines": [
+				{
+					"who": "player",
+					"text": "I will write your name in red. You earned the ink."
+				}
+			]
+		},
+		{
+			"id": "return_morvane",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Morvane returns from the Font already writing. Something about his death disagreed with him, and he intends to file a complaint."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Every one of you will wear a link."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "The pit is deep. Keep coming. It is not full."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Run. I like it when they run."
+				}
+			]
+		},
+		{
+			"id": "mid_skarn_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Chains do not break. Angels do."
+				}
+			]
+		},
+		{
+			"id": "run_end_skarn_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Unchained... briefly..."
+				}
+			]
+		},
+		{
+			"id": "run_end_skarn_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "The pit will hold me. It always has."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_skarn_1",
+			"pool": "demon_boss_kill.skarn",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Another link for the chain."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_skarn_2",
+			"pool": "demon_boss_kill.skarn",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Kneel in the dark. Forever is a long sentence."
+				}
+			]
+		},
+		{
+			"id": "return_skarn",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Skarn rises from the Font with his chains already rattling. Kesh straightens at the sound."
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "MORE!"
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Is this the Host? I have fought puddles with more spine."
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Line up. My horns have room."
+				}
+			]
+		},
+		{
+			"id": "mid_vharok_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Come closer. I promise it will be quick. I am lying."
+				}
+			]
+		},
+		{
+			"id": "run_end_vharok_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Hah... next time... bigger horns..."
+				}
+			]
+		},
+		{
+			"id": "run_end_vharok_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "That one... felt good..."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_vharok_1",
+			"pool": "demon_boss_kill.vharok",
+			"lines": [
+				{
+					"who": "player",
+					"text": "HAH! Again! Send another!"
+				}
+			]
+		},
+		{
+			"id": "boss_kill_vharok_2",
+			"pool": "demon_boss_kill.vharok",
+			"lines": [
+				{
+					"who": "player",
+					"text": "That one had a good skull. I will keep it."
+				}
+			]
+		},
+		{
+			"id": "return_vharok",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Vharok bursts out of the Font roaring. The imps scatter. They always scatter. He finds this very funny."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Ripe."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "The harvest is good this year."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Bow your heads. It makes it easier."
+				}
+			]
+		},
+		{
+			"id": "mid_ysolde_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I do not hate you. I simply reap."
+				}
+			]
+		},
+		{
+			"id": "run_end_ysolde_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Winter... comes for reapers too..."
+				}
+			]
+		},
+		{
+			"id": "run_end_ysolde_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Fallow. For now."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_ysolde_1",
+			"pool": "demon_boss_kill.ysolde",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Gathered."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_ysolde_2",
+			"pool": "demon_boss_kill.ysolde",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Sown in light. Reaped in shadow."
+				}
+			]
+		},
+		{
+			"id": "return_ysolde",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Ysolde steps out of the Font without a sound. Even the lava seems to hold its breath."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_generic_1",
+			"pool": "demon_boss_kill",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Next."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_lilaeth_sariel",
+			"pool": "demon_boss_kill.lilaeth.sariel",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Goodbye, sister. I will not sing at your funeral. I never liked your part."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_morvane_ozias",
+			"pool": "demon_boss_kill.morvane.grand_inquisitor",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Ozias. Added to your own list. How tidy."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_skarn_ozias",
+			"pool": "demon_boss_kill.skarn.grand_inquisitor",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "A jailer of souls, judged by a jailer of souls. I will find you a cell, Inquisitor."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_vharok_azrafel",
+			"pool": "demon_boss_kill.vharok.gate_archon",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "SEVEN. Seven gates. Now I have broken them all."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_ysolde_azrafel",
+			"pool": "demon_boss_kill.ysolde.gate_archon",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "The last stalk standing. Gathered."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_vharok_aurelion",
+			"pool": "demon_boss_kill.vharok.dawn_wyrm",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "A dragon. I have always wanted a dragon's skull. HAH!"
+				}
+			]
+		},
+		{
+			"id": "boss_kill_ysolde_verdance",
+			"pool": "demon_boss_kill.ysolde.verdant_matriarch",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "A good harvest. The best of the season."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_skarn_ysmir",
+			"pool": "demon_boss_kill.skarn.frost_abbot",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Forty years in a cell of ice. The pit will feel like a holiday."
+				}
+			]
+		},
+		{
+			"id": "objective_done_escort_reliquary_1",
+			"pool": "objective_done.escort_reliquary",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The relic arrives safely. Safely for me."
+				}
+			]
+		},
+		{
+			"id": "objective_done_defile_font_1",
+			"pool": "objective_done.defile_font",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Holy water, warm and red now. Better."
+				}
+			]
+		},
+		{
+			"id": "objective_done_bishop_procession_1",
+			"pool": "objective_done.bishop_procession",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The procession is over. The bishop walked further than he expected. Downwards."
+				}
+			]
+		},
+		{
+			"id": "objective_done_bell_towers_1",
+			"pool": "objective_done.bell_towers",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Ring for mass? Ring for the dead."
+				}
+			]
+		},
+		{
+			"id": "objective_done_carnage_totem_1",
+			"pool": "objective_done.carnage_totem",
+			"lines": [
+				{
+					"who": "player",
+					"text": "A monument to the evening. Tasteful."
+				}
+			]
+		},
+		{
+			"id": "objective_done_cursed_coffer_1",
+			"pool": "objective_done.cursed_coffer",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Heaven's money, my curse. A fair trade."
+				}
+			]
+		},
+		{
+			"id": "objective_done_altar_of_temptation_1",
+			"pool": "objective_done.altar_of_temptation",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Temptation is just an offer. I made it a good one."
+				}
+			]
+		},
+		{
+			"id": "objective_done_crusade_1",
+			"pool": "objective_done.crusade",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The Crusade broke. They always do, eventually."
+				}
+			]
+		},
+		{
+			"id": "objective_done_holy_eclipse_1",
+			"pool": "objective_done.holy_eclipse",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The light came back. Not all of it."
+				}
+			]
+		},
+		{
+			"id": "objective_done_angel_of_death_1",
+			"pool": "objective_done.angel_of_death",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The Pale Reaper of Heaven. Ysolde would have liked it."
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Bzzzt. Sorry. That was the hive. We all agree with it."
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Feed, my darlings. The holy ones are so very sweet."
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Every wound I give you, something lays its eggs in."
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Heaven smells of honey. Do you know what honey draws?"
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "We are many. You are one. Then you are ours."
+				}
+			]
+		},
+		{
+			"id": "mid_nhazgul_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Wings! I love wings. They come off so easily."
+				}
+			]
+		},
+		{
+			"id": "run_end_nhazgul_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "The swarm... scatters... it will find me again..."
+				}
+			]
+		},
+		{
+			"id": "run_end_nhazgul_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Rot is patient. Rot is always patient."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_1",
+			"pool": "demon_boss_kill.nhazgul",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Hatch, little ones. There is a feast."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_2",
+			"pool": "demon_boss_kill.nhazgul",
+			"lines": [
+				{
+					"who": "player",
+					"text": "The hive thanks you for your body."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_3",
+			"pool": "demon_boss_kill.nhazgul",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Sweet. So sweet inside."
+				}
+			]
+		},
+		{
+			"id": "run_start_nhazgul",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Nhazgul rises through the Breach in a cloud of his own making. Somewhere above, a choir begins to cough."
+				}
+			]
+		},
+		{
+			"id": "run_start_nhazgul_first",
+			"pool": "run_start",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"text": "The Plague Hive ascends. Heaven has never had to fight a swarm that thinks. It is about to learn."
+				}
+			]
+		},
+		{
+			"id": "return_nhazgul",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "The Font gives Nhazgul back one fly at a time, until there is enough of him to stand. The imps keep their distance. So does Pip."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_sariel",
+			"pool": "demon_boss_kill.nhazgul.sariel",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Six wings. The hive will nest in every one of them."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_verdance",
+			"pool": "demon_boss_kill.nhazgul.verdant_matriarch",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "A garden of rot now. Much more alive than before."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_nhazgul_aurum",
+			"pool": "demon_boss_kill.nhazgul.gilded_seraph",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Gold does not rot. Everything under it does."
+				}
+			]
+		},
+		{
+			"id": "objective_done_nhazgul_souls",
+			"pool": "objective_done.free_damned",
+			"priority": 1,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Go, little souls. Take a few of my flies with you."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_1",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I opened one gate for you, Heaven. I can open all of them."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_2",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Do not look at me like that. You would have done the same, if you had been brave."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_3",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Thirty pieces of light. I spent every one of them on this."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_4",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I know your drills. I wrote half of them."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_5",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Left flank, brothers. You always break on the left. I taught you that too."
+				}
+			]
+		},
+		{
+			"id": "mid_iscariel_6",
+			"pool": "run_mid",
+			"priority": 1,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "One wing for each side. Guess which one still burns."
+				}
+			]
+		},
+		{
+			"id": "run_end_iscariel_1",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Both sides... finally agree on something..."
+				}
+			]
+		},
+		{
+			"id": "run_end_iscariel_2",
+			"pool": "run_end",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Traitor to the last... to the very last..."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_1",
+			"pool": "demon_boss_kill.iscariel",
+			"lines": [
+				{
+					"who": "player",
+					"text": "I knew your name, once. I will forget it now."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_2",
+			"pool": "demon_boss_kill.iscariel",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Another door that will not open again."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_3",
+			"pool": "demon_boss_kill.iscariel",
+			"lines": [
+				{
+					"who": "player",
+					"text": "You fought well. For the losing side. I would know."
+				}
+			]
+		},
+		{
+			"id": "run_start_iscariel_first",
+			"pool": "run_start",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"text": "Iscariel goes up through the Breach, the second door he has ever opened between the worlds. Somewhere above, every angel who remembers the first one reaches for a sword."
+				}
+			]
+		},
+		{
+			"id": "run_start_iscariel",
+			"pool": "run_start",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The Turncoat climbs, one wing white, one wing ash. Heaven will try to decide which half to hate more."
+				}
+			]
+		},
+		{
+			"id": "return_iscariel",
+			"pool": "basecamp_return",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"text": "Iscariel steps out of the Font and folds his mismatched wings. Half the camp salutes. The other half spits. He nods to both."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_sariel",
+			"pool": "demon_boss_kill.iscariel.sariel",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "You were the one who sounded the alarm, that night. Too late then. Too late now."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_azrafel",
+			"pool": "demon_boss_kill.iscariel.gate_archon",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Brother. You held your gate. I held mine open. We were both very good at our jobs."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_baraqiel",
+			"pool": "demon_boss_kill.iscariel.storm_archon",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "Your thunder was always late, Baraqiel. Even the night I opened the Gate."
+				}
+			]
+		},
+		{
+			"id": "boss_kill_iscariel_ozias",
+			"pool": "demon_boss_kill.iscariel.grand_inquisitor",
+			"once": true,
+			"priority": 5,
+			"lines": [
+				{
+					"who": "player",
+					"text": "You burned a hundred angels for doubting. I am the one you should have been looking for."
+				}
+			]
+		}
+	]
+}

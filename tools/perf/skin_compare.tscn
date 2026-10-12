@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://tools/perf/skin_compare.gd" id="1"]
+
+[node name="SkinCompare" type="Node3D"]
+script = ExtResource("1")

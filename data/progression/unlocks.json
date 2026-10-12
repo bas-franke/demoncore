@@ -1,0 +1,141 @@
+{
+	"_doc": "One-time unlocks. kind: demon (resource = DemonData .tres), weapon (resource = weapon .tscn; a locked weapon never appears in the level-up pool unless it is the demon's starting weapon), ability (id checked by the ability owner via Progression.is_unlocked(id)). Anything NOT listed here is unlocked by default. requires: {upgrade_or_unlock_id: level}.",
+	"unlocks": [
+		{
+			"id": "demon_morvane",
+			"kind": "demon",
+			"resource": "res://data/demons/morvane.tres",
+			"shop": "bindings",
+			"name": "Bind Morvane",
+			"icon": "♆",
+			"currency": "sin_shards",
+			"cost": 10,
+			"description": "Break the seal on Morvane's prison and let her walk with you."
+		},
+		{
+			"id": "demon_skarn",
+			"kind": "demon",
+			"resource": "res://data/demons/skarn.tres",
+			"shop": "bindings",
+			"name": "Bind Skarn",
+			"icon": "♆",
+			"currency": "sin_shards",
+			"cost": 18,
+			"requires": {
+				"demon_morvane": 1
+			},
+			"description": "Skarn answers only to those who have already bound one of his kin."
+		},
+		{
+			"id": "demon_ysolde",
+			"kind": "demon",
+			"resource": "res://data/demons/ysolde.tres",
+			"shop": "bindings",
+			"name": "Bind Ysolde",
+			"icon": "♆",
+			"currency": "hellstone",
+			"cost": 4,
+			"requires": {
+				"demon_skarn": 1
+			},
+			"description": "Her chains were forged of hellstone. So must the key be."
+		},
+		{
+			"id": "demon_nhazgul",
+			"kind": "demon",
+			"resource": "res://data/demons/nhazgul.tres",
+			"shop": "bindings",
+			"name": "Bind Nhazgul",
+			"icon": "♆",
+			"currency": "sin_shards",
+			"cost": 24,
+			"requires": {
+				"demon_skarn": 1
+			},
+			"description": "The hive does not want a master. Feed it enough sin and it will settle for a partner."
+		},
+		{
+			"id": "demon_iscariel",
+			"kind": "demon",
+			"resource": "res://data/demons/iscariel.tres",
+			"shop": "bindings",
+			"name": "Bind Iscariel",
+			"icon": "♆",
+			"currency": "hellstone",
+			"cost": 5,
+			"requires": {
+				"demon_ysolde": 1
+			},
+			"description": "He betrayed Heaven once. Pay him in hellstone, and pray he finds Hell's terms more agreeable."
+		},
+		{
+			"id": "weapon_infernal_chain",
+			"kind": "weapon",
+			"resource": "res://scenes/weapons/infernal_chain/infernal_chain.tscn",
+			"shop": "hellforge",
+			"name": "Forge: Infernal Chain",
+			"icon": "⛓",
+			"currency": "souls",
+			"cost": 180,
+			"description": "Adds the Infernal Chain to the boons you may be offered in a run."
+		},
+		{
+			"id": "weapon_reapers_scythe",
+			"kind": "weapon",
+			"resource": "res://scenes/weapons/reapers_scythe/reapers_scythe.tscn",
+			"shop": "hellforge",
+			"name": "Forge: Reaper's Scythe",
+			"icon": "✶",
+			"currency": "hellstone",
+			"cost": 2,
+			"description": "Adds the Reaper's Scythe to the boons you may be offered in a run."
+		},
+		{
+			"id": "ability_wraith_host",
+			"kind": "ability",
+			"ability": "wraith_host",
+			"shop": "occult",
+			"name": "Grimoire: Wraith Host",
+			"icon": "☠",
+			"currency": "sin_shards",
+			"cost": 8,
+			"description": "Learn to call the Wraith Host. It may now be offered at level-ups."
+		},
+		{
+			"id": "ability_infernal_storm",
+			"kind": "ability",
+			"ability": "infernal_storm",
+			"shop": "occult",
+			"name": "Grimoire: Infernal Storm",
+			"icon": "⚡",
+			"currency": "sin_shards",
+			"cost": 14,
+			"description": "Learn the Infernal Storm. It may now be offered at level-ups."
+		},
+		{
+			"id": "ability_harvest_moon",
+			"kind": "ability",
+			"ability": "harvest_moon",
+			"shop": "occult",
+			"name": "Grimoire: Harvest of Souls",
+			"icon": "☾",
+			"currency": "sin_shards",
+			"cost": 17,
+			"requires": {
+				"ability_wraith_host": 1
+			},
+			"description": "Learn the Harvest of Souls. It may now be offered at level-ups."
+		},
+		{
+			"id": "ability_tempest_nova",
+			"kind": "ability",
+			"ability": "tempest_nova",
+			"shop": "hellforge",
+			"name": "Grimoire: Tempest Crown",
+			"icon": "♕",
+			"currency": "hellstone",
+			"cost": 2,
+			"description": "Forge the Tempest Crown. It may now be offered at level-ups."
+		}
+	]
+}

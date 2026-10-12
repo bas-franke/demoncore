@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/hellfire_bolt/hellfire_bolt.gd" id="1_bolt"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/hellfire_bolt/hellfire_projectile.tscn" id="2_proj"]
+
+[node name="HellfireBolt" type="Node3D"]
+script = ExtResource("1_bolt")
+projectile_scene = ExtResource("2_proj")
+display_name = "Hellfire Bolt"
+description = "Hurls bolts of hellfire at the nearest foe. The flame remembers every wing it has burned."
+color = Color(1, 0.42, 0.12, 1)
+icon = "🔥"
+base_damage = 10.0
+base_cooldown = 0.8
+level_descriptions = PackedStringArray("+1 bolt. The pyre spreads.", "+30% damage. The flame burns hotter.", "Bolts pierce 1 more foe.", "+1 bolt.", "+40% damage. Fire of the deepest pit.", "-25% cooldown. An unending barrage.")

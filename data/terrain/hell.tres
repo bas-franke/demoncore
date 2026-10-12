@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="TerrainTheme" format=3]
+
+[ext_resource type="Script" path="res://scripts/terrain/terrain_theme.gd" id="1_theme"]
+
+[resource]
+script = ExtResource("1_theme")
+display_name = "Basecamp Hell"
+edge = 0
+edge_height = 6.5
+terraces = 3
+ground_bump = 0.03
+liquid = 1
+liquid_level = -0.45
+ground_a = Color(0.2, 0.15, 0.13, 1)
+ground_b = Color(0.085, 0.06, 0.058, 1)
+path_color = Color(0.29, 0.19, 0.15, 1)
+path_joint = Color(0.05, 0.02, 0.015, 1)
+cliff_a = Color(0.19, 0.135, 0.12, 1)
+cliff_b = Color(0.38, 0.17, 0.11, 1)
+accent = Color(1, 0.3, 0.06, 1)
+accent_energy = 1.8
+accent_amount = 0.42
+shore = Color(0.04, 0.02, 0.02, 1)
+shore_glow = Color(1, 0.3, 0.05, 1)
+inlay_color = Color(0.45, 0.1, 0.05, 1)
+path_paved = 0.0
+edge_props = {
+&"basalt_columns": 3.0,
+&"brimstone_rock": 2.0,
+&"obsidian_spire": 3.0
+}
+field_props = {
+&"basalt_columns": 1.2,
+&"bone_heap": 1.5,
+&"brimstone_rock": 3.0,
+&"chain_posts": 1.0,
+&"hell_brazier": 1.3,
+&"impaler_spikes": 1.0,
+&"lava_pool": 0.7,
+&"obsidian_spire": 2.0
+}
+small_props = {
+&"bone_pile": 2.0,
+&"rubble": 2.0,
+&"skull": 2.0,
+&"dead_shrub": 1.0
+}
+field_density = 0.32
+small_density = 1.0
+edge_density = 0.7

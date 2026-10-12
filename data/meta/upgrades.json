@@ -1,0 +1,87 @@
+{
+	"_format": "See docs/team/basecamp.md. cost: array (price per rank, last repeats) or number (+ cost_growth). effects: {stat, per_level} applies Player.apply_stat; {type: weapon, scene} grants a starting weapon; other types are read with Meta.effect_total(type).",
+	"currency": {"id": "souls", "name": "Damned Souls", "short": "Souls"},
+	"shops": {
+		"blacksmith": {
+			"name": "Grimmaul",
+			"title": "Blacksmith of the Ninth Forge",
+			"greeting": "Steel quenched in sinners' tears. Bring souls, leave sharper.",
+			"color": "#ff6a1f"
+		},
+		"occultist": {
+			"name": "Vesper Ashtongue",
+			"title": "Occultist of the Black Choir",
+			"greeting": "Every rite has a price. Yours is merely souls. For now.",
+			"color": "#b03bff"
+		},
+		"soul_broker": {
+			"name": "Mammon's Clerk",
+			"title": "Soul Broker",
+			"greeting": "Souls in, interest out. The ledger never forgets a debt.",
+			"color": "#e8c35a"
+		},
+		"covenant": {
+			"name": "The Covenant",
+			"title": "Pacts of Heat, kept by Mammon's Clerk",
+			"greeting": "Sign in blood. The harder Heaven hunts you, the more the Ledger pays.",
+			"color": "#d0383c"
+		},
+		"pit": {
+			"name": "The Proving Pit",
+			"title": "Where the damned learn their new tricks",
+			"greeting": "Bind a rite or three. The straw angels are very forgiving.",
+			"color": "#e0662a"
+		},
+		"cartographer": {
+			"name": "Wayfarer Ossek",
+			"title": "Cartographer of the Fallen Roads",
+			"greeting": "The Heavens have many doors. I know which ones bleed.",
+			"color": "#5ad1c8"
+		}
+	},
+	"upgrades": [
+		{"id": "bs_might", "shop": "blacksmith", "name": "Hellforged Edge", "icon": "⚔",
+			"description": "+6% damage per rank.", "max_level": 5, "cost": [25, 50, 90, 150, 240],
+			"effects": [{"stat": "might", "per_level": 0.06}]},
+		{"id": "bs_armor", "shop": "blacksmith", "name": "Brimstone Plate", "icon": "⛨",
+			"description": "+1 armor per rank.", "max_level": 4, "cost": [30, 70, 130, 220],
+			"effects": [{"stat": "armor", "per_level": 1.0}]},
+		{"id": "bs_vitality", "shop": "blacksmith", "name": "Iron Hide", "icon": "♥",
+			"description": "+12 max vigor per rank.", "max_level": 5, "cost": [20, 40, 75, 120, 180],
+			"effects": [{"stat": "max_hp", "per_level": 12.0}]},
+		{"id": "bs_velocity", "shop": "blacksmith", "name": "Barbed Fletching", "icon": "➶",
+			"description": "+10% projectile speed per rank.", "max_level": 3, "cost": [30, 70, 130],
+			"effects": [{"stat": "projectile_speed", "per_level": 0.1}]},
+		{"id": "bs_multishot", "shop": "blacksmith", "name": "Twin-Forged Arsenal", "icon": "⁂",
+			"description": "+1 projectile for every weapon.", "max_level": 1, "cost": [400],
+			"requires": {"bs_might": 3},
+			"effects": [{"stat": "bonus_projectiles", "per_level": 1.0}]},
+
+		{"id": "oc_haste", "shop": "occultist", "name": "Dark Litany", "icon": "⌛",
+			"description": "Weapons recharge 4% faster per rank.", "max_level": 5, "cost": [30, 60, 100, 160, 250],
+			"effects": [{"stat": "cooldown", "per_level": -0.04}]},
+		{"id": "oc_area", "shop": "occultist", "name": "Widening Gyre", "icon": "◎",
+			"description": "+6% area of effect per rank.", "max_level": 5, "cost": [25, 55, 95, 150, 230],
+			"effects": [{"stat": "area", "per_level": 0.06}]},
+		{"id": "oc_regen", "shop": "occultist", "name": "Blood Pact", "icon": "✚",
+			"description": "Regenerate 0.2 vigor per second per rank.", "max_level": 4, "cost": [40, 80, 140, 220],
+			"effects": [{"stat": "regen", "per_level": 0.2}]},
+		{"id": "oc_speed", "shop": "occultist", "name": "Cloven Swiftness", "icon": "»",
+			"description": "+0.3 movement speed per rank.", "max_level": 4, "cost": [20, 45, 85, 140],
+			"effects": [{"stat": "move_speed", "per_level": 0.3}]},
+		{"id": "oc_sigil", "shop": "occultist", "name": "Bound Sigil", "icon": "✡",
+			"description": "Begin every hunt with the Brimstone Sigil already inscribed.", "max_level": 1, "cost": [300],
+			"requires": {"oc_area": 2},
+			"effects": [{"type": "weapon", "scene": "res://scenes/weapons/brimstone_sigil/brimstone_sigil.tscn"}]},
+
+		{"id": "sb_tithe", "shop": "soul_broker", "name": "Tithe of the Damned", "icon": "☉",
+			"description": "+10% souls earned per hunt, per rank.", "max_level": 5, "cost": [40, 80, 140, 220, 320],
+			"effects": [{"type": "soul_gain", "per_level": 0.1}]},
+		{"id": "sb_wisdom", "shop": "soul_broker", "name": "Hungering Mind", "icon": "✦",
+			"description": "+5% experience from souls per rank.", "max_level": 5, "cost": [30, 60, 100, 160, 240],
+			"effects": [{"stat": "xp_gain", "per_level": 0.05}]},
+		{"id": "sb_reach", "shop": "soul_broker", "name": "Soul Lure", "icon": "❂",
+			"description": "+0.4 soul pickup reach per rank.", "max_level": 4, "cost": [20, 45, 80, 130],
+			"effects": [{"stat": "pickup_radius", "per_level": 0.4}]}
+	]
+}

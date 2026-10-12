@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/brimstone_sigil/brimstone_sigil.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Iscariel"
+title = "the Turncoat"
+lore = "He held the Gate for Heaven, then opened it for Hell. Both sides remember. Only one forgives."
+perk_text = "+0.6 Speed, +10% Might, -8% Cooldown.
+Starts with Brimstone Sigil."
+model_id = "iscariel"
+skin_color = Color(0.42, 0.4, 0.42, 1)
+armor_color = Color(0.06, 0.055, 0.06, 1)
+cloth_color = Color(0.05, 0.048, 0.05, 1)
+glow_color = Color(1, 0.55, 0.12, 1)
+horn_color = Color(0.5, 0.3, 0.12, 1)
+build = 1
+horn_style = 4
+head_style = 0
+wing_style = 1
+height = 1.1
+bulk = 1.0
+cape_length = 0.0
+chains = false
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"move_speed": 0.6,
+&"might": 0.1,
+&"cooldown": -0.08
+}

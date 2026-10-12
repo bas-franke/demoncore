@@ -1,0 +1,644 @@
+{
+	"_doc": "The ending. ending_rule: a victory with cause <cause> (passing the Seventh Gate on the heavens_gate map: scenes/maps/features/seventh_gate.gd) while <requires> holds is the ending. The next Basecamp arrival loads scenes/dialogue/ending_stage.tscn, which plays 'ending' (stage_* events drive camera and lighting); back in Basecamp 'ending_return' plays. Then story.ended / known.ending (act 4) and the epilogue lines below take over.",
+	"ending_rule": {
+		"cause": "seventh_gate",
+		"requires": {
+			"not_flags": [
+				"story.ended"
+			]
+		}
+	},
+	"conversations": [
+		{
+			"id": "run_end_ending",
+			"pool": "run_end",
+			"once": true,
+			"priority": 30,
+			"requires": {
+				"flags": [
+					"last.ending"
+				]
+			},
+			"lines": [
+				{
+					"text": "Beyond the Gate there are stairs. Beyond the stairs there is a chair. And no one, no one at all, to stop you."
+				}
+			]
+		},
+		{
+			"id": "run_end_ending_again",
+			"pool": "run_end",
+			"priority": 20,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"eq": {
+					"last.result": "victory"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Another victory for the new order. Heaven's remnant counts its losses, and keeps counting."
+				}
+			]
+		},
+		{
+			"id": "ending",
+			"who": "narrator",
+			"lines": [
+				{
+					"text": "You climb.",
+					"event": "stage_climb"
+				},
+				{
+					"text": "Past the Seventh Gate the stairs go up through the light, and the light thins, and thins, until it is only a colour."
+				},
+				{
+					"text": "There are Archons on the steps. Seven of them. They do not raise their swords. They kneel, and watch you pass, the way a man watches a flood.",
+					"event": "stage_archons"
+				},
+				{
+					"who": "player",
+					"text": "Kneeling suits you. You should have tried it sooner.",
+					"requires": {
+						"demon": "vharok"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Seven names. I have all of them written down. None of you will be forgotten. That is my gift.",
+					"requires": {
+						"demon": "morvane"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Stay down. The chains are only for those who stand.",
+					"requires": {
+						"demon": "skarn"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Not yet. I will come back for you at harvest.",
+					"requires": {
+						"demon": "ysolde"
+					}
+				},
+				{
+					"who": "player",
+					"text": "I knew your voices once. Not one of you is singing now.",
+					"requires": {
+						"demon": "lilaeth"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Brothers. You knelt to me once before, at the First Gate, when you did not yet know what I was about to do. Kneel now and know.",
+					"requires": {
+						"demon": "iscariel"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Seven. The hive could fill each of you with a city of our own. Kneel a little lower. It helps.",
+					"requires": {
+						"demon": "nhazgul"
+					}
+				},
+				{
+					"text": "At the top there is a chair. It is very large, and very plain, and very empty. Dust lies on the armrests. No one has sat in it for longer than there have been angels.",
+					"event": "stage_throne"
+				},
+				{
+					"who": "player",
+					"text": "So it is true.",
+					"requires": {
+						"not_demon": [
+							"lilaeth",
+							"morvane",
+							"nhazgul",
+							"iscariel"
+						]
+					}
+				},
+				{
+					"who": "player",
+					"text": "I opened the First Gate because I suspected this. I have climbed every step since to be sure. Empty. I was right. I wish I had not been.",
+					"requires": {
+						"demon": "iscariel"
+					}
+				},
+				{
+					"who": "player",
+					"text": "Dust. Nothing has lived here for an age. Not even a fly. Well. Now there are a million.",
+					"requires": {
+						"demon": "nhazgul"
+					}
+				},
+				{
+					"who": "player",
+					"text": "I sang to this. For a thousand years, I sang to dust.",
+					"requires": {
+						"demon": "lilaeth"
+					}
+				},
+				{
+					"who": "player",
+					"text": "The name at the top of the first page. Struck out. Now I see why.",
+					"requires": {
+						"demon": "morvane"
+					}
+				},
+				{
+					"text": "Somewhere far below, the Last Dawn gutters. The kindling has stopped coming."
+				},
+				{
+					"choices": [
+						{
+							"text": "Sit.",
+							"goto": "sit",
+							"set": {
+								"ending.choice": "sit"
+							}
+						},
+						{
+							"text": "Break it.",
+							"goto": "break",
+							"set": {
+								"ending.choice": "break"
+							}
+						}
+					]
+				},
+				{
+					"label": "sit",
+					"text": "You sit. The chair is cold. Then, slowly, it is not.",
+					"event": "stage_sit"
+				},
+				{
+					"text": "Across every world, every shadow lengthens by a hand's width. Heaven feels it. Hell feels it. The Verge feels it, and does not know why it is suddenly afraid of the dark again."
+				},
+				{
+					"goto": "after"
+				},
+				{
+					"label": "break",
+					"text": "You put your fist through the armrest. Then the seat. Then the back. It breaks like any other chair.",
+					"event": "stage_break"
+				},
+				{
+					"text": "Across every world, something that was holding its breath lets it out. There is no Throne now. There is only whoever is strongest. That has always suited you."
+				},
+				{
+					"label": "after",
+					"text": "The Archons stay on their knees. Not for you. Out of the habit of kneeling. It will have to do, for now.",
+					"event": "stage_after"
+				},
+				{
+					"text": "The Last Dawn will not rise. The Lattice falls slack, the souls come down again like rain, and the Pit grows warm."
+				},
+				{
+					"text": "You come down the stairs, all the way down, past the Gate, past the Breach, and home."
+				}
+			]
+		},
+		{
+			"id": "ending_return",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You went up. You came back down on your own feet. Nobody has ever done both, Sinbound."
+				},
+				{
+					"who": "kesh",
+					"text": "Gatekeeper. You opened the first door and walked through the last. The count is complete.",
+					"requires": {
+						"demon": "iscariel"
+					}
+				},
+				{
+					"who": "pip",
+					"text": "The flies came back first! A whole cloud of them, wearing a tiny crown! Then the rest of you.",
+					"requires": {
+						"demon": "nhazgul"
+					}
+				},
+				{
+					"who": "grimmaul",
+					"text": "The crown is on the pillar by the fire. It fits. I checked while you were away. On Pip.",
+					"requires": {
+						"seen": [
+							"grimmaul_crown"
+						]
+					}
+				},
+				{
+					"who": "pip",
+					"text": "It was very heavy! I could not see! It was the best day of my life!",
+					"requires": {
+						"seen": [
+							"grimmaul_crown"
+						]
+					}
+				},
+				{
+					"who": "clerk",
+					"text": "The audit is ready. I signed it. With a name. My own. I will tell you what it is when you are not busy ruling.",
+					"requires": {
+						"min": {
+							"affinity.clerk": 5
+						}
+					}
+				},
+				{
+					"who": "kesh",
+					"text": "Counted you up. Counted you down. That is the whole count now. I can put the halberd away.",
+					"requires": {
+						"min": {
+							"affinity.kesh": 4
+						}
+					}
+				},
+				{
+					"who": "malphine",
+					"text": "Well. I suppose I shall have the cushion altered.",
+					"requires": {
+						"seen": [
+							"malphine_arrival"
+						],
+						"eq": {
+							"ending.choice": "sit"
+						}
+					}
+				},
+				{
+					"who": "malphine",
+					"text": "You broke it? The whole chair? Do you know how long I spent on that cushion?",
+					"requires": {
+						"seen": [
+							"malphine_arrival"
+						],
+						"eq": {
+							"ending.choice": "break"
+						}
+					}
+				},
+				{
+					"who": "malphine",
+					"text": "Do not look at me like that, darling. The Court bends to whoever is on top. It is the one honest thing about us.",
+					"requires": {
+						"flags": [
+							"path.defy_court"
+						]
+					}
+				},
+				{
+					"text": "But Heaven is not dead, only headless. Its remnant will gather. It will want its chair back."
+				},
+				{
+					"text": "Let it come. You are Sinbound. You have never once stayed down."
+				}
+			]
+		},
+		{
+			"id": "return_after_ending",
+			"pool": "basecamp_return",
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "Basecamp Hell salutes as you climb out of the Font. Even the imps stand up straight. Mostly."
+				}
+			]
+		},
+		{
+			"id": "return_after_ending_2",
+			"pool": "basecamp_return",
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"text": "The camp is warm now. Souls fall like ash snow. The Pit has never been so well fed."
+				}
+			]
+		},
+		{
+			"id": "run_start_reconquest_first",
+			"pool": "run_start",
+			"once": true,
+			"priority": 15,
+			"requires": {
+				"flags": [
+					"story.ended"
+				]
+			},
+			"lines": [
+				{
+					"text": "Heaven's remnant has rallied under the Archons who would not kneel. They call it the Reconquest. Go and show them what they are reconquering."
+				}
+			]
+		},
+		{
+			"id": "run_start_reconquest_1",
+			"pool": "run_start",
+			"priority": 4,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "The chair is yours. The world under it still needs reminding."
+				}
+			]
+		},
+		{
+			"id": "run_start_reconquest_2",
+			"pool": "run_start",
+			"priority": 4,
+			"requires": {
+				"flags": [
+					"story.ended"
+				],
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"text": "Loyalists of a Throne that was never filled. Some faiths do not know how to stop."
+				}
+			]
+		},
+		{
+			"id": "crown_1",
+			"pool": "crown",
+			"lines": [
+				{
+					"text": "Iron from eight dead Forges. One link of a god's chain. A Herald's feather. It still smells of the stairs."
+				}
+			]
+		},
+		{
+			"id": "crown_2",
+			"pool": "crown",
+			"lines": [
+				{
+					"text": "Pip has polished it again. There are small fingerprints on every spike."
+				}
+			]
+		},
+		{
+			"id": "crown_sit",
+			"pool": "crown",
+			"requires": {
+				"eq": {
+					"ending.choice": "sit"
+				}
+			},
+			"lines": [
+				{
+					"text": "Somewhere above, your chair waits, warm. It will wait as long as it must. Chairs are patient."
+				}
+			]
+		},
+		{
+			"id": "crown_break",
+			"pool": "crown",
+			"requires": {
+				"eq": {
+					"ending.choice": "break"
+				}
+			},
+			"lines": [
+				{
+					"text": "There is no Throne any more. Only this crown, and whoever can keep it."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_epilogue",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "So. Ruler of everything. Still coming to my forge for steel."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Good. A ruler who stops sharpening is a ruler who is about to be replaced."
+				}
+			]
+		},
+		{
+			"id": "vesper_epilogue",
+			"pool": "vesper",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "The Choir has stopped singing. All of it. Up there it is so quiet you can hear the stars cool."
+				},
+				{
+					"who": "vesper",
+					"text": "I think I will teach them a new hymn. One that expects an answer, and gets one. From you."
+				}
+			]
+		},
+		{
+			"id": "clerk_epilogue",
+			"pool": "clerk",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "The accounts balance. For the first time in an age, every soul is where it should be. Mostly here."
+				},
+				{
+					"who": "clerk",
+					"text": "I have never been so happy, Sinbound. It is unprofessional. I am going to have a little lie down."
+				}
+			]
+		},
+		{
+			"id": "ossek_epilogue",
+			"pool": "ossek",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "ossek",
+					"text": "I finished the map. Every road, every gate, every step of the stairs."
+				},
+				{
+					"who": "ossek",
+					"text": "At the top I drew the chair. And in it, I drew you. Smaller than life, I am afraid. The page was not big enough."
+				}
+			]
+		},
+		{
+			"id": "pip_epilogue",
+			"pool": "pip",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "I got a hat! Look! Angel feather! It sneezes sometimes. I think it is still a bit holy."
+				}
+			]
+		},
+		{
+			"id": "kesh_epilogue",
+			"pool": "kesh",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "kesh",
+					"text": "The Breach stays open now. No more chains on it."
+				},
+				{
+					"who": "kesh",
+					"text": "I still stand here. Someone has to count. But now I count them going up, too."
+				}
+			]
+		},
+		{
+			"id": "malphine_epilogue",
+			"pool": "malphine",
+			"once": true,
+			"priority": 99,
+			"requires": {
+				"flags": [
+					"known.ending"
+				]
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "The Court has voted. Unanimously, after the first three dissenters were removed."
+				},
+				{
+					"who": "malphine",
+					"text": "Hell recognises your claim. Do try to rule with some style, darling. Heaven had none."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_ending",
+			"pool": "grimmaul",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.ending"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Your Majesty. Hah. No. Still Sinbound to me."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_ending",
+			"pool": "vesper",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.ending"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Listen. Do you hear that? Nothing. Lovely, isn't it?"
+				}
+			]
+		},
+		{
+			"id": "clerk_chat_ending",
+			"pool": "clerk",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.ending"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "clerk",
+					"text": "Tax season in Heaven! I have been waiting my entire unlife for this."
+				}
+			]
+		},
+		{
+			"id": "pip_chat_ending",
+			"pool": "pip",
+			"priority": 3,
+			"requires": {
+				"flags": [
+					"known.ending"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "pip",
+					"text": "Decree from the Throne! Oh wait. That is you. Hee!"
+				}
+			]
+		}
+	]
+}

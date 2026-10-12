@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+<defs>
+<radialGradient id="bg" cx="32" cy="32" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1c0d0a" stop-opacity="0.96"/><stop offset="0.72" stop-color="#0c0605" stop-opacity="0.9"/><stop offset="1" stop-color="#080404" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="32" cy="32" r="27" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff6040" stop-opacity="0.55"/><stop offset="1" stop-color="#ff6040" stop-opacity="0"/></radialGradient>
+<linearGradient id="fill" x1="14" y1="8" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffb298"/><stop offset="0.5" stop-color="#ff6040"/><stop offset="1" stop-color="#7a2e20"/></linearGradient>
+</defs>
+<circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+<circle cx="32" cy="32" r="27" fill="url(#glow)"/>
+<path d="M14 58 L14 36 C14 24 22 18 32 18 C42 18 50 24 50 36 L50 58 Z M18 24 L8 10 L24 18 Z M46 24 L56 10 L40 18 Z" fill="url(#fill)" fill-rule="evenodd" stroke="#140806" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M23.00 34.00 a3.00 3.00 0 1 0 6.00 0 a3.00 3.00 0 1 0 -6.00 0 Z M35.00 34.00 a3.00 3.00 0 1 0 6.00 0 a3.00 3.00 0 1 0 -6.00 0 Z" fill="#ffc6ab" fill-rule="evenodd" stroke="#140806" stroke-width="0.8"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+	"_doc": "Heat pacts: optional difficulty modifiers chosen at the Covenant (shop id 'covenant'). Each rank adds heat_per_rank heat. effects are per rank: enemy_hp / enemy_damage / enemy_speed / spawn_rate are added multipliers (0.2 = +20%); player_max_hp and ichor_gain are subtracted multipliers (0.15 = -15%). Rewards scale with total heat (Progression.HEAT_SOUL_BONUS etc).",
+	"pacts": [
+		{"id": "legion", "name": "Endless Legion", "icon": "⚔", "max_rank": 3, "heat_per_rank": 1,
+			"effects": {"spawn_rate": 0.2}, "description": "Heaven sends more of its host. +20% spawn rate per rank."},
+		{"id": "zeal", "name": "Righteous Zeal", "icon": "✝", "max_rank": 3, "heat_per_rank": 1,
+			"effects": {"enemy_hp": 0.15}, "description": "Faith hardens their flesh. +15% enemy HP per rank."},
+		{"id": "wrath", "name": "Wrath of God", "icon": "⚡", "max_rank": 3, "heat_per_rank": 2,
+			"effects": {"enemy_damage": 0.15}, "description": "Holy blows burn deeper. +15% enemy damage per rank."},
+		{"id": "fervor", "name": "Fervent Pursuit", "icon": "➶", "max_rank": 2, "heat_per_rank": 1,
+			"effects": {"enemy_speed": 0.1}, "description": "The faithful run you down. +10% enemy speed per rank."},
+		{"id": "frailty", "name": "Mortal Frailty", "icon": "♡", "max_rank": 2, "heat_per_rank": 1,
+			"effects": {"player_max_hp": 0.15}, "description": "Your vessel weakens. -15% max HP per rank."},
+		{"id": "tithe", "name": "Heavy Tithe", "icon": "¤", "max_rank": 2, "heat_per_rank": 1,
+			"effects": {"ichor_gain": 0.3}, "description": "Heaven takes its cut. -30% Ichor per rank."}
+	]
+}

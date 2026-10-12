@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/icebound_penitent.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"icebound_penitent"
+display_name = "Ice-Bound Penitent"
+flavor_text = "He knelt in the snow to atone and the mountain kept him. Break the ice and his penance breaks over you."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 45.0
+speed = 1.6
+damage = 14.0
+xp_value = 5
+knockback_scale = 0.15
+behavior = 0

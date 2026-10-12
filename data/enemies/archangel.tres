@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/archangel.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"archangel"
+display_name = "Archangel"
+flavor_text = "A general of the Host, who has cast down greater things than you. Its sword remembers the war in Heaven."
+model = ExtResource("2_model")
+size = 1.5
+max_hp = 340.0
+speed = 2.1
+damage = 28.0
+xp_value = 32
+knockback_scale = 0.0
+behavior = 4
+preferred_distance = 3.2
+attack_cooldown = 3.0
+charge_time = 0.3
+windup_time = 1.0
+slam_radius = 2.6
+slam_reach = 1.8
+slam_damage = 32.0

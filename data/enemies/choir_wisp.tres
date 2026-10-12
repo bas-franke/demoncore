@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/choir_wisp.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"choir_wisp"
+display_name = "Choir Wisp"
+flavor_text = "A single note of the First Hymn, torn loose and given wings. Where one sings, a thousand answer."
+model = ExtResource("2_model")
+size = 0.7
+hover = 0.3
+max_hp = 4.0
+speed = 4.4
+damage = 6.0
+xp_value = 1
+knockback_scale = 1.0
+behavior = 0

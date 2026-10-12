@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/gilded_harpy.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"gilded_harpy"
+display_name = "Gilded Harpy"
+flavor_text = "A magpie of the treasure isles. It wants what you carry, and it has the talons to take it."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 22.0
+speed = 3.0
+damage = 10.0
+xp_value = 4
+knockback_scale = 0.8
+behavior = 3
+attack_cooldown = 1.6
+charge_speed = 9.0
+charge_time = 0.7
+windup_time = 0.5

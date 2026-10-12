@@ -1,0 +1,569 @@
+{
+	"_doc": "Grimmaul, Blacksmith of the Ninth Forge (Brimstone Foundry). Pool 'grimmaul' (shop ids: blacksmith, forge). once=true entries are story beats (one per Basecamp visit), the rest is repeatable chatter.",
+	"conversations": [
+		{
+			"id": "grimmaul_intro",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Another Sinbound. The Font spat you out still smoking."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Grimmaul. Ninth Forge. I make the things that make angels into ash."
+				},
+				{
+					"choices": [
+						{
+							"text": "What do you want for them?",
+							"goto": "price"
+						},
+						{
+							"text": "I need no trinkets, smith.",
+							"goto": "proud"
+						}
+					]
+				},
+				{
+					"label": "price",
+					"who": "grimmaul",
+					"text": "Souls. Steel drinks them. Bring me souls, leave sharper.",
+					"end": true
+				},
+				{
+					"label": "proud",
+					"who": "grimmaul",
+					"text": "Hah. The last one said that too. He is a stain on the Ashen Plain now.",
+					"set": {
+						"grimmaul.scoffed": true
+					}
+				},
+				{
+					"who": "grimmaul",
+					"text": "Come back when you are smarter. Or deader. Same thing, around here."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_first_death",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"min": {
+					"deaths": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Burnt hair, broken pride. I have seen worse. Usually on my anvil."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Dying is no shame, Sinbound. Dying the same way twice, that is shame."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_herald",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 95,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "You brought down the Herald. Whole camp felt it. The forge-fires jumped a hand higher."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Next time, bring me a feather. I want to see what Heaven makes its generals out of."
+				},
+				{
+					"choices": [
+						{
+							"text": "It came apart into light. There was nothing left.",
+							"goto": "light"
+						},
+						{
+							"text": "Next time I will bring you its spear.",
+							"goto": "spear"
+						}
+					]
+				},
+				{
+					"label": "light",
+					"who": "grimmaul",
+					"text": "Then it was never made of anything at all. Hm. Interesting.",
+					"end": true
+				},
+				{
+					"label": "spear",
+					"who": "grimmaul",
+					"text": "Hah! Do that and I will forge you something with a Herald's own fire in it."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_angel_steel",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"min": {
+					"runs": 3
+				}
+			},
+			"set": {
+				"beat.brittle_steel": true
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Pulled a Lancer's spear out of the Plain. Look at the edge."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Folded light. Pretty. But the folds are rushed. Whoever forged this was in a hurry."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Heaven was never in a hurry. Not in ten thousand years. Makes a smith wonder what they are running from."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_ninth_forge",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"min": {
+					"runs": 5
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Eight Forges before mine. Eight smiths. Every one of them swore they could make a blade to kill an Archon."
+				},
+				{
+					"who": "grimmaul",
+					"text": "All eight are slag now. The Court keeps them in a row by the lava, as a warning. Or as decoration."
+				},
+				{
+					"who": "player",
+					"text": "And you?"
+				},
+				{
+					"who": "grimmaul",
+					"text": "Ninth to try. First to be right."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_vesper",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 60,
+			"requires": {
+				"seen": [
+					"vesper_intro"
+				],
+				"min": {
+					"runs": 4
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "That Choir one sings over my anvil sometimes. Backwards hymns."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Puts a ring in the steel I cannot get any other way. Do not tell her. She will want paying."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_inquisitor",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"min": {
+					"boss_seen.grand_inquisitor": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Inquisitors now. Judges, they call themselves."
+				},
+				{
+					"who": "grimmaul",
+					"text": "They have burned more of their own this age than of ours. Heaven is turning on itself, Sinbound. And it is turning faster."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_skarn",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Warden. Those chains of yours. My master's master forged the first link, before the god in them went quiet."
+				},
+				{
+					"who": "player",
+					"text": "It is not quiet. It is listening."
+				},
+				{
+					"who": "grimmaul",
+					"text": "...Keep it away from my anvil."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_vharok",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Ravager. Those horns took the gates of the Silver City. I would pay a hundred souls for one chip of them."
+				},
+				{
+					"who": "player",
+					"text": "Come and take it."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Hah! Some day. When you are asleep."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_crown",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Vesper told me. About the chair."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Does not change the work. Steel is still steel."
+				},
+				{
+					"who": "grimmaul",
+					"text": "But I will tell you this, Sinbound. I have always wanted to forge a crown."
+				},
+				{
+					"choices": [
+						{
+							"text": "Make it heavy.",
+							"goto": "heavy",
+							"set": {
+								"crown.style": "heavy"
+							}
+						},
+						{
+							"text": "Make it sharp.",
+							"goto": "sharp",
+							"set": {
+								"crown.style": "sharp"
+							}
+						}
+					]
+				},
+				{
+					"label": "heavy",
+					"who": "grimmaul",
+					"text": "Heavy. So whoever wears it never forgets what it cost. Good answer.",
+					"end": true
+				},
+				{
+					"label": "sharp",
+					"who": "grimmaul",
+					"text": "Sharp. So whoever tries to take it bleeds. Better answer."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_victory",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 92,
+			"requires": {
+				"min": {
+					"victories": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "You came back on your own legs this time. Not through the Font."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Means my steel held. Means you held. Do it again."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_1",
+			"pool": "grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Strike while it is hot. Same goes for angels."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_2",
+			"pool": "grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Souls in, steel out. Simple."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_3",
+			"pool": "grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Mind the sparks. They bite."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_4",
+			"pool": "grimmaul",
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "A blade is a promise. Make sure yours gets kept."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_died",
+			"pool": "grimmaul",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Font smell is still on you. Go wash in the lava."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_boss",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"min": {
+					"last.boss_kills": 1
+				},
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Herald-ash on your claws. Suits you."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_crown_done",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"seen": [
+					"grimmaul_crown"
+				],
+				"min": {
+					"runs": 15
+				}
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "It is done. The crown. Do not touch it, it is still cooling. It will be cooling for a hundred years."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Iron from the eight dead Forges, one link from the Warden's chains, and a Herald's feather I finally pried out of the ash."
+				},
+				{
+					"who": "grimmaul",
+					"text": "Win the climb, Sinbound, and it is yours. Lose, and I melt it down and try again with the next one. No offence."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_lilaeth",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Seraph. Your halo would make a fine buckle. Joking. Mostly."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_morvane",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Hexbinder. Keep your ink off my anvil."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_skarn",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Warden. Need those chains re-forged? I will do it for nothing. Do not tell anyone."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_vharok",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Ravager! Butt the anvil again and I butt you back."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_ysolde",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Reaper. I keep your scythe's edge in my dreams. It is unsettling."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_nhazgul",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Hive. Keep your flies off the quench water. Last time the whole batch came out crunchy."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_nhazgul",
+			"pool": "grimmaul",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Hive. You came to the forge for steel? You have a sting the length of my forearm."
+				},
+				{
+					"who": "player",
+					"text": "The sting is for the angels. The steel is for the hive. They like something to build on."
+				},
+				{
+					"who": "grimmaul",
+					"text": "...I will forge you a comb-frame of brimstone. Do not ever tell anyone I made a beehive."
+				}
+			]
+		},
+		{
+			"id": "grimmaul_chat_iscariel",
+			"pool": "grimmaul",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "grimmaul",
+					"text": "Turncoat. I do not trust a man with two kinds of wing. But I trust your sword arm."
+				}
+			]
+		}
+	]
+}

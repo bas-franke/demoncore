@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/brimstone_sigil/brimstone_sigil.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Morvane"
+title = "the Hexbinder"
+lore = "Every name the angels forgot, he wrote down. Every name he wrote, he can unmake."
+perk_text = "-15% Cooldown, +10% Area.
+Starts with Brimstone Sigil."
+model_id = "morvane"
+skin_color = Color(0.3, 0.24, 0.28, 1)
+armor_color = Color(0.42, 0.3, 0.16, 1)
+cloth_color = Color(0.13, 0.06, 0.11, 1)
+glow_color = Color(0.78, 0.22, 1, 1)
+horn_color = Color(0.55, 0.5, 0.42, 1)
+build = 2
+horn_style = 3
+head_style = 0
+wing_style = 0
+height = 1.04
+bulk = 1.0
+cape_length = 0.85
+chains = false
+grimoire = true
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"cooldown": -0.15,
+&"area": 0.1
+}

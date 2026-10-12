@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/zealot.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"zealot"
+display_name = "Crusader Zealot"
+flavor_text = "He scourged himself bloody at dawn, and now he has run all the way here to share the feeling."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 9.0
+speed = 4.3
+damage = 9.0
+xp_value = 2
+knockback_scale = 1.1
+behavior = 8
+preferred_distance = 1.8
+windup_time = 0.8
+explode_radius = 2.2
+explode_damage = 22.0

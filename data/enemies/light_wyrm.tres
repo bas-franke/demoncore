@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/light_wyrm.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"light_wyrm"
+display_name = "Dawn Wyrmling"
+flavor_text = "A dragon of the first morning, young and proud. When it is grown it will be the sun. For now, it practises on you."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 30.0
+speed = 2.6
+damage = 10.0
+xp_value = 5
+knockback_scale = 0.6
+behavior = 1
+preferred_distance = 7.5
+attack_cooldown = 2.4
+windup_time = 0.7
+projectile_damage = 10.0
+projectile_speed = 9.0
+muzzle_height = 1.0
+shot_recover_time = 0.35

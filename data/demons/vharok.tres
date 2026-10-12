@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/ravagers_cleave/ravagers_cleave.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Vharok"
+title = "the Horned Ravager"
+lore = "He broke the gates of the Silver City with his horns alone, and was cast down for it."
+perk_text = "+60 Max HP, +1 Armor, but slower.
+Starts with Ravager's Cleave."
+model_id = "vharok"
+skin_color = Color(0.24, 0.08, 0.06, 1)
+armor_color = Color(0.05, 0.045, 0.05, 1)
+cloth_color = Color(0.18, 0.05, 0.04, 1)
+glow_color = Color(1, 0.36, 0.06, 1)
+horn_color = Color(0.36, 0.31, 0.26, 1)
+build = 0
+horn_style = 1
+head_style = 0
+wing_style = 2
+height = 1.08
+bulk = 1.0
+cape_length = 0.45
+chains = false
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"max_hp": 60.0,
+&"armor": 1.0,
+&"move_speed": -0.6
+}

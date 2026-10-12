@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/cherubim.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"cherubim"
+display_name = "Cherubim"
+flavor_text = "Four faces, four wings, feet like burnished bronze. It guarded the gate of Eden with a flaming sword. It remembers you from there."
+model = ExtResource("2_model")
+size = 1.25
+max_hp = 60.0
+speed = 2.4
+damage = 18.0
+xp_value = 8
+knockback_scale = 0.3
+behavior = 2
+preferred_distance = 8.0
+attack_cooldown = 3.4
+charge_speed = 15.0
+charge_time = 0.7
+windup_time = 1.0

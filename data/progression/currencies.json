@@ -1,0 +1,11 @@
+{
+	"_doc": "Meta (persistent) currencies. Read by Progression. color is an HTML hex string; icon is a short glyph for UI.",
+	"currencies": [
+		{"id": "souls", "name": "Souls", "icon": "☽", "color": "d0383c",
+			"description": "Wrung from every slain angel and every coin of tithe. Spent on flesh and fury."},
+		{"id": "sin_shards", "name": "Sin Shards", "icon": "◆", "color": "b45ae6",
+			"description": "Crystallised transgression, shed by elites and by long survival. Buys pacts, demons and favours."},
+		{"id": "hellstone", "name": "Hellstone", "icon": "⬢", "color": "ff7a1a",
+			"description": "Molten heart-rock torn from fallen archangels. Rare; tempers the finest weapons."}
+	]
+}

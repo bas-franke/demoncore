@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/storm_archon_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"storm_archon"
+display_name = "Baraqiel, Archon of the Tempest"
+flavor_text = "Lightning is only prayer said very quickly. Baraqiel has been praying at you since the spire was built."
+model = ExtResource("2_model")
+size = 2.2
+hover = 0.3
+max_hp = 3100.0
+speed = 2.0
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

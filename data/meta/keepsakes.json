@@ -1,0 +1,26 @@
+{
+	"_doc": "Keepsakes: small run modifiers a Basecamp NPC gives once their affinity (Dialogue.affinity(giver), 0..5, raised by offerings) reaches min_affinity. One keepsake can be carried per run, chosen at the hellgate loadout. effects use the Meta upgrade effect format: {stat, amount} -> Player.apply_stat; {type: soul_gain, amount} -> extra soul multiplier for the run; {type: run_stat, stat, amount} -> Progression.apply_stat (luck, rerolls, banishes, dash_charges, ichor_gain, shard_gain). See docs/team/basecamp.md.",
+	"keepsakes": [
+		{"id": "ember_locket", "giver": "grimmaul", "min_affinity": 3, "icon": "⚒",
+			"name": "Ember-Forged Locket", "description": "Still warm from the Ninth Forge. +8% damage.",
+			"effects": [{"stat": "might", "amount": 0.08}]},
+		{"id": "hymnal_page", "giver": "vesper", "min_affinity": 3, "icon": "♫",
+			"name": "Torn Hymnal Page", "description": "A verse Heaven forgot. +10% area, weapons recharge 4% faster.",
+			"effects": [{"stat": "area", "amount": 0.1}, {"stat": "cooldown", "amount": -0.04}]},
+		{"id": "marked_coin", "giver": "clerk", "min_affinity": 3, "icon": "¤",
+			"name": "The Clerk's Marked Coin", "description": "Interest accrues. +25% souls from this descent.",
+			"effects": [{"type": "soul_gain", "amount": 0.25}]},
+		{"id": "wayfarer_compass", "giver": "ossek", "min_affinity": 3, "icon": "✧",
+			"name": "Wayfarer's Compass", "description": "It points away from Heaven. +0.5 speed, +0.8 soul reach.",
+			"effects": [{"stat": "move_speed", "amount": 0.5}, {"stat": "pickup_radius", "amount": 0.8}]},
+		{"id": "lucky_tooth", "giver": "pip", "min_affinity": 3, "icon": "☘",
+			"name": "Pip's Lucky Tooth", "description": "Not Pip's, strictly speaking. +15% luck, +1 reroll.",
+			"effects": [{"type": "run_stat", "stat": "luck", "amount": 0.15}, {"type": "run_stat", "stat": "rerolls", "amount": 1.0}]},
+		{"id": "breach_link", "giver": "kesh", "min_affinity": 3, "icon": "⛓",
+			"name": "Breachwarden's Link", "description": "One link of the chain that held the Gate. +2 armor.",
+			"effects": [{"stat": "armor", "amount": 2.0}]},
+		{"id": "ashen_signet", "giver": "malphine", "min_affinity": 3, "icon": "♛",
+			"name": "Ashen Signet", "description": "The Duchess's favour, for now. +10% experience.",
+			"effects": [{"stat": "xp_gain", "amount": 0.1}]}
+	]
+}

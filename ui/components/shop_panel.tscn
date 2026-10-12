@@ -1,0 +1,212 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/components/shop_panel.gd" id="1_shop"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+
+[node name="ShopPanel" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("1_shop")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.006, 0.004, 0.72)
+
+[node name="Frame" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 700.0
+theme_type_variation = &"InfernalPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Root/Frame"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Root/Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleCol" type="VBoxContainer" parent="Root/Frame/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Root/Frame/VBox/Header/TitleCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 38
+text = "MERCHANT OF SIN"
+text_overrun_behavior = 3
+
+[node name="Subtitle" type="Label" parent="Root/Frame/VBox/Header/TitleCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"LoreLabel"
+text = "Everything has a price."
+autowrap_mode = 3
+
+[node name="Wallet" type="HBoxContainer" parent="Root/Frame/VBox/Header"]
+unique_name_in_owner = true
+theme_override_constants/separation = 22
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 2
+
+[node name="Rule" type="HSeparator" parent="Root/Frame/VBox"]
+layout_mode = 2
+
+[node name="Tabs" type="HBoxContainer" parent="Root/Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Body" type="BoxContainer" parent="Root/Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Frame/VBox/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="GridWrap" type="MarginContainer" parent="Root/Frame/VBox/Body/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Grid" type="GridContainer" parent="Root/Frame/VBox/Body/Scroll/GridWrap"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="Empty" type="Label" parent="Root/Frame/VBox/Body/Scroll/GridWrap"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"LoreLabel"
+text = "The shelves stand empty. Come back with more sin."
+horizontal_alignment = 1
+
+[node name="Detail" type="PanelContainer" parent="Root/Frame/VBox/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_type_variation = &"InsetPanel"
+
+[node name="DVBox" type="VBoxContainer" parent="Root/Frame/VBox/Body/Detail"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DHead" type="HBoxContainer" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="DIcon" type="PanelContainer" parent="Root/Frame/VBox/Body/Detail/DVBox/DHead"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="DNameCol" type="VBoxContainer" parent="Root/Frame/VBox/Body/Detail/DVBox/DHead"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="DName" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox/DHead/DNameCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+autowrap_mode = 3
+
+[node name="DRarity" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox/DHead/DNameCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+
+[node name="DLevel" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox/DHead/DNameCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+
+[node name="DDesc" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_type_variation = &"InkLabel"
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="DEffect" type="RichTextLabel" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="DFlavor" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_type_variation = &"LoreLabel"
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DCost" type="Label" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CostLabel"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 2
+
+[node name="Buy" type="Button" parent="Root/Frame/VBox/Body/Detail/DVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"AccentButton"
+text = "PURCHASE"
+
+[node name="Footer" type="HBoxContainer" parent="Root/Frame/VBox"]
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="Root/Frame/VBox/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"CaptionLabel"
+text = "ENTER  PURCHASE      Q / E  CATEGORY      ESC  LEAVE"
+text_overrun_behavior = 3
+
+[node name="Leave" type="Button" parent="Root/Frame/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GhostButton"
+text = "LEAVE"

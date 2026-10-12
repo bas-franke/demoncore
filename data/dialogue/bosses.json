@@ -1,0 +1,2395 @@
+{
+	"_doc": "Boss lines, played automatically as barks. Pools: boss_intro.<boss id>, boss_rage.<boss id>, boss_death.<boss id> (boss id = file name of the boss EnemyData .tres); boss_intro / boss_rage / boss_death are fallbacks for bosses with no lines yet.",
+	"conversations": [
+		{
+			"id": "sariel_intro_first",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Child of the Pit. The Dawn has no room for you. Kneel, and I will make it quick."
+				},
+				{
+					"who": "player",
+					"text": "Come down here and say that."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_lilaeth",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Lilaeth. Sister. You still have the voice. Use it to repent."
+				},
+				{
+					"who": "player",
+					"text": "I used it to scream, Sariel. You did not listen then either."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_vharok",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The Gatebreaker. We rebuilt every gate you shattered, Ravager. Twice as high."
+				},
+				{
+					"who": "player",
+					"text": "Good. Higher gates fall louder."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_morvane",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Hexbinder. Whatever names you stole, mine is not among them."
+				},
+				{
+					"who": "player",
+					"text": "Sariel. Seventh of the Second Choir. Born of the fourth morning. Shall I go on?"
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_after_kill",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "You felled me once. The Dawn does not stay felled. Neither do I."
+				},
+				{
+					"who": "player",
+					"text": "Then I will keep cutting you down until one of us gets bored."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_hymn",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				],
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Tell me, Herald. When you pray, does anything answer?"
+				},
+				{
+					"who": "sariel",
+					"text": "Silence, demon. The Throne hears all."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_throne",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "I know about the chair, Sariel."
+				},
+				{
+					"who": "sariel",
+					"text": "...Then you know why the Dawn must burn everything. Even me."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_1",
+			"pool": "boss_intro.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Again you crawl up out of the dark. Again I will put you back."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_2",
+			"pool": "boss_intro.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Behold the Herald of the Last Dawn, and despair."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_3",
+			"pool": "boss_intro.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The light is patient, demon. It has already won. It is only waiting for you to notice."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_4",
+			"pool": "boss_intro.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "By the Throne's will, you end here."
+				}
+			]
+		},
+		{
+			"id": "sariel_rage_1",
+			"pool": "boss_rage.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Enough! Behold the light you were made to fear!"
+				}
+			]
+		},
+		{
+			"id": "sariel_rage_2",
+			"pool": "boss_rage.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The Dawn will not be denied!"
+				}
+			]
+		},
+		{
+			"id": "sariel_rage_3",
+			"pool": "boss_rage.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Burn, thing of shadow! Burn as you should have burned at the Fall!"
+				}
+			]
+		},
+		{
+			"id": "sariel_rage_throne",
+			"pool": "boss_rage.sariel",
+			"priority": 1,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "It does not matter if no one is watching! It does not matter!"
+				}
+			]
+		},
+		{
+			"id": "sariel_death_first",
+			"pool": "boss_death.sariel",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Impossible. The Herald does not fall. The Herald does not..."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_lilaeth",
+			"pool": "boss_death.sariel",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Sister... sing my part..."
+				},
+				{
+					"who": "player",
+					"text": "I will sing it backwards."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_answer",
+			"pool": "boss_death.sariel",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"set": {
+				"beat.herald_doubt": true
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The light... it was supposed to answer..."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_throne",
+			"pool": "boss_death.sariel",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Tell the Throne that I... no. There is no one to tell."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_1",
+			"pool": "boss_death.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "I will rise again with the morning."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_2",
+			"pool": "boss_death.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The Dawn... will come... without me..."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_3",
+			"pool": "boss_death.sariel",
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Forgive me. Someone. Anyone."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_first",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "By the authority of the Seventh Gate, I find you guilty. The sentence is annihilation."
+				},
+				{
+					"who": "player",
+					"text": "No trial?"
+				},
+				{
+					"who": "grand_inquisitor",
+					"text": "You were tried before you were made, demon."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_hymn",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 8,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Doubt is spreading through the Host like rot. I burn it wherever I find it. Today I find it in you."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_throne",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "player",
+					"text": "Whose authority, Inquisitor? Say the name. I dare you."
+				},
+				{
+					"who": "grand_inquisitor",
+					"text": "...Heresy. The sentence is annihilation."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_1",
+			"pool": "boss_intro.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "The bells have tolled for you, demon. Approach and be judged."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_2",
+			"pool": "boss_intro.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Confess, and the fire will be brief."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_3",
+			"pool": "boss_intro.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "I have burned saints for less than you have done today."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_rage_1",
+			"pool": "boss_rage.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "CONFESS!"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_rage_2",
+			"pool": "boss_rage.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "The verdict is fire! The verdict is always fire!"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_death_first",
+			"pool": "boss_death.grand_inquisitor",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "I judged... wrongly...?"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_death_1",
+			"pool": "boss_death.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "The verdict stands... without me..."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_death_2",
+			"pool": "boss_death.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Another will take my seat. There are always more judges."
+				}
+			]
+		},
+		{
+			"id": "boss_intro_generic_1",
+			"pool": "boss_intro",
+			"lines": [
+				{
+					"text": "Something holy has come to stop you. Nothing holy has managed it yet."
+				}
+			]
+		},
+		{
+			"id": "boss_intro_generic_2",
+			"pool": "boss_intro",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Finally. Something worth the climb."
+				}
+			]
+		},
+		{
+			"id": "boss_rage_generic_1",
+			"pool": "boss_rage",
+			"lines": [
+				{
+					"text": "Its light flares, desperate and blinding."
+				}
+			]
+		},
+		{
+			"id": "boss_death_generic_1",
+			"pool": "boss_death",
+			"lines": [
+				{
+					"text": "Another light goes out over the Verge."
+				}
+			]
+		},
+		{
+			"id": "boss_death_generic_2",
+			"pool": "boss_death",
+			"lines": [
+				{
+					"who": "player",
+					"text": "Tell your Throne I said hello."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_sermon",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 11,
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Brothers, sisters, behold. The Enemy, made flesh. Mark how it stands upright, as though it had the right."
+				},
+				{
+					"who": "grand_inquisitor",
+					"text": "I am Ozias. I have heard ten thousand confessions. Yours will be the loudest."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_lilaeth",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "An apostate seraph. The worst kind of heretic: the kind who knew the truth and spat on it."
+				},
+				{
+					"who": "player",
+					"text": "I knew the truth, Ozias. That is exactly why I spat."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_intro_morvane",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "The Hexbinder. You keep a book of names. So do I. Mine is a list of the burned."
+				},
+				{
+					"who": "player",
+					"text": "Then we are both librarians. Mine has more pages."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_phase_1",
+			"pool": "boss_phase.grand_inquisitor.1",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "The interrogation is concluded. Let the Trial by Fire begin!"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_phase_1b",
+			"pool": "boss_phase.grand_inquisitor.1",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Sisters! Clerics! Bring the censers! This one will not burn on its own."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_phase_2",
+			"pool": "boss_phase.grand_inquisitor.2",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Auto-da-fe! Ring the bell! Let the whole Verge witness the sentence!"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_phase_2_throne",
+			"pool": "boss_phase.grand_inquisitor.2",
+			"priority": 1,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "I do not need Him to watch! I do not NEED Him to watch!"
+				}
+			]
+		},
+		{
+			"id": "inquisitor_rage_3",
+			"pool": "boss_rage.grand_inquisitor",
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Every sermon ends in fire. Every single one."
+				}
+			]
+		},
+		{
+			"id": "inquisitor_death_throne",
+			"pool": "boss_death.grand_inquisitor",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "I burned them for doubting... and I... doubted..."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_ozias",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 7,
+			"requires": {
+				"min": {
+					"boss_kills.grand_inquisitor": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "The Inquisitor says I doubt. The Inquisitor is wrong. Watch me prove it on you."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_first",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "I have stood before this Gate since before the first of you fell. I have never once stepped aside."
+				},
+				{
+					"who": "player",
+					"text": "You have never once been asked properly."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_lilaeth",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Lilaeth of the Second Choir. You passed this Gate once, going down. You will not pass it going up."
+				},
+				{
+					"who": "player",
+					"text": "I remember you, Azrafel. You did not look at me as I fell. Look now."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_vharok",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "The Gatebreaker. The other six gates were made to break. This one was made for you."
+				},
+				{
+					"who": "player",
+					"text": "Then it was made to fail."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_morvane",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Hexbinder. Whatever name you carry for me, I gave it up when I took this post."
+				},
+				{
+					"who": "player",
+					"text": "I know. I have the receipt."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_skarn",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Jailer. We are the same, you and I. Keepers of doors."
+				},
+				{
+					"who": "player",
+					"text": "No. My prisoners know who locked them in."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_ysolde",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Reaper. Nothing grows on these steps for you to harvest."
+				},
+				{
+					"who": "player",
+					"text": "You are standing on them."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_1",
+			"pool": "boss_intro.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Turn back. There is nothing up there for you."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_2",
+			"pool": "boss_intro.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "The Gate is shut. The Gate stays shut. That is all I am."
+				}
+			]
+		},
+		{
+			"id": "azrafel_intro_3",
+			"pool": "boss_intro.gate_archon",
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "You know what is behind me. That is exactly why you may not see it."
+				}
+			]
+		},
+		{
+			"id": "azrafel_rage_1",
+			"pool": "boss_rage.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "You will not see it! No one will see it!"
+				}
+			]
+		},
+		{
+			"id": "azrafel_rage_2",
+			"pool": "boss_rage.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "I guarded it when it was full. I will guard it empty!"
+				}
+			]
+		},
+		{
+			"id": "azrafel_phase_1",
+			"pool": "boss_phase.gate_archon.1",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Light of the first morning, burn!"
+				}
+			]
+		},
+		{
+			"id": "azrafel_death_first",
+			"pool": "boss_death.gate_archon",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Go, then. Climb. And when you reach the top... forgive me for what you find."
+				}
+			]
+		},
+		{
+			"id": "azrafel_death_1",
+			"pool": "boss_death.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "The Gate... stands open..."
+				}
+			]
+		},
+		{
+			"id": "azrafel_death_2",
+			"pool": "boss_death.gate_archon",
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "I stepped aside. At last, I stepped aside."
+				}
+			]
+		},
+		{
+			"id": "ysmir_intro_first",
+			"pool": "boss_intro.frost_abbot",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "I prayed in the snow for forty years. On the forty-first, the mountain answered."
+				},
+				{
+					"who": "player",
+					"text": "And what did it say?"
+				},
+				{
+					"who": "frost_abbot",
+					"text": "It said: wait for the demon."
+				}
+			]
+		},
+		{
+			"id": "ysmir_intro_skarn",
+			"pool": "boss_intro.frost_abbot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Jailer. I too keep a cell. It is made of ice, and I am in it."
+				},
+				{
+					"who": "player",
+					"text": "Then let me show you a deeper one."
+				}
+			]
+		},
+		{
+			"id": "ysmir_intro_throne",
+			"pool": "boss_intro.frost_abbot",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Forty years of silence. I told myself the silence was holy. Do not tell me otherwise, demon."
+				}
+			]
+		},
+		{
+			"id": "ysmir_intro_1",
+			"pool": "boss_intro.frost_abbot",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "The cold is a kind of mercy. Kneel in it."
+				}
+			]
+		},
+		{
+			"id": "ysmir_intro_2",
+			"pool": "boss_intro.frost_abbot",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Hush. The Brothers are at prayer. You will be quiet, one way or another."
+				}
+			]
+		},
+		{
+			"id": "ysmir_phase_1",
+			"pool": "boss_phase.frost_abbot.1",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Brothers! Ring the bell! Let the mountain hear!"
+				}
+			]
+		},
+		{
+			"id": "ysmir_phase_2",
+			"pool": "boss_phase.frost_abbot.2",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Winter without end! Silence without end!"
+				}
+			]
+		},
+		{
+			"id": "ysmir_rage_1",
+			"pool": "boss_rage.frost_abbot",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "The mountain is angry. So am I. At last, so am I."
+				}
+			]
+		},
+		{
+			"id": "ysmir_death_first",
+			"pool": "boss_death.frost_abbot",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "So warm... I had forgotten..."
+				}
+			]
+		},
+		{
+			"id": "ysmir_death_1",
+			"pool": "boss_death.frost_abbot",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "The bell... let it ring for me..."
+				}
+			]
+		},
+		{
+			"id": "ysmir_death_2",
+			"pool": "boss_death.frost_abbot",
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "Forty years... for this..."
+				}
+			]
+		},
+		{
+			"id": "aurelion_intro_first",
+			"pool": "boss_intro.dawn_wyrm",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "I was hatched from the first sunrise. I will be here for the last one."
+				},
+				{
+					"who": "player",
+					"text": "You are a lizard with a lamp in its mouth."
+				}
+			]
+		},
+		{
+			"id": "aurelion_intro_vharok",
+			"pool": "boss_intro.dawn_wyrm",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Horned one. I have melted gates thicker than your skull."
+				},
+				{
+					"who": "player",
+					"text": "Then you have never met my skull."
+				}
+			]
+		},
+		{
+			"id": "aurelion_intro_dawn",
+			"pool": "boss_intro.dawn_wyrm",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.dawn_fuel"
+				]
+			},
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "The Last Dawn needs a herald and a hearth. Sariel is the herald. I am the hearth."
+				}
+			]
+		},
+		{
+			"id": "aurelion_intro_1",
+			"pool": "boss_intro.dawn_wyrm",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Look upon the sun, little shadow. It is the last thing you will see."
+				}
+			]
+		},
+		{
+			"id": "aurelion_intro_2",
+			"pool": "boss_intro.dawn_wyrm",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Wings of noon! Breath of morning! Burn!"
+				}
+			]
+		},
+		{
+			"id": "aurelion_phase_1",
+			"pool": "boss_phase.dawn_wyrm.1",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "High noon. No shadows at noon. None!"
+				}
+			]
+		},
+		{
+			"id": "aurelion_phase_2",
+			"pool": "boss_phase.dawn_wyrm.2",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Eclipse? No. NO. The sun does not go out!"
+				}
+			]
+		},
+		{
+			"id": "aurelion_rage_1",
+			"pool": "boss_rage.dawn_wyrm",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Even eclipsed, I burn!"
+				}
+			]
+		},
+		{
+			"id": "aurelion_death_first",
+			"pool": "boss_death.dawn_wyrm",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "Dusk... so this is... dusk..."
+				}
+			]
+		},
+		{
+			"id": "aurelion_death_1",
+			"pool": "boss_death.dawn_wyrm",
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "The sun sets... for the first time..."
+				}
+			]
+		},
+		{
+			"id": "verdance_intro_first",
+			"pool": "boss_intro.verdant_matriarch",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Hush, child. You are trampling my flowers. Every one of them is a prayer."
+				},
+				{
+					"who": "player",
+					"text": "Then let me pick a few."
+				}
+			]
+		},
+		{
+			"id": "verdance_intro_ysolde",
+			"pool": "boss_intro.verdant_matriarch",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Reaper. You have come to my garden with a scythe. How very rude."
+				},
+				{
+					"who": "player",
+					"text": "I have come at harvest time. How very punctual."
+				}
+			]
+		},
+		{
+			"id": "verdance_intro_hymn",
+			"pool": "boss_intro.verdant_matriarch",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "I have tended this garden alone for an age. No one has come to walk in it. No one."
+				}
+			]
+		},
+		{
+			"id": "verdance_intro_1",
+			"pool": "boss_intro.verdant_matriarch",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Root and thorn, bloom and bramble. Hold it still."
+				}
+			]
+		},
+		{
+			"id": "verdance_intro_2",
+			"pool": "boss_intro.verdant_matriarch",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "The First Garden does not forgive weeds."
+				}
+			]
+		},
+		{
+			"id": "verdance_phase_1",
+			"pool": "boss_phase.verdant_matriarch.1",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Bloom, my darlings. Bloom and burn."
+				}
+			]
+		},
+		{
+			"id": "verdance_phase_2",
+			"pool": "boss_phase.verdant_matriarch.2",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "The wildwood wakes! Let it swallow you!"
+				}
+			]
+		},
+		{
+			"id": "verdance_rage_1",
+			"pool": "boss_rage.verdant_matriarch",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "You will feed my roots for a thousand years!"
+				}
+			]
+		},
+		{
+			"id": "verdance_death_first",
+			"pool": "boss_death.verdant_matriarch",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "My garden... who will water it now...?"
+				}
+			]
+		},
+		{
+			"id": "verdance_death_1",
+			"pool": "boss_death.verdant_matriarch",
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Compost... to compost..."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_first",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Crusaders! Wheels to the fore! There is the beast the bishops promised us!"
+				},
+				{
+					"who": "player",
+					"text": "A man in a cart. Heaven is running out of angels."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_vharok",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Gatebreaker! My horses have trampled bigger horns than yours."
+				},
+				{
+					"who": "player",
+					"text": "Your horses have never met mine."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_skarn",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Jailer. When I am done, I will chain you to my wheels and drag you home."
+				},
+				{
+					"who": "player",
+					"text": "Everything you chain to you, Lord-Marshal, I eventually inherit."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_ysolde",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Reaper. I have filled more graves than you have ever harvested."
+				},
+				{
+					"who": "player",
+					"text": "Then let me gather you with them."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_story",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "They say the Throne is empty. Lies. And if it is, I will fill it with the Crusade."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_1",
+			"pool": "boss_intro.war_chariot",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Charge! For the Throne and the burning road!"
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_2",
+			"pool": "boss_intro.war_chariot",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Mortal steel, holy fire. See which melts you first."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_phase_1_1",
+			"pool": "boss_phase.war_chariot.1",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "The Muster is done! Now, THE ADVANCE!"
+				}
+			]
+		},
+		{
+			"id": "war_chariot_phase_2_1",
+			"pool": "boss_phase.war_chariot.2",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Light the pyre! If I burn, the whole field burns with me!"
+				}
+			]
+		},
+		{
+			"id": "war_chariot_rage_1",
+			"pool": "boss_rage.war_chariot",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Faster! FASTER! Run it down!"
+				}
+			]
+		},
+		{
+			"id": "war_chariot_death_first",
+			"pool": "boss_death.war_chariot",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "My horses... my standard... the Crusade... ends here...?"
+				}
+			]
+		},
+		{
+			"id": "war_chariot_death_1",
+			"pool": "boss_death.war_chariot",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "The road... burns without me..."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_death_2",
+			"pool": "boss_death.war_chariot",
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Tell the bishops... I charged."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_first",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "I am the thunder that answered every prayer for rain. Hear what answers yours."
+				},
+				{
+					"who": "player",
+					"text": "Nothing answers anyone here, Archon. I checked."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_lilaeth",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Lilaeth. You sang the thunderhymn beside me once. Sing it now, on your knees."
+				},
+				{
+					"who": "player",
+					"text": "I remember the words, Baraqiel. Every one of them was a lie."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_vharok",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "vharok"
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Horned one. I have split mountains. Your skull will not trouble me."
+				},
+				{
+					"who": "player",
+					"text": "Mountains do not hit back."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_morvane",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Hexbinder. My name is written in lightning. You cannot cross it out."
+				},
+				{
+					"who": "player",
+					"text": "Lightning is just a very fast scribble."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_story",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "The prayers still rise to me. I send down storms in His name. Someone has to send something down."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_1",
+			"pool": "boss_intro.storm_archon",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "The sky is mine. Every bolt of it."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_2",
+			"pool": "boss_intro.storm_archon",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Kneel, before the storm kneels you."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_phase_1_1",
+			"pool": "boss_phase.storm_archon.1",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "The Squall! Let the heavens break!"
+				}
+			]
+		},
+		{
+			"id": "storm_archon_phase_2_1",
+			"pool": "boss_phase.storm_archon.2",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Eye of the Storm. Here, at the centre, it is silent. Here, you die."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_rage_1",
+			"pool": "boss_rage.storm_archon",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "I am the storm! I AM THE STORM!"
+				}
+			]
+		},
+		{
+			"id": "storm_archon_death_first",
+			"pool": "boss_death.storm_archon",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "The thunder... goes quiet... is this what He hears...?"
+				}
+			]
+		},
+		{
+			"id": "storm_archon_death_1",
+			"pool": "boss_death.storm_archon",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "The rain... stops..."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_death_2",
+			"pool": "boss_death.storm_archon",
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "No more storms. Only sky."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_first",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Ah. A debtor. Everything that exists owes Heaven its existence. I am here to collect."
+				},
+				{
+					"who": "player",
+					"text": "You sound like the Clerk. He is funnier."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_morvane",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Hexbinder. Every name in your book has a price. I will buy them all."
+				},
+				{
+					"who": "player",
+					"text": "Some names are not for sale, Aurum. Yours, for instance. Too cheap."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_ysolde",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Reaper. Your harvest belongs to Heaven's granary. Pay the tithe."
+				},
+				{
+					"who": "player",
+					"text": "I have come to collect it. From you."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_lilaeth",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Fallen one. Your halo was gold. I will melt it back down for you."
+				},
+				{
+					"who": "player",
+					"text": "Keep it. It never suited me."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_story",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.dawn_fuel"
+				]
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Every soul the Lattice caught passed through my ledgers. I counted them as they burned. It was very orderly."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_1",
+			"pool": "boss_intro.gilded_seraph",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Everything gleams here. Everything is paid for. Except you."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_2",
+			"pool": "boss_intro.gilded_seraph",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Count your sins. I already have."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_phase_1_1",
+			"pool": "boss_phase.gilded_seraph.1",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "The Tithe is due. One tenth of everything. Starting with your blood."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_phase_2_1",
+			"pool": "boss_phase.gilded_seraph.2",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Avarice! MORE! I want MORE!"
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_rage_1",
+			"pool": "boss_rage.gilded_seraph",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Mine! All of it is MINE!"
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_death_first",
+			"pool": "boss_death.gilded_seraph",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "My gold... it was never... worth anything... was it..."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_death_1",
+			"pool": "boss_death.gilded_seraph",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "The account... is closed..."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_death_2",
+			"pool": "boss_death.gilded_seraph",
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Tarnish... everywhere..."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_first",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Introit. Let us begin. Every requiem needs a corpse, and the choir has chosen you."
+				},
+				{
+					"who": "player",
+					"text": "Your choir is in pieces, Cantor."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_lilaeth",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Lilaeth. You left the choir mid-verse. I have kept your rest open ever since."
+				},
+				{
+					"who": "player",
+					"text": "Then I will finish it. Badly. On purpose."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_morvane",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "morvane"
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Hexbinder. I will sing your name until it unravels."
+				},
+				{
+					"who": "player",
+					"text": "I wrote yours down years ago, Seraphiel. It is mostly crossings-out."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_skarn",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "skarn"
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Warden. Even your chains ring in tune. Ring them for me."
+				},
+				{
+					"who": "player",
+					"text": "They ring for whoever they hold."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_story",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 9,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				]
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "We sang and sang and nothing sang back. So I broke the choir. Now it sings only for me."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_1",
+			"pool": "boss_intro.cantor",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Sing with me, demon. Everyone sings at the end."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_2",
+			"pool": "boss_intro.cantor",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "The Sanctum still has its acoustics. Scream."
+				}
+			]
+		},
+		{
+			"id": "cantor_phase_1_1",
+			"pool": "boss_phase.cantor.1",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Requiem. Sing for the dead. Sing for yourself."
+				}
+			]
+		},
+		{
+			"id": "cantor_phase_2_1",
+			"pool": "boss_phase.cantor.2",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Dies irae! Day of wrath! Day of WRATH!"
+				}
+			]
+		},
+		{
+			"id": "cantor_rage_1",
+			"pool": "boss_rage.cantor",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Louder! LOUDER! Until He has to hear!"
+				}
+			]
+		},
+		{
+			"id": "cantor_death_first",
+			"pool": "boss_death.cantor",
+			"once": true,
+			"priority": 10,
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "The last note... someone... finish it..."
+				}
+			]
+		},
+		{
+			"id": "cantor_death_1",
+			"pool": "boss_death.cantor",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Silence... at last... the rest..."
+				}
+			]
+		},
+		{
+			"id": "cantor_death_2",
+			"pool": "boss_death.cantor",
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Amen... amen..."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_nhazgul",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "What crawls up out of the Pit to meet me? A demon? A plague? Both?"
+				},
+				{
+					"who": "player",
+					"text": "Both, Herald. And a little honey for your wounds."
+				}
+			]
+		},
+		{
+			"id": "grand_inquisitor_intro_nhazgul",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "A walking pestilence. The fire was made for things like you."
+				},
+				{
+					"who": "player",
+					"text": "Fire, Ozias? Go on. The smoke carries us further."
+				}
+			]
+		},
+		{
+			"id": "gate_archon_intro_nhazgul",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Plague Hive. Nothing that buzzes passes this Gate."
+				},
+				{
+					"who": "player",
+					"text": "Then you will have to stop all of us. One at a time."
+				}
+			]
+		},
+		{
+			"id": "frost_abbot_intro_nhazgul",
+			"pool": "boss_intro.frost_abbot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "The cold kills flies, demon. I have forty years of cold."
+				},
+				{
+					"who": "player",
+					"text": "And I have a million flies. Shall we count?"
+				}
+			]
+		},
+		{
+			"id": "dawn_wyrm_intro_nhazgul",
+			"pool": "boss_intro.dawn_wyrm",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "I burn all rot away. You are only rot."
+				},
+				{
+					"who": "player",
+					"text": "Then you have a long day ahead, lizard."
+				}
+			]
+		},
+		{
+			"id": "verdant_matriarch_intro_nhazgul",
+			"pool": "boss_intro.verdant_matriarch",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Get your vermin out of my flowers!"
+				},
+				{
+					"who": "player",
+					"text": "Mother, your flowers invited us. Every one of them is open."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_nhazgul",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "Burn the plague-bearer! Torches to the front!"
+				},
+				{
+					"who": "player",
+					"text": "Your horses already have my flies in their eyes, Lord-Marshal."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_nhazgul",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "My winds will scatter your swarm across a hundred skies."
+				},
+				{
+					"who": "player",
+					"text": "Thank you. A hundred skies to nest in."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_nhazgul",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "What is that smell? Get it OFF my gold!"
+				},
+				{
+					"who": "player",
+					"text": "Everything you own, Aurum, the hive has already tasted."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_nhazgul",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "A choir of flies. Ugh. You sing in a single, endless note."
+				},
+				{
+					"who": "player",
+					"text": "We sing in a hundred thousand voices, Cantor. And every one of them is on key."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_iscariel",
+			"pool": "boss_intro.sariel",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Iscariel. Turncoat. Thief of the First Gate. I have prayed for this meeting every dawn since the Fall."
+				},
+				{
+					"who": "player",
+					"text": "And still nobody answered, Sariel. I did warn you."
+				},
+				{
+					"who": "sariel",
+					"text": "The Choir sang your name in mourning for a hundred years. Then they cut it from every hymn. I will cut you from the world."
+				}
+			]
+		},
+		{
+			"id": "grand_inquisitor_intro_iscariel",
+			"pool": "boss_intro.grand_inquisitor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "grand_inquisitor",
+					"text": "Iscariel. The first heretic. Every pyre I have ever lit was practice for you."
+				},
+				{
+					"who": "player",
+					"text": "Then you have had a great deal of practice, Ozias, and learned very little."
+				}
+			]
+		},
+		{
+			"id": "gate_archon_intro_iscariel",
+			"pool": "boss_intro.gate_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Brother. You opened the First Gate from the inside. I have stood at the Seventh ever since so that no one could do it twice."
+				},
+				{
+					"who": "player",
+					"text": "I know, Azrafel. That is why I came myself. You would never open it for a stranger."
+				},
+				{
+					"who": "gate_archon",
+					"text": "I will not open it for you either. Draw."
+				}
+			]
+		},
+		{
+			"id": "frost_abbot_intro_iscariel",
+			"pool": "boss_intro.frost_abbot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "frost_abbot",
+					"text": "A traitor angel, in my monastery. The Brothers pray against your kind every night."
+				},
+				{
+					"who": "player",
+					"text": "Against my kind? There is only one of me, Abbot. You have been praying very specifically."
+				}
+			]
+		},
+		{
+			"id": "dawn_wyrm_intro_iscariel",
+			"pool": "boss_intro.dawn_wyrm",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "dawn_wyrm",
+					"text": "The gatekeeper who let the dark in. I was hatched the morning after. They fed me your shame."
+				},
+				{
+					"who": "player",
+					"text": "Then choke on it, lizard."
+				}
+			]
+		},
+		{
+			"id": "verdant_matriarch_intro_iscariel",
+			"pool": "boss_intro.verdant_matriarch",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "verdant_matriarch",
+					"text": "Iscariel. You walked my paths once. You picked a flower for Sariel. Do you remember?"
+				},
+				{
+					"who": "player",
+					"text": "I remember it was the last thing in Heaven I ever gave away. Except the Gate."
+				}
+			]
+		},
+		{
+			"id": "war_chariot_intro_iscariel",
+			"pool": "boss_intro.war_chariot",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "war_chariot",
+					"text": "A turncoat seraph! The bishops will pay a fortune for your wings! Both of them!"
+				},
+				{
+					"who": "player",
+					"text": "Only one of them is worth anything, Lord-Marshal. Guess which."
+				}
+			]
+		},
+		{
+			"id": "storm_archon_intro_iscariel",
+			"pool": "boss_intro.storm_archon",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "storm_archon",
+					"text": "Iscariel. I hurled the storm at the Gate the night you opened it. I would have broken it on your head."
+				},
+				{
+					"who": "player",
+					"text": "You were late, Baraqiel. You are always late. The Gate was already open."
+				}
+			]
+		},
+		{
+			"id": "gilded_seraph_intro_iscariel",
+			"pool": "boss_intro.gilded_seraph",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "gilded_seraph",
+					"text": "Thirty pieces of light. I counted them out to you myself. Do you still have the receipt?"
+				},
+				{
+					"who": "player",
+					"text": "I spent it, Aurum. All of it. On being free."
+				}
+			]
+		},
+		{
+			"id": "cantor_intro_iscariel",
+			"pool": "boss_intro.cantor",
+			"once": true,
+			"priority": 12,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "cantor",
+					"text": "Iscariel. You stood in the back row of my choir. You never once sang on the downbeat."
+				},
+				{
+					"who": "player",
+					"text": "I was listening for the answer, Cantor. Someone had to."
+				}
+			]
+		},
+		{
+			"id": "sariel_intro_iscariel_2",
+			"pool": "boss_intro.sariel",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Traitor. Again. I will kill you as many times as it takes to make it true."
+				}
+			]
+		},
+		{
+			"id": "gate_archon_intro_iscariel_2",
+			"pool": "boss_intro.gate_archon",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.6
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "You will not open this one, brother. Not this one."
+				}
+			]
+		},
+		{
+			"id": "sariel_death_iscariel",
+			"pool": "boss_death.sariel",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "sariel",
+					"text": "Why... did you open it... Iscariel... why..."
+				},
+				{
+					"who": "player",
+					"text": "Because nobody was coming down to close it, Sariel. Nobody ever was."
+				}
+			]
+		},
+		{
+			"id": "gate_archon_death_iscariel",
+			"pool": "boss_death.gate_archon",
+			"once": true,
+			"priority": 11,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "gate_archon",
+					"text": "Go through, brother. You always did know where the doors were."
+				}
+			]
+		}
+	]
+}

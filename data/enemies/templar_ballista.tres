@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/templar_ballista.tscn" id="2_model"]
+[ext_resource type="PackedScene" path="res://scenes/characters/projectiles/holy_bolt.tscn" id="3_proj"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"templar_ballista"
+display_name = "Templar Ballista"
+flavor_text = "Sanctified oak, blessed steel, and a bolt as long as a lance. The sergeant behind it has prayed over every one."
+model = ExtResource("2_model")
+size = 1.25
+max_hp = 70.0
+speed = 1.2
+damage = 10.0
+xp_value = 8
+knockback_scale = 0.0
+behavior = 1
+preferred_distance = 12.0
+attack_cooldown = 3.4
+windup_time = 1.1
+projectile_damage = 16.0
+projectile_speed = 17.0
+muzzle_height = 0.55
+shot_recover_time = 0.6
+projectile = ExtResource("3_proj")
+aim_line = true

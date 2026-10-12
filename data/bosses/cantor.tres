@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/bosses/cantor_model.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"cantor"
+display_name = "Cantor Seraphiel"
+flavor_text = "The sanctum fell, the choir scattered, the hymn went on. It needs one more voice. It has chosen yours."
+model = ExtResource("2_model")
+size = 2.2
+hover = 0.0
+max_hp = 3000.0
+speed = 1.8
+damage = 18.0
+xp_value = 100
+knockback_scale = 0.0
+behavior = 0

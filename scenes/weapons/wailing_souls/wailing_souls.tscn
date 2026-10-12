@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/wailing_souls/wailing_souls.gd" id="1_souls"]
+
+[node name="WailingSouls" type="Node3D"]
+script = ExtResource("1_souls")
+display_name = "Wailing Souls"
+description = "The damned you have claimed circle you, howling, and tear at all who draw near."
+color = Color(0.78, 0.16, 0.6, 1)
+icon = "☠"
+base_damage = 8.0
+level_descriptions = PackedStringArray("+1 soul.", "+25% orbit radius. Their circle widens.", "+1 soul. The choir grows.", "+50% damage. Their torment sharpens.", "+1 soul.", "+30% orbit speed. A frenzy of the damned.")

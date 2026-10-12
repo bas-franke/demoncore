@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/characters/projectiles/holy_bolt.gd" id="1_bolt"]
+
+[sub_resource type="SphereShape3D" id="Shape"]
+radius = 0.22
+
+[node name="HolyBolt" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_bolt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("Shape")

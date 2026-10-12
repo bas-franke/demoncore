@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/ravagers_cleave/ravagers_cleave.gd" id="1_cleave"]
+
+[node name="RavagersCleave" type="Node3D"]
+script = ExtResource("1_cleave")
+display_name = "Ravager's Cleave"
+description = "A heavy arc of dark steel with a burning edge. What it strikes does not rise again."
+color = Color(0.85, 0.3, 0.12, 1)
+icon = "⚔"
+base_damage = 14.0
+base_cooldown = 1.1
+level_descriptions = PackedStringArray("+30% damage. The edge drinks deep.", "+20% reach.", "Also cleaves behind you. None strike your back.", "+40% damage. Steel forged in the ninth circle.", "+20% reach.", "-25% cooldown. Relentless.")

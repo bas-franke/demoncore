@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/throne.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"throne"
+display_name = "Throne"
+flavor_text = "A wheel within a wheel, full of eyes round about. It does not walk. It does not stop."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 38.0
+speed = 1.8
+damage = 14.0
+xp_value = 6
+knockback_scale = 0.4
+behavior = 9
+preferred_distance = 9.0
+attack_cooldown = 6.0
+charge_speed = 15.0
+charge_time = 0.75
+windup_time = 1.2
+summon_count = 3
+summon_max = 6

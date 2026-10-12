@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/seraph.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"seraph"
+display_name = "Seraph"
+flavor_text = "Six wings: two to hide its face, two to hide its feet, two to fly. All of it burns, and it would burn you too."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 22.0
+speed = 2.3
+damage = 8.0
+xp_value = 4
+knockback_scale = 0.7
+behavior = 1
+preferred_distance = 7.5
+attack_cooldown = 2.8
+windup_time = 0.8
+projectile_damage = 9.0
+projectile_speed = 7.0
+muzzle_height = 1.1
+shot_recover_time = 0.4

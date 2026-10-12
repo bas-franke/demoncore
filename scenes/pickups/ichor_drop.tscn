@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/pickups/ichor_drop.gd" id="1_ichor"]
+
+[sub_resource type="SphereShape3D" id="IchorShape"]
+radius = 0.35
+
+[node name="IchorDrop" type="Area3D" groups=["currency_drops"]]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_ichor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("IchorShape")

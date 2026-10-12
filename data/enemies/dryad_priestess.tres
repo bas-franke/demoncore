@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/dryad_priestess.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"dryad_priestess"
+display_name = "Dryad Priestess"
+flavor_text = "A saint of the first garden, grown rather than born. Where she walks, the faithful knit closed like spring branches."
+model = ExtResource("2_model")
+size = 1.05
+max_hp = 22.0
+speed = 2.3
+damage = 6.0
+xp_value = 4
+knockback_scale = 0.8
+behavior = 5
+preferred_distance = 7.0
+attack_cooldown = 4.0
+windup_time = 1.2
+heal_radius = 5.5
+heal_fraction = 0.3

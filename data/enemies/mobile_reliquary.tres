@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/mobile_reliquary.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mobile_reliquary"
+display_name = "Mobile Reliquary"
+flavor_text = "The skull of Saint Aurel, carried to war in a house of gold. Every soldier near it fights as if the saint were watching."
+model = ExtResource("2_model")
+size = 1.15
+max_hp = 85.0
+speed = 1.6
+damage = 12.0
+xp_value = 8
+knockback_scale = 0.2
+behavior = 6
+preferred_distance = 2.6
+attack_cooldown = 3.6
+charge_time = 0.25
+windup_time = 1.0
+slam_radius = 1.9
+slam_reach = 1.2
+slam_damage = 18.0
+ward_radius = 5.0
+ward_reduction = 0.4
+ward_max = 8

@@ -1,0 +1,11 @@
+# Godot
+.godot/
+*.translation
+
+# Tooling output
+tools/blender/previews/
+tools/perf/results/
+tools/qa/results/
+__pycache__/
+.godot_lock
+tools/perf/results.log

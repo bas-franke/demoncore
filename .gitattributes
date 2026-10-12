@@ -1,0 +1,16 @@
+# Normalize line endings: text files are stored with LF in git (workers' editors write a mix of
+# CRLF and LF). Godot reads either. See docs/team/code-quality.md.
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.glb binary
+*.wav binary
+*.ogg binary
+*.ttf binary
+*.otf binary
+*.exr binary
+*.res binary
+*.scn binary

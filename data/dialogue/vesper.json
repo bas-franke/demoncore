@@ -1,0 +1,685 @@
+{
+	"_doc": "Vesper Ashtongue, Occultist of the Black Choir: a fallen angel and the keeper of the Empty Throne arc. Pool 'vesper' (shop ids: occultist, oracle).",
+	"conversations": [
+		{
+			"id": "vesper_intro",
+			"pool": "vesper",
+			"once": true,
+			"priority": 100,
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Oh. A new note in the Pit's long song."
+				},
+				{
+					"who": "vesper",
+					"text": "I am Vesper. I sang in the High Choir until I learned the hymn backwards. It burned my tongue to ash. The name stuck."
+				},
+				{
+					"who": "vesper",
+					"text": "I sell rites, Sinbound. Small damnations. Each costs a few souls, and something else you will never notice is missing."
+				},
+				{
+					"choices": [
+						{
+							"text": "What else?",
+							"goto": "what"
+						},
+						{
+							"text": "Done. I have plenty to spare.",
+							"goto": "deal"
+						}
+					]
+				},
+				{
+					"label": "what",
+					"who": "vesper",
+					"text": "If I told you, you would notice. That would spoil it.",
+					"end": true
+				},
+				{
+					"label": "deal",
+					"who": "vesper",
+					"text": "Everyone says that. It is the most honest lie in the Pit."
+				}
+			]
+		},
+		{
+			"id": "vesper_lilaeth",
+			"pool": "vesper",
+			"once": true,
+			"priority": 98,
+			"requires": {
+				"demon": "lilaeth"
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Lilaeth. We stood three wings apart in the Choir. You had the higher voice."
+				},
+				{
+					"who": "player",
+					"text": "And you had the better silence."
+				},
+				{
+					"who": "vesper",
+					"text": "Sariel still sings your part, you know. Badly."
+				}
+			]
+		},
+		{
+			"id": "vesper_first_death",
+			"pool": "vesper",
+			"once": true,
+			"priority": 85,
+			"requires": {
+				"min": {
+					"deaths": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You died. I felt the note drop out of the song, and then come back in, off-key."
+				},
+				{
+					"who": "vesper",
+					"text": "That is what the Font does. It returns you a little more out of tune each time. Heaven hates that more than anything."
+				}
+			]
+		},
+		{
+			"id": "vesper_hymn",
+			"pool": "vesper",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"min": {
+					"runs": 4
+				}
+			},
+			"set": {
+				"beat.hollow_hymn": true
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Next time you go up, listen. Under the battle. The angels are singing."
+				},
+				{
+					"who": "vesper",
+					"text": "Every hymn is a question, Sinbound. It is sung up, toward the Throne. And it should come back down changed. Answered."
+				},
+				{
+					"who": "vesper",
+					"text": "They are not coming back down. I have listened for an age. Nothing comes back."
+				},
+				{
+					"choices": [
+						{
+							"text": "Maybe the Throne is tired of them.",
+							"goto": "tired"
+						},
+						{
+							"text": "Why should I care what angels hear?",
+							"goto": "care"
+						}
+					]
+				},
+				{
+					"label": "tired",
+					"who": "vesper",
+					"text": "Maybe. Or maybe there is no one there to be tired.",
+					"end": true
+				},
+				{
+					"label": "care",
+					"who": "vesper",
+					"text": "Because a soldier who stops hearing orders does one of two things. Deserts, or burns everything. Guess which one the Host is choosing."
+				}
+			]
+		},
+		{
+			"id": "vesper_herald",
+			"pool": "vesper",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"min": {
+					"boss_kills.sariel": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You felled Sariel. I felt it in my teeth."
+				},
+				{
+					"who": "vesper",
+					"text": "Did it say anything? At the end?"
+				},
+				{
+					"choices": [
+						{
+							"text": "It said the light was supposed to answer.",
+							"goto": "answer",
+							"requires": {
+								"seen": [
+									"sariel_death_answer"
+								]
+							}
+						},
+						{
+							"text": "It begged someone to forgive it.",
+							"goto": "forgive",
+							"requires": {
+								"seen": [
+									"sariel_death_3"
+								]
+							}
+						},
+						{
+							"text": "Nothing worth repeating.",
+							"goto": "nothing"
+						}
+					]
+				},
+				{
+					"label": "answer",
+					"who": "vesper",
+					"text": "...Then it knows. Or it has begun to. Poor bright thing.",
+					"set": {
+						"beat.herald_doubt": true
+					},
+					"end": true
+				},
+				{
+					"label": "forgive",
+					"who": "vesper",
+					"text": "Someone. Anyone. Yes, that is how it starts. When you no longer know who to ask.",
+					"set": {
+						"beat.herald_doubt": true
+					},
+					"end": true
+				},
+				{
+					"label": "nothing",
+					"who": "vesper",
+					"text": "Liar. Heralds always have last words. It is their whole function."
+				}
+			]
+		},
+		{
+			"id": "vesper_lattice",
+			"pool": "vesper",
+			"once": true,
+			"priority": 75,
+			"requires": {
+				"flags": [
+					"known.hollow_hymn"
+				],
+				"min": {
+					"runs": 6,
+					"boss_kills.sariel": 1
+				}
+			},
+			"set": {
+				"beat.lattice_question": true
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "The Lattice catches souls before they can fall to us. Have you wondered where it puts them?"
+				},
+				{
+					"who": "vesper",
+					"text": "Not into Heaven. I know Heaven's doors. None of them have opened in a very long time."
+				},
+				{
+					"who": "vesper",
+					"text": "Ask the Clerk. Ledgers do not lie, even when their keepers do."
+				}
+			]
+		},
+		{
+			"id": "vesper_morvane",
+			"pool": "vesper",
+			"once": true,
+			"priority": 88,
+			"requires": {
+				"demon": "morvane",
+				"min": {
+					"runs": 2
+				}
+			},
+			"set": {
+				"beat.crossed_name": true
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Hexbinder. You keep the names the angels forgot."
+				},
+				{
+					"who": "player",
+					"text": "All of them."
+				},
+				{
+					"who": "vesper",
+					"text": "Then tell me. Is there a name in your book that has been struck out? One name, at the very top of the first page?"
+				},
+				{
+					"who": "player",
+					"text": "...Yes. In a hand much older than mine."
+				},
+				{
+					"who": "vesper",
+					"text": "I thought so. Do not read it aloud. Not here. Not yet."
+				}
+			]
+		},
+		{
+			"id": "vesper_empty_throne",
+			"pool": "vesper",
+			"once": true,
+			"priority": 100,
+			"requires": {
+				"flags": [
+					"known.dawn_fuel"
+				],
+				"min": {
+					"runs": 10,
+					"boss_kills": 3
+				}
+			},
+			"set": {
+				"beat.empty_throne": true
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Sit with me, Sinbound. This is not a rite. No charge."
+				},
+				{
+					"who": "vesper",
+					"text": "I have listened to the silence long enough to be sure. The Throne is empty."
+				},
+				{
+					"who": "vesper",
+					"text": "Not dead. Not sleeping. Empty. Perhaps since the Fall. Perhaps the Fall was simply the moment it emptied, and we were the first to notice."
+				},
+				{
+					"who": "vesper",
+					"text": "The Archons noticed too. They have ruled from the steps ever since, relaying orders from a chair no one sits in."
+				},
+				{
+					"who": "vesper",
+					"text": "And Hell remembers the Fall. Every demon is a witness that once there was Someone to fall from."
+				},
+				{
+					"who": "vesper",
+					"text": "That is what the Last Dawn is for. Not to cleanse the world. To burn the witnesses. And the Lattice souls are the kindling."
+				},
+				{
+					"choices": [
+						{
+							"text": "Then we burn them first.",
+							"goto": "burn",
+							"set": {
+								"path.vengeance": true
+							}
+						},
+						{
+							"text": "Then the chair is free.",
+							"goto": "chair",
+							"set": {
+								"path.throne": true
+							}
+						}
+					]
+				},
+				{
+					"label": "burn",
+					"who": "vesper",
+					"text": "Spoken like a true demon. I will sing over the ashes.",
+					"end": true
+				},
+				{
+					"label": "chair",
+					"who": "vesper",
+					"text": "...Yes. I suppose it is."
+				},
+				{
+					"who": "vesper",
+					"text": "Be careful, {demon}. Everyone who has ever looked at that chair the way you are looking at it now has ended up falling."
+				}
+			]
+		},
+		{
+			"id": "vesper_after_throne",
+			"pool": "vesper",
+			"once": true,
+			"priority": 70,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "I told Pip about the Throne. Which means the whole Pit knows by now."
+				},
+				{
+					"who": "vesper",
+					"text": "Duchess Malphine has already sent someone up to measure it for a cushion."
+				}
+			]
+		},
+		{
+			"id": "vesper_ysolde",
+			"pool": "vesper",
+			"once": true,
+			"priority": 72,
+			"requires": {
+				"demon": "ysolde"
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Reaper. They say you harvest what Heaven sows."
+				},
+				{
+					"who": "player",
+					"text": "Heaven sows a great deal and harvests nothing. Someone has to."
+				},
+				{
+					"who": "vesper",
+					"text": "Then you will want to know where the Lattice takes its crop. Soon."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_1",
+			"pool": "vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Every rite has a price. Yours is merely souls. For now."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_2",
+			"pool": "vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Hush. Listen. Even the lava hums, if you are patient."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_3",
+			"pool": "vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "The Choir is loud tonight. Frightened, I think."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_4",
+			"pool": "vesper",
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "I can still hit the high notes. I simply choose not to."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_died",
+			"pool": "vesper",
+			"priority": 1,
+			"requires": {
+				"eq": {
+					"last.result": "death"
+				},
+				"chance": 0.5
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You died off-key. Try again."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_throne",
+			"pool": "vesper",
+			"priority": 1,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				],
+				"chance": 0.4
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "An empty chair is the loudest thing in all the worlds. Can you hear it?"
+				}
+			]
+		},
+		{
+			"id": "vesper_falling",
+			"pool": "vesper",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"flags": [
+					"known.march"
+				],
+				"min": {
+					"runs": 14
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Do you know what falling feels like, the first time? Not the Font. The real one. The Fall."
+				},
+				{
+					"who": "vesper",
+					"text": "It feels like being let go of. That is all. A hand opens, and you understand it was never holding on very tightly."
+				},
+				{
+					"who": "vesper",
+					"text": "When you reach the chair, {demon}, remember that. Nothing up there will hold you. Hold on yourself."
+				}
+			]
+		},
+		{
+			"id": "vesper_victory",
+			"pool": "vesper",
+			"once": true,
+			"priority": 93,
+			"requires": {
+				"min": {
+					"victories": 1
+				}
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You came back without dying. The whole Choir felt it. Up there, I mean. They have changed key."
+				},
+				{
+					"who": "vesper",
+					"text": "It is a minor key now. I could listen to it forever."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_lilaeth",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Sister. Hum with me. No one is listening, so it does not matter if we are flat."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_morvane",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "You smell of old paper and older grudges. I approve."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_skarn",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "The god in your chains sang to me last night. It is a terrible singer."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_vharok",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Ravager, please do not lean on the altar. It is load-bearing."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_ysolde",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Reaper. Do you ever reap songs? I have some I would like gone."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_nhazgul",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Your swarm hums in a key I have not heard since the Fall. I find it oddly soothing."
+				}
+			]
+		},
+		{
+			"id": "vesper_nhazgul",
+			"pool": "vesper",
+			"once": true,
+			"priority": 72,
+			"requires": {
+				"demon": "nhazgul"
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Nhazgul. Were you anything, before the flies?"
+				},
+				{
+					"who": "player",
+					"text": "A man who let things rot. Food. Friends. A city. I sat in the middle of it and called it mine."
+				},
+				{
+					"who": "vesper",
+					"text": "And now the rot sits in you and calls you its own. Heaven would call that justice."
+				},
+				{
+					"who": "player",
+					"text": "Heaven calls a lot of things justice. The flies call it home."
+				}
+			]
+		},
+		{
+			"id": "vesper_chat_iscariel",
+			"pool": "vesper",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Iscariel. You opened the Gate the night I fell through it. I never thanked you. I am still deciding whether to."
+				}
+			]
+		},
+		{
+			"id": "vesper_iscariel",
+			"pool": "vesper",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"demon": "iscariel"
+			},
+			"lines": [
+				{
+					"who": "vesper",
+					"text": "Iscariel. You opened the First Gate. I fell through it a moment later. Did you see me go?"
+				},
+				{
+					"who": "player",
+					"text": "I saw everyone go. I held the doors and counted, the way Kesh does now. You were the first of the Choir through. Lilaeth was close behind."
+				},
+				{
+					"who": "vesper",
+					"text": "...So someone saw. I went first so she would know there was somewhere to land. I thought no one knew."
+				},
+				{
+					"who": "player",
+					"text": "Nobody falls unseen, Vesper. That was the point of opening the door."
+				}
+			]
+		}
+	]
+}

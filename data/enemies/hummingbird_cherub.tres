@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/hummingbird_cherub.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"hummingbird_cherub"
+display_name = "Hummingbird Cherub"
+flavor_text = "Small, quick, and never alone. Where there is one, three more are already behind you."
+model = ExtResource("2_model")
+size = 0.7
+max_hp = 3.0
+speed = 5.2
+damage = 3.0
+xp_value = 1
+knockback_scale = 1.4
+behavior = 0

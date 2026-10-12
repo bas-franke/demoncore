@@ -1,0 +1,266 @@
+{
+	"_doc": "Duchess Malphine of the Ashen Court. Speaks through Pip's letters until the Empty Throne is known; then she comes to Basecamp in person (StoryHooks spawns her). Pool 'malphine'.",
+	"conversations": [
+		{
+			"id": "malphine_arrival",
+			"pool": "malphine",
+			"once": true,
+			"priority": 100,
+			"requires": {
+				"flags": [
+					"known.empty_throne"
+				]
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "So this is the war camp. It smells exactly as I was told. Do not tell Pip I came. He will want to carry my train."
+				},
+				{
+					"who": "malphine",
+					"text": "You are the Sinbound who found out about the chair. Clever thing. Cleverness is so rarely useful in a weapon."
+				},
+				{
+					"choices": [
+						{
+							"text": "I am not your weapon, Duchess.",
+							"goto": "not",
+							"set": {
+								"path.defy_court": true
+							}
+						},
+						{
+							"text": "Then point me at the Gate.",
+							"goto": "point"
+						}
+					]
+				},
+				{
+					"label": "not",
+					"who": "malphine",
+					"text": "Everyone is somebody's weapon, darling. The trick is choosing who holds you.",
+					"end": true
+				},
+				{
+					"label": "point",
+					"who": "malphine",
+					"text": "Good. Obedience and ambition, in the same body. How very Hell of you."
+				}
+			]
+		},
+		{
+			"id": "malphine_cushion",
+			"pool": "malphine",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"seen": [
+					"malphine_arrival"
+				],
+				"min": {
+					"runs": 12
+				}
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Yes, I have had a cushion made. For the Throne. Velvet, ash grey, embroidered with my crest."
+				},
+				{
+					"who": "malphine",
+					"text": "One should always be prepared to sit down. You may carry it up for me, if you like."
+				}
+			]
+		},
+		{
+			"id": "malphine_plot_known",
+			"pool": "malphine",
+			"once": true,
+			"priority": 90,
+			"requires": {
+				"seen": [
+					"pip_malphine_plot"
+				]
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Pip has been reading my letters. Pip always reads my letters. It is why I write them."
+				},
+				{
+					"who": "malphine",
+					"text": "Now you know what the Court intends. So the only question left is what you intend."
+				},
+				{
+					"who": "player",
+					"text": "To climb faster than you can follow."
+				},
+				{
+					"who": "malphine",
+					"text": "...Delicious. Go on, then."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_1",
+			"pool": "malphine",
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Do not kneel. It creases the ash."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_2",
+			"pool": "malphine",
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Heaven is a house with no master, darling. Houses like that always end up with a new one."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_3",
+			"pool": "malphine",
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "I never accept gifts. I accept tribute. The difference is posture. Press G, darling."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_lilaeth",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "lilaeth",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Lilaeth, darling. Fallen and still so poised. You must give me lessons."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_morvane",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "morvane",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Morvane. You have my name in that book. I have yours in mine. Shall we call it even?"
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_skarn",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "skarn",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Warden. The Court remembers who keeps its prisoners. And who could release them."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_vharok",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "vharok",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Must you stand like that? Everyone knows you have horns, darling."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_ysolde",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "ysolde",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Ysolde. You make the dukes nervous. Keep doing it."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_nhazgul",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "nhazgul",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Darling, you are dripping on my hem. No. Keep dripping. It is very avant-garde."
+				}
+			]
+		},
+		{
+			"id": "malphine_chat_iscariel",
+			"pool": "malphine",
+			"priority": 2,
+			"requires": {
+				"demon": "iscariel",
+				"chance": 0.45
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Iscariel, darling. Hell's most famous defector. The Court adores you. Nobody trusts you. Ideal."
+				}
+			]
+		},
+		{
+			"id": "malphine_iscariel",
+			"pool": "malphine",
+			"once": true,
+			"priority": 80,
+			"requires": {
+				"demon": "iscariel",
+				"seen": [
+					"malphine_arrival"
+				]
+			},
+			"lines": [
+				{
+					"who": "malphine",
+					"text": "Iscariel. You betrayed Heaven. The Court wonders, idly, whether you would betray Hell."
+				},
+				{
+					"who": "player",
+					"text": "I betrayed a door, Duchess, not a side. I would do it again to any door that keeps people in."
+				},
+				{
+					"who": "malphine",
+					"text": "Then I shall make sure my doors are always open, darling. Especially to you."
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/menu/demon_select.gd" id="1_select"]
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="2_demondata"]
+[ext_resource type="Resource" path="res://data/demons/vharok.tres" id="3_vharok"]
+[ext_resource type="Resource" path="res://data/demons/lilaeth.tres" id="4_lilaeth"]
+[ext_resource type="Resource" path="res://data/demons/morvane.tres" id="5_morvane"]
+[ext_resource type="Resource" path="res://data/demons/skarn.tres" id="6_skarn"]
+[ext_resource type="Resource" path="res://data/demons/ysolde.tres" id="7_ysolde"]
+[ext_resource type="Resource" path="res://data/demons/nhazgul.tres" id="8_nhazgul"]
+[ext_resource type="Resource" path="res://data/demons/iscariel.tres" id="9_iscariel"]
+
+[node name="DemonSelect" type="Node3D"]
+script = ExtResource("1_select")
+demons = Array[ExtResource("2_demondata")]([ExtResource("3_vharok"), ExtResource("4_lilaeth"), ExtResource("5_morvane"), ExtResource("6_skarn"), ExtResource("7_ysolde"), ExtResource("8_nhazgul"), ExtResource("9_iscariel")])

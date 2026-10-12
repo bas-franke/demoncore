@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/dawn_lancer.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"dawn_lancer"
+display_name = "Dawn Lancer"
+flavor_text = "Knights of the first light, sworn to ride before the sun. Never once has a lance of theirs been lowered in mercy."
+model = ExtResource("2_model")
+size = 1.1
+hover = 0.12
+max_hp = 30.0
+speed = 2.4
+damage = 16.0
+xp_value = 5
+knockback_scale = 0.5
+behavior = 2
+preferred_distance = 8.0
+attack_cooldown = 3.2
+charge_speed = 14.0
+charge_time = 0.6
+windup_time = 0.9

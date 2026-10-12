@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/virtue.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"virtue"
+display_name = "Virtue"
+flavor_text = "The angel of miracles. Whatever you broke in the last three heartbeats, it unbreaks. Kill it first."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 26.0
+speed = 2.2
+damage = 5.0
+xp_value = 5
+knockback_scale = 0.8
+behavior = 5
+preferred_distance = 8.0
+attack_cooldown = 5.0
+windup_time = 1.4
+heal_radius = 4.0
+heal_fraction = 0.05

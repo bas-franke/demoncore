@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="TerrainTheme" format=3]
+
+[ext_resource type="Script" path="res://scripts/terrain/terrain_theme.gd" id="1_theme"]
+
+[resource]
+script = ExtResource("1_theme")
+display_name = "Gilded Heavens"
+edge = 1
+edge_height = 9.0
+terraces = 0
+ground_bump = 0.03
+liquid = 3
+liquid_level = -0.45
+ground_a = Color(0.56, 0.6, 0.36, 1)
+ground_b = Color(0.38, 0.5, 0.24, 1)
+path_color = Color(0.86, 0.84, 0.79, 1)
+path_joint = Color(0.62, 0.46, 0.16, 1)
+cliff_a = Color(0.5, 0.47, 0.43, 1)
+cliff_b = Color(0.72, 0.67, 0.58, 1)
+accent = Color(0.95, 0.74, 0.3, 1)
+accent_energy = 0.0
+accent_amount = 0.25
+shore = Color(0.88, 0.84, 0.72, 1)
+shore_glow = Color(1, 0.9, 0.6, 1)
+ground_grain = 0.35
+corruption_strength = 0.8
+path_paved = 1.0
+edge_props = {
+&"cloud_bank": 4.0,
+&"cloud_platform": 1.0,
+&"marble_column": 1.0
+}
+field_props = {
+&"broken_statue": 1.5,
+&"chapel": 0.25,
+&"cloud_bank": 1.2,
+&"golden_gate": 0.6,
+&"holy_brazier": 1.2,
+&"holy_grave": 2.0,
+&"marble_column": 3.0,
+&"stained_window": 1.2
+}
+small_props = {
+&"candles": 1.0,
+&"grass_tuft": 2.0,
+&"holy_grave": 0.8,
+&"rubble": 0.8
+}
+field_density = 0.3
+small_density = 0.8
+edge_density = 1.4
+satellites = 2
+foliage = {
+&"flowers_pale": 0.14,
+&"grass_dry": 0.1,
+&"grass_green": 0.5
+}
+foliage_density = 1.0

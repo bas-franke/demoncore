@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/choir_wraith.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"choir_wraith"
+display_name = "Choir Wraith"
+flavor_text = "He died on the last verse of the evening hymn. He has been singing it ever since, and he has never once missed a note."
+model = ExtResource("2_model")
+size = 0.85
+max_hp = 10.0
+speed = 2.6
+damage = 5.0
+xp_value = 2
+knockback_scale = 1.1
+behavior = 1
+preferred_distance = 6.5
+attack_cooldown = 2.6
+windup_time = 0.7
+projectile_damage = 7.0
+projectile_speed = 7.5
+muzzle_height = 0.95
+shot_recover_time = 0.3

@@ -1,0 +1,227 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="Script" path="res://scenes/camera/camera_rig.gd" id="3_cam"]
+[ext_resource type="Script" path="res://scenes/spawner/enemy_spawner.gd" id="4_spawner"]
+[ext_resource type="Script" path="res://scenes/spawner/spawn_rule.gd" id="5_rule"]
+[ext_resource type="Resource" path="res://data/enemies/choir_wisp.tres" id="6_cucumber"]
+[ext_resource type="Resource" path="res://data/enemies/seraph_sentinel.tres" id="7_clock"]
+[ext_resource type="Resource" path="res://data/enemies/choir_wisp.tres" id="7_foil"]
+[ext_resource type="Resource" path="res://data/enemies/penitent_statue.tres" id="7_cone"]
+[ext_resource type="Resource" path="res://data/enemies/thurible_priest.tres" id="7_dryer"]
+[ext_resource type="PackedScene" path="res://scenes/ui/boss_bar.tscn" id="20_bossbar"]
+[ext_resource type="Resource" path="res://data/enemies/ophanim.tres" id="8_spray"]
+[ext_resource type="Resource" path="res://data/enemies/dawn_lancer.tres" id="9_roomba"]
+[ext_resource type="Resource" path="res://data/enemies/archon.tres" id="10_carrier"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="11_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_menu.tscn" id="12_lvl"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over.tscn" id="13_go"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="14_pause"]
+[ext_resource type="Shader" path="res://scenes/world/ground.gdshader" id="15_gshader"]
+[ext_resource type="Script" path="res://scenes/world/ground.gd" id="16_ground"]
+[ext_resource type="Script" path="res://scenes/world/decor.gd" id="17_decor"]
+[ext_resource type="Script" path="res://scenes/world/atmosphere.gd" id="19_atmo"]
+
+[ext_resource type="Script" path="res://scenes/vfx/combat_vfx.gd" id="30_vfx"]
+[ext_resource type="Script" path="res://scenes/world/game_feel.gd" id="31_feel"]
+[ext_resource type="Script" path="res://scenes/maps/map_loader.gd" id="40_maploader"]
+[ext_resource type="PackedScene" path="res://scenes/objectives/objective_director.tscn" id="50_objectives"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.2, 0.26, 0.32, 1)
+sky_horizon_color = Color(0.62, 0.52, 0.38, 1)
+sky_curve = 0.12
+sky_energy_multiplier = 1.0
+ground_bottom_color = Color(0.06, 0.06, 0.055, 1)
+ground_horizon_color = Color(0.36, 0.31, 0.25, 1)
+sun_angle_max = 20.0
+sun_curve = 0.1
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.07, 0.075, 0.085, 1)
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.4, 0.5, 0.62, 1)
+ambient_light_sky_contribution = 0.6
+ambient_light_energy = 0.55
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 1.05
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 1.8
+ssao_power = 1.5
+ssao_detail = 0.6
+ssao_light_affect = 0.2
+glow_enabled = true
+glow_intensity = 0.65
+glow_strength = 1.0
+glow_bloom = 0.04
+glow_blend_mode = 1
+glow_hdr_threshold = 0.95
+glow_hdr_scale = 2.0
+fog_enabled = true
+fog_light_color = Color(0.36, 0.42, 0.48, 1)
+fog_light_energy = 0.8
+fog_sun_scatter = 0.35
+fog_density = 0.008
+fog_aerial_perspective = 0.2
+fog_sky_affect = 0.0
+fog_height = 0.6
+fog_height_density = 0.06
+volumetric_fog_enabled = false
+volumetric_fog_density = 0.0045
+volumetric_fog_albedo = Color(0.7, 0.72, 0.76, 1)
+volumetric_fog_emission = Color(0.32, 0.38, 0.46, 1)
+volumetric_fog_emission_energy = 0.04
+volumetric_fog_anisotropy = 0.55
+volumetric_fog_length = 72.0
+volumetric_fog_detail_spread = 2.0
+volumetric_fog_ambient_inject = 0.2
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="CameraAttributesPractical" id="CamAttr"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 34.0
+dof_blur_far_transition = 8.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 20.0
+dof_blur_near_transition = 4.0
+dof_blur_amount = 0.05
+
+[sub_resource type="ShaderMaterial" id="GroundMat"]
+render_priority = 0
+shader = ExtResource("15_gshader")
+
+[sub_resource type="PlaneMesh" id="GroundMesh"]
+material = SubResource("GroundMat")
+size = Vector2(140, 140)
+
+[sub_resource type="Resource" id="RuleCucumber"]
+script = ExtResource("5_rule")
+enemy = ExtResource("6_cucumber")
+start_time = 0.0
+end_time = -1.0
+weight = 6.0
+
+[sub_resource type="Resource" id="RuleClock"]
+script = ExtResource("5_rule")
+enemy = ExtResource("7_clock")
+start_time = 20.0
+end_time = -1.0
+weight = 8.0
+
+[sub_resource type="Resource" id="RuleFoil"]
+script = ExtResource("5_rule")
+enemy = ExtResource("7_foil")
+start_time = 45.0
+end_time = -1.0
+weight = 4.0
+
+[sub_resource type="Resource" id="RuleCone"]
+script = ExtResource("5_rule")
+enemy = ExtResource("7_cone")
+start_time = 90.0
+end_time = -1.0
+weight = 3.0
+
+[sub_resource type="Resource" id="RuleDryer"]
+script = ExtResource("5_rule")
+enemy = ExtResource("7_dryer")
+start_time = 150.0
+end_time = -1.0
+weight = 2.5
+
+[sub_resource type="Resource" id="RuleSpray"]
+script = ExtResource("5_rule")
+enemy = ExtResource("8_spray")
+start_time = 60.0
+end_time = -1.0
+weight = 3.0
+
+[sub_resource type="Resource" id="RuleRoomba"]
+script = ExtResource("5_rule")
+enemy = ExtResource("9_roomba")
+start_time = 120.0
+end_time = -1.0
+weight = 3.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+camera_attributes = SubResource("CamAttr")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+position = Vector3(0, 10, 0)
+rotation = Vector3(-0.541, -2.142, 0)
+light_color = Color(1, 0.83, 0.62, 1)
+light_energy = 2.3
+light_volumetric_fog_energy = 2.4
+shadow_enabled = true
+shadow_bias = 0.04
+shadow_normal_bias = 1.4
+shadow_blur = 1.0
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.3
+directional_shadow_fade_start = 0.85
+directional_shadow_max_distance = 55.0
+
+[node name="Map" type="Node3D" parent="."]
+script = ExtResource("40_maploader")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("GroundMesh")
+script = ExtResource("16_ground")
+
+[node name="Decor" type="Node3D" parent="."]
+script = ExtResource("17_decor")
+
+[node name="Atmosphere" type="Node3D" parent="." node_paths=PackedStringArray("sun")]
+script = ExtResource("19_atmo")
+sun = NodePath("../Sun")
+
+[node name="Entities" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("3_cam")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.573576, -0.819152, 0, 0.819152, 0.573576, 0, 21.7, 14.91)
+current = true
+fov = 35.0
+near = 1.0
+far = 100.0
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("4_spawner")
+rules = Array[ExtResource("5_rule")]([SubResource("RuleCucumber"), SubResource("RuleClock"), SubResource("RuleFoil"), SubResource("RuleSpray"), SubResource("RuleCone"), SubResource("RuleRoomba"), SubResource("RuleDryer")])
+elite = ExtResource("10_carrier")
+
+[node name="HUD" parent="." instance=ExtResource("11_hud")]
+
+[node name="BossBar" parent="." instance=ExtResource("20_bossbar")]
+holy_style = true
+
+[node name="LevelUpMenu" parent="." instance=ExtResource("12_lvl")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("14_pause")]
+
+[node name="GameOver" parent="." instance=ExtResource("13_go")]
+
+[node name="CombatVFX" type="Node3D" parent="."]
+script = ExtResource("30_vfx")
+
+[node name="GameFeel" type="Node" parent="."]
+script = ExtResource("31_feel")
+
+[node name="ObjectiveDirector" parent="." instance=ExtResource("50_objectives")]

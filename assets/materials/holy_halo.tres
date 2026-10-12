@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://shaders/style/holy_glow.gdshader" id="1_shader"]
+
+[resource]
+shader = ExtResource("1_shader")
+shader_parameter/energy = 4.0
+shader_parameter/rim_weight = 0.3
+shader_parameter/shimmer = 0.5
+shader_parameter/shimmer_scale = 2.0

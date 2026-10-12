@@ -1,0 +1,83 @@
+{
+	"_doc": "MusicManager config (owned by the music role, see docs/team/music.md). Track ids are the keys of res://assets/audio/music/manifest.json (written by tools/music/gen_music.py). Aliases: '@map' = the music of the current/selected map (Maps def 'music'), '@menu' = 'basecamp' while the Basecamp Hell hub is loaded, else 'title'.",
+	"aliases": {
+		"menu": "@menu",
+		"title": "@menu",
+		"backyard": "@map",
+		"battle": "@map",
+		"map": "@map",
+		"hub": "basecamp",
+		"boss": "boss_sariel",
+		"game_over": "defeat"
+	},
+	"default_map_track": "battle_sanctum",
+	"boss_track": "boss_sariel",
+	"_boss_tracks_doc": "Boss id (the boss's EnemyData file name, e.g. data/bosses/grand_inquisitor.tres) -> track.",
+	"boss_tracks": {
+		"sariel": "boss_sariel",
+		"grand_inquisitor": "boss_inquisitor",
+		"gate_archon": "boss_archon",
+		"frost_abbot": "boss_abbot",
+		"dawn_wyrm": "boss_wyrm",
+		"verdant_matriarch": "boss_verdance",
+		"war_chariot": "boss_chariot",
+		"storm_archon": "boss_tempest",
+		"gilded_seraph": "boss_aurum",
+		"cantor": "boss_cantor"
+	},
+	"_map_tracks_doc": "Map id -> track, overriding the map definition's 'music' (used when a map JSON still points at a shared theme).",
+	"map_tracks": {
+		"gilded_isles": "battle_isles",
+		"the_breach": "battle_breach"
+	},
+	"_story_doc": "Story music: the hub plays 'ended_basecamp' once Dialogue.has_flag(ended_flag); the staged ending plays 'ending_track' and reacts to Dialogue.event_triggered stage_* events (archons/throne layers, sit/break resolutions).",
+	"story": {
+		"ended_flag": "story.ended",
+		"ended_basecamp": "basecamp_ended",
+		"ending_scene": "res://scenes/dialogue/ending_stage.tscn",
+		"ending_track": "ending_climb",
+		"resolutions": {"stage_sit": "ending_sit", "stage_break": "ending_break"}
+	},
+	"run_won_track": "run_won",
+	"crossfade": 2.5,
+	"boss_crossfade": 1.2,
+	"_quantize_doc": "Track switches wait for the playing track's next bar line (or 'beat' for urgent switches like a boss arriving). Bars longer than 'max_bar_wait' seconds quantize to half bars.",
+	"quantize": "bar",
+	"boss_quantize": "beat",
+	"max_bar_wait": 2.8,
+	"scene_tracks": {
+		"res://scenes/basecamp/basecamp.tscn": "basecamp"
+	},
+	"group_tracks": {
+		"basecamp": "basecamp"
+	},
+	"_stingers_doc": "Event -> one-shot stinger, started on the playing track's next beat. duck = music dip in dB while it rings; priority: a playing stinger is not interrupted by a lower one; cooldown in seconds per event. Relic (relic_<rarity>) and level_up events are hooked but off by default (the SFX role covers them): render them with `python tools/music/gen_music.py sting_relics sting_level_up` and add entries here to turn them on.",
+	"stingers": {
+		"boss_defeated": {"track": "victory", "duck": -12.0, "priority": 5, "cooldown": 0.0},
+		"objective_complete": {"track": "sting_objective", "duck": -9.0, "priority": 3, "cooldown": 1.0},
+		"relic_common": {"track": "sting_relic_common", "duck": -3.0, "priority": 0, "cooldown": 0.6},
+		"relic_uncommon": {"track": "sting_relic_uncommon", "duck": -4.0, "priority": 1, "cooldown": 0.6},
+		"relic_rare": {"track": "sting_relic_rare", "duck": -6.0, "priority": 2, "cooldown": 0.6},
+		"relic_epic": {"track": "sting_relic_epic", "duck": -8.0, "priority": 3, "cooldown": 0.6},
+		"relic_legendary": {"track": "sting_relic_legendary", "duck": -11.0, "priority": 4, "cooldown": 0.6},
+		"level_up": {"track": "sting_level_up", "duck": -3.0, "priority": 0, "cooldown": 8.0},
+		"purchase": {"track": "sting_purchase", "duck": -5.0, "priority": 1, "cooldown": 0.4}
+	},
+	"intensity": {
+		"_doc": "Run intensity: 0 calm (base stem), 1 combat (+combat stem), 2 frenzy (+frenzy stem). Raises are instant, drops wait 'hold' seconds and go one step at a time. Wave surges and active objectives bump it.",
+		"radius": 24.0,
+		"combat_enemies": 7,
+		"frenzy_enemies": 38,
+		"hit_combat_seconds": 7.0,
+		"kills_per_10s_combat": 6,
+		"kills_per_10s_frenzy": 40,
+		"low_hp_frenzy": 0.3,
+		"hold": 8.0,
+		"stem_fade_in": 1.2,
+		"stem_fade_out": 3.5,
+		"surge_level": 2,
+		"surge_seconds": 14.0,
+		"objective_level": 1,
+		"objective_seconds": 25.0
+	}
+}

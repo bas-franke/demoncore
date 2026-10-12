@@ -1,0 +1,62 @@
+{
+	"_doc": "Mid-run events, run by scenes/objectives/run_events.gd (child of the ObjectiveDirector). settings: first_at (s), gap_min/gap_max (s between events), skip_with_boss (no event while a boss is up). Each event: id, kind (crusade | eclipse | reaper), weight, min_time, title (banner), plus kind-specific fields. rewards use the objective reward format (docs/team/objectives.md). Per-map: 'map_weights': {map id: {event id: multiplier}}.",
+	"settings": {
+		"first_at": 140.0,
+		"gap_min": 110.0,
+		"gap_max": 170.0,
+		"skip_with_boss": true
+	},
+	"events": [
+		{
+			"id": "crusade",
+			"kind": "crusade",
+			"name": "Crusade",
+			"title": "A CRUSADE MARCHES ON YOU",
+			"weight": 1.0,
+			"min_time": 120.0,
+			"duration": 50.0,
+			"wave_interval": 3.5,
+			"wave_size": 7,
+			"wave_growth": 0.5,
+			"soldiers": ["seraph_sentinel", "dawn_lancer", "dawn_lancer", "penitent_statue", "archon"],
+			"captain": "archon",
+			"captain_hp": 18.0,
+			"rewards": { "xp_levels": 1.5, "souls": 35, "relic": "rare", "ichor": 15 }
+		},
+		{
+			"id": "holy_eclipse",
+			"kind": "eclipse",
+			"name": "Holy Eclipse",
+			"title": "A HOLY ECLIPSE",
+			"subtitle": "Heaven's host burns brighter. So does their sin.",
+			"weight": 1.0,
+			"min_time": 150.0,
+			"duration": 45.0,
+			"hp_mult": 1.45,
+			"damage_mult": 1.3,
+			"bonus_xp_mult": 1.0,
+			"souls_per_kill": 0.25
+		},
+		{
+			"id": "angel_of_death",
+			"kind": "reaper",
+			"name": "The Pale Reaper",
+			"title": "THE PALE REAPER WALKS",
+			"weight": 0.8,
+			"min_time": 200.0,
+			"duration": 90.0,
+			"hp": 1800.0,
+			"hp_per_minute": 260.0,
+			"rewards": { "xp_levels": 2.0, "souls": 40, "relic": "rare", "hellstone": 1 }
+		}
+	],
+	"map_weights": {
+		"cathedral_city": { "crusade": 1.6 },
+		"sunlit_citadel": { "crusade": 2.0, "angel_of_death": 1.2 },
+		"outer_gardens": { "holy_eclipse": 1.5 },
+		"gilded_isles": { "holy_eclipse": 1.6 },
+		"frozen_monastery": { "angel_of_death": 1.8 },
+		"ashen_wastes": { "angel_of_death": 1.6, "crusade": 0.6 },
+		"heavens_gate": { "crusade": 1.5, "holy_eclipse": 1.3 }
+	}
+}

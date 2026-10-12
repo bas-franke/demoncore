@@ -1,0 +1,17 @@
+{
+	"_doc": "Demonic ally models (characters-new, docs/team/characters-new.md). scene: an EnemyModel/ProcModel scene to use as a minion's visual. Stats are suggested baselines for summons (AbilityMinion or any ally controller): hp, damage per hit, speed (m/s), hit_rate (s between hits), range (m). role: swarm / caster / hunter / tank.",
+	"allies": {
+		"imp": {"name": "Imp", "scene": "res://scenes/characters/allies/imp.tscn", "role": "swarm",
+			"hp": 12, "damage": 4, "speed": 5.5, "hit_rate": 0.5, "range": 1.0, "scale": 1.0,
+			"blurb": "A cackling red pest. Comes in dozens, bites ankles, sets things on fire."},
+		"succubus": {"name": "Succubus", "scene": "res://scenes/characters/allies/succubus.tscn", "role": "caster",
+			"hp": 30, "damage": 9, "speed": 4.0, "hit_rate": 1.2, "range": 6.0, "scale": 1.0,
+			"blurb": "Charms the faithful into doubt, then burns the doubt out of them."},
+		"hellhound": {"name": "Hellhound", "scene": "res://scenes/characters/allies/hellhound.tscn", "role": "hunter",
+			"hp": 24, "damage": 8, "speed": 7.0, "hit_rate": 0.7, "range": 1.3, "scale": 1.0,
+			"blurb": "Smells holiness from three fields away and runs the whole distance."},
+		"hell_brute": {"name": "Hell Brute", "scene": "res://scenes/characters/allies/hell_brute.tscn", "role": "tank",
+			"hp": 90, "damage": 18, "speed": 3.0, "hit_rate": 1.6, "range": 1.8, "scale": 1.0,
+			"blurb": "Broke its chains, kept the shackles. Uses them."}
+	}
+}

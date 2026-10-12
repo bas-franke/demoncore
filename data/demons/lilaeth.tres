@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/hellfire_bolt/hellfire_bolt.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Lilaeth"
+title = "the Fallen Seraph"
+lore = "Once she sang before the Throne. Now her halo burns, and she sings only of ruin."
+perk_text = "+1.2 Speed, +15% Might, -20 Max HP.
+Starts with Hellfire Bolt."
+model_id = "lilaeth"
+skin_color = Color(0.6, 0.55, 0.54, 1)
+armor_color = Color(0.07, 0.06, 0.07, 1)
+cloth_color = Color(0.05, 0.045, 0.05, 1)
+glow_color = Color(1, 0.13, 0.1, 1)
+horn_color = Color(0.5, 0.36, 0.16, 1)
+build = 1
+horn_style = 4
+head_style = 0
+wing_style = 1
+height = 1.1
+bulk = 1.0
+cape_length = 0.0
+chains = false
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"move_speed": 1.2,
+&"might": 0.15,
+&"max_hp": -20.0
+}

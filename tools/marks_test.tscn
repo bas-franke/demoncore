@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://tools/marks_test.gd" id="1_test"]
+[ext_resource type="PackedScene" path="res://scenes/main.tscn" id="2_main"]
+[ext_resource type="Script" path="res://scenes/world/ground_marks.gd" id="3_marks"]
+
+[node name="MarksTest" type="Node"]
+script = ExtResource("1_test")
+
+[node name="Main" parent="." instance=ExtResource("2_main")]
+
+[node name="GroundMarks" type="Node3D" parent="Main"]
+script = ExtResource("3_marks")

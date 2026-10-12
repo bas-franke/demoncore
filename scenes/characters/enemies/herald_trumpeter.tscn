@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/characters/enemies/herald_trumpeter.gd" id="1_script"]
+
+[node name="HeraldTrumpeter" type="Node3D"]
+script = ExtResource("1_script")

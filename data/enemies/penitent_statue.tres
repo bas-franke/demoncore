@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/models/penitent_statue.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"penitent_statue"
+display_name = "Penitent Statue"
+flavor_text = "Once it wept for the damned, and was turned to stone for its mercy. It weeps still. It does not forgive."
+model = ExtResource("2_model")
+size = 1.2
+max_hp = 26.0
+speed = 2.2
+damage = 16.0
+xp_value = 4
+knockback_scale = 0.5
+behavior = 3
+attack_cooldown = 0.6
+charge_speed = 6.5
+charge_time = 0.7
+windup_time = 0.45

@@ -1,0 +1,907 @@
+{
+	"_doc": "In-map objectives, read by scenes/objectives/objective_director.gd. See docs/team/objectives.md for every field. 'type' picks the script in scenes/objectives/types/<type>_objective.gd. Colors are hex. Times are seconds. Enemy ids are file names in data/enemies/. Shared 'variants' roll on any definition (settings.variant_chance); 'map_preferences' multiply weights per map by type or id.",
+	"settings": {
+		"first_delay": 6.0,
+		"initial_count": 2,
+		"max_active": 3,
+		"spawn_interval": 50.0,
+		"min_distance": 20.0,
+		"max_distance": 34.0,
+		"min_separation": 16.0,
+		"dormant_life": 170.0,
+		"abandon_distance": 85.0,
+		"boss_after_completions": [
+			3,
+			7,
+			12
+		],
+		"boss_rotation": [
+			"grand_inquisitor",
+			"sariel"
+		],
+		"victory_bosses": 3,
+		"finale_maps": [
+			"sunlit_citadel"
+		],
+		"finale_flag": "known.march",
+		"variant_chance": 0.3,
+		"variant_chance_per_minute": 0.03
+	},
+	"objectives": [
+		{
+			"id": "desecrate_shrine",
+			"type": "shrine",
+			"title": "Desecrate the Shrine",
+			"description": "Stand in the shrine's light until it burns black.",
+			"glyph": "✠",
+			"color": "ffd77a",
+			"weight": 3.0,
+			"min_time": 0.0,
+			"params": {
+				"radius": 3.4,
+				"channel_time": 9.0,
+				"decay": 0.4,
+				"guard_interval": 3.2,
+				"guards_per_wave": 3,
+				"guards": [
+					"choir_wisp",
+					"seraph_sentinel",
+					"penitent_statue"
+				]
+			},
+			"anchors": [
+				"shrine",
+				"altar",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.0,
+				"souls": 12,
+				"heal": 15,
+				"ichor": 6
+			}
+		},
+		{
+			"id": "corrupt_relic",
+			"type": "relic",
+			"title": "Corrupt the Holy Relic",
+			"description": "Break its three seals. It will strike at you with pillars of light.",
+			"glyph": "✧",
+			"color": "fff4cf",
+			"weight": 2.0,
+			"min_time": 60.0,
+			"params": {
+				"radius": 4.6,
+				"seals": 3,
+				"seal_time": 4.5,
+				"decay": 0.25,
+				"pulse_interval": 3.4,
+				"pillar_damage": 18.0,
+				"guardians": [
+					"seraph_sentinel",
+					"dawn_lancer",
+					"archon"
+				]
+			},
+			"anchors": [
+				"relic",
+				"altar",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.5,
+				"souls": 20,
+				"relic": "uncommon",
+				"boon": {
+					"stat": "might",
+					"amount": 0.08,
+					"label": "Profaned Might  +8% damage"
+				}
+			}
+		},
+		{
+			"id": "slay_champion",
+			"type": "champion",
+			"title": "Slay the Champion",
+			"description": "A champion of Heaven stands watch. Cut it down.",
+			"glyph": "♛",
+			"color": "f2c66b",
+			"weight": 2.5,
+			"min_time": 25.0,
+			"params": {
+				"wake_radius": 15.0,
+				"bases": [
+					"archon",
+					"dawn_lancer",
+					"penitent_statue",
+					"seraph_sentinel"
+				],
+				"hp_mult": 14.0,
+				"size_mult": 1.5,
+				"damage_mult": 1.4,
+				"affixes": [
+					"radiant",
+					"zealous",
+					"bulwark",
+					"choir_led",
+					"martyr"
+				]
+			},
+			"anchors": [
+				"arena",
+				"landmark",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.5,
+				"souls": 18,
+				"chalice": 1,
+				"ichor": 12,
+				"sin_shards": 1
+			}
+		},
+		{
+			"id": "holy_siege",
+			"type": "siege",
+			"title": "Survive the Holy Siege",
+			"description": "Open the hellgate and hold its circle while Heaven lays siege.",
+			"glyph": "⛨",
+			"color": "e0662a",
+			"weight": 1.6,
+			"min_time": 90.0,
+			"params": {
+				"trigger_radius": 2.4,
+				"radius": 9.0,
+				"duration": 40.0,
+				"grace": 5.0,
+				"wave_interval": 3.5,
+				"wave_size": 5,
+				"wave_growth": 0.6,
+				"attackers": [
+					"choir_wisp",
+					"seraph_sentinel",
+					"dawn_lancer",
+					"thurible_priest",
+					"ophanim"
+				],
+				"finale_damage": 400.0
+			},
+			"anchors": [
+				"ritual",
+				"arena",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 2.0,
+				"souls": 30,
+				"heal": 40,
+				"sin_shards": 2,
+				"ichor": 15,
+				"boon": {
+					"stat": "armor",
+					"amount": 1.0,
+					"label": "Siegebreaker  +1 armor"
+				}
+			}
+		},
+		{
+			"id": "free_damned",
+			"type": "souls",
+			"title": "Free the Damned",
+			"description": "Break the gilded cages. The souls inside will fight for you.",
+			"glyph": "☩",
+			"color": "e8432c",
+			"weight": 2.2,
+			"min_time": 0.0,
+			"params": {
+				"cages": 4,
+				"spread": 6.5,
+				"break_time": 1.2,
+				"time_limit": 70.0,
+				"wardens": [
+					"thurible_priest",
+					"penitent_statue"
+				],
+				"ally_duration": 80.0,
+				"ally_damage": 9.0,
+				"ally_interval": 0.75,
+				"ally_range": 6.0
+			},
+			"anchors": [
+				"graveyard",
+				"prison",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 0.75,
+				"souls": 6,
+				"ichor": 8,
+				"per_soul": {
+					"souls": 4,
+					"heal": 6
+				}
+			}
+		},
+		{
+			"id": "hunt_saint",
+			"type": "saint",
+			"title": "Hunt the Fleeing Saint",
+			"description": "A living saint runs for the heavens. Catch it before it ascends.",
+			"glyph": "✝",
+			"color": "9fd4ff",
+			"weight": 1.8,
+			"min_time": 70.0,
+			"params": {
+				"wake_radius": 16.0,
+				"time_limit": 38.0,
+				"hp": 260.0,
+				"hp_per_minute": 90.0,
+				"speed": 4.6,
+				"model": "thurible_priest",
+				"blessing_interval": 2.6,
+				"blessing_damage": 16.0
+			},
+			"anchors": [
+				"chapel",
+				"altar",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.25,
+				"souls": 25,
+				"hellstone": 1,
+				"boon": {
+					"stat": "move_speed",
+					"amount": 0.3,
+					"label": "Saint's Stride  +5% speed"
+				}
+			}
+		},
+		{
+			"id": "blood_sacrifice",
+			"type": "ritual",
+			"title": "Blood Sacrifice",
+			"description": "Slay angels inside your ritual circle before the candles gutter.",
+			"glyph": "⛧",
+			"color": "b3201a",
+			"weight": 2.0,
+			"min_time": 35.0,
+			"params": {
+				"radius": 7.0,
+				"kills": 30,
+				"time_limit": 55.0,
+				"lure_interval": 2.2,
+				"lure_count": 4,
+				"lures": [
+					"choir_wisp",
+					"choir_wisp",
+					"seraph_sentinel",
+					"dawn_lancer"
+				],
+				"finale_damage": 300.0
+			},
+			"anchors": [
+				"ritual",
+				"graveyard",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.25,
+				"souls": 18,
+				"heal": 25,
+				"ichor": 10
+			}
+		},
+		{
+			"id": "topple_pylons",
+			"type": "pylons",
+			"title": "Topple the Sanctified Pylons",
+			"description": "Three obelisks mend every angel near them. Break them all.",
+			"glyph": "▲",
+			"color": "fff4cf",
+			"weight": 1.8,
+			"min_time": 50.0,
+			"params": {
+				"count": 3,
+				"spread": 6.0,
+				"wake_radius": 16.0,
+				"hp": 220.0,
+				"hp_per_minute": 70.0,
+				"pulse_interval": 4.0,
+				"pulse_radius": 7.0,
+				"heal_ratio": 0.2,
+				"pulse_damage": 10.0
+			},
+			"anchors": [
+				"landmark",
+				"arena",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.25,
+				"souls": 16,
+				"sin_shards": 1,
+				"boon": {
+					"stat": "area",
+					"amount": 0.08,
+					"label": "Toppled Glory  +8% area"
+				}
+			}
+		},
+		{
+			"id": "bell_of_challenge",
+			"type": "challenge",
+			"title": "Ring the Bell of Challenge",
+			"description": "Ring it to call a boss early. Slay it for a great reward.",
+			"glyph": "♫",
+			"color": "e6b35a",
+			"weight": 1.0,
+			"min_time": 120.0,
+			"requires_no_boss": true,
+			"max_per_run": 2,
+			"dormant_life": 120.0,
+			"params": {
+				"radius": 2.2,
+				"ring_time": 2.0,
+				"boss": ""
+			},
+			"anchors": [
+				"chapel",
+				"landmark",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 2.0,
+				"souls": 45,
+				"relic": "rare",
+				"hellstone": 1
+			}
+		},
+		{
+			"id": "profane_fonts",
+			"type": "interactables",
+			"title": "Profane the Holy Fonts",
+			"description": "Corrupt two of the map's holy fonts before the host can mend itself in them.",
+			"glyph": "♁",
+			"color": "8fd0ff",
+			"weight": 2.0,
+			"min_time": 30.0,
+			"max_per_run": 1,
+			"dormant_life": 150.0,
+			"maps": [
+				"outer_gardens",
+				"cathedral_city",
+				"sunlit_citadel",
+				"heavens_gate"
+			],
+			"params": {
+				"feature": "font",
+				"count": 2,
+				"time_limit": 90.0
+			},
+			"anchors": [
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.0,
+				"souls": 20,
+				"heal": 20
+			}
+		},
+		{
+			"id": "toll_the_bell",
+			"type": "interactables",
+			"title": "Toll the Bell",
+			"description": "Strike the map's great bell and survive the host it calls down.",
+			"glyph": "♫",
+			"color": "f0b860",
+			"weight": 1.5,
+			"min_time": 60.0,
+			"max_per_run": 1,
+			"dormant_life": 150.0,
+			"maps": [
+				"outer_gardens",
+				"cathedral_city",
+				"frozen_monastery",
+				"sunlit_citadel",
+				"ashen_wastes",
+				"storm_spire",
+				"heavens_gate"
+			],
+			"params": {
+				"feature": "bell",
+				"count": 1
+			},
+			"anchors": [
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.0,
+				"souls": 25,
+				"ichor": 8
+			}
+		},
+		{
+			"id": "storm_seventh_gate",
+			"type": "gate",
+			"finale": true,
+			"title": "Storm the Seventh Gate",
+			"description": "Break the seven seals, then slay the Gate's warden. Win the run.",
+			"herald": "The Seventh Gate rises on the horizon. Storm it.",
+			"glyph": "✵",
+			"color": "fff4cf",
+			"weight": 0.0,
+			"min_time": 150.0,
+			"dormant_life": -1.0,
+			"params": {
+				"radius": 7.0,
+				"seals": 7,
+				"seal_time": 4.5,
+				"decay": 0.3,
+				"wave_interval": 3.0,
+				"wave_size": 5,
+				"attackers": [
+					"choir_wisp",
+					"seraph_sentinel",
+					"dawn_lancer",
+					"thurible_priest",
+					"ophanim",
+					"archon"
+				],
+				"pillar_damage": 20.0,
+				"boss": "gate_archon",
+				"boss_hp_scale": 1.2
+			},
+			"anchors": [
+				"seventh_gate",
+				"boss_arena",
+				"*"
+			],
+			"rewards": {
+				"souls": 120,
+				"hellstone": 3,
+				"relic": "epic"
+			}
+		},
+		{
+			"id": "escort_reliquary",
+			"type": "escort",
+			"title": "Escort the Corrupted Reliquary",
+			"description": "Walk beside the cart to its sigil. Don't let the angels break it.",
+			"glyph": "⛟",
+			"color": "e8432c",
+			"weight": 1.6,
+			"min_time": 40.0,
+			"params": {
+				"distance": 30.0,
+				"speed": 2.2,
+				"follow_radius": 7.0,
+				"cart_hp": 260.0,
+				"gnaw_dps": 9.0,
+				"ambush_interval": 5.0,
+				"ambush_size": 4,
+				"ambushers": [
+					"choir_wisp",
+					"seraph_sentinel",
+					"dawn_lancer"
+				]
+			},
+			"anchors": [
+				"relic",
+				"altar",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.5,
+				"souls": 22,
+				"relic": "uncommon",
+				"ichor": 12
+			}
+		},
+		{
+			"id": "defile_font",
+			"type": "font",
+			"title": "Defile the Baptismal Font",
+			"description": "Foul the holy water. The land around it becomes yours.",
+			"glyph": "♆",
+			"color": "9fd4ff",
+			"weight": 1.8,
+			"min_time": 30.0,
+			"params": {
+				"radius": 3.4,
+				"channel_time": 8.0,
+				"decay": 0.4,
+				"wave_interval": 3.0,
+				"wave_damage": 12.0,
+				"ground_radius": 9.0,
+				"ground_regen": 2.5,
+				"ground_burn": 8.0,
+				"ground_duration": -1.0
+			},
+			"anchors": [
+				"shrine",
+				"altar",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.0,
+				"souls": 14,
+				"ichor": 6
+			}
+		},
+		{
+			"id": "bishop_procession",
+			"type": "procession",
+			"title": "Assassinate the Bishop",
+			"description": "Ambush the procession before it reaches the cathedral.",
+			"glyph": "✟",
+			"color": "fff4cf",
+			"weight": 1.6,
+			"min_time": 60.0,
+			"params": {
+				"route_length": 38.0,
+				"waypoints": 4,
+				"walk_speed": 1.8,
+				"panic_distance": 7.0,
+				"flee_speed": 4.4,
+				"hp": 380.0,
+				"hp_per_minute": 110.0,
+				"escorts": [
+					"thurible_priest",
+					"thurible_priest",
+					"seraph_sentinel",
+					"seraph_sentinel"
+				],
+				"time_limit": 35.0,
+				"model": "thurible_priest"
+			},
+			"anchors": [
+				"chapel",
+				"shrine",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.5,
+				"souls": 26,
+				"relic": "uncommon",
+				"hellstone": 1
+			}
+		},
+		{
+			"id": "bell_towers",
+			"type": "towers",
+			"title": "Hold the Bell Towers",
+			"description": "Corrupt all three towers and hold them at once.",
+			"glyph": "♪",
+			"color": "e6b35a",
+			"weight": 1.5,
+			"min_time": 75.0,
+			"params": {
+				"count": 3,
+				"spread": 9.0,
+				"capture_radius": 3.0,
+				"capture_time": 4.0,
+				"hold_time": 10.0,
+				"reclaim_rate": 0.12,
+				"time_limit": 100.0,
+				"raid_interval": 5.0,
+				"raid_size": 4,
+				"raiders": [
+					"choir_wisp",
+					"seraph_sentinel",
+					"thurible_priest",
+					"dawn_lancer"
+				]
+			},
+			"anchors": [
+				"arena",
+				"boss_arena",
+				"ritual",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.75,
+				"souls": 28,
+				"sin_shards": 1,
+				"boon": {
+					"stat": "cooldown",
+					"amount": -0.04,
+					"label": "Toll of Ruin  -4% cooldowns"
+				}
+			}
+		},
+		{
+			"id": "carnage_totem",
+			"type": "slaughter",
+			"title": "Carnage Totem",
+			"description": "Touch the totem, then slay 40 angels in 30 seconds.",
+			"glyph": "☗",
+			"color": "ff7a1f",
+			"weight": 1.6,
+			"min_time": 20.0,
+			"params": {
+				"kills": 40,
+				"time_limit": 30.0,
+				"fodder_interval": 2.0,
+				"fodder_count": 6,
+				"fodder": [
+					"choir_wisp",
+					"choir_wisp",
+					"seraph_sentinel"
+				],
+				"trigger_radius": 2.2
+			},
+			"anchors": [
+				"ritual",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.25,
+				"souls": 15,
+				"heal": 30,
+				"ichor": 8
+			}
+		},
+		{
+			"id": "cursed_coffer",
+			"type": "chest",
+			"title": "The Cursed Coffer",
+			"description": "Break the lock. Survive what the wards call down.",
+			"glyph": "▣",
+			"color": "e6b35a",
+			"weight": 1.4,
+			"min_time": 45.0,
+			"params": {
+				"open_time": 1.6,
+				"waves": 3,
+				"wave_size": 6,
+				"wave_gap": 1.5,
+				"ambushers": [
+					"seraph_sentinel",
+					"dawn_lancer",
+					"penitent_statue",
+					"thurible_priest"
+				],
+				"captain": "archon",
+				"captain_hp": 6.0
+			},
+			"anchors": [
+				"relic",
+				"*"
+			],
+			"rewards": {
+				"xp_levels": 1.5,
+				"souls": 20,
+				"relic": "rare",
+				"ichor": 20,
+				"chalice": 1
+			}
+		},
+		{
+			"id": "altar_of_temptation",
+			"type": "temptation",
+			"title": "Altar of Temptation",
+			"description": "A bargain: a curse for the rest of the run, for power now.",
+			"glyph": "⛥",
+			"color": "c46bff",
+			"weight": 1.0,
+			"min_time": 90.0,
+			"max_per_run": 2,
+			"no_variants": true,
+			"dormant_life": 120.0,
+			"params": {
+				"radius": 2.0,
+				"accept_time": 2.5,
+				"deals": [
+					{
+						"name": "Pact of Frailty",
+						"curse_text": "-30 max life",
+						"reward_text": "two levels and a rare relic",
+						"curse": {
+							"max_hp": -30.0
+						},
+						"rewards": {
+							"xp_levels": 2.0,
+							"relic": "rare",
+							"souls": 10
+						}
+					},
+					{
+						"name": "Pact of Lead",
+						"curse_text": "-12% move speed",
+						"reward_text": "+20% damage",
+						"curse": {
+							"move_speed": -0.7
+						},
+						"rewards": {
+							"boon": {
+								"stat": "might",
+								"amount": 0.2,
+								"label": "Leaden Wrath  +20% damage"
+							},
+							"souls": 10
+						}
+					},
+					{
+						"name": "Pact of Glass",
+						"curse_text": "-2 armor",
+						"reward_text": "an epic relic",
+						"curse": {
+							"armor": -2.0
+						},
+						"rewards": {
+							"relic": "epic",
+							"souls": 15
+						}
+					},
+					{
+						"name": "Pact of Hunger",
+						"curse_text": "no more regeneration (-1 regen)",
+						"reward_text": "+25% area and souls",
+						"curse": {
+							"regen": -1.0
+						},
+						"rewards": {
+							"boon": {
+								"stat": "area",
+								"amount": 0.25,
+								"label": "Hungering Reach  +25% area"
+							},
+							"souls": 30
+						}
+					}
+				]
+			},
+			"anchors": [
+				"altar",
+				"*"
+			],
+			"rewards": {}
+		}
+	],
+	"variants": [
+		{
+			"id": "gilded",
+			"name": "Gilded",
+			"weight": 2.0,
+			"color": "ffd77a",
+			"reward_mult": 1.8,
+			"param_mult": {
+				"guards_per_wave": 1.5,
+				"wave_size": 1.4,
+				"ambush_size": 1.5,
+				"raid_size": 1.5,
+				"hp_mult": 1.4,
+				"hp": 1.4,
+				"kills": 1.25,
+				"cart_hp": 0.85,
+				"lure_count": 1.3,
+				"fodder_count": 1.3
+			}
+		},
+		{
+			"id": "hasty",
+			"name": "Hasty",
+			"weight": 1.5,
+			"color": "ff9a2e",
+			"reward_mult": 1.35,
+			"param_mult": {
+				"time_limit": 0.75,
+				"channel_time": 0.75,
+				"seal_time": 0.75,
+				"duration": 0.8,
+				"capture_time": 0.8,
+				"walk_speed": 1.35
+			}
+		},
+		{
+			"id": "warded",
+			"name": "Warded",
+			"weight": 1.5,
+			"color": "9fd4ff",
+			"reward_mult": 1.5,
+			"guardian": "archon",
+			"guardian_hp": 5.0,
+			"min_time": 90.0
+		},
+		{
+			"id": "bloodsoaked",
+			"name": "Bloodsoaked",
+			"weight": 1.2,
+			"color": "e8432c",
+			"reward_mult": 1.2,
+			"rewards": {
+				"heal": 40,
+				"chalice": 2
+			}
+		},
+		{
+			"id": "martyrs",
+			"name": "Martyrs'",
+			"weight": 1.0,
+			"color": "fff4cf",
+			"reward_mult": 1.4,
+			"types": [
+				"shrine",
+				"relic",
+				"font",
+				"towers"
+			],
+			"param_mult": {
+				"decay": 2.0,
+				"guard_interval": 0.75,
+				"pulse_interval": 0.8,
+				"wave_interval": 0.8
+			}
+		}
+	],
+	"map_preferences": {
+		"ruined_sanctum": {
+			"types": {
+				"shrine": 1.3,
+				"souls": 1.3,
+				"ritual": 1.2
+			}
+		},
+		"outer_gardens": {
+			"types": {
+				"font": 2.2,
+				"souls": 1.4,
+				"escort": 1.2
+			}
+		},
+		"cathedral_city": {
+			"types": {
+				"procession": 2.4,
+				"towers": 2.0,
+				"chest": 1.3
+			}
+		},
+		"frozen_monastery": {
+			"types": {
+				"shrine": 1.6,
+				"relic": 1.5,
+				"saint": 1.4,
+				"font": 1.3
+			}
+		},
+		"sunlit_citadel": {
+			"types": {
+				"siege": 1.8,
+				"towers": 1.6,
+				"champion": 1.5,
+				"pylons": 1.4
+			}
+		},
+		"gilded_isles": {
+			"types": {
+				"chest": 2.0,
+				"escort": 1.8,
+				"temptation": 1.4
+			}
+		},
+		"storm_spire": {
+			"types": {
+				"pylons": 1.8,
+				"towers": 1.6,
+				"slaughter": 1.3
+			}
+		},
+		"ashen_wastes": {
+			"types": {
+				"slaughter": 2.0,
+				"ritual": 1.8,
+				"temptation": 1.6,
+				"chest": 1.3
+			}
+		},
+		"heavens_gate": {
+			"types": {
+				"siege": 1.6,
+				"champion": 1.6,
+				"procession": 1.4,
+				"challenge": 0.0
+			}
+		}
+	}
+}

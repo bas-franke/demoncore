@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DemonData" format=3]
+
+[ext_resource type="Script" path="res://scenes/demons/demon_data.gd" id="1_demondata"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/reapers_scythe/reapers_scythe.tscn" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_demondata")
+display_name = "Ysolde"
+title = "the Pale Reaper"
+lore = "She harvests what Heaven sows. Even angels have a season."
+perk_text = "+15% Area, +25% XP Gain.
+Starts with Reaper's Scythe."
+model_id = "ysolde"
+skin_color = Color(0.7, 0.67, 0.6, 1)
+armor_color = Color(0.62, 0.58, 0.5, 1)
+cloth_color = Color(0.09, 0.085, 0.095, 1)
+glow_color = Color(0.62, 0.86, 1, 1)
+horn_color = Color(0.12, 0.11, 0.11, 1)
+build = 4
+horn_style = 2
+head_style = 2
+wing_style = 0
+height = 1.1
+bulk = 1.0
+cape_length = 0.95
+chains = false
+grimoire = false
+starting_weapon = ExtResource("2_weapon")
+stat_mods = {
+&"area": 0.15,
+&"xp_gain": 0.25
+}

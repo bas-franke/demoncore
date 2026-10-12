@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="TerrainTheme" format=3]
+
+[ext_resource type="Script" path="res://scripts/terrain/terrain_theme.gd" id="1_theme"]
+
+[resource]
+script = ExtResource("1_theme")
+display_name = "The Breach"
+edge = 1
+edge_height = 9.0
+terraces = 0
+ground_bump = 0.03
+liquid = 1
+liquid_level = -0.45
+ground_a = Color(0.42, 0.46, 0.27, 1)
+ground_b = Color(0.2, 0.17, 0.13, 1)
+path_color = Color(0.74, 0.7, 0.64, 1)
+path_joint = Color(0.35, 0.12, 0.06, 1)
+cliff_a = Color(0.3, 0.24, 0.22, 1)
+cliff_b = Color(0.5, 0.36, 0.3, 1)
+accent = Color(1, 0.32, 0.07, 1)
+accent_energy = 2.0
+accent_amount = 0.3
+shore = Color(0.06, 0.03, 0.03, 1)
+shore_glow = Color(1, 0.3, 0.06, 1)
+ground_grain = 0.5
+inlay_color = Color(0.3, 0.07, 0.04, 1)
+path_paved = 1.0
+edge_props = {
+&"basalt_columns": 2.0,
+&"cloud_bank": 1.5,
+&"obsidian_spire": 3.0
+}
+field_props = {
+&"basalt_columns": 0.8,
+&"brimstone_rock": 1.5,
+&"broken_statue": 1.5,
+&"corrupted_column": 2.5,
+&"fallen_wing": 0.8,
+&"hell_brazier": 0.8,
+&"hell_rift": 1.2,
+&"holy_grave": 1.0,
+&"marble_column": 1.5,
+&"obsidian_spire": 1.5,
+&"stained_window": 0.8
+}
+small_props = {
+&"bone_pile": 1.0,
+&"candles": 0.6,
+&"rubble": 2.0,
+&"skull": 1.0
+}
+field_density = 0.34
+small_density = 0.9
+edge_density = 1.0
+satellites = 1
+foliage = {
+&"flowers_red": 0.05,
+&"grass_ash": 0.25,
+&"grass_dry": 0.12,
+&"grass_green": 0.3
+}
+foliage_density = 1.0

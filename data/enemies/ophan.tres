@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/ophan.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ophan"
+display_name = "Lesser Ophan"
+flavor_text = "A wheel within a wheel, no larger than a shield, full of eyes. Where there is one there are fifty, and all of them are watching."
+model = ExtResource("2_model")
+size = 0.8
+hover = 0.0
+max_hp = 5.0
+speed = 4.2
+damage = 5.0
+xp_value = 1
+knockback_scale = 1.2
+behavior = 0

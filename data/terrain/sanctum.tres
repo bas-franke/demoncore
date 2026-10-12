@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="TerrainTheme" format=3]
+
+[ext_resource type="Script" path="res://scripts/terrain/terrain_theme.gd" id="1_theme"]
+
+[resource]
+script = ExtResource("1_theme")
+display_name = "Drowned Sanctum"
+edge = 0
+edge_height = 5.0
+terraces = 2
+ground_bump = 0.03
+liquid = 2
+liquid_level = -0.4
+ground_a = Color(0.14, 0.16, 0.08, 1)
+ground_b = Color(0.12, 0.1, 0.075, 1)
+path_color = Color(0.4, 0.38, 0.34, 1)
+path_joint = Color(0.04, 0.04, 0.03, 1)
+cliff_a = Color(0.2, 0.2, 0.19, 1)
+cliff_b = Color(0.33, 0.31, 0.28, 1)
+accent = Color(0.2, 0.25, 0.1, 1)
+accent_energy = 0.0
+accent_amount = 0.15
+shore = Color(0.06, 0.055, 0.045, 1)
+shore_glow = Color(0, 0, 0, 1)
+path_paved = 1.0
+edge_props = {
+&"dead_tree": 3.0,
+&"broken_column": 1.0,
+&"marble_column": 1.0
+}
+field_props = {
+&"broken_column": 2.0,
+&"broken_statue": 1.0,
+&"crypt": 1.0,
+&"dead_tree": 2.0,
+&"holy_grave": 1.5,
+&"stained_window": 1.0,
+&"statue_angel": 1.0
+}
+small_props = {
+&"gravestone": 3.0,
+&"grass_tuft": 3.0,
+&"rubble": 1.5,
+&"candles": 0.6
+}
+field_density = 0.3
+small_density = 1.2
+edge_density = 0.6
+foliage = {
+&"fern": 0.1,
+&"grass_green": 0.4,
+&"leaf_litter": 0.08,
+&"toadstools": 0.03
+}

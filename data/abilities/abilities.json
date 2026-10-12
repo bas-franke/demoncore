@@ -1,0 +1,3518 @@
+{
+ "_doc": "Ability catalog. See docs/team/abilities.md for the schema. kind = behaviour archetype in AbilityCaster; params feed that kind; levels[] add deltas per rank (damage/cooldown are fractions, everything else adds to params; status_stacks adds to every applied status).",
+ "max_abilities": 5,
+ "statuses": {
+  "burn": {
+   "name": "Burning",
+   "color": "#ff6a1e",
+   "duration": 3.0,
+   "max": 12,
+   "dps": 3.0,
+   "tags": [
+    "fire"
+   ]
+  },
+  "plague": {
+   "name": "Plagued",
+   "color": "#8fd13a",
+   "duration": 6.0,
+   "max": 10,
+   "dps": 1.8,
+   "spread": 2,
+   "spread_range": 3.0,
+   "tags": [
+    "plague"
+   ]
+  },
+  "bleed": {
+   "name": "Bleeding",
+   "color": "#c4101e",
+   "duration": 3.0,
+   "max": 15,
+   "dps": 2.6,
+   "tags": [
+    "blood"
+   ]
+  },
+  "curse": {
+   "name": "Cursed",
+   "color": "#a43cff",
+   "duration": 6.0,
+   "max": 5,
+   "amp": 0.08,
+   "tags": [
+    "curse"
+   ]
+  },
+  "chill": {
+   "name": "Hexed Slow",
+   "color": "#6f7dff",
+   "duration": 2.5,
+   "max": 5,
+   "slow": 0.12,
+   "tags": [
+    "curse"
+   ]
+  },
+  "root": {
+   "name": "Bound",
+   "color": "#d08a3a",
+   "duration": 1.2,
+   "max": 1,
+   "tags": [
+    "chain"
+   ]
+  },
+  "shock": {
+   "name": "Shocked",
+   "color": "#7fd6ff",
+   "duration": 3.0,
+   "max": 5,
+   "amp": 0.1,
+   "tags": [
+    "storm"
+   ]
+  },
+  "doom": {
+   "name": "Doomed",
+   "color": "#ff2a6a",
+   "duration": 3.0,
+   "max": 1,
+   "burst": 4.0,
+   "tags": [
+    "shadow",
+    "curse"
+   ]
+  },
+  "soul_mark": {
+   "name": "Soul-marked",
+   "color": "#ff3346",
+   "duration": 5.0,
+   "max": 1,
+   "tags": [
+    "soul"
+   ]
+  },
+  "gilded": {
+   "name": "Gilded",
+   "color": "#ffd040",
+   "duration": 6.0,
+   "max": 1,
+   "amp": 0.15,
+   "ichor": 1,
+   "tags": [
+    "greed"
+   ]
+  }
+ },
+ "weapon_tags": {
+  "hellfire_bolt": [
+   "fire",
+   "projectile"
+  ],
+  "brimstone_sigil": [
+   "fire",
+   "area"
+  ],
+  "infernal_chain": [
+   "chain",
+   "storm"
+  ],
+  "ravagers_cleave": [
+   "brute",
+   "melee"
+  ],
+  "reapers_scythe": [
+   "shadow",
+   "soul"
+  ],
+  "wailing_souls": [
+   "soul",
+   "necro"
+  ]
+ },
+ "abilities": [
+  {
+   "id": "cinder_spray",
+   "name": "Cinder Spray",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "projectile"
+   ],
+   "icon": "≋",
+   "color": "#ff7a22",
+   "desc": "Spits a fan of cinders at the nearest foe. Each cinder sets its mark Burning.",
+   "kind": "bolt",
+   "cooldown": 1.3,
+   "damage": 6,
+   "params": {
+    "count": 5,
+    "spread": 0.55,
+    "speed": 13,
+    "range": 12,
+    "pierce": 0,
+    "size": 0.18
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 cinders",
+     "count": 2
+    },
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "Cinders pierce once",
+     "pierce": 1
+    },
+    {
+     "text": "+1 Burning stack per hit",
+     "status_stacks": 1
+    },
+    {
+     "text": "+2 cinders, -15% cooldown",
+     "count": 2,
+     "cooldown": -0.15
+    }
+   ]
+  },
+  {
+   "id": "inferno_nova",
+   "name": "Inferno Nova",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "area"
+   ],
+   "icon": "✹",
+   "color": "#ff4a12",
+   "desc": "A ring of hellfire bursts from your body, scorching and hurling back everything near.",
+   "kind": "nova",
+   "cooldown": 3.2,
+   "damage": 18,
+   "params": {
+    "radius": 4.0,
+    "knockback": 7
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.7
+    },
+    {
+     "text": "+35% damage",
+     "damage": 0.35
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+2 Burning stacks",
+     "status_stacks": 2
+    },
+    {
+     "text": "+50% damage, +20% radius",
+     "damage": 0.5,
+     "radius": 0.7
+    }
+   ]
+  },
+  {
+   "id": "brimstone_meteor",
+   "name": "Brimstone Meteor",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "brute",
+    "area"
+   ],
+   "icon": "◈",
+   "color": "#ff5a10",
+   "desc": "Calls burning stone down on the thickest knot of angels. The crater keeps burning.",
+   "kind": "strike",
+   "cooldown": 4.0,
+   "damage": 30,
+   "params": {
+    "count": 1,
+    "radius": 2.4,
+    "delay": 0.8,
+    "range": 14,
+    "style": "meteor"
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 3
+    }
+   ],
+   "on_hit": [],
+   "after": [
+    {
+     "do": "zone",
+     "radius": 1.8,
+     "duration": 2.5,
+     "damage": 0.08,
+     "status": [
+      {
+       "id": "burn",
+       "stacks": 1
+      }
+     ]
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 meteor",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% impact radius",
+     "radius": 0.6
+    },
+    {
+     "text": "+1 meteor",
+     "count": 1
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "pyre_circle",
+   "name": "Pyre Circle",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "aura"
+   ],
+   "icon": "◎",
+   "color": "#ff8a2a",
+   "desc": "You walk wreathed in a circle of flame that kindles everything inside it.",
+   "kind": "aura",
+   "cooldown": 0.6,
+   "damage": 4,
+   "params": {
+    "radius": 3.0
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.45
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.45
+    },
+    {
+     "text": "+1 Burning stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+100% damage",
+     "damage": 1.0
+    }
+   ]
+  },
+  {
+   "id": "flame_pillar",
+   "name": "Pillar of Gehenna",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "area",
+    "dot"
+   ],
+   "icon": "Ѱ",
+   "color": "#ffb040",
+   "desc": "Raises a column of sulphurous fire beneath a foe that burns for several seconds.",
+   "kind": "zone",
+   "cooldown": 3.0,
+   "damage": 4,
+   "params": {
+    "count": 1,
+    "radius": 1.5,
+    "duration": 4.0,
+    "tick": 0.5,
+    "range": 12,
+    "style": "pillar"
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 pillar",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1.5s duration",
+     "duration": 1.5
+    },
+    {
+     "text": "+1 pillar",
+     "count": 1
+    },
+    {
+     "text": "+30% radius",
+     "radius": 0.5
+    }
+   ]
+  },
+  {
+   "id": "hemorrhage_lance",
+   "name": "Hemorrhage Lance",
+   "school": "Blood Magic",
+   "tags": [
+    "blood",
+    "projectile"
+   ],
+   "icon": "⟊",
+   "color": "#d0102a",
+   "desc": "Tears 3% of your life into a piercing lance of blood. Hits leave foes Bleeding.",
+   "kind": "bolt",
+   "cooldown": 1.8,
+   "damage": 22,
+   "hp_cost": 0.03,
+   "params": {
+    "count": 1,
+    "speed": 20,
+    "range": 16,
+    "pierce": 4,
+    "size": 0.26
+   },
+   "status": [
+    {
+     "id": "bleed",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 lance",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "Pierces +4",
+     "pierce": 4
+    },
+    {
+     "text": "+2 Bleeding stacks",
+     "status_stacks": 2
+    },
+    {
+     "text": "+1 lance, +40% damage",
+     "count": 1,
+     "damage": 0.4
+    }
+   ]
+  },
+  {
+   "id": "crimson_nova",
+   "name": "Crimson Tide",
+   "school": "Blood Magic",
+   "tags": [
+    "blood",
+    "area"
+   ],
+   "icon": "✺",
+   "color": "#b00a1e",
+   "desc": "Spends 5% of your life in a wave of blood. Every foe struck returns some of it to you.",
+   "kind": "nova",
+   "cooldown": 4.0,
+   "damage": 24,
+   "hp_cost": 0.05,
+   "params": {
+    "radius": 4.5,
+    "knockback": 4
+   },
+   "status": [
+    {
+     "id": "bleed",
+     "stacks": 2
+    }
+   ],
+   "on_hit": [
+    {
+     "do": "heal",
+     "amount": 0.8
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.8
+    },
+    {
+     "text": "+1 HP per foe struck",
+     "heal_bonus": 1.0
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "blood_frenzy",
+   "name": "Blood Frenzy",
+   "school": "Blood Magic",
+   "tags": [
+    "blood",
+    "buff"
+   ],
+   "icon": "Ϡ",
+   "color": "#ff2038",
+   "desc": "Bleeds 8% of your life to enter a frenzy: +40% Might and faster casting for 5 seconds.",
+   "kind": "buff",
+   "cooldown": 12.0,
+   "damage": 0,
+   "hp_cost": 0.08,
+   "params": {
+    "duration": 5.0,
+    "might": 0.4,
+    "cooldown_stat": -0.15,
+    "move_speed": 0.8
+   },
+   "levels": [
+    {
+     "text": "+2s duration",
+     "duration": 2.0
+    },
+    {
+     "text": "+20% Might while frenzied",
+     "might": 0.2
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+2s duration",
+     "duration": 2.0
+    },
+    {
+     "text": "+30% Might while frenzied",
+     "might": 0.3
+    }
+   ]
+  },
+  {
+   "id": "sanguine_tithe",
+   "name": "Sanguine Tithe",
+   "school": "Blood Magic",
+   "tags": [
+    "blood",
+    "aura"
+   ],
+   "icon": "Ѵ",
+   "color": "#901020",
+   "desc": "Draws blood from every angel near you. A share of it flows back into your veins.",
+   "kind": "aura",
+   "cooldown": 0.8,
+   "damage": 4,
+   "params": {
+    "radius": 3.0
+   },
+   "on_hit": [
+    {
+     "do": "heal",
+     "amount": 0.25
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.5
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+0.25 HP per foe drained",
+     "heal_bonus": 0.25
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.5
+    },
+    {
+     "text": "+80% damage",
+     "damage": 0.8
+    }
+   ]
+  },
+  {
+   "id": "bloodboil",
+   "name": "Bloodboil",
+   "school": "Blood Magic",
+   "tags": [
+    "blood",
+    "curse",
+    "dot"
+   ],
+   "icon": "☍",
+   "color": "#e0304a",
+   "desc": "Brands nearby foes. Their blood boils, and when they die they burst in a crimson spray.",
+   "kind": "hex",
+   "cooldown": 2.6,
+   "damage": 4,
+   "params": {
+    "count": 4,
+    "range": 8
+   },
+   "status": [
+    {
+     "id": "bleed",
+     "stacks": 3
+    }
+   ],
+   "on_kill": [
+    {
+     "do": "explode",
+     "radius": 2.0,
+     "damage": 10,
+     "flat": true,
+     "status": [
+      {
+       "id": "bleed",
+       "stacks": 2
+      }
+     ],
+     "color": "#c4101e"
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "+2 Bleeding stacks",
+     "status_stacks": 2
+    },
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+3 targets",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "raise_thralls",
+   "name": "Raise Thralls",
+   "school": "Necromancy",
+   "tags": [
+    "necro",
+    "summon"
+   ],
+   "icon": "Ж",
+   "color": "#c86a78",
+   "desc": "Drags skeletal thralls up from the ash. They hunt the nearest angel and claw at it.",
+   "kind": "summon",
+   "cooldown": 3.5,
+   "damage": 7,
+   "params": {
+    "count": 2,
+    "lifetime": 14,
+    "speed": 5.0,
+    "hit_rate": 0.6,
+    "style": "thrall"
+   },
+   "levels": [
+    {
+     "text": "+1 thrall",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 thrall",
+     "count": 1
+    },
+    {
+     "text": "Thralls move 25% faster",
+     "speed": 1.25
+    },
+    {
+     "text": "+2 thralls",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "wraith_host",
+   "name": "Wraith Host",
+   "school": "Necromancy",
+   "tags": [
+    "necro",
+    "summon",
+    "shadow"
+   ],
+   "icon": "♆",
+   "color": "#d890b0",
+   "desc": "Looses screaming wraiths that streak through the ranks of Heaven, passing through bodies.",
+   "kind": "summon",
+   "cooldown": 5.0,
+   "damage": 9,
+   "params": {
+    "count": 3,
+    "lifetime": 6,
+    "speed": 9.0,
+    "hit_rate": 0.35,
+    "style": "wraith"
+   },
+   "levels": [
+    {
+     "text": "+1 wraith",
+     "count": 1
+    },
+    {
+     "text": "+3s lifetime",
+     "lifetime": 3
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+2 wraiths",
+     "count": 2
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "bone_spear",
+   "name": "Bone Spear",
+   "school": "Necromancy",
+   "tags": [
+    "necro",
+    "projectile"
+   ],
+   "icon": "➶",
+   "color": "#e8dcc0",
+   "desc": "Hurls a spear of fused bone that skewers a whole line of foes.",
+   "kind": "bolt",
+   "cooldown": 2.0,
+   "damage": 17,
+   "params": {
+    "count": 1,
+    "speed": 22,
+    "range": 18,
+    "pierce": 99,
+    "size": 0.22,
+    "style": "spear"
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 spear",
+     "count": 1
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+1 spear",
+     "count": 1
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "corpse_explosion",
+   "name": "Corpse Detonation",
+   "school": "Necromancy",
+   "tags": [
+    "necro",
+    "area"
+   ],
+   "icon": "✷",
+   "color": "#c83a30",
+   "desc": "Detonates the fresh corpses of fallen angels around you, each a blast of bone and rot.",
+   "kind": "corpse",
+   "cooldown": 1.6,
+   "damage": 16,
+   "params": {
+    "count": 3,
+    "radius": 2.2,
+    "range": 10
+   },
+   "levels": [
+    {
+     "text": "+2 corpses per cast",
+     "count": 2
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% blast radius",
+     "radius": 0.55
+    },
+    {
+     "text": "+3 corpses per cast",
+     "count": 3
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "pestilent_cloud",
+   "name": "Pestilent Cloud",
+   "school": "Plague",
+   "tags": [
+    "plague",
+    "area",
+    "dot"
+   ],
+   "icon": "∴",
+   "color": "#9acd32",
+   "desc": "Leaves a choking cloud of pestilence on a foe. All inside are Plagued.",
+   "kind": "zone",
+   "cooldown": 3.0,
+   "damage": 2.5,
+   "params": {
+    "count": 1,
+    "radius": 2.2,
+    "duration": 5.0,
+    "tick": 0.5,
+    "range": 11,
+    "style": "cloud"
+   },
+   "status": [
+    {
+     "id": "plague",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+25% radius",
+     "radius": 0.55
+    },
+    {
+     "text": "+1 cloud",
+     "count": 1
+    },
+    {
+     "text": "+2s duration",
+     "duration": 2.0
+    },
+    {
+     "text": "+1 Plague stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+1 cloud",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "blight_spit",
+   "name": "Blight Spit",
+   "school": "Plague",
+   "tags": [
+    "plague",
+    "projectile",
+    "dot"
+   ],
+   "icon": "⊕",
+   "color": "#b4e04a",
+   "desc": "Spits globs of rot. They Plague whatever they strike, and plague spreads on death.",
+   "kind": "bolt",
+   "cooldown": 1.1,
+   "damage": 6,
+   "params": {
+    "count": 2,
+    "spread": 0.3,
+    "speed": 11,
+    "range": 12,
+    "pierce": 0,
+    "size": 0.22,
+    "explode": 1.2
+   },
+   "status": [
+    {
+     "id": "plague",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 glob",
+     "count": 1
+    },
+    {
+     "text": "+1 Plague stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+40% splash radius",
+     "explode": 0.5
+    },
+    {
+     "text": "+2 globs",
+     "count": 2
+    },
+    {
+     "text": "+1 Plague stack",
+     "status_stacks": 1
+    }
+   ]
+  },
+  {
+   "id": "rot_aura",
+   "name": "Mantle of Rot",
+   "school": "Plague",
+   "tags": [
+    "plague",
+    "aura"
+   ],
+   "icon": "❂",
+   "color": "#6fa020",
+   "desc": "A mantle of flies and decay. Foes who linger beside you sicken.",
+   "kind": "aura",
+   "cooldown": 1.0,
+   "damage": 1,
+   "params": {
+    "radius": 3.4
+   },
+   "status": [
+    {
+     "id": "plague",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.55
+    },
+    {
+     "text": "+1 Plague stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.55
+    },
+    {
+     "text": "-30% tick time",
+     "cooldown": -0.3
+    },
+    {
+     "text": "+2 Plague stacks",
+     "status_stacks": 2
+    }
+   ]
+  },
+  {
+   "id": "locust_swarm",
+   "name": "Locust Swarm",
+   "school": "Plague",
+   "tags": [
+    "plague",
+    "summon"
+   ],
+   "icon": "⁂",
+   "color": "#c8d040",
+   "desc": "Releases a cloud of carrion locusts that chew through the nearest angels and spread rot.",
+   "kind": "summon",
+   "cooldown": 4.5,
+   "damage": 3,
+   "params": {
+    "count": 4,
+    "lifetime": 7,
+    "speed": 7.5,
+    "hit_rate": 0.3,
+    "style": "locust"
+   },
+   "status": [
+    {
+     "id": "plague",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 locusts",
+     "count": 2
+    },
+    {
+     "text": "+3s lifetime",
+     "lifetime": 3
+    },
+    {
+     "text": "+2 locusts",
+     "count": 2
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+4 locusts",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "infernal_storm",
+   "name": "Infernal Storm",
+   "school": "Storm",
+   "tags": [
+    "storm",
+    "chain"
+   ],
+   "icon": "ϟ",
+   "color": "#ff4a6a",
+   "desc": "Red lightning leaps from your claws and arcs between angels.",
+   "kind": "chain",
+   "cooldown": 1.5,
+   "damage": 11,
+   "params": {
+    "count": 1,
+    "jumps": 4,
+    "range": 9,
+    "jump_range": 4.5
+   },
+   "status": [
+    {
+     "id": "shock",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 jumps",
+     "jumps": 2
+    },
+    {
+     "text": "+35% damage",
+     "damage": 0.35
+    },
+    {
+     "text": "+1 bolt",
+     "count": 1
+    },
+    {
+     "text": "+2 jumps",
+     "jumps": 2
+    },
+    {
+     "text": "+1 bolt, -15% cooldown",
+     "count": 1,
+     "cooldown": -0.15
+    }
+   ]
+  },
+  {
+   "id": "thunder_brand",
+   "name": "Brand of Thunder",
+   "school": "Storm",
+   "tags": [
+    "storm",
+    "area"
+   ],
+   "icon": "Ϟ",
+   "color": "#ff7090",
+   "desc": "The sky over Heaven splits: crimson bolts strike random foes nearby.",
+   "kind": "strike",
+   "cooldown": 2.2,
+   "damage": 10,
+   "params": {
+    "count": 3,
+    "radius": 1.3,
+    "delay": 0.25,
+    "range": 12,
+    "style": "lightning"
+   },
+   "status": [
+    {
+     "id": "shock",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 strikes",
+     "count": 2
+    },
+    {
+     "text": "+35% damage",
+     "damage": 0.35
+    },
+    {
+     "text": "+2 strikes",
+     "count": 2
+    },
+    {
+     "text": "+30% radius",
+     "radius": 0.4
+    },
+    {
+     "text": "+3 strikes",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "ball_lightning",
+   "name": "Ball Lightning",
+   "school": "Storm",
+   "tags": [
+    "storm",
+    "orbit"
+   ],
+   "icon": "⊛",
+   "color": "#ff5aa0",
+   "desc": "Crackling orbs circle you, shocking anything they touch.",
+   "kind": "orbit",
+   "cooldown": 1.0,
+   "damage": 7,
+   "params": {
+    "count": 2,
+    "radius": 2.6,
+    "spin": 2.4,
+    "size": 0.35,
+    "rehit": 0.5,
+    "style": "orb"
+   },
+   "status": [
+    {
+     "id": "shock",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 orb",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 orb",
+     "count": 1
+    },
+    {
+     "text": "+25% orbit radius",
+     "radius": 0.65
+    },
+    {
+     "text": "+2 orbs",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "tempest_nova",
+   "name": "Tempest Crown",
+   "school": "Storm",
+   "tags": [
+    "storm",
+    "area"
+   ],
+   "icon": "Ψ",
+   "color": "#ff3a7a",
+   "desc": "A crown of lightning flares above you, discharging into every foe in reach.",
+   "kind": "chain",
+   "cooldown": 3.5,
+   "damage": 9,
+   "params": {
+    "count": 6,
+    "jumps": 0,
+    "range": 6.5,
+    "jump_range": 3.0
+   },
+   "status": [
+    {
+     "id": "shock",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+3 targets",
+     "count": 3
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "Every bolt jumps once",
+     "jumps": 1
+    },
+    {
+     "text": "+3 targets",
+     "count": 3
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "umbral_step",
+   "name": "Umbral Step",
+   "school": "Shadow",
+   "tags": [
+    "shadow",
+    "movement"
+   ],
+   "icon": "⇝",
+   "color": "#7a5cff",
+   "desc": "When angels close in, you step through shadow behind the nearest one, cutting all in your path.",
+   "kind": "blink",
+   "cooldown": 2.5,
+   "damage": 28,
+   "params": {
+    "range": 7,
+    "width": 1.2,
+    "trigger_range": 4.0
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+50% path width",
+     "width": 0.6
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "shadow_daggers",
+   "name": "Shadow Daggers",
+   "school": "Shadow",
+   "tags": [
+    "shadow",
+    "projectile"
+   ],
+   "icon": "†",
+   "color": "#9a7aff",
+   "desc": "Flings a spread of black daggers. Assassin's edge: 25% chance to strike for triple damage.",
+   "kind": "bolt",
+   "cooldown": 1.0,
+   "damage": 6,
+   "params": {
+    "count": 3,
+    "spread": 0.35,
+    "speed": 18,
+    "range": 13,
+    "pierce": 1,
+    "size": 0.14,
+    "crit": 0.25,
+    "crit_mult": 3.0,
+    "style": "dagger"
+   },
+   "levels": [
+    {
+     "text": "+2 daggers",
+     "count": 2
+    },
+    {
+     "text": "+10% crit chance",
+     "crit": 0.1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+2 daggers",
+     "count": 2
+    },
+    {
+     "text": "Crits deal x4",
+     "crit_mult": 1.0
+    }
+   ]
+  },
+  {
+   "id": "death_mark",
+   "name": "Death Mark",
+   "school": "Shadow",
+   "tags": [
+    "shadow",
+    "curse"
+   ],
+   "icon": "⌖",
+   "color": "#ff2a6a",
+   "desc": "Marks the strongest angel nearby. After 3 seconds the mark erupts for 40 damage plus all the damage it took while marked.",
+   "kind": "hex",
+   "cooldown": 4.0,
+   "damage": 12,
+   "params": {
+    "count": 1,
+    "range": 12,
+    "prefer": "strongest"
+   },
+   "status": [
+    {
+     "id": "doom",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 mark",
+     "count": 1
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+1 mark",
+     "count": 1
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+2 marks",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "shade_clone",
+   "name": "Shade Clones",
+   "school": "Shadow",
+   "tags": [
+    "shadow",
+    "summon"
+   ],
+   "icon": "Ѫ",
+   "color": "#6040c0",
+   "desc": "Splits off shadows of yourself that dash from angel to angel, cutting as they go.",
+   "kind": "summon",
+   "cooldown": 6.0,
+   "damage": 14,
+   "params": {
+    "count": 2,
+    "lifetime": 5,
+    "speed": 12.0,
+    "hit_rate": 0.4,
+    "style": "shade"
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 shade",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+2s lifetime",
+     "lifetime": 2
+    },
+    {
+     "text": "+1 shade",
+     "count": 1
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "brimstone_maul",
+   "name": "Brimstone Maul",
+   "school": "Brimstone",
+   "tags": [
+    "brute",
+    "melee",
+    "fire"
+   ],
+   "icon": "Ѧ",
+   "color": "#ff9a30",
+   "desc": "A crushing overhead blow in front of you. Enormous damage, slow and heavy.",
+   "kind": "cone",
+   "cooldown": 2.2,
+   "damage": 28,
+   "params": {
+    "radius": 3.6,
+    "arc": 110,
+    "knockback": 10
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+20% reach",
+     "radius": 0.65
+    },
+    {
+     "text": "Wider swing",
+     "arc": 50
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "earthsunder",
+   "name": "Earthsunder",
+   "school": "Brimstone",
+   "tags": [
+    "brute",
+    "area"
+   ],
+   "icon": "⌇",
+   "color": "#ffb060",
+   "desc": "Splits the ground in a long fissure toward your foe; molten rock erupts along it.",
+   "kind": "line",
+   "cooldown": 3.0,
+   "damage": 20,
+   "params": {
+    "length": 9,
+    "width": 1.4,
+    "knockback": 6,
+    "style": "fissure"
+   },
+   "levels": [
+    {
+     "text": "+30% length",
+     "length": 2.7
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+50% width",
+     "width": 0.7
+    },
+    {
+     "text": "+1 fissure",
+     "count": 1
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "ground_slam",
+   "name": "Hellquake",
+   "school": "Brimstone",
+   "tags": [
+    "brute",
+    "area",
+    "melee"
+   ],
+   "icon": "Δ",
+   "color": "#d07030",
+   "desc": "Stamps the earth. A shockwave staggers and roots everything in a wide ring.",
+   "kind": "nova",
+   "cooldown": 5.0,
+   "damage": 18,
+   "params": {
+    "radius": 4.6,
+    "knockback": 2
+   },
+   "status": [
+    {
+     "id": "root",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.9
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.9
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "hellhook",
+   "name": "Hellhook",
+   "school": "Chains",
+   "tags": [
+    "chain",
+    "cc"
+   ],
+   "icon": "∫",
+   "color": "#d0a060",
+   "desc": "Hurls barbed hooks at distant foes and drags them to your feet, Bound.",
+   "kind": "hook",
+   "cooldown": 2.6,
+   "damage": 10,
+   "params": {
+    "count": 2,
+    "range": 11,
+    "min_range": 3.0
+   },
+   "status": [
+    {
+     "id": "root",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 hook",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 hook",
+     "count": 1
+    },
+    {
+     "text": "+25% range",
+     "range": 2.75
+    },
+    {
+     "text": "+2 hooks",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "binding_chains",
+   "name": "Binding Chains",
+   "school": "Chains",
+   "tags": [
+    "chain",
+    "cc",
+    "curse"
+   ],
+   "icon": "§",
+   "color": "#b08040",
+   "desc": "Chains erupt from the ground around foes and hold them fast.",
+   "kind": "hex",
+   "cooldown": 3.2,
+   "damage": 6,
+   "params": {
+    "count": 4,
+    "range": 9
+   },
+   "status": [
+    {
+     "id": "root",
+     "stacks": 1
+    },
+    {
+     "id": "chill",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+4 targets",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "chain_whirl",
+   "name": "Chain Whirl",
+   "school": "Chains",
+   "tags": [
+    "chain",
+    "orbit",
+    "melee"
+   ],
+   "icon": "⟲",
+   "color": "#c09050",
+   "desc": "Spinning flails of chain sweep around you, battering anything they catch.",
+   "kind": "orbit",
+   "cooldown": 1.0,
+   "damage": 8,
+   "params": {
+    "count": 2,
+    "radius": 3.0,
+    "spin": 3.2,
+    "size": 0.4,
+    "rehit": 0.45,
+    "style": "flail",
+    "knockback": 5
+   },
+   "levels": [
+    {
+     "text": "+1 flail",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+20% reach",
+     "radius": 0.6
+    },
+    {
+     "text": "+1 flail",
+     "count": 1
+    },
+    {
+     "text": "Spins 30% faster",
+     "spin": 1.0
+    }
+   ]
+  },
+  {
+   "id": "hex_frailty",
+   "name": "Hex of Frailty",
+   "school": "Curses",
+   "tags": [
+    "curse"
+   ],
+   "icon": "⍟",
+   "color": "#b050ff",
+   "desc": "Lays a hex on nearby foes: every Curse stack makes them take 8% more damage from all sources.",
+   "kind": "hex",
+   "cooldown": 2.0,
+   "damage": 2,
+   "params": {
+    "count": 5,
+    "range": 9
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+3 targets",
+     "count": 3
+    },
+    {
+     "text": "+1 Curse stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+3 targets",
+     "count": 3
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+2 Curse stacks",
+     "status_stacks": 2
+    }
+   ]
+  },
+  {
+   "id": "withering_gaze",
+   "name": "Withering Gaze",
+   "school": "Curses",
+   "tags": [
+    "curse",
+    "area"
+   ],
+   "icon": "◉",
+   "color": "#c070ff",
+   "desc": "A beam of withering malice. Slows, curses and scorches everything along it.",
+   "kind": "line",
+   "cooldown": 2.4,
+   "damage": 12,
+   "params": {
+    "length": 11,
+    "width": 0.9,
+    "style": "beam"
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 1
+    },
+    {
+     "id": "chill",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 beam",
+     "count": 1
+    },
+    {
+     "text": "+50% width",
+     "width": 0.45
+    },
+    {
+     "text": "+1 Curse stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+1 beam",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "malediction",
+   "name": "Malediction",
+   "school": "Curses",
+   "tags": [
+    "curse",
+    "area"
+   ],
+   "icon": "✠",
+   "color": "#8020d0",
+   "desc": "Speaks an unholy word. Every foe nearby is Cursed and slowed; cursed foes that die spread it.",
+   "kind": "nova",
+   "cooldown": 5.0,
+   "damage": 6,
+   "params": {
+    "radius": 5.5,
+    "knockback": 0
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 2
+    },
+    {
+     "id": "chill",
+     "stacks": 2
+    }
+   ],
+   "on_kill": [
+    {
+     "do": "spread",
+     "status": "curse",
+     "count": 3,
+     "range": 4.0,
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 1.1
+    },
+    {
+     "text": "+1 Curse stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+20% radius",
+     "radius": 1.1
+    },
+    {
+     "text": "+100% damage",
+     "damage": 1.0
+    }
+   ]
+  },
+  {
+   "id": "soul_siphon",
+   "name": "Soul Siphon",
+   "school": "Soul Harvest",
+   "tags": [
+    "soul",
+    "projectile"
+   ],
+   "icon": "❦",
+   "color": "#ff3346",
+   "desc": "Every angel slain feeds you a Soul (max 200). Fires soul bolts, one more for every 20 Souls held.",
+   "kind": "bolt",
+   "cooldown": 1.4,
+   "damage": 7,
+   "params": {
+    "count": 1,
+    "speed": 12,
+    "range": 14,
+    "pierce": 1,
+    "size": 0.2,
+    "homing": 6.0,
+    "per_souls": 20,
+    "soul_scale": 0.004,
+    "style": "soul"
+   },
+   "levels": [
+    {
+     "text": "+1 bolt",
+     "count": 1
+    },
+    {
+     "text": "+1 bolt per 15 Souls",
+     "per_souls": -5
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "Souls empower bolts more",
+     "soul_scale": 0.004
+    },
+    {
+     "text": "+2 bolts",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "reaping_wail",
+   "name": "Reaping Wail",
+   "school": "Soul Harvest",
+   "tags": [
+    "soul",
+    "area"
+   ],
+   "icon": "☊",
+   "color": "#ff6070",
+   "desc": "A wail of the damned. Damage grows by 1% per Soul held. Kills feed you extra Souls.",
+   "kind": "nova",
+   "cooldown": 3.5,
+   "damage": 14,
+   "params": {
+    "radius": 5.0,
+    "knockback": 3,
+    "soul_scale": 0.01
+   },
+   "on_kill": [
+    {
+     "do": "soul",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.85
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+0.5% per Soul",
+     "soul_scale": 0.005
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.85
+    }
+   ]
+  },
+  {
+   "id": "soul_lanterns",
+   "name": "Soul Lanterns",
+   "school": "Soul Harvest",
+   "tags": [
+    "soul",
+    "orbit"
+   ],
+   "icon": "♁",
+   "color": "#ff4058",
+   "desc": "Lanterns of captured souls circle you. One more lantern for every 40 Souls held.",
+   "kind": "orbit",
+   "cooldown": 1.0,
+   "damage": 11,
+   "params": {
+    "count": 1,
+    "radius": 2.4,
+    "spin": 2.0,
+    "size": 0.3,
+    "rehit": 0.5,
+    "per_souls": 40,
+    "soul_scale": 0.004,
+    "style": "lantern"
+   },
+   "status": [
+    {
+     "id": "soul_mark",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 lantern",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 lantern per 30 Souls",
+     "per_souls": -10
+    },
+    {
+     "text": "+1 lantern",
+     "count": 1
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "harvest_moon",
+   "name": "Harvest of Souls",
+   "school": "Soul Harvest",
+   "tags": [
+    "soul",
+    "buff"
+   ],
+   "icon": "Ω",
+   "color": "#ff8090",
+   "desc": "Permanently: +0.2% Might per Soul held. Activates every 8s to pull all souls (XP) toward you.",
+   "kind": "harvest",
+   "cooldown": 8.0,
+   "damage": 0,
+   "params": {
+    "might_per_soul": 0.002
+   },
+   "levels": [
+    {
+     "text": "+0.1% Might per Soul",
+     "might_per_soul": 0.001
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+0.1% Might per Soul",
+     "might_per_soul": 0.001
+    },
+    {
+     "text": "+0.1% Might per Soul",
+     "might_per_soul": 0.001
+    },
+    {
+     "text": "+0.2% Might per Soul",
+     "might_per_soul": 0.002
+    }
+   ]
+  },
+  {
+   "id": "wrathful_cleave",
+   "name": "Wrathful Cleave",
+   "school": "Wrath",
+   "tags": [
+    "wrath",
+    "melee"
+   ],
+   "icon": "Ꙩ",
+   "color": "#ff3a1a",
+   "desc": "A furious sweep before you. +3% damage per Wrath stack (Wrath builds as you are hurt or swarmed).",
+   "kind": "cone",
+   "cooldown": 1.8,
+   "damage": 18,
+   "params": {
+    "radius": 3.4,
+    "arc": 140,
+    "knockback": 6,
+    "wrath_scale": 0.03
+   },
+   "levels": [
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "+20% reach",
+     "radius": 0.6
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+1% per Wrath stack",
+     "wrath_scale": 0.01
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    }
+   ]
+  },
+  {
+   "id": "retribution",
+   "name": "Retribution",
+   "school": "Wrath",
+   "tags": [
+    "wrath",
+    "area"
+   ],
+   "icon": "ᛟ",
+   "color": "#ff2a10",
+   "desc": "When your Wrath reaches 6 stacks, vents it as a nova: base damage plus 2.5 per Wrath stack, spending half your Wrath.",
+   "kind": "retaliate",
+   "cooldown": 1.5,
+   "damage": 10,
+   "params": {
+    "radius": 3.8,
+    "threshold": 6,
+    "retaliate_mult": 2.5,
+    "knockback": 7
+   },
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.8
+    },
+    {
+     "text": "+0.5 per Wrath stack",
+     "retaliate_mult": 0.5
+    },
+    {
+     "text": "Vents from 4 Wrath",
+     "threshold": -2
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+1 per Wrath stack",
+     "retaliate_mult": 1.0
+    }
+   ]
+  },
+  {
+   "id": "berserker_howl",
+   "name": "Berserker's Howl",
+   "school": "Wrath",
+   "tags": [
+    "wrath",
+    "buff"
+   ],
+   "icon": "Ѻ",
+   "color": "#ff5030",
+   "desc": "A howl of hate: for 5 s gain +15% Might plus 1% per Wrath stack, +1 Armor and faster casting.",
+   "kind": "buff",
+   "cooldown": 10.0,
+   "damage": 0,
+   "params": {
+    "duration": 5.0,
+    "might": 0.15,
+    "might_per_wrath": 0.01,
+    "armor": 1.0,
+    "move_speed": 0.6,
+    "cooldown_stat": -0.1
+   },
+   "levels": [
+    {
+     "text": "+2s duration",
+     "duration": 2.0
+    },
+    {
+     "text": "+0.5% Might per Wrath",
+     "might_per_wrath": 0.005
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+1 Armor while howling",
+     "armor": 1.0
+    },
+    {
+     "text": "+1% Might per Wrath",
+     "might_per_wrath": 0.01
+    }
+   ]
+  },
+  {
+   "id": "seething_aura",
+   "name": "Seething Aura",
+   "school": "Wrath",
+   "tags": [
+    "wrath",
+    "aura"
+   ],
+   "icon": "◍",
+   "color": "#d02a10",
+   "desc": "Your hate scalds everything near you. +5% damage per Wrath stack.",
+   "kind": "aura",
+   "cooldown": 0.7,
+   "damage": 3.5,
+   "params": {
+    "radius": 2.8,
+    "wrath_scale": 0.05
+   },
+   "levels": [
+    {
+     "text": "+20% radius",
+     "radius": 0.5
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    },
+    {
+     "text": "+2% per Wrath stack",
+     "wrath_scale": 0.02
+    },
+    {
+     "text": "+20% radius",
+     "radius": 0.5
+    },
+    {
+     "text": "+100% damage",
+     "damage": 1.0
+    }
+   ]
+  },
+  {
+   "id": "coin_barrage",
+   "name": "Coin Barrage",
+   "school": "Greed",
+   "tags": [
+    "greed",
+    "projectile"
+   ],
+   "icon": "¤",
+   "color": "#ffd040",
+   "desc": "Flings a fan of burning coins. +0.4% damage per Ichor you carry. Kills sometimes spill Ichor.",
+   "kind": "bolt",
+   "cooldown": 1.2,
+   "damage": 6,
+   "params": {
+    "count": 4,
+    "spread": 0.6,
+    "speed": 15,
+    "range": 12,
+    "pierce": 0,
+    "size": 0.16,
+    "style": "coin",
+    "greed_scale": 0.004
+   },
+   "on_kill": [
+    {
+     "do": "ichor",
+     "amount": 1,
+     "chance": 0.12
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 coins",
+     "count": 2
+    },
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "Coins pierce once",
+     "pierce": 1
+    },
+    {
+     "text": "+0.2% per Ichor",
+     "greed_scale": 0.002
+    },
+    {
+     "text": "+3 coins",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "midas_touch",
+   "name": "Midas Touch",
+   "school": "Greed",
+   "tags": [
+    "greed",
+    "curse"
+   ],
+   "icon": "Ѯ",
+   "color": "#ffe070",
+   "desc": "Gilds nearby angels: they take 15% more damage and drop Ichor when they die.",
+   "kind": "hex",
+   "cooldown": 3.0,
+   "damage": 7,
+   "params": {
+    "count": 3,
+    "range": 9
+   },
+   "status": [
+    {
+     "id": "gilded",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+3 targets",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "avarice",
+   "name": "Avarice",
+   "school": "Greed",
+   "tags": [
+    "greed",
+    "area"
+   ],
+   "icon": "Ꝑ",
+   "color": "#ffc020",
+   "desc": "Spends 2 Ichor to drop a molten ingot on the thickest crowd. +0.6% damage per Ichor you carry.",
+   "kind": "strike",
+   "cooldown": 3.5,
+   "damage": 40,
+   "params": {
+    "count": 1,
+    "radius": 2.2,
+    "delay": 0.6,
+    "range": 13,
+    "style": "gold",
+    "ichor_cost": 2,
+    "greed_scale": 0.006,
+    "knockback": 6
+   },
+   "status": [
+    {
+     "id": "gilded",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% radius",
+     "radius": 0.55
+    },
+    {
+     "text": "+1 ingot",
+     "count": 1
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+0.3% per Ichor",
+     "greed_scale": 0.003
+    }
+   ]
+  },
+  {
+   "id": "tithe_coins",
+   "name": "Tithe of Coins",
+   "school": "Greed",
+   "tags": [
+    "greed",
+    "orbit"
+   ],
+   "icon": "⊜",
+   "color": "#f0c040",
+   "desc": "Spinning coins circle you. +0.4% damage per Ichor you carry. Kills sometimes spill Ichor.",
+   "kind": "orbit",
+   "cooldown": 1.0,
+   "damage": 7,
+   "params": {
+    "count": 3,
+    "radius": 2.4,
+    "spin": 3.0,
+    "size": 0.25,
+    "rehit": 0.5,
+    "style": "coin",
+    "greed_scale": 0.004
+   },
+   "on_kill": [
+    {
+     "do": "ichor",
+     "amount": 1,
+     "chance": 0.08
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 coin",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 coin",
+     "count": 1
+    },
+    {
+     "text": "+25% orbit radius",
+     "radius": 0.6
+    },
+    {
+     "text": "+2 coins",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "stolen_radiance",
+   "name": "Stolen Radiance",
+   "school": "Envy",
+   "tags": [
+    "envy",
+    "projectile"
+   ],
+   "icon": "Ꙭ",
+   "color": "#58c070",
+   "desc": "Snatches holy orbs and bolts flying near you and hurls them back, twice as hard. With none to steal, fires a stolen ray.",
+   "kind": "reflect",
+   "cooldown": 1.6,
+   "damage": 8,
+   "params": {
+    "radius": 5.0,
+    "count": 3,
+    "power": 2.0,
+    "speed": 16
+   },
+   "levels": [
+    {
+     "text": "+25% steal radius",
+     "radius": 1.25
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "x3 their damage",
+     "power": 1.0
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+2 stolen per cast",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "covetous_gaze",
+   "name": "Covetous Gaze",
+   "school": "Envy",
+   "tags": [
+    "envy",
+    "area"
+   ],
+   "icon": "ↂ",
+   "color": "#46a860",
+   "desc": "Copies the nearest angel's own attack and turns it on Heaven: its volley, its charge, its slam or its smite.",
+   "kind": "mimic",
+   "cooldown": 2.4,
+   "damage": 14,
+   "params": {
+    "range": 10,
+    "radius": 2.4,
+    "length": 10,
+    "width": 1.2
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% radius",
+     "radius": 0.6
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+50% width",
+     "width": 0.6
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "jealous_hex",
+   "name": "Jealous Hex",
+   "school": "Envy",
+   "tags": [
+    "envy",
+    "curse"
+   ],
+   "icon": "Ҩ",
+   "color": "#6cd088",
+   "desc": "Curses nearby angels. When a hexed angel dies you steal its glory: +3% Might for 8 s (stacks).",
+   "kind": "hex",
+   "cooldown": 3.0,
+   "damage": 6,
+   "params": {
+    "count": 3,
+    "range": 9
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 1
+    }
+   ],
+   "on_kill": [
+    {
+     "do": "empower",
+     "might": 0.03,
+     "duration": 8
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "+1 Curse stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+2 targets",
+     "count": 2
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+3 targets",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "hubris",
+   "name": "Hubris",
+   "school": "Pride",
+   "tags": [
+    "pride",
+    "area"
+   ],
+   "icon": "♔",
+   "color": "#f2b89a",
+   "desc": "Gathers pride while you go unhurt, then drops a colossal blade on the mightiest angel near: up to 4x damage. Being hit costs some of it.",
+   "kind": "pride",
+   "cooldown": 4.0,
+   "damage": 24,
+   "params": {
+    "range": 12,
+    "radius": 1.6,
+    "charge_rate": 0.25,
+    "max_charge": 3.0,
+    "hurt_loss": 0.2
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "Gathers 30% faster",
+     "charge_rate": 0.075
+    },
+    {
+     "text": "+25% blast radius",
+     "radius": 0.4
+    },
+    {
+     "text": "Up to 5x damage",
+     "max_charge": 1.0
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  },
+  {
+   "id": "prides_fall",
+   "name": "Pride's Fall",
+   "school": "Pride",
+   "tags": [
+    "pride",
+    "area"
+   ],
+   "icon": "⍒",
+   "color": "#f8c8a8",
+   "desc": "Once in a long while, a falling star of pure arrogance flattens a whole host.",
+   "kind": "strike",
+   "cooldown": 10.0,
+   "damage": 55,
+   "params": {
+    "count": 1,
+    "radius": 2.4,
+    "delay": 1.0,
+    "range": 14,
+    "knockback": 10
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% radius",
+     "radius": 0.8
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    },
+    {
+     "text": "+1 star",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "crown_of_contempt",
+   "name": "Crown of Contempt",
+   "school": "Pride",
+   "tags": [
+    "pride",
+    "curse"
+   ],
+   "icon": "♕",
+   "color": "#e8a888",
+   "desc": "Singles out the mightiest angel for scorn: a hit with 35% chance to crit for x3, and two Curse stacks.",
+   "kind": "hex",
+   "cooldown": 2.5,
+   "damage": 15,
+   "params": {
+    "count": 1,
+    "range": 12,
+    "prefer": "strongest",
+    "crit": 0.35,
+    "crit_mult": 3.0
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 2
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+15% crit chance",
+     "crit": 0.15
+    },
+    {
+     "text": "+1 target",
+     "count": 1
+    },
+    {
+     "text": "Crits deal x4",
+     "crit_mult": 1.0
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    }
+   ]
+  },
+  {
+   "id": "devour",
+   "name": "Devour",
+   "school": "Gluttony",
+   "tags": [
+    "gluttony",
+    "melee"
+   ],
+   "icon": "Ѡ",
+   "color": "#c86a3a",
+   "desc": "Swallows a weak angel beside you whole: heals 3 HP and adds Girth (+2 max HP, a little bigger). Stronger ones just get bitten.",
+   "kind": "devour",
+   "cooldown": 1.6,
+   "damage": 12,
+   "params": {
+    "range": 3.2,
+    "threshold": 22,
+    "heal": 3,
+    "count": 1
+   },
+   "levels": [
+    {
+     "text": "+50% swallow threshold",
+     "threshold": 11
+    },
+    {
+     "text": "+1 bite",
+     "count": 1
+    },
+    {
+     "text": "+2 HP per meal",
+     "heal": 2
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+100% swallow threshold",
+     "threshold": 22
+    }
+   ]
+  },
+  {
+   "id": "maw_of_hell",
+   "name": "Maw of Hell",
+   "school": "Gluttony",
+   "tags": [
+    "gluttony",
+    "melee"
+   ],
+   "icon": "Ѿ",
+   "color": "#a04a2a",
+   "desc": "A great maw bites the crowd in front of you. Each kill heals 1 HP.",
+   "kind": "cone",
+   "cooldown": 2.2,
+   "damage": 24,
+   "params": {
+    "radius": 3.2,
+    "arc": 90,
+    "knockback": 3
+   },
+   "on_kill": [
+    {
+     "do": "heal",
+     "amount": 1.0
+    }
+   ],
+   "levels": [
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "Wider bite",
+     "arc": 40
+    },
+    {
+     "text": "+1 HP per kill",
+     "heal_bonus": 1.0
+    },
+    {
+     "text": "+20% reach",
+     "radius": 0.55
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    }
+   ]
+  },
+  {
+   "id": "bilious_belch",
+   "name": "Bilious Belch",
+   "school": "Gluttony",
+   "tags": [
+    "gluttony",
+    "plague",
+    "area"
+   ],
+   "icon": "ӂ",
+   "color": "#b0a040",
+   "desc": "Belches a cloud of half-digested bile onto the nearest foe: Plagued and slowed.",
+   "kind": "zone",
+   "cooldown": 3.5,
+   "damage": 4,
+   "params": {
+    "count": 1,
+    "radius": 2.6,
+    "duration": 4.0,
+    "tick": 0.5,
+    "range": 8,
+    "style": "cloud"
+   },
+   "status": [
+    {
+     "id": "plague",
+     "stacks": 1
+    },
+    {
+     "id": "chill",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+25% radius",
+     "radius": 0.65
+    },
+    {
+     "text": "+1 cloud",
+     "count": 1
+    },
+    {
+     "text": "+2s duration",
+     "duration": 2.0
+    },
+    {
+     "text": "+1 Plague stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+1 cloud",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "mirror_image",
+   "name": "Mirror Image",
+   "school": "Illusion",
+   "tags": [
+    "illusion",
+    "area"
+   ],
+   "icon": "ⵙ",
+   "color": "#c8a8e8",
+   "desc": "Leaves a glass double of yourself that flings mirror shards, then shatters when crowded or after 6 s.",
+   "kind": "decoy",
+   "cooldown": 6.0,
+   "damage": 16,
+   "params": {
+    "count": 1,
+    "max": 3,
+    "rate": 0.9,
+    "reach": 2.4,
+    "lifetime": 6
+   },
+   "status": [
+    {
+     "id": "chill",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 double per cast",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% shatter radius",
+     "reach": 0.6
+    },
+    {
+     "text": "-25% cooldown",
+     "cooldown": -0.25
+    },
+    {
+     "text": "+2 doubles alive",
+     "max": 2
+    }
+   ]
+  },
+  {
+   "id": "hall_of_mirrors",
+   "name": "Hall of Mirrors",
+   "school": "Illusion",
+   "tags": [
+    "illusion",
+    "orbit"
+   ],
+   "icon": "▯",
+   "color": "#d4b4ec",
+   "desc": "Panes of enchanted glass circle you, dazing (slowing) whatever they cut.",
+   "kind": "orbit",
+   "cooldown": 1.0,
+   "damage": 7,
+   "params": {
+    "count": 3,
+    "radius": 2.8,
+    "spin": 1.6,
+    "size": 0.35,
+    "rehit": 0.6,
+    "style": "mirror"
+   },
+   "status": [
+    {
+     "id": "chill",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 pane",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 pane",
+     "count": 1
+    },
+    {
+     "text": "+25% orbit radius",
+     "radius": 0.7
+    },
+    {
+     "text": "+2 panes",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "doppelganger",
+   "name": "Doppelganger",
+   "school": "Illusion",
+   "tags": [
+    "illusion",
+    "summon"
+   ],
+   "icon": "Ꙫ",
+   "color": "#d898e0",
+   "desc": "Calls a succubus wearing your face. She hexes angels from range.",
+   "kind": "summon",
+   "cooldown": 6.0,
+   "damage": 9,
+   "params": {
+    "count": 1,
+    "lifetime": 12,
+    "speed": 4.0,
+    "hit_rate": 1.2,
+    "style": "succubus"
+   },
+   "status": [
+    {
+     "id": "curse",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 succubus",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+4s lifetime",
+     "lifetime": 4
+    },
+    {
+     "text": "Strikes 25% faster",
+     "hit_rate": -0.3
+    },
+    {
+     "text": "+1 succubus",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "brimstone_turret",
+   "name": "Brimstone Turret",
+   "school": "Infernal Machinery",
+   "tags": [
+    "machine",
+    "projectile"
+   ],
+   "icon": "⊤",
+   "color": "#ffa040",
+   "desc": "Bolts an iron turret to the ground beside you. It spits burning slugs at angels for 12 s (2 at once).",
+   "kind": "turret",
+   "cooldown": 4.0,
+   "damage": 7,
+   "params": {
+    "count": 1,
+    "max": 2,
+    "rate": 0.7,
+    "reach": 9,
+    "lifetime": 12
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 turret alive",
+     "max": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "Fires 25% faster",
+     "rate": -0.17
+    },
+    {
+     "text": "+4s lifetime",
+     "lifetime": 4
+    },
+    {
+     "text": "+1 turret alive",
+     "max": 1
+    }
+   ]
+  },
+  {
+   "id": "hellmine_field",
+   "name": "Hellmine Field",
+   "school": "Infernal Machinery",
+   "tags": [
+    "machine",
+    "trap",
+    "area"
+   ],
+   "icon": "⊚",
+   "color": "#ff7a20",
+   "desc": "Strews spiked mines around you. They arm in a moment and burst when an angel steps close.",
+   "kind": "mine",
+   "cooldown": 2.5,
+   "damage": 26,
+   "params": {
+    "count": 2,
+    "max": 10,
+    "reach": 2.0,
+    "lifetime": 14,
+    "scatter": 3.5
+   },
+   "levels": [
+    {
+     "text": "+1 mine per cast",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+25% blast radius",
+     "reach": 0.5
+    },
+    {
+     "text": "+6 mines on the field",
+     "max": 6
+    },
+    {
+     "text": "+1 mine per cast",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "infernal_engine",
+   "name": "Infernal Engine",
+   "school": "Infernal Machinery",
+   "tags": [
+    "machine",
+    "fire"
+   ],
+   "icon": "Ⓘ",
+   "color": "#ff6020",
+   "desc": "Plants a squat engine that belches cones of hellfire at anything within 6 m.",
+   "kind": "turret",
+   "cooldown": 6.0,
+   "damage": 5,
+   "params": {
+    "count": 1,
+    "max": 1,
+    "rate": 0.4,
+    "reach": 6,
+    "lifetime": 10,
+    "flamer": 1
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 engine alive",
+     "max": 1
+    },
+    {
+     "text": "+4s lifetime",
+     "lifetime": 4
+    },
+    {
+     "text": "+1 Burning stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+50% damage",
+     "damage": 0.5
+    }
+   ]
+  },
+  {
+   "id": "hellfire_lash",
+   "name": "Hellfire Lash",
+   "school": "Hellfire Whip",
+   "tags": [
+    "whip",
+    "fire",
+    "melee"
+   ],
+   "icon": "ᔕ",
+   "color": "#ff5a2a",
+   "desc": "A long burning lash in front of you. Foes caught by the tip take 70% more.",
+   "kind": "whip",
+   "cooldown": 1.4,
+   "damage": 12,
+   "params": {
+    "count": 1,
+    "length": 5.0,
+    "arc": 130,
+    "tip_mult": 1.7
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+1 lash (back-hand)",
+     "count": 1
+    },
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "+20% reach",
+     "length": 1.0
+    },
+    {
+     "text": "Tip deals +30%",
+     "tip_mult": 0.3
+    },
+    {
+     "text": "+1 lash",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "chain_dance",
+   "name": "Chain Dance",
+   "school": "Hellfire Whip",
+   "tags": [
+    "whip",
+    "chain",
+    "melee"
+   ],
+   "icon": "⥁",
+   "color": "#e08a40",
+   "desc": "You whirl a burning chain all the way around you, twice.",
+   "kind": "whip",
+   "cooldown": 2.4,
+   "damage": 9,
+   "params": {
+    "count": 2,
+    "length": 4.2,
+    "tip_mult": 1.5,
+    "knockback": 4,
+    "style": "spin"
+   },
+   "levels": [
+    {
+     "text": "+1 whirl",
+     "count": 1
+    },
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "+20% reach",
+     "length": 0.85
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+1 whirl",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "barbed_flurry",
+   "name": "Barbed Flurry",
+   "school": "Hellfire Whip",
+   "tags": [
+    "whip",
+    "blood",
+    "melee"
+   ],
+   "icon": "ᘓ",
+   "color": "#d03040",
+   "desc": "Four quick lashes of a barbed scourge, each tearing flesh (Bleeding).",
+   "kind": "whip",
+   "cooldown": 2.0,
+   "damage": 6,
+   "params": {
+    "count": 4,
+    "length": 4.0,
+    "arc": 90,
+    "tip_mult": 1.4
+   },
+   "status": [
+    {
+     "id": "bleed",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 lashes",
+     "count": 2
+    },
+    {
+     "text": "+30% damage",
+     "damage": 0.3
+    },
+    {
+     "text": "+1 Bleeding stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "-20% cooldown",
+     "cooldown": -0.2
+    },
+    {
+     "text": "+2 lashes",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "call_the_pack",
+   "name": "Call the Pack",
+   "school": "Necromancy",
+   "tags": [
+    "necro",
+    "summon"
+   ],
+   "icon": "Ѣ",
+   "color": "#ff7040",
+   "desc": "Hellhounds bound from the pit and run down the nearest angels.",
+   "kind": "summon",
+   "cooldown": 5.0,
+   "damage": 9,
+   "params": {
+    "count": 2,
+    "lifetime": 15,
+    "speed": 7.0,
+    "hit_rate": 0.7,
+    "style": "hellhound"
+   },
+   "levels": [
+    {
+     "text": "+1 hound",
+     "count": 1
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+5s lifetime",
+     "lifetime": 5
+    },
+    {
+     "text": "+1 hound",
+     "count": 1
+    },
+    {
+     "text": "Bite 25% faster",
+     "hit_rate": -0.18
+    }
+   ]
+  },
+  {
+   "id": "imp_rabble",
+   "name": "Imp Rabble",
+   "school": "Hellfire",
+   "tags": [
+    "fire",
+    "summon"
+   ],
+   "icon": "ӝ",
+   "color": "#ff5020",
+   "desc": "A cackling rabble of imps pours out of the ground, biting ankles and setting them alight.",
+   "kind": "summon",
+   "cooldown": 4.0,
+   "damage": 4,
+   "params": {
+    "count": 4,
+    "lifetime": 10,
+    "speed": 5.5,
+    "hit_rate": 0.5,
+    "style": "imp"
+   },
+   "status": [
+    {
+     "id": "burn",
+     "stacks": 1
+    }
+   ],
+   "levels": [
+    {
+     "text": "+2 imps",
+     "count": 2
+    },
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+1 Burning stack",
+     "status_stacks": 1
+    },
+    {
+     "text": "+2 imps",
+     "count": 2
+    },
+    {
+     "text": "+4s lifetime",
+     "lifetime": 4
+    }
+   ]
+  },
+  {
+   "id": "pit_brute",
+   "name": "Pit Brute",
+   "school": "Brimstone",
+   "tags": [
+    "brute",
+    "summon"
+   ],
+   "icon": "Ѩ",
+   "color": "#c06030",
+   "desc": "Unchains a hulking brute from the pit. Slow, but every swing hurls angels aside.",
+   "kind": "summon",
+   "cooldown": 8.0,
+   "damage": 20,
+   "params": {
+    "count": 1,
+    "lifetime": 18,
+    "speed": 3.2,
+    "hit_rate": 1.4,
+    "knockback": 6,
+    "style": "hell_brute"
+   },
+   "levels": [
+    {
+     "text": "+40% damage",
+     "damage": 0.4
+    },
+    {
+     "text": "+6s lifetime",
+     "lifetime": 6
+    },
+    {
+     "text": "+1 brute",
+     "count": 1
+    },
+    {
+     "text": "Swings 25% faster",
+     "hit_rate": -0.35
+    },
+    {
+     "text": "+60% damage",
+     "damage": 0.6
+    }
+   ]
+  }
+ ],
+ "weapon_status": {
+  "fire": {
+   "id": "burn",
+   "stacks": 1,
+   "chance": 0.5
+  },
+  "storm": {
+   "id": "shock",
+   "stacks": 1,
+   "chance": 0.4
+  },
+  "chain": {
+   "id": "root",
+   "stacks": 1,
+   "chance": 0.06
+  },
+  "shadow": {
+   "id": "curse",
+   "stacks": 1,
+   "chance": 0.25
+  },
+  "soul": {
+   "id": "soul_mark",
+   "stacks": 1,
+   "chance": 0.15
+  },
+  "necro": {
+   "id": "plague",
+   "stacks": 1,
+   "chance": 0.25
+  },
+  "brute": {
+   "id": "chill",
+   "stacks": 1,
+   "chance": 0.3
+  }
+ },
+ "demon_affinity": {
+  "_doc": "Each demon's favoured school: its abilities are offered weight x more often and deal +damage. Matches Progression's mastery signature boons (docs/team/progression.md).",
+  "vharok": {
+   "school": "Brimstone",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "lilaeth": {
+   "school": "Hellfire",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "morvane": {
+   "school": "Curses",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "skarn": {
+   "school": "Chains",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "ysolde": {
+   "school": "Soul Harvest",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "nhazgul": {
+   "school": "Plague",
+   "damage": 0.1,
+   "weight": 3.0
+  },
+  "iscariel": {
+   "school": "Envy",
+   "damage": 0.1,
+   "weight": 3.0
+  }
+ }
+}

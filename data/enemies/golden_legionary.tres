@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/golden_legionary.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"golden_legionary"
+display_name = "Golden Legionary"
+flavor_text = "The legion of the citadel fights shield-first. Strike it from the front and you strike gold."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 38.0
+speed = 2.5
+damage = 14.0
+xp_value = 5
+knockback_scale = 0.3
+behavior = 0

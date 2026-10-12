@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/honour_guard.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"honour_guard"
+display_name = "Seraphic Honour Guard"
+flavor_text = "They line the last road to the Throne in pairs. They salute you. Then they kill you."
+model = ExtResource("2_model")
+size = 1.1
+max_hp = 40.0
+speed = 3.0
+damage = 15.0
+xp_value = 6
+knockback_scale = 0.4
+behavior = 2
+preferred_distance = 9.0
+attack_cooldown = 3.0
+charge_speed = 19.0
+charge_time = 0.55
+windup_time = 0.7

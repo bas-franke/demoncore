@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/martyr.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"martyr"
+display_name = "Martyr"
+flavor_text = "He walked into the arrows singing. He will walk into your fire the same way, and he is so very glad to die for this."
+model = ExtResource("2_model")
+size = 1.0
+max_hp = 12.0
+speed = 2.4
+damage = 8.0
+xp_value = 3
+knockback_scale = 1.0
+behavior = 0
